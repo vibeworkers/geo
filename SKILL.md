@@ -234,6 +234,9 @@ supported skill root.
 
 Activate it with `geo` or `$geo` once the directory is present.
 
+For repository navigation, `README.md` is the human entrypoint and `SKILL.md`
+remains the representative execution surface.
+
 The bundled references provide the default portable baseline until stronger
 user-provided material or a confirmed local overlay is available.
 
@@ -259,6 +262,8 @@ User-supplied GEO materials remain user-controlled sources of truth and
 evidence.
 
 No third-party licensed asset is required for the bundled routing baseline.
+
+Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.
 
 If a downstream workspace has stricter license, content, or permission rules,
 that workspace outranks this packaged baseline.

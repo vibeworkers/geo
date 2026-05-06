@@ -8,6 +8,8 @@ from pathlib import Path
 
 
 REQUIRED_FILES = [
+    "README.md",
+    "LICENSE",
     "SKILL.md",
     "agents/openai.yaml",
     "references/glossary.md",
@@ -46,6 +48,7 @@ REQUIRED_PHRASES = [
     "No special bootstrap is required beyond installing this skill package in a",
     "No external API credential is required for the bundled portable baseline.",
     "No third-party licensed asset is required for the bundled routing baseline.",
+    "Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.",
     "If a downstream workspace has stricter license, content, or permission rules,",
     "**Brand** — `Vibeworkers.net` unless explicit user or source brand overrides it",
 ]
@@ -74,6 +77,28 @@ DISALLOWED_STRINGS = [
 PORTABILITY_PATH_PATTERNS = [
     re.compile(r"/Volumes/"),
     re.compile(r"/Users/"),
+]
+
+README_REQUIRED_PHRASES = [
+    "# GEO",
+    "Portable GEO skill package",
+    "Representative execution surface: `SKILL.md`",
+    "Agent metadata: `agents/openai.yaml`",
+    "Bundled portable references: `references/*.md`",
+    "Validator: `python3 scripts/check_geo_skill.py`",
+    "This repository is licensed under `CC BY-ND 4.0`",
+    "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
+    "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
+]
+
+LICENSE_REQUIRED_PHRASES = [
+    "Creative Commons Attribution-NoDerivatives 4.0 International",
+    "SPDX-License-Identifier: CC-BY-ND-4.0",
+    "Unless otherwise noted, the contents of this repository are licensed under the",
+    "You may share the material with proper attribution.",
+    "you may not distribute the modified material.",
+    "https://creativecommons.org/licenses/by-nd/4.0/",
+    "https://creativecommons.org/licenses/by-nd/4.0/legalcode",
 ]
 
 
@@ -112,8 +137,24 @@ def ensure_skill_contract(skill_text: str) -> None:
             fail(f"missing inline workflow gate phrase in SKILL.md: {phrase}")
 
 
+def ensure_readme_contract(skill_dir: Path) -> None:
+    readme = read_text(skill_dir / "README.md")
+    for phrase in README_REQUIRED_PHRASES:
+        if phrase not in readme:
+            fail(f"missing required README phrase: {phrase}")
+
+
+def ensure_license_contract(skill_dir: Path) -> None:
+    license_text = read_text(skill_dir / "LICENSE")
+    for phrase in LICENSE_REQUIRED_PHRASES:
+        if phrase not in license_text:
+            fail(f"missing required LICENSE phrase: {phrase}")
+
+
 def ensure_no_stale_aliases(skill_dir: Path) -> None:
     for rel_path in [
+        "README.md",
+        "LICENSE",
         "SKILL.md",
         "agents/openai.yaml",
         "references/glossary.md",
@@ -129,6 +170,8 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
 
 def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
     for rel_path in [
+        "README.md",
+        "LICENSE",
         "SKILL.md",
         "agents/openai.yaml",
         "references/glossary.md",
@@ -223,6 +266,8 @@ def main() -> None:
     ensure_files(skill_dir)
     skill_text = read_text(skill_dir / "SKILL.md")
     ensure_skill_contract(skill_text)
+    ensure_readme_contract(skill_dir)
+    ensure_license_contract(skill_dir)
     ensure_no_stale_aliases(skill_dir)
     ensure_no_absolute_path_leaks(skill_dir)
     ensure_no_generated_clutter(skill_dir)
