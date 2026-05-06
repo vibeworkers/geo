@@ -11,6 +11,50 @@ local overlays, and a restored local execution bundle under `skills/*`.
 
 VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
 
+### Purpose
+
+This repository exists to provide one portable `geo` entrypoint for GEO
+strategy, teaching-material design, evidence work, and execution routing
+without assuming a hidden machine-local workspace.
+It should remain usable as a standalone package first, then adopt stronger
+user material or a confirmed local overlay when those sources exist.
+
+### Background
+
+GEO work usually spans multiple surfaces at once: reference notes, editable
+drafts, validation evidence, reusable assets, and execution tools for audit,
+schema, and report work.
+Without an explicit router, teams tend to edit the wrong artifact, treat a
+derived deliverable as the source of truth, or depend on paths that only exist
+on one machine.
+This repository separates the shared portable contract in `SKILL.md` from
+runtime-specific adaptation in `references/runtime-adaptation.md`, and exposes
+the repo-local execution bundle only after it is confirmed.
+
+### Core Capabilities
+
+- portable-baseline routing from bundled references when no stronger source is
+  available
+- source-order protection across bundled references, user material, local
+  overlays, execution overlays, and derived outputs
+- working-lane classification across framework-source, working-source,
+  evidence-note, asset-surface, execution-bundle, and derived-deliverable
+- restored execution workflows for audit, brand-mentions, citability, compare,
+  content, crawlers, `llms.txt`, platform, proposal, prospect, report, PDF,
+  schema, and technical GEO work
+- bilingual operator-facing documentation while stored prompts and routing
+  examples stay in English
+- release governance that keeps `README.md`, `CHANGELOG.md`, validators, and
+  the release gate aligned
+
+### Typical Use Cases
+
+- structure a GEO lecture, workshop, or study flow from the foundation
+- decide which GEO note, draft, or source surface should own a change
+- turn source material into checklists, handouts, templates, or evidence notes
+- run a repo-local GEO audit, schema, crawler, report, or proposal workflow
+  only after `skills/*` is confirmed
+
 ### Entrypoints
 
 - Human entrypoint: `README.md`
@@ -179,6 +223,49 @@ GEO 전략, 교육 자료, 근거 작업을 라우팅하기 위한 portable GEO 
 패키지이며, `skills/*` 아래 복원된 로컬 실행 번들을 함께 제공합니다.
 
 VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
+
+### 목적
+
+이 저장소는 숨겨진 machine-local workspace를 가정하지 않고도 GEO 전략, 교육
+자료 설계, 근거 작업, 실행 라우팅을 처리할 수 있는 하나의 portable `geo`
+진입점을 제공하기 위해 존재합니다.
+기본적으로는 standalone package로 바로 쓸 수 있어야 하고, 더 강한 사용자 자료
+또는 확인된 로컬 overlay가 있을 때만 그 표면을 받아들여야 합니다.
+
+### 배경
+
+GEO 작업은 보통 reference note, 편집 가능한 draft, validation evidence,
+재사용 asset, audit/schema/report용 실행 도구처럼 여러 표면을 동시에
+가로지릅니다.
+명시적인 router가 없으면 팀은 잘못된 산출물을 수정하거나, derived deliverable을
+source of truth처럼 취급하거나, 한 대의 머신에만 있는 경로에 의존하게 됩니다.
+이 저장소는 shared portable contract를 `SKILL.md`에 두고, runtime-specific
+adaptation은 `references/runtime-adaptation.md`로 분리하며, repo-local 실행
+번들은 실제로 확인된 경우에만 노출합니다.
+
+### 핵심 기능
+
+- 더 강한 source가 없을 때 bundled reference를 기준으로 동작하는
+  portable-baseline routing
+- bundled reference, user material, local overlay, execution overlay,
+  derived output 사이의 source-order 보호
+- framework-source, working-source, evidence-note, asset-surface,
+  execution-bundle, derived-deliverable로 나누는 작업 lane 분류
+- audit, brand-mentions, citability, compare, content, crawlers, `llms.txt`,
+  platform, proposal, prospect, report, PDF, schema, technical GEO 작업을
+  위한 복원된 실행 workflow
+- 저장된 prompt와 routing example은 영어로 유지하면서 operator-facing 문서는
+  이중언어로 제공
+- `README.md`, `CHANGELOG.md`, validator, release gate를 함께 맞추는 릴리스
+  거버넌스
+
+### 대표 사용 예시
+
+- GEO 강의, 워크숍, 학습 흐름의 기초 구조를 잡기
+- 어떤 GEO note, draft, source surface가 수정의 소유권을 가져야 하는지 판단하기
+- source material을 checklist, handout, template, evidence note로 바꾸기
+- `skills/*`가 확인된 뒤에만 repo-local GEO audit, schema, crawler, report,
+  proposal workflow를 실행하기
 
 ### 진입점
 
