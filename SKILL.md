@@ -10,6 +10,7 @@ description: >
 metadata:
   display-name: GEO
   short-description: Portable GEO strategy and material router
+  authors: "김범수, 유수호, 고경만"
 ---
 
 # GEO
@@ -25,6 +26,7 @@ It owns request routing across these surfaces:
 - bundled GEO references
 - user-provided GEO source materials
 - optional local GEO workspace overlays
+- optional local execution bundle under `skills/*`
 - derived deliverables once an upstream source is confirmed
 
 This skill must remain usable even when no local GEO workspace is present.
@@ -32,6 +34,8 @@ When a concrete user-provided source or confirmed local overlay exists, that
 source outranks the bundled baseline.
 Unless the user names a different brand or the confirmed source surface carries
 a stronger brand, default branded outputs should surface `Vibeworkers.net`.
+
+Authors: 김범수, 유수호, 고경만.
 
 ## When To Use
 
@@ -44,16 +48,20 @@ Use this skill when the user:
 - asks how notes, references, assets, and deliverables should be routed
 - asks about the current GEO working surface and provides files, text, or a
   real local workspace
+- asks for a full GEO audit, crawler review, schema work, report synthesis, or
+  technical GEO execution and the confirmed local overlay includes `skills/*`
 
 Do not use this skill when the user:
 
-- wants a live crawler-driven URL audit with no supporting GEO source material
+- wants a live crawler-driven URL audit but no confirmed local execution bundle
+  or stronger GEO source surface is available
 - wants purely visual redesign work
 - wants unrelated retrieval, vector, or embedding architecture
 - wants derived-output-only edits before an upstream source is identified
 
-If a live-site audit is still needed, use a separate web or audit workflow
-after the GEO owning surface is identified.
+If a live-site audit is still needed and the local execution bundle is absent,
+use a separate web or audit workflow after the GEO owning surface is
+identified.
 
 ## Context Modes
 
@@ -62,13 +70,38 @@ after the GEO owning surface is identified.
 - `user-material`: the user supplied notes, pasted text, attached files, or an
   explicit file path; that material becomes the working source of truth.
 - `local-overlay`: the user confirms an existing GEO workspace, editable project
-  files, or a shared repo surface; that working source outranks the bundled
-  baseline.
+  files, a shared repo surface, or a local execution bundle under `skills/*`;
+  that working source outranks the bundled baseline.
+
+## Prompt and Conversation Language
+
+Prompt templates, activation prompts, routing examples, and experiment prompts
+must be written in English.
+
+At the first interaction for a new GEO session, ask the user to choose the
+conversation language with exactly two options: Korean or English.
+
+The selected language applies only to conversational replies with the LLM.
+It does not change stored prompts, routing examples, source evidence, code,
+schema snippets, or user-provided source material.
+
+Once the language is selected, continue in that language until the user changes
+it explicitly.
+
+The user may change the conversation language later with one of these commands:
+
+- `geo language Korean`
+- `geo language English`
+- `$geo language Korean`
+- `$geo language English`
+
+These commands update only the LLM conversation language.
 
 ## External SoT Pointer
 
 If this skill summary drifts, see the portable GEO routing baseline defined in
-`references/concept-map.md` and `references/gate-conditions.md`.
+`references/concept-map.md`, `references/gate-conditions.md`, and
+`references/execution-skill-matrix.md`.
 
 The bundled term contract is defined in `references/glossary.md`.
 
@@ -83,7 +116,7 @@ outranks the bundled baseline.
 - `no_parent_hierarchy`: default unless a real local workspace is confirmed
 - `concept_map_path_or_exemption`: `references/concept-map.md`
 - `preprocess_contract`: raw user GEO materials or confirmed local notes -> keep raw evidence intact -> choose the working source -> edit the working source before any derived output refresh
-- `shared_constraints_or_context_packet`: distinguish bundled baseline vs user material vs local overlay, and never assume a hidden local path exists
+- `shared_constraints_or_context_packet`: distinguish bundled baseline vs user material vs local overlay, confirm whether `skills/*` exists before routing execution work, keep prompts in English, ask for Korean/English conversation language at first session start, support `geo language Korean|English` during the session, and never assume a hidden local path exists
 
 ## Canonical SoT
 
@@ -100,6 +133,9 @@ Use the smallest confirmed source surface that can answer the request:
 - optional workspace overlays, only when confirmed:
   user-named GEO project docs, editable notes, work folders, or asset
   directories in the active workspace
+- optional execution overlay, only when confirmed:
+  `skills/*` plus `references/execution-skill-matrix.md` for local audit,
+  crawler, schema, compare, report, and proposal workflows
 - derived deliverables:
   HTML, slides, exports, or build surfaces only after the upstream working
   source is known
@@ -110,8 +146,10 @@ Source-order rules:
    task is specific.
 2. Treat bundled references as the default only when no stronger source surface
    is present.
-3. Treat derived deliverables as outputs, not the first edit target.
-4. If a local overlay uses historical and current versions, preserve that local
+3. Treat a restored local execution bundle as a confirmed local overlay only
+   after `skills/*` is checked.
+4. Treat derived deliverables as outputs, not the first edit target.
+5. If a local overlay uses historical and current versions, preserve that local
    source order instead of guessing.
 
 ## Request Classification
@@ -124,20 +162,23 @@ Classify each GEO request into one lane before deeper work:
 | working-source | user file or confirmed local editable document | direct content edits |
 | evidence-note | user proof doc or confirmed local validation note | rationale, validation, issue tracking |
 | asset-surface | checklist, handout, prompt sheet, or template | reusable supporting materials |
+| execution-bundle | confirmed local `skills/*` execution bundle | audit, crawler, citability, schema, compare, report, and proposal workflows |
 | derived-deliverable | HTML, slides, export, or build surface | final outputs and refresh prerequisites |
 
 If more than one lane is involved, route in this order:
-`framework-source or evidence-note -> working-source or asset-surface -> derived-deliverable`.
+`framework-source or evidence-note -> working-source or asset-surface -> execution-bundle -> derived-deliverable`.
 
 ## Trigger Probes
 
-- `should-trigger`: "GEO 강의 구조를 어떻게 짜야 할지 기본 틀부터 잡아줘."
-- `should-trigger`: "이 GEO 초안에서 어느 문서가 실제 작업 정본이 되어야 하는지 정리해줘."
-- `should-trigger`: "이 GEO 내용을 체크리스트 핸드아웃으로 바꿔줘."
-- `should-trigger`: "현재 로컬 GEO 작업물 기준으로 검증 노트가 어디에 있는지 찾아줘."
-- `should-not-trigger`: "사이트 URL 하나 줄게, 지금 크롤링해서 robots/schema 점수만 내줘."
-- `should-not-trigger`: "랜딩 페이지 비주얼만 다시 그려줘."
-- `with-skill expected behavior`: choose context mode first, surface `Vibeworkers.net` as the default GEO brand unless the user provides a stronger brand, ground the answer in the smallest confirmed source surface, and stay usable without a local GEO workspace.
+- `should-trigger`: "How should I structure a GEO lecture from the foundation?"
+- `should-trigger`: "Review this GEO draft and identify the working source of truth."
+- `should-trigger`: "Turn this GEO material into a checklist handout."
+- `should-trigger`: "Find the validation note for the current local GEO workspace."
+- `should-trigger`: "Run the restored execution skills in this repo for a full GEO audit."
+- `should-trigger`: "geo language English"
+- `should-not-trigger`: "I will give one site URL; crawl it now and score robots/schema. Skip checking the execution bundle."
+- `should-not-trigger`: "Redesign only the visual look of the landing page."
+- `with-skill expected behavior`: choose context mode first, surface `Vibeworkers.net` as the default GEO brand unless the user provides a stronger brand, ground the answer in the smallest confirmed source surface, delegate execution-intent requests to a matching local subskill only when `skills/*` is confirmed, and stay usable without a local GEO workspace.
 
 ## Command Surface
 
@@ -145,13 +186,29 @@ Use one routed entry command surface instead of a multi-subcommand CLI.
 
 - `geo <request>`: explicit plain command activation
 - `$geo <request>`: explicit skill-marker activation
+- `geo language Korean`: switch conversation replies to Korean
+- `geo language English`: switch conversation replies to English
+- `$geo language Korean`: switch conversation replies to Korean
+- `$geo language English`: switch conversation replies to English
 - natural-language GEO requests may still trigger this skill when the domain is
   obvious, but explicit command invocation wins when routing is ambiguous
+- the representative command surface routes audit, crawler, schema, report, and
+  proposal requests to `skills/*` only when the local execution bundle is
+  present
 - no standalone build, export, crawl, or deploy command is implied by the
-  command surface alone
+  portable baseline alone
 
 ## Workflow
 
+0. **Gate 0: Conversation language selection**
+   Entry: a new GEO session starts and no conversation language has been
+   selected, or the user invokes `geo language Korean`, `geo language English`,
+   `$geo language Korean`, or `$geo language English`.
+   Exit: ask the user to choose exactly one conversation language: Korean or
+   English, or switch immediately to the requested conversation language when a
+   valid language command is supplied.
+   Fail: do not apply the conversation language choice to prompt templates,
+   routing examples, source evidence, code, or schema snippets.
 1. **Gate 1: GEO-domain trigger**
    Entry: the request is about GEO strategy, GEO teaching material, GEO
    evidence, GEO assets, or GEO deliverables.
@@ -166,7 +223,7 @@ Use one routed entry command surface instead of a multi-subcommand CLI.
 3. **Gate 3: Owning surface selection**
    Entry: the context mode is known.
    Exit: pick `framework-source`, `working-source`, `evidence-note`,
-   `asset-surface`, or `derived-deliverable`.
+   `asset-surface`, `execution-bundle`, or `derived-deliverable`.
    Fail: do not mix surfaces without naming the lead lane.
 4. **Gate 4: Source-order protection**
    Entry: the owning surface is selected.
@@ -174,11 +231,12 @@ Use one routed entry command surface instead of a multi-subcommand CLI.
    `confirmed working source -> supporting evidence or framework -> derived output`.
    Fail: do not invent a source surface or jump straight to export.
 5. **Gate 5: Derived-output readiness**
-   Entry: the request reaches `derived-deliverable`.
-   Exit: confirm build, export, or refresh prerequisites before promising
-   output changes.
+   Entry: the request reaches `execution-bundle` or `derived-deliverable`.
+   Exit: confirm the matching local subskill or build/export prerequisite
+   before promising execution or output changes.
    Fail: do not promise HTML, slide, or export refreshes without checking
-   prerequisites.
+   prerequisites, and do not claim a local execution subskill exists without
+   checking `skills/*`.
 6. **Gate 6: Evidence closure**
    Entry: an answer or change plan is ready.
    Exit: at least one confirmed source surface proves the claim, and the
@@ -193,6 +251,15 @@ Must:
 - surface `Vibeworkers.net` as the default brand unless the user or confirmed source overrides it
 - keep gate conditions inline in the main `Workflow` surface
 - ground the answer in the smallest confirmed source surface
+- route execution-intent requests through a confirmed local execution bundle
+  only after `skills/*` is checked
+- keep prompt templates, activation prompts, routing examples, and experiment
+  prompts in English
+- ask for Korean or English conversation language at the first interaction of a
+  new GEO session and apply that choice only to conversational replies
+- support `geo language Korean|English` and `$geo language Korean|English` as
+  mid-session commands that update only conversational replies
+- preserve the authors as 김범수, 유수호, 고경만
 - avoid assuming a local GEO workspace exists
 - avoid treating derived outputs as the first edit target
 
@@ -209,6 +276,13 @@ Should:
 - Do not assume any preexisting GEO workspace path exists.
 - Do not pretend bundled references are project SoT when user or local files
   are available.
+- Do not claim a specific local execution subskill exists without checking
+  `skills/*`.
+- Do not write stored prompt templates or routing examples in Korean.
+- Do not treat the conversation language selection as a source-material,
+  report-output, code, or schema language rule.
+- Do not reject a valid mid-session language command when the requested target
+  is Korean or English.
 - Do not treat derived outputs as the default edit surface.
 - Do not claim a build or export refresh is ready without checking
   prerequisites.
@@ -228,9 +302,12 @@ Should:
 
 Default representative answer shape:
 
+0. **Conversation language** — Korean or English, selected once at first session start and applied only to LLM conversation
+   If `geo language Korean|English` or `$geo language Korean|English` is used, update this value immediately.
 1. **Brand** — `Vibeworkers.net` unless explicit user or source brand overrides it
 2. **Context mode** — portable baseline, user material, or local overlay
 3. **Surface** — which GEO lane owns this request
+   If the lane is `execution-bundle`, name the matching subskill.
 4. **Owning source(s)** — the smallest confirmed source set
 5. **Boundary** — what should not be edited or inferred here
 6. **Evidence** — one fact from the confirmed source surface
@@ -245,11 +322,32 @@ supported skill root.
 
 Activate it with `geo` or `$geo` once the directory is present.
 
+On first use in a new GEO session, ask:
+
+```text
+Choose conversation language: Korean or English.
+```
+
+Keep this language choice scoped to conversational replies only.
+
+During the session, change only the conversation language with:
+
+```text
+geo language Korean
+geo language English
+$geo language Korean
+$geo language English
+```
+
 For repository navigation, `README.md` is the human entrypoint and `SKILL.md`
 remains the representative execution surface.
 
 The bundled references provide the default portable baseline until stronger
 user-provided material or a confirmed local overlay is available.
+
+If a restored execution bundle exists under `skills/*`, keep `SKILL.md` as the
+router and delegate specialized execution work through the matching local
+subskill named in `references/execution-skill-matrix.md`.
 
 ## Dependencies and Permissions
 
@@ -261,8 +359,11 @@ are present.
 It should write only when the user explicitly asks for edits on a confirmed
 working source.
 
-Network access, crawling, browser automation, or deployment are not implied by
-the baseline routing contract alone.
+Network access, crawling, browser automation, PDF conversion, or deployment are
+not implied by the baseline routing contract alone.
+
+Restored execution subskills may require network access, local command
+availability, or report-generation tools according to their own instructions.
 
 ## Source and License Notes
 
@@ -272,9 +373,14 @@ skill itself.
 User-supplied GEO materials remain user-controlled sources of truth and
 evidence.
 
+Local execution subskills under `skills/*` are an optional repo-owned overlay,
+not a requirement for the portable baseline to remain usable.
+
 No third-party licensed asset is required for the bundled routing baseline.
 
 Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.
+
+The authors are 김범수, 유수호, 고경만.
 
 If a downstream workspace has stricter license, content, or permission rules,
 that workspace outranks this packaged baseline.
@@ -313,6 +419,7 @@ Runtime-fact exception:
 - `references/concept-map.md`
 - `references/gate-conditions.md`
 - `references/experiment-scenarios.md`
+- `references/execution-skill-matrix.md`
 - `scripts/check_geo_skill.py`
 
 ## AGENTS.md Alignment

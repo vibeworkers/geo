@@ -16,13 +16,32 @@ REQUIRED_FILES = [
     "references/concept-map.md",
     "references/gate-conditions.md",
     "references/experiment-scenarios.md",
+    "references/execution-skill-matrix.md",
     "scripts/check_geo_skill.py",
+]
+
+RESTORED_SUBSKILLS = [
+    "geo-audit",
+    "geo-brand-mentions",
+    "geo-citability",
+    "geo-compare",
+    "geo-content",
+    "geo-crawlers",
+    "geo-llmstxt",
+    "geo-platform-optimizer",
+    "geo-proposal",
+    "geo-prospect",
+    "geo-report",
+    "geo-report-pdf",
+    "geo-schema",
+    "geo-technical",
 ]
 
 REQUIRED_SECTIONS = [
     "## Identity",
     "## When To Use",
     "## Context Modes",
+    "## Prompt and Conversation Language",
     "## External SoT Pointer",
     "## Project Topology Contract",
     "## Canonical SoT",
@@ -44,8 +63,16 @@ REQUIRED_PHRASES = [
     "This skill must remain usable even when no local GEO workspace is present.",
     "default branded outputs should surface `Vibeworkers.net`.",
     "This package is intended to move across supported skill roots without hidden",
+    "Authors: 김범수, 유수호, 고경만.",
+    "Prompt templates, activation prompts, routing examples, and experiment prompts",
+    "Choose conversation language: Korean or English.",
+    "geo language Korean",
+    "geo language English",
+    "$geo language Korean",
+    "$geo language English",
     "Treat bundled references as the default only when no stronger source surface",
     "Do not assume any preexisting GEO workspace path exists.",
+    "Do not claim a specific local execution subskill exists without checking",
     "No special bootstrap is required beyond installing this skill package in a",
     "No external API credential is required for the bundled portable baseline.",
     "No third-party licensed asset is required for the bundled routing baseline.",
@@ -53,11 +80,16 @@ REQUIRED_PHRASES = [
     "Use one routed entry command surface instead of a multi-subcommand CLI.",
     "- `geo <request>`: explicit plain command activation",
     "- `$geo <request>`: explicit skill-marker activation",
+    "the representative command surface routes audit, crawler, schema, report, and",
     "If a downstream workspace has stricter license, content, or permission rules,",
+    "The authors are 김범수, 유수호, 고경만.",
     "**Brand** — `Vibeworkers.net` unless explicit user or source brand overrides it",
 ]
 
 INLINE_GATE_PHRASES = [
+    "**Gate 0: Conversation language selection**",
+    "Exit: ask the user to choose exactly one conversation language: Korean or",
+    "valid language command is supplied.",
     "**Gate 1: GEO-domain trigger**",
     "Entry: the request is about GEO strategy, GEO teaching material, GEO",
     "**Gate 2: Context mode selection**",
@@ -90,14 +122,24 @@ README_REQUIRED_PHRASES = [
     "## English",
     "## 한국어",
     "Portable GEO skill package",
+    "Authors: 김범수, 유수호, 고경만.",
+    "Stored prompts are written in English.",
+    "Choose conversation language: Korean or English.",
+    "geo language Korean",
+    "geo language English",
+    "$geo language Korean",
+    "$geo language English",
     "Representative execution surface: `SKILL.md`",
     "Agent metadata: `agents/openai.yaml`",
     "Bundled portable references: `references/*.md`",
+    "Restored local execution bundle: `skills/*`",
     "Validator: `python3 scripts/check_geo_skill.py`",
     "Explicit skill invocation: `geo <request>`",
     "Explicit skill invocation with skill marker: `$geo <request>`",
     "This repository is licensed under `CC BY-ND 4.0`",
     "대표 실행 표면: `SKILL.md`",
+    "저작자: 김범수, 유수호, 고경만.",
+    "저장된 prompt는 영어로 작성합니다.",
     "에이전트 메타데이터: `agents/openai.yaml`",
     "검증기: `python3 scripts/check_geo_skill.py`",
     "명시적 스킬 호출: `geo <request>`",
@@ -110,6 +152,7 @@ README_REQUIRED_PHRASES = [
 LICENSE_REQUIRED_PHRASES = [
     "Creative Commons Attribution-NoDerivatives 4.0 International",
     "SPDX-License-Identifier: CC-BY-ND-4.0",
+    "Authors: 김범수, 유수호, 고경만.",
     "Unless otherwise noted, the contents of this repository are licensed under the",
     "You may share the material with proper attribution.",
     "you may not distribute the modified material.",
@@ -177,6 +220,7 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/concept-map.md",
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
+        "references/execution-skill-matrix.md",
     ]:
         text = read_text(skill_dir / rel_path)
         for disallowed in DISALLOWED_STRINGS:
@@ -194,6 +238,7 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/concept-map.md",
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
+        "references/execution-skill-matrix.md",
     ]:
         text = read_text(skill_dir / rel_path)
         for pattern in PORTABILITY_PATH_PATTERNS:
@@ -214,7 +259,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use geo or $geo to choose portable-baseline, user-material, or local-overlay mode, surface Vibeworkers.net as the default GEO brand unless the user provides a stronger brand, then route the GEO request to the smallest confirmed source surface."',
+        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. Then choose portable-baseline, user-material, or local-overlay mode, surface Vibeworkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve authors as 김범수, 유수호, 고경만."',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
@@ -225,12 +270,18 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     gate_conditions = read_text(skill_dir / "references/gate-conditions.md")
     experiments = read_text(skill_dir / "references/experiment-scenarios.md")
     glossary = read_text(skill_dir / "references/glossary.md")
+    execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
 
     for phrase in [
         "`portable-baseline`",
         "`user-material`",
         "`local-overlay`",
         "`default_brand`: `Vibeworkers.net`",
+        "`prompt_language`: English",
+        "`conversation_language`: first-session user choice between Korean and English",
+        "`conversation_language_commands`: `geo language Korean`",
+        "`authors`: 김범수, 유수호, 고경만",
+        "`execution_overlay_rule`: `skills/*` is a repo-local execution bundle",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
     ]:
@@ -238,10 +289,12 @@ def ensure_reference_contract(skill_dir: Path) -> None:
             fail(f"missing concept-map phrase: {phrase}")
 
     for phrase in [
+        "Gate 0: Conversation language selection",
         "Gate 1: GEO-domain trigger",
         "Gate 2: Context mode selection",
         "Gate 5: Derived-output readiness",
         "Gate 6: Evidence closure",
+        "`execution-bundle`",
     ]:
         if phrase not in gate_conditions:
             fail(f"missing gate condition phrase: {phrase}")
@@ -257,7 +310,11 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected lane: `framework-source`",
         "Expected lane: `working-source`",
         "Expected lane: `derived-deliverable`",
-        "Expected behavior: do not pretend this skill bundles a live crawler",
+        "Expected lane: `execution-bundle`",
+        "Expected behavior: ask exactly `Choose conversation language: Korean or English.`",
+        "Expected behavior: switch conversation replies to English without changing stored prompts",
+        "Expected boundary: confirm `skills/*` and route to `geo-audit`",
+        "Expected behavior: do not pretend the portable baseline alone bundles a live crawler",
     ]:
         if phrase not in experiments:
             fail(f"missing experiment phrase: {phrase}")
@@ -266,13 +323,53 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "portable baseline",
         "user-material mode",
         "local overlay",
+        "execution-bundle",
         "derived-deliverable",
         "default brand",
+        "prompt language",
+        "conversation language",
+        "language command",
+        "authors",
         "Vibeworkers.net",
     ]:
         if phrase not in glossary:
             fail(f"missing glossary phrase: {phrase}")
 
+    for line in experiments.splitlines():
+        if line.startswith("- Prompt:") and re.search(r"[가-힣]", line):
+            fail(f"experiment prompt must be written in English: {line}")
+
+    for skill_name in RESTORED_SUBSKILLS:
+        if f"`{skill_name}`" not in execution_matrix:
+            fail(f"missing execution skill in matrix: {skill_name}")
+
+
+def ensure_restored_execution_bundle(skill_dir: Path) -> None:
+    skills_dir = skill_dir / "skills"
+    if not skills_dir.is_dir():
+        fail("restored execution bundle missing: skills/")
+
+    actual_dirs = sorted(path.name for path in skills_dir.iterdir() if path.is_dir())
+    if actual_dirs != RESTORED_SUBSKILLS:
+        fail(f"restored execution bundle mismatch: expected {RESTORED_SUBSKILLS}, got {actual_dirs}")
+
+    for skill_name in RESTORED_SUBSKILLS:
+        skill_path = skills_dir / skill_name / "SKILL.md"
+        text = read_text(skill_path)
+        if not re.search(rf"(?ms)^---\s*\nname:\s*{re.escape(skill_name)}\s*\n", text):
+            fail(f"restored skill frontmatter mismatch: {skill_name}")
+        if "audience:" in text:
+            fail(f"unsupported frontmatter field leaked into restored skill: {skill_name}")
+        for section in [
+            "## Setup",
+            "## Dependencies and Permissions",
+            "## Source and License Notes",
+        ]:
+            if section not in text:
+                fail(f"missing restored skill section in {skill_name}: {section}")
+
+        if "../../LICENSE" not in text:
+            fail(f"restored skill must reference repository license in {skill_name}")
 
 def main() -> None:
     if len(sys.argv) > 2:
@@ -289,6 +386,7 @@ def main() -> None:
     ensure_no_generated_clutter(skill_dir)
     ensure_openai_yaml(skill_dir)
     ensure_reference_contract(skill_dir)
+    ensure_restored_execution_bundle(skill_dir)
 
     print("[ok] geo skill package and portable contract are consistent")
 

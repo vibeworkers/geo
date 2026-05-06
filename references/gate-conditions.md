@@ -1,5 +1,16 @@
 # GEO Gate Conditions
 
+## Gate 0: Conversation language selection
+
+- Entry condition: a new GEO session starts and no conversation language has
+  been selected, or the user invokes `geo language Korean`,
+  `geo language English`, `$geo language Korean`, or `$geo language English`.
+- Exit condition: the user chooses exactly one option, Korean or English, or
+  the valid language command immediately switches the conversation language.
+- Fail condition: the language choice is applied to stored prompts, routing
+  examples, source evidence, code, or schema snippets instead of conversation
+  only.
+
 ## Gate 1: GEO-domain trigger
 
 - Entry condition: the request is about GEO strategy, GEO teaching material,
@@ -20,7 +31,7 @@
 
 - Entry condition: context mode is known.
 - Exit condition: the request is mapped to `framework-source`,
-  `working-source`, `evidence-note`, `asset-surface`, or
+  `working-source`, `evidence-note`, `asset-surface`, `execution-bundle`, or
   `derived-deliverable`.
 - Fail condition: the request mixes surfaces without a lead lane.
 
@@ -33,11 +44,13 @@
 
 ## Gate 5: Derived-output readiness
 
-- Entry condition: the request touches a derived output.
-- Exit condition: build or export preconditions are either confirmed or
-  explicitly marked as missing.
+- Entry condition: the request touches `execution-bundle` or a
+  `derived-deliverable`.
+- Exit condition: the matching local subskill or build/export preconditions are
+  either confirmed or explicitly marked as missing.
 - Fail condition: the response promises a refresh without checking
-  prerequisites.
+  prerequisites or claims a local execution workflow without confirming
+  `skills/*`.
 
 ## Gate 6: Evidence closure
 
