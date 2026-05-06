@@ -85,6 +85,10 @@ PORTABILITY_PATH_PATTERNS = [
 
 README_REQUIRED_PHRASES = [
     "# GEO",
+    "This README is bilingual: English first, Korean second.",
+    "이 README는 영어 먼저, 한국어 다음 순서의 이중언어 문서입니다.",
+    "## English",
+    "## 한국어",
     "Portable GEO skill package",
     "Representative execution surface: `SKILL.md`",
     "Agent metadata: `agents/openai.yaml`",
@@ -93,6 +97,12 @@ README_REQUIRED_PHRASES = [
     "Explicit skill invocation: `geo <request>`",
     "Explicit skill invocation with skill marker: `$geo <request>`",
     "This repository is licensed under `CC BY-ND 4.0`",
+    "대표 실행 표면: `SKILL.md`",
+    "에이전트 메타데이터: `agents/openai.yaml`",
+    "검증기: `python3 scripts/check_geo_skill.py`",
+    "명시적 스킬 호출: `geo <request>`",
+    "명시적 스킬 호출(스킬 마커): `$geo <request>`",
+    "이 저장소는 `CC BY-ND 4.0`",
     "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
     "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
 ]
