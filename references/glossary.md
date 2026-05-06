@@ -14,11 +14,12 @@
 | execution-bundle | The confirmed local `skills/*` execution bundle used for audit, crawler, compare, schema, report, and proposal workflows |
 | derived-deliverable | An HTML, slide, export, or build surface produced from an upstream source |
 | build precondition | Any required input that must exist before a derived deliverable refresh is promised |
-| default brand | `Vibeworkers.net`, unless the user or confirmed source names a stronger brand that should own the response surface |
+| default brand | `VibeWorkers.net`, unless the user or confirmed source names a stronger brand that should own the response surface |
 | prompt language | English for stored prompts, activation prompts, routing examples, and experiment prompts |
 | conversation language | Korean or English, selected at the first interaction of a new GEO session and applied only to LLM conversation |
 | language command | `geo language Korean`, `geo language English`, `$geo language Korean`, or `$geo language English`; changes only LLM conversation language |
 | authors | 김범수, 유수호, 고경만 |
+| contributor display label | `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.` when contributor provenance is surfaced |
 
 ## Editing defaults
 

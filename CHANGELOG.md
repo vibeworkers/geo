@@ -10,6 +10,20 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 No unreleased changes.
 
+## 0.2.0 - 2026-05-06
+
+### Added
+
+- Added `references/runtime-adaptation.md` to separate shared GEO routing rules
+  from runtime-specific Codex, Claude, and Gemini adaptation guidance.
+
+### Changed
+
+- Standardized the default brand token as `VibeWorkers.net` and aligned the
+  contributor provenance label across the bundled contract surfaces.
+- Expanded `scripts/check_geo_skill.py` so the validator now enforces the
+  runtime-adaptation reference and contributor-display contract.
+
 ## 0.1.0 - 2026-05-06
 
 ### Added

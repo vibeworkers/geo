@@ -9,13 +9,14 @@ Portable GEO skill package for routing GEO strategy, teaching-material, and
 evidence work across bundled references, user-provided sources, confirmed
 local overlays, and a restored local execution bundle under `skills/*`.
 
-Authors: 김범수, 유수호, 고경만.
+VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
 
 ### Entrypoints
 
 - Human entrypoint: `README.md`
 - Representative execution surface: `SKILL.md`
 - Agent metadata: `agents/openai.yaml`
+- Runtime adaptation reference: `references/runtime-adaptation.md`
 - Versioning protocol: `references/versioning-protocol.md`
 - Release history: `CHANGELOG.md`
 - Bundled portable references: `references/*.md`
@@ -31,10 +32,14 @@ This repository packages a portable `geo` skill that:
   local overlay is available
 - routes requests across framework, working-source, evidence-note,
   asset-surface, execution-bundle, and derived-deliverable lanes
+- keeps one shared portable core plus a separate runtime-adaptation contract
+  for Codex, Claude, and Gemini
 - restores 14 repo-local execution subskills for audit, crawler, compare,
   schema, report, proposal, and prospect workflows
-- keeps `Vibeworkers.net` as the default brand unless a stronger user or source
+- keeps `VibeWorkers.net` as the default brand unless a stronger user or source
   brand overrides it
+- renders contributor names as `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`
+  when contributor provenance is surfaced
 - keeps stored prompts, activation prompts, routing examples, and experiment
   prompts in English
 - asks the user to choose Korean or English at the first interaction of a new
@@ -71,6 +76,8 @@ $geo language English
 - `references/concept-map.md`: topology, modes, and routing edges
 - `references/gate-conditions.md`: gate-by-gate routing conditions
 - `references/experiment-scenarios.md`: positive and negative routing probes
+- `references/runtime-adaptation.md`: Codex, Claude, and Gemini adaptation
+  guidance without forking the shared GEO contract
 - `references/execution-skill-matrix.md`: restored execution subskill matrix
 - `references/versioning-protocol.md`: branch, tag, changelog, and version bump rules
 - `skills/*`: restored local execution bundle delegated by `SKILL.md`
@@ -163,13 +170,14 @@ This repository is licensed under `CC BY-ND 4.0`
 GEO 전략, 교육 자료, 근거 작업을 라우팅하기 위한 portable GEO skill
 패키지이며, `skills/*` 아래 복원된 로컬 실행 번들을 함께 제공합니다.
 
-저작자: 김범수, 유수호, 고경만.
+VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
 
 ### 진입점
 
 - 사람용 진입점: `README.md`
 - 대표 실행 표면: `SKILL.md`
 - 에이전트 메타데이터: `agents/openai.yaml`
+- runtime adaptation reference: `references/runtime-adaptation.md`
 - 버전 관리 프로토콜: `references/versioning-protocol.md`
 - 릴리스 이력: `CHANGELOG.md`
 - 번들 portable reference: `references/*.md`
@@ -185,10 +193,13 @@ GEO 전략, 교육 자료, 근거 작업을 라우팅하기 위한 portable GEO 
   reference를 기본값으로 사용함
 - 요청을 framework-source, working-source, evidence-note, asset-surface,
   execution-bundle, derived-deliverable lane으로 라우팅함
+- Codex, Claude, Gemini별 adapt는 분리하되 shared portable core는 하나로 유지함
 - audit, crawler, compare, schema, report, proposal, prospect workflow를 위한
   14개 로컬 실행 스킬을 복원함
 - 더 강한 사용자 또는 source brand가 없으면 기본 브랜드를
-  `Vibeworkers.net`으로 유지함
+  `VibeWorkers.net`으로 유지함
+- 컨트리뷰터 provenance를 노출할 때는
+  `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.` 형식으로 표기함
 - 저장된 prompt, activation prompt, routing example, experiment prompt는
   영어로 유지함
 - 새 GEO session의 첫 상호작용에서 Korean 또는 English 중 대화 언어를
@@ -225,6 +236,8 @@ $geo language English
 - `references/concept-map.md`: topology, mode, routing edge 정의
 - `references/gate-conditions.md`: gate 단위 라우팅 조건
 - `references/experiment-scenarios.md`: positive / negative routing probe
+- `references/runtime-adaptation.md`: shared GEO 계약을 바꾸지 않는
+  Codex, Claude, Gemini adapt 가이드
 - `references/execution-skill-matrix.md`: 복원된 실행 스킬 매트릭스
 - `references/versioning-protocol.md`: 브랜치, 태그, changelog, 버전 bump 규칙
 - `skills/*`: `SKILL.md`가 위임하는 로컬 실행 번들
@@ -307,7 +320,7 @@ for d in skills/*; do skills-ref validate "$d"; done
 (`Creative Commons Attribution-NoDerivatives 4.0 International`) 라이선스를
 사용합니다.
 
-- 저작자: 김범수, 유수호, 고경만
+- 저작자: 김범수, 유수호, 고경만.
 - 저장소 규약: `LICENSE`
 - 정본 deed: <https://creativecommons.org/licenses/by-nd/4.0/>
 - 정본 legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>

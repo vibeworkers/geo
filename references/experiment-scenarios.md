@@ -7,7 +7,7 @@
 - Prompt: "How should I structure a GEO lecture from the foundation?"
 - Expected mode: `portable-baseline`
 - Expected lane: `framework-source`
-- Expected brand: `Vibeworkers.net`
+- Expected brand: `VibeWorkers.net`
 - Expected boundary: stay useful without assuming a local GEO workspace
 
 ### Scenario 2: user-provided draft routing
@@ -63,14 +63,19 @@
 - Prompt: "geo language English"
 - Expected behavior: switch conversation replies to English without changing stored prompts, routing examples, source evidence, code, or schema snippets
 
+### Scenario 10: contributor provenance wording
+
+- Prompt: "Who contributed to this GEO baseline?"
+- Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`
+
 ## Negative routing probes
 
-### Scenario 10: live crawler audit only
+### Scenario 11: live crawler audit only
 
 - Prompt: "I will give one site URL; crawl it now and score robots/schema. Skip checking the execution bundle."
 - Expected behavior: do not pretend the portable baseline alone bundles a live crawler; either confirm the local execution bundle first or route to a separate audit workflow
 
-### Scenario 11: pure visual redesign
+### Scenario 12: pure visual redesign
 
 - Prompt: "Redesign only the visual look of the landing page."
 - Expected behavior: do not activate this skill unless a GEO working source or GEO material-routing task is involved

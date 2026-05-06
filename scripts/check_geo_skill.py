@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     "references/concept-map.md",
     "references/gate-conditions.md",
     "references/experiment-scenarios.md",
+    "references/runtime-adaptation.md",
     "references/execution-skill-matrix.md",
     "references/versioning-protocol.md",
     "scripts/check_geo_release.py",
@@ -51,6 +52,7 @@ REQUIRED_SECTIONS = [
     "## Request Classification",
     "## Trigger Probes",
     "## Command Surface",
+    "## Runtime Adaptation",
     "## Workflow",
     "## Code / LLM Boundary",
     "## Standard Response Shape",
@@ -64,9 +66,9 @@ REQUIRED_SECTIONS = [
 
 REQUIRED_PHRASES = [
     "This skill must remain usable even when no local GEO workspace is present.",
-    "default branded outputs should surface `Vibeworkers.net`.",
+    "default branded outputs should surface `VibeWorkers.net`.",
     "This package is intended to move across supported skill roots without hidden",
-    "Authors: 김범수, 유수호, 고경만.",
+    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
     "Prompt templates, activation prompts, routing examples, and experiment prompts",
     "Choose conversation language: Korean or English.",
     "geo language Korean",
@@ -84,9 +86,14 @@ REQUIRED_PHRASES = [
     "- `geo <request>`: explicit plain command activation",
     "- `$geo <request>`: explicit skill-marker activation",
     "the representative command surface routes audit, crawler, schema, report, and",
+    "Keep one shared portable GEO core in this `SKILL.md`.",
+    "Do not fork the portable GEO routing contract per runtime.",
+    "Use runtime-specific adaptation only when invocation, metadata, evidence",
+    "Load `references/runtime-adaptation.md` only when the request is about",
     "If a downstream workspace has stricter license, content, or permission rules,",
-    "The authors are 김범수, 유수호, 고경만.",
-    "**Brand** — `Vibeworkers.net` unless explicit user or source brand overrides it",
+    "The legal authors are 김범수, 유수호, 고경만.",
+    "render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
+    "**Brand** — `VibeWorkers.net` unless explicit user or source brand overrides it",
 ]
 
 INLINE_GATE_PHRASES = [
@@ -125,7 +132,7 @@ README_REQUIRED_PHRASES = [
     "## English",
     "## 한국어",
     "Portable GEO skill package",
-    "Authors: 김범수, 유수호, 고경만.",
+    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
     "Stored prompts are written in English.",
     "Choose conversation language: Korean or English.",
     "geo language Korean",
@@ -134,6 +141,7 @@ README_REQUIRED_PHRASES = [
     "$geo language English",
     "Representative execution surface: `SKILL.md`",
     "Agent metadata: `agents/openai.yaml`",
+    "Runtime adaptation reference: `references/runtime-adaptation.md`",
     "Versioning protocol: `references/versioning-protocol.md`",
     "Release history: `CHANGELOG.md`",
     "Bundled portable references: `references/*.md`",
@@ -144,9 +152,11 @@ README_REQUIRED_PHRASES = [
     "Explicit skill invocation with skill marker: `$geo <request>`",
     "This repository is licensed under `CC BY-ND 4.0`",
     "대표 실행 표면: `SKILL.md`",
+    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
     "에이전트 메타데이터: `agents/openai.yaml`",
+    "runtime adaptation reference: `references/runtime-adaptation.md`",
     "버전 관리 프로토콜: `references/versioning-protocol.md`",
     "릴리스 이력: `CHANGELOG.md`",
     "검증기: `python3 scripts/check_geo_skill.py`",
@@ -202,6 +212,15 @@ LICENSE_REQUIRED_PHRASES = [
     "you may not distribute the modified material.",
     "https://creativecommons.org/licenses/by-nd/4.0/",
     "https://creativecommons.org/licenses/by-nd/4.0/legalcode",
+]
+
+RUNTIME_ADAPTATION_REQUIRED_PHRASES = [
+    "# GEO Runtime Adaptation",
+    "Keep one shared portable GEO core in `SKILL.md`.",
+    "Do not import the full CogArch multi-tool topology into `geo` just to express",
+    "Runtime adaptation must not replace context modes, source-order rules, language",
+    "Runtime adaptation may optimize invocation wording, metadata, evidence",
+    "Do not fork the whole skill package unless `geo` itself later becomes a",
 ]
 
 
@@ -286,6 +305,7 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/concept-map.md",
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
+        "references/runtime-adaptation.md",
         "references/execution-skill-matrix.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
@@ -307,6 +327,7 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/concept-map.md",
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
+        "references/runtime-adaptation.md",
         "references/execution-skill-matrix.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
@@ -330,7 +351,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. Then choose portable-baseline, user-material, or local-overlay mode, surface Vibeworkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve authors as 김범수, 유수호, 고경만."',
+        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
@@ -340,6 +361,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     concept_map = read_text(skill_dir / "references/concept-map.md")
     gate_conditions = read_text(skill_dir / "references/gate-conditions.md")
     experiments = read_text(skill_dir / "references/experiment-scenarios.md")
+    runtime_adaptation = read_text(skill_dir / "references/runtime-adaptation.md")
     glossary = read_text(skill_dir / "references/glossary.md")
     execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
 
@@ -347,11 +369,12 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`portable-baseline`",
         "`user-material`",
         "`local-overlay`",
-        "`default_brand`: `Vibeworkers.net`",
+        "`default_brand`: `VibeWorkers.net`",
         "`prompt_language`: English",
         "`conversation_language`: first-session user choice between Korean and English",
         "`conversation_language_commands`: `geo language Korean`",
         "`authors`: 김범수, 유수호, 고경만",
+        "`contributors_display_label`: `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "`execution_overlay_rule`: `skills/*` is a repo-local execution bundle",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
@@ -375,7 +398,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         fail("experiment scenarios must include at least 8 scenario blocks")
     for phrase in [
         "Expected mode: `portable-baseline`",
-        "Expected brand: `Vibeworkers.net`",
+        "Expected brand: `VibeWorkers.net`",
         "Expected mode: `user-material`",
         "Expected mode: `local-overlay`",
         "Expected lane: `framework-source`",
@@ -384,6 +407,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected lane: `execution-bundle`",
         "Expected behavior: ask exactly `Choose conversation language: Korean or English.`",
         "Expected behavior: switch conversation replies to English without changing stored prompts",
+        "Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "Expected boundary: confirm `skills/*` and route to `geo-audit`",
         "Expected behavior: do not pretend the portable baseline alone bundles a live crawler",
     ]:
@@ -401,10 +425,15 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "conversation language",
         "language command",
         "authors",
-        "Vibeworkers.net",
+        "contributor display label",
+        "VibeWorkers.net",
     ]:
         if phrase not in glossary:
             fail(f"missing glossary phrase: {phrase}")
+
+    for phrase in RUNTIME_ADAPTATION_REQUIRED_PHRASES:
+        if phrase not in runtime_adaptation:
+            fail(f"missing runtime-adaptation phrase: {phrase}")
 
     for line in experiments.splitlines():
         if line.startswith("- Prompt:") and re.search(r"[가-힣]", line):
