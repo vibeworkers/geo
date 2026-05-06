@@ -139,6 +139,17 @@ If more than one lane is involved, route in this order:
 - `should-not-trigger`: "랜딩 페이지 비주얼만 다시 그려줘."
 - `with-skill expected behavior`: choose context mode first, surface `Vibeworkers.net` as the default GEO brand unless the user provides a stronger brand, ground the answer in the smallest confirmed source surface, and stay usable without a local GEO workspace.
 
+## Command Surface
+
+Use one routed entry command surface instead of a multi-subcommand CLI.
+
+- `geo <request>`: explicit plain command activation
+- `$geo <request>`: explicit skill-marker activation
+- natural-language GEO requests may still trigger this skill when the domain is
+  obvious, but explicit command invocation wins when routing is ambiguous
+- no standalone build, export, crawl, or deploy command is implied by the
+  command surface alone
+
 ## Workflow
 
 1. **Gate 1: GEO-domain trigger**

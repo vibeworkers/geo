@@ -28,6 +28,7 @@ REQUIRED_SECTIONS = [
     "## Canonical SoT",
     "## Request Classification",
     "## Trigger Probes",
+    "## Command Surface",
     "## Workflow",
     "## Code / LLM Boundary",
     "## Standard Response Shape",
@@ -49,6 +50,9 @@ REQUIRED_PHRASES = [
     "No external API credential is required for the bundled portable baseline.",
     "No third-party licensed asset is required for the bundled routing baseline.",
     "Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.",
+    "Use one routed entry command surface instead of a multi-subcommand CLI.",
+    "- `geo <request>`: explicit plain command activation",
+    "- `$geo <request>`: explicit skill-marker activation",
     "If a downstream workspace has stricter license, content, or permission rules,",
     "**Brand** — `Vibeworkers.net` unless explicit user or source brand overrides it",
 ]
@@ -86,6 +90,8 @@ README_REQUIRED_PHRASES = [
     "Agent metadata: `agents/openai.yaml`",
     "Bundled portable references: `references/*.md`",
     "Validator: `python3 scripts/check_geo_skill.py`",
+    "Explicit skill invocation: `geo <request>`",
+    "Explicit skill invocation with skill marker: `$geo <request>`",
     "This repository is licensed under `CC BY-ND 4.0`",
     "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
     "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
@@ -198,7 +204,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use $geo to choose portable-baseline, user-material, or local-overlay mode, surface Vibeworkers.net as the default GEO brand unless the user provides a stronger brand, then route the GEO request to the smallest confirmed source surface."',
+        'default_prompt: "Use geo or $geo to choose portable-baseline, user-material, or local-overlay mode, surface Vibeworkers.net as the default GEO brand unless the user provides a stronger brand, then route the GEO request to the smallest confirmed source surface."',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
