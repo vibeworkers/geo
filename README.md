@@ -16,6 +16,8 @@ Authors: 김범수, 유수호, 고경만.
 - Human entrypoint: `README.md`
 - Representative execution surface: `SKILL.md`
 - Agent metadata: `agents/openai.yaml`
+- Versioning protocol: `references/versioning-protocol.md`
+- Release history: `CHANGELOG.md`
 - Bundled portable references: `references/*.md`
 - Restored local execution bundle: `skills/*`
 - Validator: `python3 scripts/check_geo_skill.py`
@@ -64,11 +66,13 @@ $geo language English
 ### Repository Layout
 
 - `SKILL.md`: canonical routing contract and representative skill surface
+- `CHANGELOG.md`: release history keyed by git tag
 - `references/glossary.md`: portable term contract
 - `references/concept-map.md`: topology, modes, and routing edges
 - `references/gate-conditions.md`: gate-by-gate routing conditions
 - `references/experiment-scenarios.md`: positive and negative routing probes
 - `references/execution-skill-matrix.md`: restored execution subskill matrix
+- `references/versioning-protocol.md`: branch, tag, changelog, and version bump rules
 - `skills/*`: restored local execution bundle delegated by `SKILL.md`
 - `agents/openai.yaml`: default activation prompt for the OpenAI agent surface
 - `scripts/check_geo_skill.py`: package validator for portability and contract
@@ -97,6 +101,28 @@ Examples:
 - `geo How should I structure a GEO lecture from the foundation?`
 - `$geo Review this GEO draft and identify the working source of truth.`
 
+### Versioning and Release
+
+This repository versions the portable GEO package as one public contract
+surface.
+The canonical rules live in `references/versioning-protocol.md`, and the
+release history lives in `CHANGELOG.md`.
+
+High-level rules:
+
+- Tag format: `X.Y.Z` without a leading `v`
+- `main` is the release line; use short-lived working branches such as
+  `codex/<topic>` for non-trivial changes
+- While the package is pre-`1.0.0`, use `0.Y.Z`: bump `Z` for backward-
+  compatible fixes and clarifications, bump `Y` when the public package
+  contract changes
+- Historical tags `0.0.1` through `0.0.4` predate the formal protocol and
+  remain immutable
+- New release tags should be annotated tags
+- A release decision is valid only if
+  `python3 scripts/check_geo_release.py <target-version>` passes; there are no
+  exceptions
+
 ### Validate
 
 Run the targeted validator from the repository root:
@@ -110,6 +136,11 @@ Expected result:
 ```text
 [ok] geo skill package and portable contract are consistent
 ```
+
+Before creating a release tag, update `CHANGELOG.md` and confirm the rules in
+`references/versioning-protocol.md`.
+Use `python3 scripts/check_geo_release.py <target-version>` as the final
+release-decision gate.
 
 To validate the restored execution subskills individually:
 
@@ -139,6 +170,8 @@ GEO 전략, 교육 자료, 근거 작업을 라우팅하기 위한 portable GEO 
 - 사람용 진입점: `README.md`
 - 대표 실행 표면: `SKILL.md`
 - 에이전트 메타데이터: `agents/openai.yaml`
+- 버전 관리 프로토콜: `references/versioning-protocol.md`
+- 릴리스 이력: `CHANGELOG.md`
 - 번들 portable reference: `references/*.md`
 - 복원된 로컬 실행 번들: `skills/*`
 - 검증기: `python3 scripts/check_geo_skill.py`
@@ -187,11 +220,13 @@ $geo language English
 ### 저장소 구조
 
 - `SKILL.md`: 정본 라우팅 계약이자 대표 skill 표면
+- `CHANGELOG.md`: git tag 기준 릴리스 이력
 - `references/glossary.md`: portable 용어 계약
 - `references/concept-map.md`: topology, mode, routing edge 정의
 - `references/gate-conditions.md`: gate 단위 라우팅 조건
 - `references/experiment-scenarios.md`: positive / negative routing probe
 - `references/execution-skill-matrix.md`: 복원된 실행 스킬 매트릭스
+- `references/versioning-protocol.md`: 브랜치, 태그, changelog, 버전 bump 규칙
 - `skills/*`: `SKILL.md`가 위임하는 로컬 실행 번들
 - `agents/openai.yaml`: OpenAI agent 표면의 기본 activation prompt
 - `scripts/check_geo_skill.py`: portability와 계약 일관성을 검증하는 패키지
@@ -220,6 +255,27 @@ $geo language English
 - `geo How should I structure a GEO lecture from the foundation?`
 - `$geo Review this GEO draft and identify the working source of truth.`
 
+### 버전 관리와 릴리스
+
+이 저장소는 portable GEO package 전체를 하나의 public contract surface로
+버전 관리합니다.
+정본 규칙은 `references/versioning-protocol.md`, 릴리스 이력은
+`CHANGELOG.md`에 둡니다.
+
+핵심 규칙:
+
+- 태그 형식은 앞에 `v`를 붙이지 않는 `X.Y.Z`
+- `main`을 릴리스 라인으로 두고, 의미 있는 변경은 `codex/<topic>` 같은
+  짧은 작업 브랜치에서 준비
+- `1.0.0` 이전에는 `0.Y.Z`를 사용하고, 하위 호환되는 수정/명확화는 `Z`,
+  공개 package 계약 변경은 `Y`를 올림
+- 기존 `0.0.1`부터 `0.0.4`까지의 태그는 정식 프로토콜 이전 이력이므로
+  그대로 보존
+- 새 릴리스 태그는 annotated tag를 기본값으로 사용
+- 릴리스 판단은 반드시
+  `python3 scripts/check_geo_release.py <target-version>` 통과를 기준으로
+  하며 예외를 두지 않음
+
 ### 검증
 
 저장소 루트에서 아래 validator를 실행합니다.
@@ -233,6 +289,11 @@ python3 scripts/check_geo_skill.py
 ```text
 [ok] geo skill package and portable contract are consistent
 ```
+
+릴리스 태그를 만들기 전에는 `CHANGELOG.md`를 갱신하고
+`references/versioning-protocol.md` 규칙과 함께 검증합니다.
+최종 릴리스 판단 게이트는
+`python3 scripts/check_geo_release.py <target-version>`입니다.
 
 복원된 실행 스킬을 개별 검증하려면:
 

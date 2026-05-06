@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 REQUIRED_FILES = [
+    "CHANGELOG.md",
     "README.md",
     "LICENSE",
     "SKILL.md",
@@ -17,6 +18,8 @@ REQUIRED_FILES = [
     "references/gate-conditions.md",
     "references/experiment-scenarios.md",
     "references/execution-skill-matrix.md",
+    "references/versioning-protocol.md",
+    "scripts/check_geo_release.py",
     "scripts/check_geo_skill.py",
 ]
 
@@ -131,9 +134,12 @@ README_REQUIRED_PHRASES = [
     "$geo language English",
     "Representative execution surface: `SKILL.md`",
     "Agent metadata: `agents/openai.yaml`",
+    "Versioning protocol: `references/versioning-protocol.md`",
+    "Release history: `CHANGELOG.md`",
     "Bundled portable references: `references/*.md`",
     "Restored local execution bundle: `skills/*`",
     "Validator: `python3 scripts/check_geo_skill.py`",
+    "python3 scripts/check_geo_release.py <target-version>",
     "Explicit skill invocation: `geo <request>`",
     "Explicit skill invocation with skill marker: `$geo <request>`",
     "This repository is licensed under `CC BY-ND 4.0`",
@@ -141,12 +147,50 @@ README_REQUIRED_PHRASES = [
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
     "에이전트 메타데이터: `agents/openai.yaml`",
+    "버전 관리 프로토콜: `references/versioning-protocol.md`",
+    "릴리스 이력: `CHANGELOG.md`",
     "검증기: `python3 scripts/check_geo_skill.py`",
+    "python3 scripts/check_geo_release.py <target-version>",
     "명시적 스킬 호출: `geo <request>`",
     "명시적 스킬 호출(스킬 마커): `$geo <request>`",
     "이 저장소는 `CC BY-ND 4.0`",
     "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
     "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
+]
+
+VERSIONING_PROTOCOL_REQUIRED_PHRASES = [
+    "# GEO Versioning Protocol",
+    "Tag format: `X.Y.Z` without a leading `v`",
+    "Start the protocol-governed line at `0.1.0`.",
+    "Historical tags `0.0.1` through `0.0.4` predate this protocol and remain",
+    "`main` is the release line",
+    "`codex/<topic>` is the default short-lived working branch shape",
+    "Run `python3 scripts/check_geo_skill.py`.",
+    "A release decision is valid only if `python3 scripts/check_geo_release.py",
+    "No exception, waiver, verbal approval, or ad hoc interpretation can replace",
+    "If the gate fails, the release decision is `blocked`, not `approved with",
+    "The next release after adopting this protocol should start at `0.1.0`, not at",
+    "Semantic Versioning 2.0.0: <https://semver.org/>",
+]
+
+CHANGELOG_REQUIRED_PHRASES = [
+    "# Changelog",
+    "Tag format: `X.Y.Z` without a leading `v`.",
+    "Historical note: `0.0.1` through `0.0.4` predate the formal protocol in",
+    "## Unreleased",
+    "## 0.0.4 - 2026-05-06",
+    "## 0.0.3 - 2026-05-06",
+    "## 0.0.2 - 2026-05-06",
+    "## 0.0.1 - 2026-05-06",
+]
+
+RELEASE_GATE_SCRIPT_REQUIRED_PHRASES = [
+    "usage: check_geo_release.py <target-version>",
+    "release decision requires branch main",
+    "release decision requires a clean worktree",
+    "target version must match X.Y.Z without a leading v",
+    "CHANGELOG contains non-empty Unreleased release notes",
+    "release decision passed for",
 ]
 
 LICENSE_REQUIRED_PHRASES = [
@@ -210,8 +254,30 @@ def ensure_license_contract(skill_dir: Path) -> None:
             fail(f"missing required LICENSE phrase: {phrase}")
 
 
+def ensure_versioning_contract(skill_dir: Path) -> None:
+    text = read_text(skill_dir / "references/versioning-protocol.md")
+    for phrase in VERSIONING_PROTOCOL_REQUIRED_PHRASES:
+        if phrase not in text:
+            fail(f"missing versioning protocol phrase: {phrase}")
+
+
+def ensure_changelog_contract(skill_dir: Path) -> None:
+    text = read_text(skill_dir / "CHANGELOG.md")
+    for phrase in CHANGELOG_REQUIRED_PHRASES:
+        if phrase not in text:
+            fail(f"missing changelog phrase: {phrase}")
+
+
+def ensure_release_gate_script(skill_dir: Path) -> None:
+    text = read_text(skill_dir / "scripts/check_geo_release.py")
+    for phrase in RELEASE_GATE_SCRIPT_REQUIRED_PHRASES:
+        if phrase not in text:
+            fail(f"missing release gate script phrase: {phrase}")
+
+
 def ensure_no_stale_aliases(skill_dir: Path) -> None:
     for rel_path in [
+        "CHANGELOG.md",
         "README.md",
         "LICENSE",
         "SKILL.md",
@@ -221,6 +287,8 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
         "references/execution-skill-matrix.md",
+        "references/versioning-protocol.md",
+        "scripts/check_geo_release.py",
     ]:
         text = read_text(skill_dir / rel_path)
         for disallowed in DISALLOWED_STRINGS:
@@ -230,6 +298,7 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
 
 def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
     for rel_path in [
+        "CHANGELOG.md",
         "README.md",
         "LICENSE",
         "SKILL.md",
@@ -239,6 +308,8 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
         "references/execution-skill-matrix.md",
+        "references/versioning-protocol.md",
+        "scripts/check_geo_release.py",
     ]:
         text = read_text(skill_dir / rel_path)
         for pattern in PORTABILITY_PATH_PATTERNS:
@@ -381,6 +452,9 @@ def main() -> None:
     ensure_skill_contract(skill_text)
     ensure_readme_contract(skill_dir)
     ensure_license_contract(skill_dir)
+    ensure_versioning_contract(skill_dir)
+    ensure_changelog_contract(skill_dir)
+    ensure_release_gate_script(skill_dir)
     ensure_no_stale_aliases(skill_dir)
     ensure_no_absolute_path_leaks(skill_dir)
     ensure_no_generated_clutter(skill_dir)
