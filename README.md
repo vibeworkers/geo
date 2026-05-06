@@ -22,6 +22,7 @@ VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
 - Bundled portable references: `references/*.md`
 - Restored local execution bundle: `skills/*`
 - Validator: `python3 scripts/check_geo_skill.py`
+- Release gate: `python3 scripts/check_geo_release.py <target-version>`
 
 ### What This Repository Owns
 
@@ -84,6 +85,8 @@ $geo language English
 - `agents/openai.yaml`: default activation prompt for the OpenAI agent surface
 - `scripts/check_geo_skill.py`: package validator for portability and contract
   consistency and execution bundle completeness
+- `scripts/check_geo_release.py`: release-decision gate for target-version
+  approval
 
 ### Command Surface
 
@@ -126,6 +129,8 @@ High-level rules:
 - Historical tags `0.0.1` through `0.0.4` predate the formal protocol and
   remain immutable
 - New release tags should be annotated tags
+- When a release-impacting entrypoint or package-contract surface changes,
+  refresh `README.md` in the same change set because it is the human entrypoint
 - A release decision is valid only if
   `python3 scripts/check_geo_release.py <target-version>` passes; there are no
   exceptions
@@ -146,6 +151,9 @@ Expected result:
 
 Before creating a release tag, update `CHANGELOG.md` and confirm the rules in
 `references/versioning-protocol.md`.
+If the release-impacting change touched entrypoints, defaults, required
+references/scripts, or other human-facing contract surfaces, refresh
+`README.md` in the same change set before running the release gate.
 Use `python3 scripts/check_geo_release.py <target-version>` as the final
 release-decision gate.
 
@@ -183,6 +191,7 @@ VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.
 - 번들 portable reference: `references/*.md`
 - 복원된 로컬 실행 번들: `skills/*`
 - 검증기: `python3 scripts/check_geo_skill.py`
+- 릴리스 게이트: `python3 scripts/check_geo_release.py <target-version>`
 
 ### 이 저장소가 담당하는 범위
 
@@ -244,6 +253,7 @@ $geo language English
 - `agents/openai.yaml`: OpenAI agent 표면의 기본 activation prompt
 - `scripts/check_geo_skill.py`: portability와 계약 일관성을 검증하는 패키지
   validator이자 실행 번들 완결성 점검기
+- `scripts/check_geo_release.py`: target version 승인용 release-decision gate
 
 ### 명령 표면
 
@@ -285,6 +295,8 @@ $geo language English
 - 기존 `0.0.1`부터 `0.0.4`까지의 태그는 정식 프로토콜 이전 이력이므로
   그대로 보존
 - 새 릴리스 태그는 annotated tag를 기본값으로 사용
+- 공개 package 계약 또는 entrypoint가 바뀌면 사람용 진입점인 `README.md`를
+  같은 change set에서 함께 갱신
 - 릴리스 판단은 반드시
   `python3 scripts/check_geo_release.py <target-version>` 통과를 기준으로
   하며 예외를 두지 않음
@@ -305,6 +317,9 @@ python3 scripts/check_geo_skill.py
 
 릴리스 태그를 만들기 전에는 `CHANGELOG.md`를 갱신하고
 `references/versioning-protocol.md` 규칙과 함께 검증합니다.
+entrypoint, 기본 동작, required reference/script 같은 사람 읽기용 계약이
+바뀐 패스라면 release gate를 돌리기 전에 같은 change set에서 `README.md`도
+함께 갱신합니다.
 최종 릴리스 판단 게이트는
 `python3 scripts/check_geo_release.py <target-version>`입니다.
 

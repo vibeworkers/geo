@@ -10,6 +10,17 @@ from pathlib import Path
 
 
 SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
+README_SYNC_REQUIRED_EXACT = {
+    "SKILL.md",
+    "agents/openai.yaml",
+    "references/concept-map.md",
+    "references/gate-conditions.md",
+    "references/execution-skill-matrix.md",
+    "references/runtime-adaptation.md",
+    "references/versioning-protocol.md",
+    "scripts/check_geo_skill.py",
+    "scripts/check_geo_release.py",
+}
 
 
 @dataclass(frozen=True, order=True)
@@ -111,6 +122,19 @@ def classify_bump(latest: Version, target: Version) -> str:
     fail("target version does not match the next allowed semantic bump")
 
 
+def changed_files_since_tag(repo_root: Path, latest_tag: str) -> list[str]:
+    raw = git_output(repo_root, "diff", "--name-only", f"{latest_tag}..HEAD")
+    return [line.strip() for line in raw.splitlines() if line.strip()]
+
+
+def path_requires_readme_refresh(path: str) -> bool:
+    if path in README_SYNC_REQUIRED_EXACT:
+        return True
+    if path.startswith("skills/") and path.endswith("/SKILL.md"):
+        return True
+    return False
+
+
 def extract_section_body(text: str, heading: str) -> str | None:
     pattern = re.compile(
         rf"(?ms)^## {re.escape(heading)}\n(.*?)(?=^## |\Z)"
@@ -134,6 +158,21 @@ def ensure_release_notes(changelog_text: str, target_version: str) -> None:
     if not re.search(r"(?m)^- ", unreleased_body):
         fail("CHANGELOG Unreleased section must contain at least one bullet")
     ok("CHANGELOG contains non-empty Unreleased release notes")
+
+
+def ensure_readme_refreshed(repo_root: Path, latest_tag: str) -> None:
+    changed_files = changed_files_since_tag(repo_root, latest_tag)
+    needs_refresh = any(path_requires_readme_refresh(path) for path in changed_files)
+    readme_changed = "README.md" in changed_files
+
+    if needs_refresh and not readme_changed:
+        fail(
+            "README.md must be updated when release-impacting entrypoint or contract surfaces change"
+        )
+    if needs_refresh:
+        ok("README.md refreshed for release-impacting entrypoint or contract changes")
+        return
+    ok("no README refresh trigger detected since latest release tag")
 
 
 def ensure_skill_validator_passes(repo_root: Path) -> None:
@@ -175,6 +214,7 @@ def main() -> None:
     ok(f"latest release tag is {latest_tag_raw}")
     ok(f"target version {target_version_raw} is the next {bump_kind} bump")
     ensure_release_notes(read_text(changelog_path), target_version_raw)
+    ensure_readme_refreshed(repo_root, latest_tag_raw)
     ensure_skill_validator_passes(repo_root)
     ok(f"release decision passed for {target_version_raw}")
 

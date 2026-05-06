@@ -14,11 +14,14 @@ The public package surface for versioning purposes is:
 - `references/*.md`
 - `skills/*/SKILL.md`
 - `scripts/check_geo_skill.py`
+- `scripts/check_geo_release.py`
 - `LICENSE`
 - `CHANGELOG.md`
 
 In Semantic Versioning terms, this documented package contract is the public
 API for the repository.
+`README.md` is the human entrypoint for that public API and should be refreshed
+when release-impacting contract surfaces change.
 
 ## Canonical Version Sources
 
@@ -104,10 +107,13 @@ Once `1.0.0` exists, follow standard Semantic Versioning:
 2. Choose the next version according to this protocol.
 3. Update `CHANGELOG.md` in the same change set as the release-impacting
    changes.
-4. Run `python3 scripts/check_geo_skill.py`.
-5. Review the staged diff to confirm the release scope matches the chosen bump.
-6. Merge the validated change to `main`.
-7. Create an annotated tag that matches the changelog heading.
+4. Refresh `README.md` in the same change set when entrypoints, defaults,
+   required references/scripts, or other release-impacting human-facing
+   contract surfaces changed.
+5. Run `python3 scripts/check_geo_skill.py`.
+6. Review the staged diff to confirm the release scope matches the chosen bump.
+7. Merge the validated change to `main`.
+8. Create an annotated tag that matches the changelog heading.
 
 ## Release Decision Gate
 
@@ -129,6 +135,8 @@ The release decision gate validates at least these conditions:
   tag under this protocol
 - `CHANGELOG.md` contains either a dated target section or non-empty
   `Unreleased` notes
+- `README.md` is updated when release-impacting entrypoint or contract surfaces
+  changed since the latest normal release tag
 - `python3 scripts/check_geo_skill.py` passes
 
 This gate is for normal release approval.

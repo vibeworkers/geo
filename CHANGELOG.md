@@ -19,6 +19,8 @@ No unreleased changes.
 
 ### Changed
 
+- Documented the human-entrypoint rule so `README.md` must be refreshed when
+  release-impacting entrypoint or contract surfaces change.
 - Standardized the default brand token as `VibeWorkers.net` and aligned the
   contributor provenance label across the bundled contract surfaces.
 - Expanded `scripts/check_geo_skill.py` so the validator now enforces the
