@@ -152,6 +152,26 @@ To make advanced workflows available:
 - treat the matching subskill as the workflow owner for setup, permissions,
   and output details; the top-level `geo` router only routes you there
 
+### Advanced Workflow Troubleshooting
+
+If advanced workflows are not available or do not start as expected:
+
+- verify that `skills/` is present in the same checkout or installation as this
+  package
+- if you copied only `README.md` and `SKILL.md`, reinstall from a GEO checkout
+  or package that also includes `skills/*`
+- if you are unsure which workflow to use, start with a plain request through
+  `geo <request>` or `$geo <request>` and let the router choose the matching
+  subskill
+- if GEO asks clarification questions first, answer them before expecting an
+  audit, schema, report, or other execution workflow to start
+- if the matching subskill needs tools, network access, credentials, or export
+  steps, open that subskill's `SKILL.md` and follow its local contract
+- if your runtime does not provide automatic first-use onboarding, use this
+  `README.md`, `references/execution-skill-matrix.md`, and the matching
+  `skills/geo-*/SKILL.md` manually; advanced workflows do not rely on hidden
+  global files or hidden session-state commands
+
 ### Project Docs
 
 - `README.md`: project introduction, installation, and feature guide
@@ -325,6 +345,26 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
   서브스킬 문서를 확인합니다
 - setup, permission, output detail은 해당 서브스킬이 직접 소유하고,
   상위 `geo` 라우터는 그 서브스킬로 연결만 한다고 이해합니다
+
+### 고급 Workflow 문제 해결
+
+고급 workflow가 보이지 않거나 기대대로 시작되지 않으면 아래 순서로
+확인합니다.
+
+- `skills/` 디렉터리가 이 패키지와 같은 checkout 또는 설치본 안에 있는지
+  확인합니다
+- `README.md`와 `SKILL.md`만 따로 복사했다면 `skills/*`가 함께 포함된 GEO
+  checkout 또는 패키지로 다시 설치합니다
+- 어떤 workflow를 써야 할지 모르겠으면 `geo <request>` 또는 `$geo <request>`로
+  평문 요청을 먼저 주고, 라우터가 맞는 서브스킬을 고르게 둡니다
+- GEO가 먼저 clarification question을 하면 답한 뒤에 audit, schema,
+  report 같은 실행 workflow가 시작된다고 이해합니다
+- 해당 서브스킬이 추가 도구, 네트워크 접근, 자격 증명, export 단계를
+  요구하면 그 서브스킬의 `SKILL.md`를 열어 로컬 계약을 따릅니다
+- 사용하는 런타임이 자동 첫 실행 onboarding을 제공하지 않으면 이
+  `README.md`, `references/execution-skill-matrix.md`, 그리고 해당
+  `skills/geo-*/SKILL.md`를 직접 따라 사용합니다. 고급 workflow는 숨은 전역
+  파일이나 숨은 세션 상태 명령에 의존하지 않습니다
 
 ### 프로젝트 문서
 

@@ -22,6 +22,23 @@ a separate `/geo ...` slash-command surface.
 - If a workflow needs extra tools or export steps, read the matching subskill's
   `SKILL.md`.
 
+## Troubleshooting
+
+- If no advanced workflow is available, verify that `skills/*` is present in
+  the same GEO installation or checkout.
+- If you copied only the representative docs, reinstall from a GEO package that
+  also includes `skills/*`.
+- If you do not know which workflow owner to choose, start with `geo <request>`
+  or `$geo <request>` and let the representative router select the matching
+  subskill.
+- If GEO asks clarification questions first, answer them before expecting an
+  execution subskill to run.
+- If a subskill needs extra tools, network access, credentials, or export
+  steps, open that subskill's `SKILL.md` and follow its local contract.
+- If your runtime has no automatic first-use onboarding, use this matrix plus
+  the matching subskill docs manually; advanced workflows do not depend on
+  hidden global files or hidden session-state commands.
+
 ## Standalone execution subskills
 
 | Skill | Primary use | Typical trigger | Local profile | Typical output |

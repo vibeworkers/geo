@@ -15,6 +15,10 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
   `scripts/check_geo_skill.py` that the current shipped runtime-local surface
   is `agents/openai.yaml`, while Claude/Gemini first-use onboarding remains
   optional and host-runtime dependent.
+- Added advanced-workflow troubleshooting guidance to `README.md` and
+  `references/execution-skill-matrix.md` so users can recover when `skills/*`,
+  workflow selection, clarification questions, or local setup requirements block
+  execution.
 
 ## 0.3.0 - 2026-05-07
 
