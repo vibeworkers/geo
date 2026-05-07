@@ -8,6 +8,13 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.6.0 - 2026-05-07
+
+- Added a short user-facing capability summary and a concise system overview to
+  `README.md`, including a feature-list style summary plus
+  `generateSkill`/Cognitive-Architecture based system notes and the
+  representative GEO routing structure.
+
 ## 0.5.0 - 2026-05-07
 
 - Clarified that `VibeWorkers` is the default GEO output brand and

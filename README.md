@@ -8,6 +8,18 @@ This README is bilingual: English first, Korean second.
 Portable GEO skill package for turning GEO ideas, notes, and working materials
 into structured guidance, reusable assets, and optional execution workflows.
 
+### Quick Summary
+
+`geo` provides these core functions:
+
+- planning GEO strategy and learning or workshop structure
+- choosing the right working source across notes, drafts, briefs, and reports
+- turning source material into checklists, handouts, templates, and evidence notes
+- running optional advanced workflows such as audits, schema work, reports, and proposals when `skills/*` is available
+
+Additional guidance is included for runtime compatibility, setup, troubleshooting,
+and workflow-specific execution docs.
+
 ### What This Project Is
 
 `geo` is a portable skill package for GEO strategy, teaching-material design,
@@ -197,6 +209,16 @@ If advanced workflows are not available or do not start as expected:
 - `references/execution-skill-matrix.md`: advanced execution workflow list
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
+### System Notes
+
+`geo` is packaged as one portable skill with one representative router.
+`SKILL.md` owns the routing contract, `skills/geo-*` own advanced execution
+workflows, and `references/runtime-adaptation.md` records runtime-specific
+boundaries.
+This package was implemented with a private `generateSkill` workflow derived
+from the public Skill Creator skill and a Cognitive Architecture based skill
+design.
+
 ### Package Provenance
 
 This package was created with a private `generateSkill` workflow derived from
@@ -218,6 +240,17 @@ This repository is licensed under `CC BY-NC-ND 4.0`
 
 GEO 아이디어, 노트, 작업 자료를 구조화된 가이드, 재사용 자산, 선택적 실행
 workflow로 연결하는 portable GEO skill 패키지입니다.
+
+### 한눈 요약
+
+`geo`는 아래 기능을 제공합니다.
+
+- GEO 전략과 학습/워크숍 구조 설계
+- note, draft, brief, report 중 올바른 working source 판단
+- source material을 checklist, handout, template, evidence note로 변환
+- `skills/*`가 있을 때 audit, schema, report, proposal 같은 고급 workflow 실행
+
+추가로 런타임 호환성, setup, 문제 해결, workflow별 실행 문서도 함께 제공합니다.
 
 ### 이 프로젝트는 무엇인가
 
@@ -406,6 +439,14 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/runtime-adaptation.md`: 런타임 호환성과 모델별 경계
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
+
+### 시스템 개요
+
+`geo`는 하나의 대표 라우터를 가진 portable skill 패키지로 묶여 있습니다.
+`SKILL.md`는 라우팅 계약을 소유하고, `skills/geo-*`는 고급 실행 workflow를
+소유하며, `references/runtime-adaptation.md`는 런타임별 경계를 기록합니다.
+이 패키지는 공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`
+workflow와 Cognitive Architecture 기반 skill 설계를 바탕으로 구현되었습니다.
 
 ### 패키지 생성 배경
 
