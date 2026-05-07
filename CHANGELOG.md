@@ -6,6 +6,8 @@ Tag format: `X.Y.Z` without a leading `v`.
 Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 `references/versioning-protocol.md` and remain immutable.
 
+## Unreleased
+
 ## 0.4.0 - 2026-05-07
 
 - Added user-facing runtime compatibility guidance to `README.md` so
