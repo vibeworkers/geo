@@ -10,15 +10,18 @@ into structured guidance, reusable assets, and optional execution workflows.
 
 ### Quick Summary
 
-`geo` provides these core functions:
+`geo` helps solve these GEO work problems:
 
-- planning GEO strategy and learning or workshop structure
-- choosing the right working source across notes, drafts, briefs, and reports
-- turning source material into checklists, handouts, templates, and evidence notes
-- running optional advanced workflows such as audits, schema work, reports, and proposals when `skills/*` is available
+- you need a GEO strategy, workshop, or learning structure but do not have a clear plan yet
+- your notes, drafts, briefs, files, and reports are scattered and you need one working source before editing
+- you have source material, but you still need reusable checklists, handouts, templates, or evidence notes
+- you need optional execution work such as audits, schema work, reports, or proposals when `skills/*` is available
 
-Additional guidance is included for runtime compatibility, setup, troubleshooting,
-and workflow-specific execution docs.
+Additional guidance is included for:
+
+- runtime compatibility across Codex/ChatGPT, Claude, and Gemini
+- setup and model-specific optimization hints when a runtime can surface them
+- troubleshooting and workflow-specific execution docs
 
 ### What This Project Is
 
@@ -66,7 +69,8 @@ OpenAI in `agents/openai.yaml`.
 Claude and Gemini users should follow the shared GEO contract in this
 `README.md` and `SKILL.md`; if a runtime-local surface is added later, it may
 run the same advanced-workflow setup guide with runtime-local first-use
-wording, installation hints, or response packaging only.
+wording, installation hints, model-specific setup hints, or response packaging
+only.
 Automatic runtime-local setup guidance is possible only when that runtime
 exposes a native metadata, extension, or skill slot and can surface the active
 runtime or model identity.
@@ -243,14 +247,18 @@ workflow로 연결하는 portable GEO skill 패키지입니다.
 
 ### 한눈 요약
 
-`geo`는 아래 기능을 제공합니다.
+`geo`는 아래 GEO 문제를 해결하도록 돕습니다.
 
-- GEO 전략과 학습/워크숍 구조 설계
-- note, draft, brief, report 중 올바른 working source 판단
-- source material을 checklist, handout, template, evidence note로 변환
-- `skills/*`가 있을 때 audit, schema, report, proposal 같은 고급 workflow 실행
+- GEO 전략, 워크숍, 학습 구조가 필요한데 아직 명확한 계획이 없을 때
+- note, draft, brief, file, report가 흩어져 있어 먼저 working source를 하나로 정해야 할 때
+- source material은 있지만 checklist, handout, template, evidence note 같은 재사용 자산이 더 필요할 때
+- `skills/*`가 있을 때 audit, schema, report, proposal 같은 선택적 실행 작업이 필요할 때
 
-추가로 런타임 호환성, setup, 문제 해결, workflow별 실행 문서도 함께 제공합니다.
+추가로 아래 안내를 함께 제공합니다.
+
+- Codex/ChatGPT, Claude, Gemini용 런타임 호환성
+- 런타임이 노출할 수 있을 때의 setup 및 모델별 최적화 힌트
+- 문제 해결과 workflow별 실행 문서
 
 ### 이 프로젝트는 무엇인가
 
@@ -298,8 +306,8 @@ Advanced workflow 설치:
 `agents/openai.yaml`로 포함합니다.
 Claude와 Gemini 사용자는 지금은 이 `README.md`와 `SKILL.md`의 공통 GEO
 계약을 따라 사용하고, 나중에 runtime-local surface가 추가되더라도 같은 고급
-workflow setup guide를 런타임별 첫 실행 문구, 설치 힌트, 응답 포장 수준에서만
-다르게 얹을 수 있습니다.
+workflow setup guide를 런타임별 첫 실행 문구, 설치 힌트, 모델별 setup 힌트,
+응답 포장 수준에서만 다르게 얹을 수 있습니다.
 자동 런타임별 setup guide는 해당 런타임이 native metadata, extension,
 skill slot을 제공하고 현재 활성 런타임 또는 모델 정체성을 드러낼 수 있을 때만
 가능합니다.

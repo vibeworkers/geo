@@ -8,6 +8,12 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.7.0 - 2026-05-07
+
+- Reframed the README summary around the GEO problems this package helps solve,
+  and added clearer user-facing guidance for runtime compatibility plus
+  model-specific setup and optimization hints.
+
 ## 0.6.0 - 2026-05-07
 
 - Added a short user-facing capability summary and a concise system overview to
