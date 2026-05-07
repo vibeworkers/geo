@@ -23,6 +23,11 @@ API for the repository.
 `README.md` is the human entrypoint for that public API and should be refreshed
 when release-impacting contract surfaces change.
 
+Auxiliary delivery and sharing surfaces such as `docs/`, social-preview images,
+`robots.txt`, `llms.txt`, and `sitemap` may ship with the repository, but they
+are not part of the portable GEO package contract unless a future protocol
+revision promotes them explicitly.
+
 ## Canonical Version Sources
 
 Read version state in this order:
@@ -72,15 +77,22 @@ Treat the following as `minor` changes while the major version is zero:
 - changing the routed command surface or conversation-language commands
 - changing prompt-language, brand-default, or routing-lane rules
 - changing validator-enforced required files, required sections, or required
-  phrases
+  phrases that alter routed invocation, source-order, runtime adaptation,
+  required package artifacts, or release procedure
 - changing the release checklist or version source priority
 
 Treat the following as `patch` changes while the major version is zero:
 
 - wording clarification without contract meaning drift
+- README or reference wording about auxiliary delivery, sharing, or social
+  preview surfaces when routed invocation, required package artifacts, runtime
+  adaptation, and release procedure stay the same
 - typo fixes
 - validator fixes that only repair incorrect enforcement of the existing
   contract
+- validator changes for auxiliary delivery or share-preview guidance that do
+  not alter routed invocation, runtime adaptation, required package artifacts,
+  or release procedure
 - changelog corrections that do not alter the meaning of a released version
 
 ## 1.0.0 Promotion Rule

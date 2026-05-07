@@ -73,6 +73,8 @@ This repository also includes Pages-ready landing pages at `docs/index.html`
 and `docs/ko/index.html`.
 Those pages carry Open Graph and schema.org metadata for shareable project
 previews once GitHub Pages is enabled for the `/docs` folder on `main`.
+They are supporting delivery surfaces for repository presentation, not part of
+the core portable GEO routing contract.
 If you want the repository URL `https://github.com/vibeworkers/geo` itself to
 show a custom image on social platforms, upload a repository Social preview
 image in GitHub Settings. GitHub owns that repository-level preview; README
@@ -328,6 +330,8 @@ Advanced workflow 설치:
 landing page도 함께 포함되어 있습니다.
 이 페이지들은 `main` 브랜치의 `/docs` 폴더로 GitHub Pages를 활성화하면
 Open Graph와 schema.org 메타데이터를 가진 공유용 소개 페이지로 동작합니다.
+이 공유 페이지들은 저장소 소개를 위한 보조 delivery surface이며, portable
+GEO 라우팅 핵심 계약 자체는 아닙니다.
 반대로 `https://github.com/vibeworkers/geo` 저장소 URL 자체가 소셜 플랫폼에서
 특정 이미지를 보이게 하려면 GitHub Settings의 repository Social preview
 이미지를 별도로 업로드해야 합니다. 그 저장소 수준 미리보기는 GitHub가
