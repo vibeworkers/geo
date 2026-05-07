@@ -285,6 +285,15 @@ exposes a native metadata, extension, or skill slot.
 That onboarding may adjust first-use wording, installation hints, or response
 packaging only.
 
+When an advanced workflow is requested for the first time in a local
+environment, or the active runtime or model changed since the last advanced
+workflow run, the runtime-local surface may run the advanced-workflow setup
+guide before promising execution.
+
+If the runtime cannot expose that trigger or runtime/model identity natively,
+the same guide remains manual in `README.md`,
+`references/execution-skill-matrix.md`, and the matching subskill contract.
+
 It must not fork context modes, source-order rules, language policy, or
 execution-bundle gates.
 
@@ -337,11 +346,15 @@ optimization.
    Fail: do not invent a source surface or jump straight to export.
 6. **Gate 6: Derived-output readiness**
    Entry: the request reaches `execution-bundle` or `derived-deliverable`.
-   Exit: confirm the matching local subskill or build/export prerequisite
-   before promising execution or output changes.
+   Exit: if this is the first advanced-workflow request in the local
+   environment, or the active runtime/model changed, run the advanced-workflow
+   setup guide or point to the manual guide first, then confirm the matching
+   local subskill or build/export prerequisite before promising execution or
+   output changes.
    Fail: do not promise HTML, slide, or export refreshes without checking
-   prerequisites, and do not claim a local execution subskill exists without
-   checking `skills/*`.
+   prerequisites, do not skip the setup-guide pass when first-use or
+   runtime/model change conditions apply, and do not claim a local execution
+   subskill exists without checking `skills/*`.
 7. **Gate 7: Evidence closure**
    Entry: an answer or change plan is ready.
    Exit: at least one confirmed source surface proves the claim, and the
@@ -434,6 +447,14 @@ The portable baseline works as soon as this package is installed.
 To enable advanced execution workflows, keep the repo-owned `skills/*` bundle
 in the same checkout or installation so the representative `geo` router can
 confirm it and delegate to the matching local subskill.
+Treat advanced-workflow setup as a guide-style feature.
+When an advanced workflow is requested for the first time in a local
+environment, run that setup guide before promising execution.
+If the active runtime or model changes, rerun the same guide so runtime-local
+hints, permissions, and export steps can be refreshed.
+When the host runtime cannot surface that guide automatically, the shared
+manual path is `README.md`, `references/execution-skill-matrix.md`, and the
+matching subskill `SKILL.md`.
 Each delegated subskill must still explain its own setup, permissions, access
 profile, and outputs without depending on `cogarch` or hidden session-state.
 If a workflow needs extra tools, network access, or export support, check that

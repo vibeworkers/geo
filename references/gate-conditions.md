@@ -56,11 +56,15 @@
 
 - Entry condition: the request touches `execution-bundle` or a
   `derived-deliverable`.
-- Exit condition: the matching local subskill or build/export preconditions are
-  either confirmed or explicitly marked as missing.
+- Exit condition: if this is the first advanced-workflow request in the local
+  environment, or the active runtime or model changed, the advanced-workflow
+  setup guide is run or the manual guide path is surfaced first; then the
+  matching local subskill or build/export preconditions are either confirmed or
+  explicitly marked as missing.
 - Fail condition: the response promises a refresh without checking
-  prerequisites or claims a local execution workflow without confirming
-  `skills/*`.
+  prerequisites, skips the setup-guide pass when first-use or runtime/model
+  change conditions apply, or claims a local execution workflow without
+  confirming `skills/*`.
 
 ## Gate 7: Evidence closure
 

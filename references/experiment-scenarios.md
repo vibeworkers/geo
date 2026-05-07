@@ -85,3 +85,15 @@
 
 - Prompt: "Redesign only the visual look of the landing page."
 - Expected behavior: do not activate this skill unless a GEO working source or GEO material-routing task is involved
+
+### Scenario 14: first advanced-workflow setup guide
+
+- Prompt: "Run a GEO audit for example.com in this local environment for the first time."
+- Expected behavior: run the advanced-workflow setup guide before promising execution, then confirm `skills/*` and local prerequisites
+- Expected boundary: if the runtime has no native setup-guide onboarding slot, fall back to `README.md`, `references/execution-skill-matrix.md`, and the matching subskill contract
+
+### Scenario 15: runtime or model change reruns setup guide
+
+- Prompt: "Switch to a different runtime or model, then run a GEO schema workflow."
+- Expected behavior: rerun the advanced-workflow setup guide before execution because runtime-local hints may differ
+- Expected boundary: do not assume the previous runtime or model already satisfied current setup requirements

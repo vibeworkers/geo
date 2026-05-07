@@ -52,10 +52,12 @@ Codex/ChatGPT, Claude, and Gemini.
 This repository currently ships native runtime metadata only for Codex /
 OpenAI in `agents/openai.yaml`.
 Claude and Gemini users should follow the shared GEO contract in this
-`README.md` and `SKILL.md`; if a runtime-local surface is added later, it
-will adjust first-use wording, installation hints, or response packaging only.
-Automatic first-use runtime guidance is possible only when that runtime
-exposes a native metadata, extension, or skill slot.
+`README.md` and `SKILL.md`; if a runtime-local surface is added later, it may
+run the same advanced-workflow setup guide with runtime-local first-use
+wording, installation hints, or response packaging only.
+Automatic runtime-local setup guidance is possible only when that runtime
+exposes a native metadata, extension, or skill slot and can surface the active
+runtime or model identity.
 See `references/runtime-adaptation.md` for current runtime-specific
 boundaries.
 
@@ -138,6 +140,15 @@ session-state commands.
 Advanced workflows are available only when the local `skills/*` bundle is part
 of your GEO installation or checkout.
 If you are using this repository checkout, that bundle is already included.
+GEO treats advanced-workflow setup as a guide-style feature.
+When an advanced workflow is requested for the first time in a local
+environment, run this setup guide before promising execution.
+If the active runtime or model changes, run the same guide again because
+runtime-local hints, permissions, or export steps may differ.
+If your runtime can host native first-use onboarding, the same guide may
+appear automatically. Otherwise, follow it manually here, in
+`references/execution-skill-matrix.md`, and in the matching
+`skills/geo-*/SKILL.md`.
 
 To make advanced workflows available:
 
@@ -165,9 +176,11 @@ If advanced workflows are not available or do not start as expected:
   subskill
 - if GEO asks clarification questions first, answer them before expecting an
   audit, schema, report, or other execution workflow to start
+- if you switched to a different runtime or model, rerun the setup guide before
+  expecting the same workflow to continue with unchanged hints or permissions
 - if the matching subskill needs tools, network access, credentials, or export
   steps, open that subskill's `SKILL.md` and follow its local contract
-- if your runtime does not provide automatic first-use onboarding, use this
+- if your runtime does not provide automatic setup-guide onboarding, use this
   `README.md`, `references/execution-skill-matrix.md`, and the matching
   `skills/geo-*/SKILL.md` manually; advanced workflows do not rely on hidden
   global files or hidden session-state commands
@@ -247,10 +260,12 @@ Advanced workflow 설치:
 현재 이 저장소는 Codex / OpenAI용 native runtime metadata만
 `agents/openai.yaml`로 포함합니다.
 Claude와 Gemini 사용자는 지금은 이 `README.md`와 `SKILL.md`의 공통 GEO
-계약을 따라 사용하고, 나중에 runtime-local surface가 추가되더라도 첫 실행
-안내, 설치 힌트, 응답 포장 정도만 달라집니다.
-자동 첫 실행 런타임 가이드는 해당 런타임이 native metadata, extension,
-skill slot을 제공할 때만 가능합니다.
+계약을 따라 사용하고, 나중에 runtime-local surface가 추가되더라도 같은 고급
+workflow setup guide를 런타임별 첫 실행 문구, 설치 힌트, 응답 포장 수준에서만
+다르게 얹을 수 있습니다.
+자동 런타임별 setup guide는 해당 런타임이 native metadata, extension,
+skill slot을 제공하고 현재 활성 런타임 또는 모델 정체성을 드러낼 수 있을 때만
+가능합니다.
 현재 런타임별 경계는 `references/runtime-adaptation.md`를 참고하세요.
 
 ### 기능 가이드
@@ -332,6 +347,15 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 고급 workflow는 로컬 `skills/*` 번들이 현재 GEO 설치본 또는 checkout에 함께
 있을 때만 사용할 수 있습니다.
 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어 있습니다.
+GEO는 고급 workflow setup을 가이드형 기능으로 다룹니다.
+로컬 환경에서 고급 workflow를 처음 요청하면 실행 약속 전에 이 setup guide를
+먼저 거칩니다.
+현재 활성 런타임이나 모델이 바뀌면 런타임별 힌트, 권한, export 단계가 달라질 수
+있으므로 같은 guide를 다시 실행합니다.
+사용 중인 런타임이 native first-use onboarding을 넣을 수 있으면 이 guide가
+자동으로 먼저 나타날 수 있고, 그렇지 않으면 여기와
+`references/execution-skill-matrix.md`, 해당 `skills/geo-*/SKILL.md`를
+따라 수동으로 같은 setup을 수행합니다.
 
 고급 workflow를 사용할 수 있게 하려면:
 
@@ -359,9 +383,11 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
   평문 요청을 먼저 주고, 라우터가 맞는 서브스킬을 고르게 둡니다
 - GEO가 먼저 clarification question을 하면 답한 뒤에 audit, schema,
   report 같은 실행 workflow가 시작된다고 이해합니다
+- 다른 런타임이나 모델로 바꿨다면 기존 상태를 그대로 가정하지 말고 setup
+  guide를 다시 따라 현재 환경 기준 힌트와 권한을 다시 확인합니다
 - 해당 서브스킬이 추가 도구, 네트워크 접근, 자격 증명, export 단계를
   요구하면 그 서브스킬의 `SKILL.md`를 열어 로컬 계약을 따릅니다
-- 사용하는 런타임이 자동 첫 실행 onboarding을 제공하지 않으면 이
+- 사용하는 런타임이 자동 setup guide onboarding을 제공하지 않으면 이
   `README.md`, `references/execution-skill-matrix.md`, 그리고 해당
   `skills/geo-*/SKILL.md`를 직접 따라 사용합니다. 고급 workflow는 숨은 전역
   파일이나 숨은 세션 상태 명령에 의존하지 않습니다

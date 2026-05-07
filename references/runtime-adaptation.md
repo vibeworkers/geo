@@ -37,8 +37,18 @@ packaging, or installation notes.
 Runtime-local first-use onboarding may be added only when a runtime exposes a
 native metadata, extension, or skill slot.
 
+Use that onboarding as the advanced-workflow setup guide for the first advanced
+workflow request in a local environment.
+
+Rerun the same guide when the active runtime or model changes, because
+runtime-local hints, permissions, and export steps may differ.
+
 It may add a short first-use guide, invocation wording, installation hints, or
 response-shaping help.
+
+If the runtime cannot surface that trigger or runtime/model identity natively,
+keep the same setup guide manual in `README.md`,
+`references/execution-skill-matrix.md`, and the matching subskill contract.
 
 It must not replace the shared `geo` contract or require `cogarch`, hidden
 global files, or a hidden local path.

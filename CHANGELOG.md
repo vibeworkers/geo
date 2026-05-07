@@ -19,6 +19,9 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
   `references/execution-skill-matrix.md` so users can recover when `skills/*`,
   workflow selection, clarification questions, or local setup requirements block
   execution.
+- Reframed advanced-workflow setup as a guide-style first-run feature that runs
+  before execution in a local environment and reruns when the active runtime or
+  model changes, with manual fallback when host-native onboarding is absent.
 
 ## 0.3.0 - 2026-05-07
 

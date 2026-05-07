@@ -94,8 +94,13 @@ REQUIRED_PHRASES = [
     "Do not fork the portable GEO routing contract per runtime.",
     "Use runtime-specific adaptation only when invocation, metadata, evidence",
     "Runtime-local first-use onboarding is allowed only when the target runtime",
+    "When an advanced workflow is requested for the first time in a local",
+    "the same guide remains manual in `README.md`,",
     "The shared portable package must stay usable even when no runtime-local",
     "Load `references/runtime-adaptation.md` only when the request is about",
+    "Treat advanced-workflow setup as a guide-style feature.",
+    "run that setup guide before promising execution.",
+    "If the active runtime or model changes, rerun the same guide so runtime-local",
     "Each delegated subskill must still explain its own setup, permissions, access",
     "If a downstream workspace has stricter license, content, or permission rules,",
     "The legal authors are 김범수, 유수호, 고경만.",
@@ -119,7 +124,9 @@ INLINE_GATE_PHRASES = [
     "**Gate 5: Source-order protection**",
     "confirmed working source -> supporting evidence or framework -> derived",
     "**Gate 6: Derived-output readiness**",
+    "run the advanced-workflow",
     "do not promise HTML, slide, or export refreshes without checking",
+    "do not skip the setup-guide pass when first-use or",
     "**Gate 7: Evidence closure**",
     "response ends with one concrete next action or one explicit blocker.",
 ]
@@ -157,7 +164,7 @@ README_REQUIRED_PHRASES = [
     "Advanced workflow installation:",
     "`geo` uses one shared `geo <request>` or `$geo <request>` contract across",
     "This repository currently ships native runtime metadata only for Codex /",
-    "Automatic first-use runtime guidance is possible only when that runtime",
+    "Automatic runtime-local setup guidance is possible only when that runtime",
     "Core router capabilities:",
     "Advanced execution workflows available with `skills/*`:",
     "| Capability | What it does | When to use | How to start |",
@@ -165,9 +172,14 @@ README_REQUIRED_PHRASES = [
     "Each `skills/geo-*` subskill owns its own workflow contract.",
     "must remain usable without `cogarch`, hidden global files, or hidden",
     "If you are using this repository checkout, that bundle is already included.",
+    "GEO treats advanced-workflow setup as a guide-style feature.",
+    "When an advanced workflow is requested for the first time in a local",
+    "If the active runtime or model changes, run the same guide again because",
+    "If your runtime can host native first-use onboarding, the same guide may",
     "To make advanced workflows available:",
     "If advanced workflows are not available or do not start as expected:",
     "if GEO asks clarification questions first, answer them before expecting an",
+    "if you switched to a different runtime or model, rerun the setup guide before",
     "global files or hidden session-state commands",
     "treat the matching subskill as the workflow owner for setup, permissions,",
     "Stored prompts are written in English.",
@@ -205,7 +217,7 @@ README_REQUIRED_PHRASES = [
     "Advanced workflow 설치:",
     "`geo`는 Codex/ChatGPT, Claude, Gemini에서 공통 `geo <request>` 또는",
     "현재 이 저장소는 Codex / OpenAI용 native runtime metadata만",
-    "자동 첫 실행 런타임 가이드는 해당 런타임이 native metadata, extension,",
+    "자동 런타임별 setup guide는 해당 런타임이 native metadata, extension,",
     "기본 라우터 기능:",
     "`skills/*`가 있을 때 사용할 수 있는 고급 실행 workflow:",
     "| 기능 | 무엇을 하는가 | 언제 쓰는가 | 어떻게 시작하는가 |",
@@ -213,9 +225,14 @@ README_REQUIRED_PHRASES = [
     "각 `skills/geo-*` 서브스킬은 자기 workflow 계약을 직접 소유합니다.",
     "상위 `geo` 라우터는 그 서브스킬로 연결만 한다고 이해합니다",
     "이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어 있습니다.",
+    "GEO는 고급 workflow setup을 가이드형 기능으로 다룹니다.",
+    "로컬 환경에서 고급 workflow를 처음 요청하면 실행 약속 전에 이 setup guide를",
+    "현재 활성 런타임이나 모델이 바뀌면 런타임별 힌트, 권한, export 단계가 달라질 수",
+    "사용 중인 런타임이 native first-use onboarding을 넣을 수 있으면 이 guide가",
     "고급 workflow를 사용할 수 있게 하려면:",
     "고급 workflow가 보이지 않거나 기대대로 시작되지 않으면 아래 순서로",
     "GEO가 먼저 clarification question을 하면 답한 뒤에 audit, schema,",
+    "다른 런타임이나 모델로 바꿨다면 기존 상태를 그대로 가정하지 말고 setup",
     "파일이나 숨은 세션 상태 명령에 의존하지 않습니다",
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
@@ -233,9 +250,13 @@ EXECUTION_MATRIX_REQUIRED_PHRASES = [
     "Each subskill below owns its own setup, permission, access-profile, and output",
     "A subskill must remain usable without `cogarch`, `~/.cogarch`,",
     "Subskill examples should describe direct inputs or plain-language requests, not",
+    "Treat this section as the advanced-workflow setup guide.",
+    "Run this guide the first time an advanced workflow is requested in a local",
+    "Run the same guide again when the active runtime or model changes.",
     "If you already know the exact workflow owner, you can open that subskill",
     "## Troubleshooting",
     "If GEO asks clarification questions first, answer them before expecting an",
+    "If you switched to a different runtime or model, rerun the setup guide",
     "hidden global files or hidden session-state commands.",
     "## Standalone execution subskills",
     "| Skill | Primary use | Typical trigger | Local profile | Typical output |",
@@ -312,6 +333,9 @@ RUNTIME_ADAPTATION_REQUIRED_PHRASES = [
     "## First-Use Runtime-Local Onboarding",
     "Codex / OpenAI: `agents/openai.yaml` is bundled today.",
     "no runtime-local surface is bundled in this repository yet",
+    "Use that onboarding as the advanced-workflow setup guide for the first advanced",
+    "Rerun the same guide when the active runtime or model changes, because",
+    "If the runtime cannot surface that trigger or runtime/model identity natively,",
     "The shared portable package must remain usable even when no runtime-local",
     "Do not fork the whole skill package unless `geo` itself later becomes a",
 ]
@@ -444,7 +468,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. If goal, scope, working surface, success condition, or evidence target is unclear, ask a short pre-question set first and freeze a clarification packet with goal, scope, surface, success, and evidence target before planning. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
+        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. If goal, scope, working surface, success condition, or evidence target is unclear, ask a short pre-question set first and freeze a clarification packet with goal, scope, surface, success, and evidence target before planning. If the request asks for an advanced execution workflow and this is the first such workflow in the local environment, or the active runtime/model changed, run the advanced-workflow setup guide before promising execution. Confirm skills/*, surface any matching subskill setup or permission requirements, and if native onboarding cannot carry the full guide, fall back to README.md, references/execution-skill-matrix.md, and the matching `skills/geo-*/SKILL.md`. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
@@ -473,6 +497,9 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
         "| clarification packet | minimal pre-plan packet with `goal / scope / surface / success / evidence target`",
+        "| advanced-workflow setup guide | `README.md`, `references/execution-skill-matrix.md`, matching",
+        "`advanced_workflow_setup_rule`: when an advanced workflow is requested for",
+        "Run the advanced-workflow setup guide before promising execution when",
     ]:
         if phrase not in concept_map:
             fail(f"missing concept-map phrase: {phrase}")
@@ -486,6 +513,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Gate 7: Evidence closure",
         "packet with `goal / scope / surface / success / evidence target` is locked.",
         "`execution-bundle`",
+        "advanced-workflow",
+        "runtime or model changed",
     ]:
         if phrase not in gate_conditions:
             fail(f"missing gate condition phrase: {phrase}")
@@ -508,6 +537,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "Expected boundary: confirm `skills/*` and route to `geo-audit`",
         "Expected behavior: do not pretend the portable baseline alone bundles a live crawler",
+        "Expected behavior: run the advanced-workflow setup guide before promising execution",
+        "Expected behavior: rerun the advanced-workflow setup guide before execution because runtime-local hints may differ",
     ]:
         if phrase not in experiments:
             fail(f"missing experiment phrase: {phrase}")
@@ -519,6 +550,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "execution-bundle",
         "derived-deliverable",
         "clarification packet",
+        "advanced-workflow setup guide",
         "default brand",
         "prompt language",
         "conversation language",

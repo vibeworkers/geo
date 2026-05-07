@@ -12,6 +12,16 @@ a separate `/geo ...` slash-command surface.
 
 ## How to enable these workflows
 
+Treat this section as the advanced-workflow setup guide.
+
+Run this guide the first time an advanced workflow is requested in a local
+environment.
+
+Run the same guide again when the active runtime or model changes.
+
+If your runtime can host native first-use onboarding, the same guide may
+appear automatically there. Otherwise, follow these steps manually.
+
 - Use a GEO checkout or installation that includes the local `skills/*` bundle.
 - In this repository checkout, the bundle is already included under `skills/`.
 - Start with the representative `geo` entrypoint, then ask for a concrete
@@ -33,9 +43,12 @@ a separate `/geo ...` slash-command surface.
   subskill.
 - If GEO asks clarification questions first, answer them before expecting an
   execution subskill to run.
+- If you switched to a different runtime or model, rerun the setup guide
+  before expecting the same workflow to continue with unchanged hints or
+  permissions.
 - If a subskill needs extra tools, network access, credentials, or export
   steps, open that subskill's `SKILL.md` and follow its local contract.
-- If your runtime has no automatic first-use onboarding, use this matrix plus
+- If your runtime has no automatic setup-guide onboarding, use this matrix plus
   the matching subskill docs manually; advanced workflows do not depend on
   hidden global files or hidden session-state commands.
 

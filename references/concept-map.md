@@ -22,6 +22,10 @@
 - `clarification_rule`: if `goal / scope / surface / success / evidence target`
   is unclear, ask short pre-questions first and freeze a clarification packet
   before deeper routing
+- `advanced_workflow_setup_rule`: when an advanced workflow is requested for
+  the first time in a local environment, or the active runtime/model changes,
+  run the setup guide before promising execution; automatic first-use guidance
+  is host-runtime dependent, but the same guide must remain available manually
 
 ## Context modes
 
@@ -41,6 +45,7 @@
 | evidence note | user proof doc or confirmed local validation note | validation, rationale, issue tracking |
 | asset surface | checklist, handout, prompt sheet, template | reusable support material |
 | execution bundle | local `skills/*` plus `references/execution-skill-matrix.md` | specialized execution surface for audit, crawler, compare, schema, report, and proposal work |
+| advanced-workflow setup guide | `README.md`, `references/execution-skill-matrix.md`, matching `skills/geo-*/SKILL.md`, and any future runtime-local onboarding surface | first-use or runtime/model-change setup flow before advanced execution promises |
 | runtime adaptation surface | `references/runtime-adaptation.md` and any future runtime-local metadata surface | per-runtime invocation, metadata, and evidence-shaping guidance without changing the shared GEO contract |
 | derived output | HTML, slides, export, build surface | final output only after the source is confirmed |
 | workspace overlay | confirmed project notes, outlines, work folders, or asset directories | runtime-only project SoT, not a portability requirement |
@@ -54,9 +59,12 @@
 2. request about editing a specific note or document -> `working-source`
 3. request about proof, validation, or issue status -> `evidence-note`
 4. request about reusable materials -> `asset-surface`
-5. request about audit, crawler, schema, technical, compare, or report
+5. first advanced-workflow request in a local environment, or advanced
+   workflow request after a runtime/model change -> `advanced-workflow setup
+   guide` before `execution-bundle`
+6. request about audit, crawler, schema, technical, compare, or report
    execution -> `execution-bundle`, but only after `skills/*` is confirmed
-6. request about exports or HTML/slides -> `derived-deliverable`, but only
+7. request about exports or HTML/slides -> `derived-deliverable`, but only
    after the upstream source lane is identified
 
 ## Preservation rule
@@ -67,6 +75,8 @@
   routing.
 - Confirmed user or local working sources outrank bundled references.
 - Confirm the local execution bundle before routing an execution-intent request.
+- Run the advanced-workflow setup guide before promising execution when
+  first-use or runtime/model-change conditions apply.
 - Keep stored prompts and routing examples in English.
 - Apply the Korean/English choice only to conversational replies.
 - Accept `geo language Korean|English` and `$geo language Korean|English` as

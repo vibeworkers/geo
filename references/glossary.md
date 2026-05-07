@@ -12,6 +12,7 @@
 | evidence-note | A validation, rationale, issue, or proof document tied to the current GEO task |
 | asset-surface | A checklist, handout, prompt sheet, rubric, or template meant for reuse |
 | execution-bundle | The confirmed local `skills/*` execution bundle used for audit, crawler, compare, schema, report, and proposal workflows |
+| advanced-workflow setup guide | The first-use or runtime/model-change guide that confirms `skills/*`, workflow ownership, and local prerequisites before advanced execution is promised |
 | derived-deliverable | An HTML, slide, export, or build surface produced from an upstream source |
 | build precondition | Any required input that must exist before a derived deliverable refresh is promised |
 | clarification packet | A minimal pre-plan packet that locks `goal / scope / surface / success / evidence target` before deeper routing or plan creation |
