@@ -229,6 +229,7 @@ If advanced workflows are not available or do not start as expected:
 
 - `README.md`: project introduction, installation, and feature guide
 - `SKILL.md`: full GEO routing contract
+- `references/versioning-protocol.md`: release rules and the three-part `X.Y.Z` version structure
 - `references/runtime-adaptation.md`: runtime compatibility and per-runtime boundaries
 - `references/execution-skill-matrix.md`: advanced execution workflow list
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
@@ -483,6 +484,7 @@ guide를 먼저 따라갈 수 있습니다.
 
 - `README.md`: 프로젝트 소개, 설치, 기능 가이드
 - `SKILL.md`: 전체 GEO 라우팅 계약
+- `references/versioning-protocol.md`: 릴리즈 규칙과 3단계 `X.Y.Z` 버전 구조
 - `references/runtime-adaptation.md`: 런타임 호환성과 모델별 경계
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
