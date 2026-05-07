@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vibeworkers.github.io/geo/sitemap.xml

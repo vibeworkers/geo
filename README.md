@@ -5,6 +5,8 @@ This README is bilingual: English first, Korean second.
 
 ## English
 
+![VibeWorkers GEO Skill System introduction image (English)](docs/assets/geo-skill-system-en.png)
+
 Portable GEO skill package for turning GEO ideas, notes, and working materials
 into structured guidance, reusable assets, and optional execution workflows.
 
@@ -22,6 +24,8 @@ Additional guidance is included for:
 - runtime compatibility across Codex/ChatGPT, Claude, and Gemini
 - setup and model-specific optimization hints when a runtime can surface them
 - troubleshooting and workflow-specific execution docs
+- GitHub-ready intro images in this README plus shareable landing pages with
+  Open Graph and schema.org metadata under `docs/`
 
 ### What This Project Is
 
@@ -59,6 +63,20 @@ Advanced workflow installation:
 3. Read the matching `skills/geo-*/SKILL.md` when a workflow needs extra
    tools, network access, or export support.
 4. If you are using this repository checkout, that bundle is already included.
+
+### GitHub Sharing and Preview
+
+This README embeds the English and Korean introduction images directly so
+repository visitors can see the right overview at the start of each language
+section.
+This repository also includes Pages-ready landing pages at `docs/index.html`
+and `docs/ko/index.html`.
+Those pages carry Open Graph and schema.org metadata for shareable project
+previews once GitHub Pages is enabled for the `/docs` folder on `main`.
+If you want the repository URL `https://github.com/vibeworkers/geo` itself to
+show a custom image on social platforms, upload a repository Social preview
+image in GitHub Settings. GitHub owns that repository-level preview; README
+markdown and committed HTML cannot set it.
 
 ### Runtime Compatibility
 
@@ -242,6 +260,8 @@ This repository is licensed under `CC BY-NC-ND 4.0`
 
 ## 한국어
 
+![VibeWorkers GEO 스킬 시스템 소개 이미지 (한국어)](docs/assets/geo-skill-system-ko.png)
+
 GEO 아이디어, 노트, 작업 자료를 구조화된 가이드, 재사용 자산, 선택적 실행
 workflow로 연결하는 portable GEO skill 패키지입니다.
 
@@ -259,6 +279,8 @@ workflow로 연결하는 portable GEO skill 패키지입니다.
 - Codex/ChatGPT, Claude, Gemini용 런타임 호환성
 - 런타임이 노출할 수 있을 때의 setup 및 모델별 최적화 힌트
 - 문제 해결과 workflow별 실행 문서
+- 이 README의 GitHub용 소개 이미지와 `docs/` 아래 Open Graph /
+  schema.org 공유 페이지
 
 ### 이 프로젝트는 무엇인가
 
@@ -297,6 +319,19 @@ Advanced workflow 설치:
    `skills/geo-*/SKILL.md`를 읽습니다.
 4. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
    있습니다.
+
+### GitHub 공유와 미리보기
+
+이 README는 영문/국문 섹션 시작부에 소개 이미지를 직접 넣어 저장소 방문자가
+언어별 개요를 바로 볼 수 있게 합니다.
+이 저장소에는 `docs/index.html`, `docs/ko/index.html` 형태의 Pages-ready
+landing page도 함께 포함되어 있습니다.
+이 페이지들은 `main` 브랜치의 `/docs` 폴더로 GitHub Pages를 활성화하면
+Open Graph와 schema.org 메타데이터를 가진 공유용 소개 페이지로 동작합니다.
+반대로 `https://github.com/vibeworkers/geo` 저장소 URL 자체가 소셜 플랫폼에서
+특정 이미지를 보이게 하려면 GitHub Settings의 repository Social preview
+이미지를 별도로 업로드해야 합니다. 그 저장소 수준 미리보기는 GitHub가
+소유하므로 README markdown이나 커밋된 HTML만으로는 설정할 수 없습니다.
 
 ### 런타임 호환성
 

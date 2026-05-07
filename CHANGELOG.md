@@ -8,6 +8,10 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+- Added English and Korean introduction images to `README.md`, plus a
+  Pages-ready `docs/` sharing surface with Open Graph and schema.org metadata
+  for GitHub-hosted project previews.
+
 ## 0.7.0 - 2026-05-07
 
 - Reframed the README summary around the GEO problems this package helps solve,

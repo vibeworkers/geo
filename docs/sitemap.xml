@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://vibeworkers.github.io/geo/</loc>
+    <image:image>
+      <image:loc>https://vibeworkers.github.io/geo/assets/geo-social-preview-en.jpg</image:loc>
+      <image:title>VibeWorkers geo Skill System overview image (English)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vibeworkers.github.io/geo/ko/</loc>
+    <image:image>
+      <image:loc>https://vibeworkers.github.io/geo/assets/geo-social-preview-ko.jpg</image:loc>
+      <image:title>VibeWorkers geo Skill System overview image (Korean)</image:title>
+    </image:image>
+  </url>
+</urlset>

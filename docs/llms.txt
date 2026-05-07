@@ -1,0 +1,9 @@
+# VibeWorkers GEO Skill System
+
+Portable landing pages for the GEO skill package.
+
+- Canonical repository: https://github.com/vibeworkers/geo
+- English landing page: https://vibeworkers.github.io/geo/
+- Korean landing page: https://vibeworkers.github.io/geo/ko/
+- Brand website: https://vibeworkers.net
+- License: https://creativecommons.org/licenses/by-nc-nd/4.0/
