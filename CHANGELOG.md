@@ -23,6 +23,9 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
   completion conditions before planning ambiguous requests.
 - Updated `scripts/check_geo_skill.py` so README validation now enforces the
   user-facing intro and usage contract.
+- Expanded `README.md` with step-by-step installation, feature-by-feature
+  usage guidance, workflow timing examples, and package provenance for the
+  private `generateSkill` creation workflow.
 
 ## 0.2.0 - 2026-05-06
 

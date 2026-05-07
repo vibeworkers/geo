@@ -23,13 +23,57 @@ This project provides one entrypoint so users can start from the right source,
 keep source and output separate, and move from GEO thinking to practical
 deliverables without depending on a hidden machine-local workspace.
 
-### What You Can Do
+### Installation
 
-- structure a GEO lecture, workshop, or study flow
-- decide which note, draft, or source surface should own a change
-- turn source material into checklists, handouts, templates, or evidence notes
-- run optional local audit, schema, report, proposal, or technical GEO
-  workflows when the execution bundle is available
+Portable baseline installation:
+
+1. Install this package in a supported skill root, or keep this repository
+   checkout intact as one package.
+2. Keep `SKILL.md`, `README.md`, `agents/`, `references/`, `scripts/`, and
+   `LICENSE` together.
+3. Run `python3 scripts/check_geo_skill.py` to verify that the package is
+   consistent.
+4. Start the skill with `geo <request>` or `$geo <request>`.
+
+Advanced workflow installation:
+
+1. Keep the repo-owned `skills/` directory in the same checkout or
+   installation.
+2. Confirm that subskills such as `skills/geo-audit` and `skills/geo-schema`
+   are present.
+3. Read the matching `skills/geo-*/SKILL.md` when a workflow needs extra
+   tools, network access, or export support.
+4. If you are using this repository checkout, that bundle is already included.
+
+### Feature Guide
+
+Core router capabilities:
+
+| Capability | What it does | When to use | How to start |
+| --- | --- | --- | --- |
+| Strategy and learning design | turns raw GEO ideas into lecture, workshop, or study structure | when you have a teaching goal, agenda, or note set but no clear flow yet | `geo design a 90-minute GEO workshop for B2B marketers using these notes.` |
+| Source ownership and planning | decides which note, draft, file, or report should own a change | when GEO material is scattered and you need one working surface before editing | `geo decide whether this schema guidance belongs in this brief or this report.` |
+| Asset generation | turns source material into checklists, handouts, templates, and evidence notes | when you already have material but need a reusable deliverable | `geo turn these notes into a GEO audit checklist.` |
+| Clarification-first intake | asks short pre-questions and freezes goal, scope, surface, success, and evidence target before planning | when the request is broad, ambiguous, or underspecified | `geo improve GEO for this brand.` and answer the follow-up intake questions |
+
+Advanced execution workflows available with `skills/*`:
+
+| Workflow | What it does | When to use | How to start |
+| --- | --- | --- | --- |
+| `geo-audit` | runs a full GEO + SEO audit across crawler, content, citability, technical, and platform signals | when you need a broad baseline review of a site or property | `geo audit https://example.com for GEO and AI visibility.` |
+| `geo-brand-mentions` | reviews external brand mention visibility across the web and AI-visible sources | when you need to understand whether a brand is being surfaced and cited | `geo review brand mentions for Brand X in AI-visible sources.` |
+| `geo-citability` | evaluates whether pages are answer-ready and citation-friendly | when inclusion in AI answers matters more than raw traffic alone | `geo assess citability for these product and docs pages.` |
+| `geo-compare` | compares GEO gaps against competitors | when prioritization depends on a competitor benchmark | `geo compare example.com with competitor.com for GEO gaps.` |
+| `geo-content` | reviews content quality, trust, and E-E-A-T signals | when content exists but depth, authority, or answer quality is weak | `geo review content quality and E-E-A-T for these pages.` |
+| `geo-crawlers` | checks `robots.txt`, bot access, `llms.txt`, and crawlability | when crawler access or indexing rules may be blocking visibility | `geo check crawler access, robots.txt, and llms.txt for example.com.` |
+| `geo-llmstxt` | audits or drafts `llms.txt` guidance | when a site needs explicit LLM-facing crawling guidance | `geo create an llms.txt recommendation for example.com.` |
+| `geo-platform-optimizer` | reviews visibility across Google AI Overviews, Perplexity, ChatGPT, Copilot, and Grok | when you want platform-specific GEO exposure guidance | `geo review how this brand shows up across ChatGPT, Perplexity, and Google AI Overviews.` |
+| `geo-proposal` | turns findings into a scoped proposal or remediation plan | when audit work must become an actionable roadmap | `geo draft a 6-week proposal from these GEO findings.` |
+| `geo-prospect` | runs a lightweight discovery scan for sales or consulting | when you need a fast first-pass prospect review before deeper work | `geo run a prospect scan for example.com.` |
+| `geo-report` | combines multiple findings into one report | when separate GEO findings need executive synthesis | `geo combine these crawler, schema, and technical findings into one report.` |
+| `geo-report-pdf` | packages markdown for PDF delivery | when client delivery needs print-oriented formatting | `geo package this GEO report for PDF delivery.` |
+| `geo-schema` | generates or validates JSON-LD schema | when a page needs schema markup or schema correction | `geo create JSON-LD for this product page.` |
+| `geo-technical` | diagnoses technical SEO and implementation risks | when rendering, performance, architecture, or indexing issues block GEO | `geo run a technical GEO review for example.com.` |
 
 ### How To Use
 
@@ -55,11 +99,14 @@ $geo language Korean
 $geo language English
 ```
 
+Choose the closest capability or workflow from the feature guide, then phrase
+the request directly in one sentence or one short packet with your materials.
+
 When you provide your own notes, files, pasted text, or explicit file paths,
 those materials become the working source of truth.
-If goal, scope, working surface, success condition, or evidence are still
-unclear, GEO asks a short pre-question set first and locks those completion
-conditions before planning.
+If goal, scope, working surface, success condition, or evidence target are
+still unclear, GEO asks a short pre-question set first and locks those
+completion conditions before planning.
 If you do not provide a stronger brand, outputs default to `VibeWorkers.net`.
 
 ### Optional Advanced Workflows
@@ -93,8 +140,17 @@ To make advanced workflows available:
 
 ### Project Docs
 
+- `README.md`: project introduction, installation, and feature guide
 - `SKILL.md`: full GEO routing contract
 - `references/execution-skill-matrix.md`: advanced execution workflow list
+- `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
+
+### Package Provenance
+
+This package was created with a private `generateSkill` workflow derived from
+the public Skill Creator skill.
+The private creator workflow is not included in this repository; this
+repository ships the resulting GEO package and its user-facing docs.
 
 ### License
 
@@ -102,7 +158,7 @@ This repository is licensed under `CC BY-ND 4.0`
 (`Creative Commons Attribution-NoDerivatives 4.0 International`).
 
 - Authors: 김범수, 유수호, 고경만.
-- Repository terms: `LICENSE`
+- See `LICENSE` for repository terms.
 - Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>
 - Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>
 
@@ -126,13 +182,58 @@ GEO 작업은 note, draft, evidence document, 재사용 asset, derived output으
 분리하며, 숨겨진 machine-local workspace에 의존하지 않고도 GEO 사고를 실제
 deliverable로 이어갈 수 있게 하나의 entrypoint를 제공합니다.
 
-### 사용자가 할 수 있는 일
+### 설치
 
-- GEO 강의, 워크숍, 학습 흐름의 구조 잡기
-- 어떤 note, draft, source surface가 수정의 소유권을 가져야 하는지 판단하기
-- source material을 checklist, handout, template, evidence note로 바꾸기
-- execution bundle이 있을 때 audit, schema, report, proposal, technical GEO
-  workflow를 실행하기
+Portable baseline 설치:
+
+1. 이 패키지를 지원되는 skill root에 설치하거나, 이 저장소 checkout 전체를
+   하나의 패키지로 유지합니다.
+2. `SKILL.md`, `README.md`, `agents/`, `references/`, `scripts/`,
+   `LICENSE`를 함께 유지합니다.
+3. `python3 scripts/check_geo_skill.py`를 실행해 패키지 정합성을
+   확인합니다.
+4. `geo <request>` 또는 `$geo <request>`로 시작합니다.
+
+Advanced workflow 설치:
+
+1. repo 소유 `skills/` 디렉터리를 같은 checkout 또는 installation 안에
+   함께 둡니다.
+2. `skills/geo-audit`, `skills/geo-schema` 같은 서브스킬이 실제로 있는지
+   확인합니다.
+3. workflow에 추가 도구, 네트워크 접근, export 지원이 필요하면 해당
+   `skills/geo-*/SKILL.md`를 읽습니다.
+4. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
+   있습니다.
+
+### 기능 가이드
+
+기본 라우터 기능:
+
+| 기능 | 무엇을 하는가 | 언제 쓰는가 | 어떻게 시작하는가 |
+| --- | --- | --- | --- |
+| 전략 및 학습 설계 | GEO 아이디어를 강의, 워크숍, 학습 구조로 정리합니다 | 교육 목표, 아젠다, 노트는 있지만 흐름이 아직 없을 때 | `geo design a 90-minute GEO workshop for B2B marketers using these notes.` |
+| source 소유권 판단과 계획 | 어떤 note, draft, file, report가 수정의 정본이 될지 정합니다 | GEO 자료가 흩어져 있어 먼저 작업 surface를 고정해야 할 때 | `geo decide whether this schema guidance belongs in this brief or this report.` |
+| 재사용 자산 생성 | source material을 checklist, handout, template, evidence note로 바꿉니다 | 원자료는 있지만 재사용 가능한 deliverable이 아직 없을 때 | `geo turn these notes into a GEO audit checklist.` |
+| 사전 질문 intake | 계획 전에 goal, scope, surface, success, evidence target을 짧게 잠급니다 | 요청이 넓거나 모호하거나 누락이 있을 때 | `geo improve GEO for this brand.`라고 시작한 뒤 후속 intake 질문에 답합니다 |
+
+`skills/*`가 있을 때 사용할 수 있는 고급 실행 workflow:
+
+| Workflow | 무엇을 하는가 | 언제 쓰는가 | 어떻게 시작하는가 |
+| --- | --- | --- | --- |
+| `geo-audit` | crawler, content, citability, technical, platform 신호를 함께 보는 전체 GEO + SEO 감사 | 사이트나 자산의 전체 상태를 한 번에 점검해야 할 때 | `geo audit https://example.com for GEO and AI visibility.` |
+| `geo-brand-mentions` | 웹과 AI 노출 source에서 브랜드 언급 가시성을 점검합니다 | 브랜드가 실제로 얼마나 노출되고 인용되는지 알고 싶을 때 | `geo review brand mentions for Brand X in AI-visible sources.` |
+| `geo-citability` | 페이지가 답변용 source로 인용되기 쉬운지 평가합니다 | 단순 트래픽보다 AI 답변 내 포함 가능성이 중요할 때 | `geo assess citability for these product and docs pages.` |
+| `geo-compare` | 경쟁사 대비 GEO 격차를 비교합니다 | 우선순위를 경쟁사 기준으로 잡아야 할 때 | `geo compare example.com with competitor.com for GEO gaps.` |
+| `geo-content` | 콘텐츠 품질, 신뢰, E-E-A-T 신호를 검토합니다 | 콘텐츠는 있지만 깊이, 권위, 답변 품질이 약할 때 | `geo review content quality and E-E-A-T for these pages.` |
+| `geo-crawlers` | `robots.txt`, bot access, `llms.txt`, crawlability를 점검합니다 | 크롤러 접근이나 인덱싱 규칙이 노출을 막고 있을 수 있을 때 | `geo check crawler access, robots.txt, and llms.txt for example.com.` |
+| `geo-llmstxt` | `llms.txt`를 감사하거나 초안을 만듭니다 | 사이트에 LLM 대상 가이드가 필요할 때 | `geo create an llms.txt recommendation for example.com.` |
+| `geo-platform-optimizer` | Google AI Overviews, Perplexity, ChatGPT, Copilot, Grok 기준으로 노출을 검토합니다 | 특정 AI 답변 플랫폼 기준 최적화가 필요할 때 | `geo review how this brand shows up across ChatGPT, Perplexity, and Google AI Overviews.` |
+| `geo-proposal` | GEO findings를 제안서나 개선 계획으로 바꿉니다 | 감사 결과를 실행 가능한 로드맵으로 넘겨야 할 때 | `geo draft a 6-week proposal from these GEO findings.` |
+| `geo-prospect` | 영업/컨설팅용 가벼운 discovery scan을 수행합니다 | 본격 작업 전에 잠재 고객을 빠르게 훑어야 할 때 | `geo run a prospect scan for example.com.` |
+| `geo-report` | 여러 GEO findings를 하나의 보고서로 통합합니다 | 개별 결과를 임원용 또는 종합 보고서로 묶어야 할 때 | `geo combine these crawler, schema, and technical findings into one report.` |
+| `geo-report-pdf` | PDF 전달용 markdown 패키지를 만듭니다 | 클라이언트 전달이 인쇄형 포맷을 필요로 할 때 | `geo package this GEO report for PDF delivery.` |
+| `geo-schema` | JSON-LD schema를 생성하거나 검증합니다 | 페이지에 schema markup이 필요하거나 오류를 고쳐야 할 때 | `geo create JSON-LD for this product page.` |
+| `geo-technical` | 기술 SEO와 구현 리스크를 진단합니다 | 렌더링, 성능, 구조, 인덱싱 문제가 GEO를 막고 있을 때 | `geo run a technical GEO review for example.com.` |
 
 ### 사용하는 방법
 
@@ -158,10 +259,14 @@ $geo language Korean
 $geo language English
 ```
 
+기능 가이드에서 가장 가까운 기능이나 workflow를 고른 뒤, 가지고 있는
+자료와 함께 한 문장 또는 짧은 요청 묶음으로 바로 시작합니다.
+
 사용자가 자신의 note, file, pasted text, explicit file path를 제공하면 그
 자료가 working source of truth가 됩니다.
-goal, scope, working surface, success condition, evidence가 아직 불명확하면
-GEO는 먼저 짧은 사전 질문으로 완료 조건을 잠근 뒤 계획을 세웁니다.
+goal, scope, working surface, success condition, evidence target이 아직
+불명확하면 GEO는 먼저 짧은 사전 질문으로 완료 조건을 잠근 뒤 계획을
+세웁니다.
 더 강한 brand를 별도로 주지 않으면 출력 기본 brand는 `VibeWorkers.net`입니다.
 
 ### 선택적 고급 Workflow
@@ -195,8 +300,17 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 
 ### 프로젝트 문서
 
+- `README.md`: 프로젝트 소개, 설치, 기능 가이드
 - `SKILL.md`: 전체 GEO 라우팅 계약
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
+- `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
+
+### 패키지 생성 배경
+
+이 패키지는 공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`
+workflow로 생성되었습니다.
+비공개 생성 workflow 자체는 이 저장소에 포함되지 않으며, 이 저장소에는
+결과물인 GEO 패키지와 사용자 문서가 포함됩니다.
 
 ### 라이선스
 
@@ -205,6 +319,6 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 사용합니다.
 
 - 저작자: 김범수, 유수호, 고경만.
-- 저장소 규약: `LICENSE`
+- 자세한 저장소 규약은 `LICENSE`를 참고하세요.
 - 정본 deed: <https://creativecommons.org/licenses/by-nd/4.0/>
 - 정본 legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>
