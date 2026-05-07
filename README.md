@@ -57,6 +57,9 @@ $geo language English
 
 When you provide your own notes, files, pasted text, or explicit file paths,
 those materials become the working source of truth.
+If goal, scope, working surface, success condition, or evidence are still
+unclear, GEO asks a short pre-question set first and locks those completion
+conditions before planning.
 If you do not provide a stronger brand, outputs default to `VibeWorkers.net`.
 
 ### Optional Advanced Workflows
@@ -157,6 +160,8 @@ $geo language English
 
 사용자가 자신의 note, file, pasted text, explicit file path를 제공하면 그
 자료가 working source of truth가 됩니다.
+goal, scope, working surface, success condition, evidence가 아직 불명확하면
+GEO는 먼저 짧은 사전 질문으로 완료 조건을 잠근 뒤 계획을 세웁니다.
 더 강한 brand를 별도로 주지 않으면 출력 기본 brand는 `VibeWorkers.net`입니다.
 
 ### 선택적 고급 Workflow

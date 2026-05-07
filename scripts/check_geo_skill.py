@@ -50,6 +50,7 @@ REQUIRED_SECTIONS = [
     "## Project Topology Contract",
     "## Canonical SoT",
     "## Request Classification",
+    "## Clarification-First Intake",
     "## Trigger Probes",
     "## Command Surface",
     "## Runtime Adaptation",
@@ -76,6 +77,8 @@ REQUIRED_PHRASES = [
     "$geo language Korean",
     "$geo language English",
     "Treat bundled references as the default only when no stronger source surface",
+    "If goal, scope, working surface, success condition, or evidence target is still",
+    "Freeze a clarification packet with at least `goal / scope / surface / success / evidence target`.",
     "Do not assume any preexisting GEO workspace path exists.",
     "Do not claim a specific local execution subskill exists without checking",
     "No special bootstrap is required beyond installing this skill package in a",
@@ -105,15 +108,17 @@ INLINE_GATE_PHRASES = [
     "valid language command is supplied.",
     "**Gate 1: GEO-domain trigger**",
     "Entry: the request is about GEO strategy, GEO teaching material, GEO",
-    "**Gate 2: Context mode selection**",
+    "**Gate 2: Clarification-first intake**",
+    "clarification packet with `goal / scope / surface / success / evidence target`.",
+    "**Gate 3: Context mode selection**",
     "Exit: choose `portable-baseline`, `user-material`, or `local-overlay`.",
-    "**Gate 3: Owning surface selection**",
+    "**Gate 4: Owning surface selection**",
     "Exit: pick `framework-source`, `working-source`, `evidence-note`,",
-    "**Gate 4: Source-order protection**",
+    "**Gate 5: Source-order protection**",
     "confirmed working source -> supporting evidence or framework -> derived",
-    "**Gate 5: Derived-output readiness**",
+    "**Gate 6: Derived-output readiness**",
     "do not promise HTML, slide, or export refreshes without checking",
-    "**Gate 6: Evidence closure**",
+    "**Gate 7: Evidence closure**",
     "response ends with one concrete next action or one explicit blocker.",
 ]
 
@@ -155,6 +160,7 @@ README_REQUIRED_PHRASES = [
     "$geo language English",
     "`geo <request>`",
     "`$geo <request>`",
+    "If goal, scope, working surface, success condition, or evidence are still",
     "`skills/*`",
     "`VibeWorkers.net`",
     "`SKILL.md`",
@@ -174,6 +180,7 @@ README_REQUIRED_PHRASES = [
     "고급 workflow를 사용할 수 있게 하려면:",
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
+    "goal, scope, working surface, success condition, evidence가 아직 불명확하면",
     "이 저장소는 `CC BY-ND 4.0`",
     "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
     "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
@@ -387,7 +394,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
+        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. If goal, scope, working surface, success condition, or evidence target is unclear, ask a short pre-question set first and freeze a clarification packet with goal, scope, surface, success, and evidence target before planning. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
@@ -412,8 +419,10 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`authors`: 김범수, 유수호, 고경만",
         "`contributors_display_label`: `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "`execution_overlay_rule`: `skills/*` is a repo-local execution bundle",
+        "`clarification_rule`: if `goal / scope / surface / success / evidence target`",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
+        "| clarification packet | minimal pre-plan packet with `goal / scope / surface / success / evidence target`",
     ]:
         if phrase not in concept_map:
             fail(f"missing concept-map phrase: {phrase}")
@@ -421,9 +430,11 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     for phrase in [
         "Gate 0: Conversation language selection",
         "Gate 1: GEO-domain trigger",
-        "Gate 2: Context mode selection",
-        "Gate 5: Derived-output readiness",
-        "Gate 6: Evidence closure",
+        "Gate 2: Clarification-first intake",
+        "Gate 3: Context mode selection",
+        "Gate 6: Derived-output readiness",
+        "Gate 7: Evidence closure",
+        "packet with `goal / scope / surface / success / evidence target` is locked.",
         "`execution-bundle`",
     ]:
         if phrase not in gate_conditions:
@@ -442,6 +453,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected lane: `derived-deliverable`",
         "Expected lane: `execution-bundle`",
         "Expected behavior: ask exactly `Choose conversation language: Korean or English.`",
+        "Expected behavior: ask short pre-questions first until `goal / scope / surface / success / evidence target` are locked",
         "Expected behavior: switch conversation replies to English without changing stored prompts",
         "Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "Expected boundary: confirm `skills/*` and route to `geo-audit`",
@@ -456,6 +468,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "local overlay",
         "execution-bundle",
         "derived-deliverable",
+        "clarification packet",
         "default brand",
         "prompt language",
         "conversation language",

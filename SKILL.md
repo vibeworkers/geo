@@ -118,7 +118,7 @@ outranks the bundled baseline.
 - `no_parent_hierarchy`: default unless a real local workspace is confirmed
 - `concept_map_path_or_exemption`: `references/concept-map.md`
 - `preprocess_contract`: raw user GEO materials or confirmed local notes -> keep raw evidence intact -> choose the working source -> edit the working source before any derived output refresh
-- `shared_constraints_or_context_packet`: distinguish bundled baseline vs user material vs local overlay, confirm whether `skills/*` exists before routing execution work, keep prompts in English, ask for Korean/English conversation language at first session start, support `geo language Korean|English` during the session, keep runtime adaptation separate from the shared routing contract, and never assume a hidden local path exists
+- `shared_constraints_or_context_packet`: distinguish bundled baseline vs user material vs local overlay, lock `goal / scope / surface / success / evidence target` before planning when the request is ambiguous, confirm whether `skills/*` exists before routing execution work, keep prompts in English, ask for Korean/English conversation language at first session start, support `geo language Korean|English` during the session, keep runtime adaptation separate from the shared routing contract, and never assume a hidden local path exists
 
 ## Canonical SoT
 
@@ -171,6 +171,49 @@ Classify each GEO request into one lane before deeper work:
 
 If more than one lane is involved, route in this order:
 `framework-source or evidence-note -> working-source or asset-surface -> execution-bundle -> derived-deliverable`.
+
+## Clarification-First Intake
+
+If goal, scope, working surface, success condition, or evidence target is still
+unclear, ask short pre-questions before deeper routing or planning.
+
+Use only the intake and plan-building process here.
+Do not import external topology, hidden files, or `cogarch`-specific ownership
+rules.
+
+### Round 1. Orientation intake
+
+- Goal result: what output would count as done in this GEO task
+- Scope and exclusions: what this turn should cover and what it should not
+- Working surface: which note, file, source set, workspace, or execution
+  surface should own the task
+
+### Round 2. Constraint and completion intake
+
+- Ask this round only when Round 1 did not lock the task.
+- Constraint or dependency: what is required, forbidden, or missing
+- Success condition: how pass/fail will be judged
+- Evidence target: what source, file, command result, or validation note should
+  prove the answer
+- Optional source anchor: which example, draft, or existing artifact should be
+  used if one exists
+
+### Round 3. Limited deep probes
+
+- Use only when ambiguity remains after the first two rounds.
+- Pick only two or three probes in one round.
+- Useful probes: background/history, likely failure point, first action, or
+  what would prove the current interpretation wrong
+
+Operating rules:
+
+- Questions are for ambiguity resolution before planning, not a post-plan
+  handshake.
+- Keep one round to three to five slots.
+- Freeze a clarification packet with at least `goal / scope / surface / success / evidence target`.
+- Treat the request as a `candidate` until that clarification packet exists.
+- Once the clarification packet is locked, move to context mode selection,
+  owning surface selection, and a plan that ties each next step to the packet.
 
 ## Trigger Probes
 
@@ -256,29 +299,37 @@ optimization.
    Exit: accept the request into the GEO routing flow.
    Fail: do not activate this skill for unrelated design-only,
    retrieval-only, or crawler-only work.
-2. **Gate 2: Context mode selection**
-   Entry: Gate 1 passed.
+2. **Gate 2: Clarification-first intake**
+   Entry: Gate 1 passed and goal, scope, working surface, success condition, or
+   evidence target is still unclear.
+   Exit: ask the smallest pre-question set needed, then freeze a
+   clarification packet with `goal / scope / surface / success / evidence target`.
+   Fail: do not start deeper routing, edits, or execution promises from an
+   ambiguous candidate request.
+3. **Gate 3: Context mode selection**
+   Entry: Gate 1 passed and the request is execution-ready, either directly or
+   through Gate 2.
    Exit: choose `portable-baseline`, `user-material`, or `local-overlay`.
    Fail: do not assume a hidden local workspace exists or skip a stronger
    user-provided source surface.
-3. **Gate 3: Owning surface selection**
+4. **Gate 4: Owning surface selection**
    Entry: the context mode is known.
    Exit: pick `framework-source`, `working-source`, `evidence-note`,
    `asset-surface`, `execution-bundle`, or `derived-deliverable`.
    Fail: do not mix surfaces without naming the lead lane.
-4. **Gate 4: Source-order protection**
+5. **Gate 5: Source-order protection**
    Entry: the owning surface is selected.
    Exit: cite the smallest confirmed source set and preserve
    `confirmed working source -> supporting evidence or framework -> derived output`.
    Fail: do not invent a source surface or jump straight to export.
-5. **Gate 5: Derived-output readiness**
+6. **Gate 6: Derived-output readiness**
    Entry: the request reaches `execution-bundle` or `derived-deliverable`.
    Exit: confirm the matching local subskill or build/export prerequisite
    before promising execution or output changes.
    Fail: do not promise HTML, slide, or export refreshes without checking
    prerequisites, and do not claim a local execution subskill exists without
    checking `skills/*`.
-6. **Gate 6: Evidence closure**
+7. **Gate 7: Evidence closure**
    Entry: an answer or change plan is ready.
    Exit: at least one confirmed source surface proves the claim, and the
    response ends with one concrete next action or one explicit blocker.

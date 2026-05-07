@@ -19,6 +19,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
   execution subskill contract.
 - Removed leftover `/geo ...` slash-command examples from restored execution
   subskills so they now describe direct inputs or plain-language GEO requests.
+- Imported a clarification-first pre-question intake so `geo` now locks
+  completion conditions before planning ambiguous requests.
 - Updated `scripts/check_geo_skill.py` so README validation now enforces the
   user-facing intro and usage contract.
 

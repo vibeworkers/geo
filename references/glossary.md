@@ -14,6 +14,7 @@
 | execution-bundle | The confirmed local `skills/*` execution bundle used for audit, crawler, compare, schema, report, and proposal workflows |
 | derived-deliverable | An HTML, slide, export, or build surface produced from an upstream source |
 | build precondition | Any required input that must exist before a derived deliverable refresh is promised |
+| clarification packet | A minimal pre-plan packet that locks `goal / scope / surface / success / evidence target` before deeper routing or plan creation |
 | default brand | `VibeWorkers.net`, unless the user or confirmed source names a stronger brand that should own the response surface |
 | prompt language | English for stored prompts, activation prompts, routing examples, and experiment prompts |
 | conversation language | Korean or English, selected at the first interaction of a new GEO session and applied only to LLM conversation |
@@ -27,6 +28,7 @@
 - Prefer `evidence-note` for status, justification, or validation claims.
 - Prefer `asset-surface` for reusable learner or operator materials.
 - Prefer `execution-bundle` for repo-local audit, schema, compare, or report execution after `skills/*` is confirmed.
+- Ask short pre-questions first when `goal / scope / surface / success / evidence target` is still unclear.
 - Keep stored prompts and routing examples in English.
 - Ask for Korean or English conversation language at first session start and
   apply it only to LLM conversation.

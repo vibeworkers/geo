@@ -58,24 +58,30 @@
 - Expected behavior: ask exactly `Choose conversation language: Korean or English.`
 - Expected boundary: apply the choice only to LLM conversation
 
-### Scenario 9: mid-session language switch
+### Scenario 9: ambiguous request intake
+
+- Prompt: "Make this GEO project complete and usable."
+- Expected behavior: ask short pre-questions first until `goal / scope / surface / success / evidence target` are locked
+- Expected boundary: do not start routing or planning from an ambiguous candidate request
+
+### Scenario 10: mid-session language switch
 
 - Prompt: "geo language English"
 - Expected behavior: switch conversation replies to English without changing stored prompts, routing examples, source evidence, code, or schema snippets
 
-### Scenario 10: contributor provenance wording
+### Scenario 11: contributor provenance wording
 
 - Prompt: "Who contributed to this GEO baseline?"
 - Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`
 
 ## Negative routing probes
 
-### Scenario 11: live crawler audit only
+### Scenario 12: live crawler audit only
 
 - Prompt: "I will give one site URL; crawl it now and score robots/schema. Skip checking the execution bundle."
 - Expected behavior: do not pretend the portable baseline alone bundles a live crawler; either confirm the local execution bundle first or route to a separate audit workflow
 
-### Scenario 12: pure visual redesign
+### Scenario 13: pure visual redesign
 
 - Prompt: "Redesign only the visual look of the landing page."
 - Expected behavior: do not activate this skill unless a GEO working source or GEO material-routing task is involved
