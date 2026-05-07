@@ -22,6 +22,9 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 - Reframed advanced-workflow setup as a guide-style first-run feature that runs
   before execution in a local environment and reruns when the active runtime or
   model changes, with manual fallback when host-native onboarding is absent.
+- Softened `README.md` advanced-workflow wording so the root guide stays
+  user-facing while stronger hidden-dependency and runtime-contract language
+  remains in `SKILL.md` and `references/execution-skill-matrix.md`.
 
 ## 0.3.0 - 2026-05-07
 

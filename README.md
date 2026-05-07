@@ -131,22 +131,22 @@ When the local execution bundle `skills/*` is present, GEO can route advanced
 work such as audit, crawlers, `llms.txt`, schema, compare, report, proposal,
 prospect, and technical review workflows.
 Each `skills/geo-*` subskill owns its own workflow contract.
-The representative `geo` router selects a subskill, but the subskill itself
-must remain usable without `cogarch`, hidden global files, or hidden
-session-state commands.
+The representative `geo` router selects a subskill, but you should be able to
+read and use that subskill directly from the files included in this package.
 
 ### Enable Advanced Workflows
 
 Advanced workflows are available only when the local `skills/*` bundle is part
 of your GEO installation or checkout.
 If you are using this repository checkout, that bundle is already included.
-GEO treats advanced-workflow setup as a guide-style feature.
+Think of advanced-workflow setup as the getting-started guide for this
+environment.
 When an advanced workflow is requested for the first time in a local
-environment, run this setup guide before promising execution.
-If the active runtime or model changes, run the same guide again because
-runtime-local hints, permissions, or export steps may differ.
-If your runtime can host native first-use onboarding, the same guide may
-appear automatically. Otherwise, follow it manually here, in
+environment, GEO may walk through this guide before it starts the workflow.
+If the active runtime or model changes, GEO may walk through the same guide
+again because setup hints, permissions, or export steps can differ.
+Some runtimes can show this guide automatically. Otherwise, follow it manually
+here, in
 `references/execution-skill-matrix.md`, and in the matching
 `skills/geo-*/SKILL.md`.
 
@@ -182,8 +182,8 @@ If advanced workflows are not available or do not start as expected:
   steps, open that subskill's `SKILL.md` and follow its local contract
 - if your runtime does not provide automatic setup-guide onboarding, use this
   `README.md`, `references/execution-skill-matrix.md`, and the matching
-  `skills/geo-*/SKILL.md` manually; advanced workflows do not rely on hidden
-  global files or hidden session-state commands
+  `skills/geo-*/SKILL.md` directly; you should not need any separate hidden
+  global setup or a command from an earlier session just to start
 
 ### Project Docs
 
@@ -339,21 +339,20 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 라우팅할 수 있습니다.
 각 `skills/geo-*` 서브스킬은 자기 workflow 계약을 직접 소유합니다.
 대표 `geo` 라우터는 해당 서브스킬로 연결하지만, 서브스킬 자체는
-`cogarch`, 숨은 전역 파일, 숨은 세션 상태 명령 없이도 읽고 사용할 수
-있어야 합니다.
+이 패키지에 포함된 문서와 파일만으로도 읽고 따라갈 수 있어야 합니다.
 
 ### 고급 Workflow 준비
 
 고급 workflow는 로컬 `skills/*` 번들이 현재 GEO 설치본 또는 checkout에 함께
 있을 때만 사용할 수 있습니다.
 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어 있습니다.
-GEO는 고급 workflow setup을 가이드형 기능으로 다룹니다.
-로컬 환경에서 고급 workflow를 처음 요청하면 실행 약속 전에 이 setup guide를
-먼저 거칩니다.
-현재 활성 런타임이나 모델이 바뀌면 런타임별 힌트, 권한, export 단계가 달라질 수
-있으므로 같은 guide를 다시 실행합니다.
-사용 중인 런타임이 native first-use onboarding을 넣을 수 있으면 이 guide가
-자동으로 먼저 나타날 수 있고, 그렇지 않으면 여기와
+고급 workflow setup은 이 환경에서 처음 시작할 때 보는 사용 가이드라고
+이해하면 됩니다.
+로컬 환경에서 고급 workflow를 처음 요청하면 workflow가 시작되기 전에 이
+guide를 먼저 따라갈 수 있습니다.
+현재 활성 런타임이나 모델이 바뀌면 setup 힌트, 권한, export 단계가 달라질 수
+있으므로 같은 guide를 다시 볼 수 있습니다.
+자동으로 보여주는 런타임도 있고, 그렇지 않으면 여기와
 `references/execution-skill-matrix.md`, 해당 `skills/geo-*/SKILL.md`를
 따라 수동으로 같은 setup을 수행합니다.
 
@@ -389,8 +388,8 @@ GEO는 고급 workflow setup을 가이드형 기능으로 다룹니다.
   요구하면 그 서브스킬의 `SKILL.md`를 열어 로컬 계약을 따릅니다
 - 사용하는 런타임이 자동 setup guide onboarding을 제공하지 않으면 이
   `README.md`, `references/execution-skill-matrix.md`, 그리고 해당
-  `skills/geo-*/SKILL.md`를 직접 따라 사용합니다. 고급 workflow는 숨은 전역
-  파일이나 숨은 세션 상태 명령에 의존하지 않습니다
+  `skills/geo-*/SKILL.md`를 직접 따라 사용합니다. 별도 숨은 전역 설정이나
+  이전 세션에서 먼저 실행해 둔 명령을 요구하지 않습니다
 
 ### 프로젝트 문서
 
