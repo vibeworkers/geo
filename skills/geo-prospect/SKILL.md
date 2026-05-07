@@ -5,15 +5,16 @@ description: >
   전체 감사보다 가볍게 핵심 신호만 확인하고 개선 여지와 제안 포인트를 도출한다.
   단일 도메인 또는 복수 도메인 배치 스캔을 지원한다.
   L3(개발자·컨설턴트) 전용 스킬.
-  트리거: "잠재 고객", "영업 스캔", "prospect", "/geo prospect".
+  트리거: "잠재 고객", "영업 스캔", "prospect".
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
 # geo-prospect — 잠재 클라이언트 GEO 빠른 스캔
 
-> 실행 시 USER_LEVEL을 확인한다.
-> L1 또는 L2인 경우 아래 안내 메시지를 출력하고 실행을 중단한다.
-> L3인 경우 아래 단계를 순서대로 실행한다.
+> 이 서브스킬은 `cogarch` 없이 직접 열어도 닫히는 standalone GEO 실행 계약이다.
+> 숨은 레벨 세션 상태를 요구하지 않는다. 요청에 수신자 맥락이 없으면 이 문서 안에서 `L1`(manager), `L2`(operator), `L3`(builder) 중 하나의 수신자 레벨을 직접 정한다.
+> `L1` 또는 `L2`로 판단되면 아래 안내 메시지를 출력하고 실행을 중단한다.
+> `L3`로 판단되면 아래 단계를 순서대로 실행한다.
 > 결과는 `GEO-잠재고객-[도메인]-[날짜].md`로 저장한다.
 > 복수 도메인인 경우 `GEO-잠재고객-배치-[날짜].md`로 저장한다.
 
@@ -27,18 +28,17 @@ GEO 잠재 고객 스캔은 영업·컨설팅 목적의 기술 분석 작업입�
 현재 레벨에서는 직접 실행이 어렵습니다.
 
 선택 사항:
-1. 레벨을 변경하려면 `/geo level` 을 입력하세요.
+1. 이 작업을 다시 요청할 때 `L3 개발자 프로필로 진행해 주세요.`처럼 수신자 레벨을 직접 명시하세요.
 2. 개발팀 또는 컨설턴트에게 아래 내용을 전달하세요:
 
-   "아래 도메인의 GEO 현황을 빠르게 확인하고 개선 여지를 파악해 주세요.
-    명령어: /geo prospect https://[도메인]"
+   "아래 도메인의 GEO 현황을 빠르게 확인하고 개선 여지를 파악해 주세요."
 ```
 
 ---
 
 ## 스캔 범위
 
-geo-prospect는 전체 감사(/geo audit)보다 가볍고 빠르다.
+geo-prospect는 전체 감사 workflow보다 가볍고 빠르다.
 영업 판단에 필요한 핵심 신호 10개만 확인하여 개선 여지를 측정한다.
 
 | 신호 | 확인 방법 | 배점 |
@@ -77,16 +77,16 @@ geo-prospect는 전체 감사(/geo audit)보다 가볍고 빠르다.
 
 사용자가 제공한 도메인 목록을 파악한다.
 
-- **단일 스캔:** `/geo prospect https://example.com`
-- **배치 스캔:** `/geo prospect https://a.com https://b.com https://c.com`
+- **단일 스캔:** `https://example.com`
+- **배치 스캔:** `https://a.com https://b.com https://c.com`
 
 도메인이 제공되지 않은 경우:
 ```
 스캔할 도메인을 알려주세요.
 
 예:
-  /geo prospect https://example.com
-  /geo prospect https://a.com https://b.com https://c.com
+  https://example.com
+  https://a.com https://b.com https://c.com
 ```
 
 ---
@@ -263,9 +263,9 @@ for domain, d in results.items():
 
 ## 다음 단계
 
-- 전체 감사: `/geo audit https://[도메인]`
-- 제안서 작성: `/geo proposal`
-- 경쟁사 비교: `/geo compare https://[도메인] https://[경쟁사]`
+- 전체 감사: `https://[도메인] 전체 감사`
+- 제안서 작성: `현재 스캔 결과 기반 제안서 작성`
+- 경쟁사 비교: `https://[도메인] 와 https://[경쟁사] 비교`
 ```
 
 ---
@@ -324,9 +324,9 @@ for domain, d in results.items():
 
 ## 전체 감사 대상 (A급 우선)
 
-```bash
-/geo audit https://[A급 도메인1]
-/geo audit https://[A급 도메인2]
+```text
+https://[A급 도메인1] 전체 감사
+https://[A급 도메인2] 전체 감사
 ```
 ```
 

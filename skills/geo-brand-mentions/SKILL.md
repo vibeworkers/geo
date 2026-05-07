@@ -6,14 +6,15 @@ description: >
   AI 모델은 외부 언급을 학습 데이터로 사용하므로, 자사 사이트 최적화와 별개로
   브랜드 인지도가 AI 응답에 직접 영향을 미친다.
   모든 레벨에서 동일하게 분석하며 출력 방식만 달라진다.
-  트리거: "브랜드 언급", "브랜드 인지도", "AI 브랜드", "brand mentions", "/geo brand".
+  트리거: "브랜드 언급", "브랜드 인지도", "AI 브랜드", "brand mentions", "brand".
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
 # geo-brand-mentions — 브랜드 언급 평가
 
-> 실행 시 USER_LEVEL을 확인한다. 설정되지 않은 경우 레벨 선택을 먼저 요청한다.
-> 결과는 USER_LEVEL에 맞는 출력 템플릿으로 전달하고 `GEO-브랜드언급-분석.md`로 저장한다.
+> 이 서브스킬은 `cogarch` 없이 직접 열어도 닫히는 standalone GEO 실행 계약이다.
+> 숨은 레벨 세션 상태를 요구하지 않는다. 요청에 수신자 맥락이 없으면 이 문서 안에서 `L1`(manager), `L2`(operator), `L3`(builder) 중 하나의 수신자 레벨을 직접 정하고 그 레벨에 맞춰 출력한다.
+> 결과는 선택한 수신자 레벨에 맞는 출력 템플릿으로 전달하고 `GEO-브랜드언급-분석.md`로 저장한다.
 
 ---
 

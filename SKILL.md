@@ -26,7 +26,8 @@ It owns request routing across these surfaces:
 - bundled GEO references
 - user-provided GEO source materials
 - optional local GEO workspace overlays
-- optional local execution bundle under `skills/*`
+- optional local execution bundle under `skills/*`, where each subskill owns a
+  standalone workflow contract
 - derived deliverables once an upstream source is confirmed
 
 This skill must remain usable even when no local GEO workspace is present.
@@ -136,7 +137,9 @@ Use the smallest confirmed source surface that can answer the request:
   directories in the active workspace
 - optional execution overlay, only when confirmed:
   `skills/*` plus `references/execution-skill-matrix.md` for local audit,
-  crawler, schema, compare, report, and proposal workflows
+  crawler, schema, compare, report, and proposal workflows; each subskill
+  remains a standalone execution owner and must not require `cogarch`,
+  `~/.cogarch`, `OPERATIONS.md`, or hidden session-state commands
 - derived deliverables:
   HTML, slides, exports, or build surfaces only after the upstream working
   source is known
@@ -196,6 +199,11 @@ Use one routed entry command surface instead of a multi-subcommand CLI.
 - the representative command surface routes audit, crawler, schema, report, and
   proposal requests to `skills/*` only when the local execution bundle is
   present
+- delegated execution subskills must stay usable when opened directly and must
+  not require `cogarch`, `~/.cogarch`, `OPERATIONS.md`, or hidden profile
+  selection commands
+- delegated execution subskills should describe direct inputs or plain-language
+  requests, not a separate `/geo ...` slash-command surface
 - no standalone build, export, crawl, or deploy command is implied by the
   portable baseline alone
 
@@ -358,6 +366,15 @@ supported skill root.
 
 Activate it with `geo` or `$geo` once the directory is present.
 
+The portable baseline works as soon as this package is installed.
+To enable advanced execution workflows, keep the repo-owned `skills/*` bundle
+in the same checkout or installation so the representative `geo` router can
+confirm it and delegate to the matching local subskill.
+Each delegated subskill must still explain its own setup, permissions, access
+profile, and outputs without depending on `cogarch` or hidden session-state.
+If a workflow needs extra tools, network access, or export support, check that
+subskill's own `SKILL.md`.
+
 On first use in a new GEO session, ask:
 
 ```text
@@ -411,6 +428,8 @@ evidence.
 
 Local execution subskills under `skills/*` are an optional repo-owned overlay,
 not a requirement for the portable baseline to remain usable.
+They are routed by `geo`, but each one must remain a standalone contract rather
+than a `cogarch`-dependent plugin.
 
 No third-party licensed asset is required for the bundled routing baseline.
 

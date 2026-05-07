@@ -8,7 +8,19 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
-No unreleased changes.
+- Refocused `README.md` on user-facing project introduction and usage guidance.
+- Removed maintainer-oriented release and internal routing detail from
+  `README.md`.
+- Added user-facing setup guidance for enabling advanced workflows from the
+  bundled `skills/*` execution bundle.
+- Declared that `skills/geo-*` subskills are standalone workflow owners routed
+  by `geo`, not `cogarch`-dependent plugins.
+- Removed hidden `/geo level` session-state dependence from the restored
+  execution subskill contract.
+- Removed leftover `/geo ...` slash-command examples from restored execution
+  subskills so they now describe direct inputs or plain-language GEO requests.
+- Updated `scripts/check_geo_skill.py` so README validation now enforces the
+  user-facing intro and usage contract.
 
 ## 0.2.0 - 2026-05-06
 

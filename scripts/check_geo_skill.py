@@ -86,14 +86,17 @@ REQUIRED_PHRASES = [
     "- `geo <request>`: explicit plain command activation",
     "- `$geo <request>`: explicit skill-marker activation",
     "the representative command surface routes audit, crawler, schema, report, and",
+    "delegated execution subskills must stay usable when opened directly and must",
     "Keep one shared portable GEO core in this `SKILL.md`.",
     "Do not fork the portable GEO routing contract per runtime.",
     "Use runtime-specific adaptation only when invocation, metadata, evidence",
     "Load `references/runtime-adaptation.md` only when the request is about",
+    "Each delegated subskill must still explain its own setup, permissions, access",
     "If a downstream workspace has stricter license, content, or permission rules,",
     "The legal authors are 김범수, 유수호, 고경만.",
     "render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
     "**Brand** — `VibeWorkers.net` unless explicit user or source brand overrides it",
+    "They are routed by `geo`, but each one must remain a standalone contract rather",
 ]
 
 INLINE_GATE_PHRASES = [
@@ -132,52 +135,73 @@ README_REQUIRED_PHRASES = [
     "## English",
     "## 한국어",
     "Portable GEO skill package",
-    "### Purpose",
-    "### Background",
-    "### Core Capabilities",
-    "### Typical Use Cases",
-    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
+    "### What This Project Is",
+    "### Why It Exists",
+    "### What You Can Do",
+    "### How To Use",
+    "### Optional Advanced Workflows",
+    "### Enable Advanced Workflows",
+    "### Project Docs",
+    "Each `skills/geo-*` subskill owns its own workflow contract.",
+    "must remain usable without `cogarch`, hidden global files, or hidden",
+    "If you are using this repository checkout, that bundle is already included.",
+    "To make advanced workflows available:",
+    "treat the matching subskill as the workflow owner for setup, permissions,",
     "Stored prompts are written in English.",
     "Choose conversation language: Korean or English.",
     "geo language Korean",
     "geo language English",
     "$geo language Korean",
     "$geo language English",
-    "Representative execution surface: `SKILL.md`",
-    "Agent metadata: `agents/openai.yaml`",
-    "Release gate: `python3 scripts/check_geo_release.py <target-version>`",
-    "Runtime adaptation reference: `references/runtime-adaptation.md`",
-    "Versioning protocol: `references/versioning-protocol.md`",
-    "Release history: `CHANGELOG.md`",
-    "Bundled portable references: `references/*.md`",
-    "Restored local execution bundle: `skills/*`",
-    "Validator: `python3 scripts/check_geo_skill.py`",
-    "python3 scripts/check_geo_release.py <target-version>",
-    "Explicit skill invocation: `geo <request>`",
-    "Explicit skill invocation with skill marker: `$geo <request>`",
+    "`geo <request>`",
+    "`$geo <request>`",
+    "`skills/*`",
+    "`VibeWorkers.net`",
+    "`SKILL.md`",
+    "`references/execution-skill-matrix.md`",
     "This repository is licensed under `CC BY-ND 4.0`",
-    "refresh `README.md` in the same change set because it is the human entrypoint",
-    "대표 실행 표면: `SKILL.md`",
-    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
-    "### 목적",
-    "### 배경",
-    "### 핵심 기능",
-    "### 대표 사용 예시",
-    "릴리스 게이트: `python3 scripts/check_geo_release.py <target-version>`",
-    "사람용 진입점인 `README.md`를",
+    "Authors: 김범수, 유수호, 고경만.",
+    "### 이 프로젝트는 무엇인가",
+    "### 왜 존재하는가",
+    "### 사용자가 할 수 있는 일",
+    "### 사용하는 방법",
+    "### 선택적 고급 Workflow",
+    "### 고급 Workflow 준비",
+    "### 프로젝트 문서",
+    "각 `skills/geo-*` 서브스킬은 자기 workflow 계약을 직접 소유합니다.",
+    "상위 `geo` 라우터는 그 서브스킬로 연결만 한다고 이해합니다",
+    "이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어 있습니다.",
+    "고급 workflow를 사용할 수 있게 하려면:",
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
-    "에이전트 메타데이터: `agents/openai.yaml`",
-    "runtime adaptation reference: `references/runtime-adaptation.md`",
-    "버전 관리 프로토콜: `references/versioning-protocol.md`",
-    "릴리스 이력: `CHANGELOG.md`",
-    "검증기: `python3 scripts/check_geo_skill.py`",
-    "python3 scripts/check_geo_release.py <target-version>",
-    "명시적 스킬 호출: `geo <request>`",
-    "명시적 스킬 호출(스킬 마커): `$geo <request>`",
     "이 저장소는 `CC BY-ND 4.0`",
     "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
     "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
+]
+
+EXECUTION_MATRIX_REQUIRED_PHRASES = [
+    "# GEO Execution Skill Matrix",
+    "This repository includes an optional local execution bundle under `skills/*`.",
+    "Each subskill below owns its own setup, permission, access-profile, and output",
+    "A subskill must remain usable without `cogarch`, `~/.cogarch`,",
+    "Subskill examples should describe direct inputs or plain-language requests, not",
+    "If you already know the exact workflow owner, you can open that subskill",
+    "## Standalone execution subskills",
+    "| Skill | Primary use | Typical trigger | Local profile | Typical output |",
+]
+
+RESTORED_SUBSKILL_REQUIRED_PHRASES = [
+    "standalone GEO 실행 계약이다.",
+    "숨은 레벨 세션 상태를 요구하지 않는다.",
+    "`L1`(manager), `L2`(operator), `L3`(builder)",
+]
+
+RESTORED_SUBSKILL_DISALLOWED_STRINGS = [
+    "/geo ",
+    "USER_LEVEL",
+    "레벨을 변경하려면 `/geo level`",
+    "~/.cogarch",
+    "OPERATIONS.md",
 ]
 
 VERSIONING_PROTOCOL_REQUIRED_PHRASES = [
@@ -447,6 +471,10 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         if phrase not in runtime_adaptation:
             fail(f"missing runtime-adaptation phrase: {phrase}")
 
+    for phrase in EXECUTION_MATRIX_REQUIRED_PHRASES:
+        if phrase not in execution_matrix:
+            fail(f"missing execution-matrix phrase: {phrase}")
+
     for line in experiments.splitlines():
         if line.startswith("- Prompt:") and re.search(r"[가-힣]", line):
             fail(f"experiment prompt must be written in English: {line}")
@@ -482,6 +510,12 @@ def ensure_restored_execution_bundle(skill_dir: Path) -> None:
 
         if "../../LICENSE" not in text:
             fail(f"restored skill must reference repository license in {skill_name}")
+        for phrase in RESTORED_SUBSKILL_REQUIRED_PHRASES:
+            if phrase not in text:
+                fail(f"missing standalone subskill phrase in {skill_name}: {phrase}")
+        for disallowed in RESTORED_SUBSKILL_DISALLOWED_STRINGS:
+            if disallowed in text:
+                fail(f"hidden dependency leaked into restored skill {skill_name}: {disallowed}")
 
 def main() -> None:
     if len(sys.argv) > 2:

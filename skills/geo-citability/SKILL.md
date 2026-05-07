@@ -5,14 +5,15 @@ description: >
   AI 검색 엔진에 인용될 가능성을 진단한다.
   직접 답변 구조, 콘텐츠 권위성, 기술 인용 신호, 브랜드 명확성 4개 차원으로 평가한다.
   모든 레벨에서 동일하게 분석하며 출력 방식만 달라진다.
-  트리거: "인용 가능성", "AI 인용", "citability", "/geo citability".
+  트리거: "인용 가능성", "AI 인용", "citability".
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
 # geo-citability — AI 인용 가능성 평가
 
-> 실행 시 USER_LEVEL을 확인한다. 설정되지 않은 경우 레벨 선택을 먼저 요청한다.
-> 결과는 USER_LEVEL에 맞는 출력 템플릿으로 전달하고 `GEO-인용가능성-분석.md`로 저장한다.
+> 이 서브스킬은 `cogarch` 없이 직접 열어도 닫히는 standalone GEO 실행 계약이다.
+> 숨은 레벨 세션 상태를 요구하지 않는다. 요청에 수신자 맥락이 없으면 이 문서 안에서 `L1`(manager), `L2`(operator), `L3`(builder) 중 하나의 수신자 레벨을 직접 정하고 그 레벨에 맞춰 출력한다.
+> 결과는 선택한 수신자 레벨에 맞는 출력 템플릿으로 전달하고 `GEO-인용가능성-분석.md`로 저장한다.
 
 ---
 

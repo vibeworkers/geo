@@ -5,15 +5,16 @@ description: >
   사이트 설정(도메인 루트 기준)과 페이지 콘텐츠(입력 URL 기준)를 분리하여
   각각 30점으로 평가하고 경쟁사 대비 격차를 도출한다.
   L2(웹마스터·운영자)와 L3(개발자) 전용 스킬.
-  트리거: "경쟁사 비교", "GEO 비교", "compare", "/geo compare".
+  트리거: "경쟁사 비교", "GEO 비교", "compare".
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
 # geo-compare — GEO 경쟁 비교 분석
 
-> 실행 시 USER_LEVEL을 확인한다.
-> L1인 경우 아래 안내 메시지를 출력하고 실행을 중단한다.
-> L2 또는 L3인 경우 아래 단계를 순서대로 실행한다.
+> 이 서브스킬은 `cogarch` 없이 직접 열어도 닫히는 standalone GEO 실행 계약이다.
+> 숨은 레벨 세션 상태를 요구하지 않는다. 요청에 수신자 맥락이 없으면 이 문서 안에서 `L1`(manager), `L2`(operator), `L3`(builder) 중 하나의 수신자 레벨을 직접 정한다.
+> `L1`로 판단되면 아래 안내 메시지를 출력하고 실행을 중단한다.
+> `L2` 또는 `L3`로 판단되면 아래 단계를 순서대로 실행한다.
 > 결과는 `GEO-비교분석-[자사도메인]-vs-[경쟁사도메인].md`로 저장한다.
 
 ---
@@ -26,7 +27,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 현재 레벨(마케팅 담당자)에서는 직접 실행이 어렵습니다.
 
 선택 사항:
-1. 레벨을 변경하려면 `/geo level` 을 입력하세요.
+1. 이 작업을 다시 요청할 때 `L2 운영자 프로필로 진행해 주세요.` 또는 `L3 개발자 프로필로 진행해 주세요.`처럼 수신자 레벨을 직접 명시하세요.
 2. 개발팀 또는 운영팀에 아래 내용을 전달하세요:
 
    "자사 사이트와 경쟁사 사이트의 AI 검색 최적화 현황을 비교해 주세요.
@@ -61,7 +62,7 @@ URL이 제공되지 않은 경우:
 ```
 비교할 URL을 알려주세요.
 
-예: /geo compare https://mysite.com/blog/post-A https://competitor.com/blog/post-B
+예: https://mysite.com/blog/post-A 와 https://competitor.com/blog/post-B 비교
 ```
 
 ---
@@ -457,12 +458,12 @@ Self: [자사 URL]  vs  Competitor: [경쟁사 URL]
 
 ## 재분석 명령어
 
-```bash
+```text
 # 경쟁사 변경 후 재비교
-/geo compare https://[자사URL] https://[새경쟁사URL]
+https://[자사URL] 와 https://[새경쟁사URL] 비교
 
 # 전체 자사 감사
-/geo audit https://[자사URL]
+https://[자사URL] 전체 감사
 ```
 ```
 

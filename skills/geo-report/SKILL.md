@@ -6,14 +6,15 @@ description: >
   geo-audit 이후 자동으로 실행되거나 단독으로 실행할 수 있다.
   L1은 경영진·팀장 공유용 요약, L2는 작업 체크리스트,
   L3는 기술 명세 전체를 포함하는 구현 로드맵을 생성한다.
-  트리거: "보고서", "리포트", "report", "요약", "/geo report".
+  트리거: "보고서", "리포트", "report", "요약".
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
 # geo-report — GEO 종합 보고서 생성
 
-> 실행 시 USER_LEVEL을 확인한다. 설정되지 않은 경우 레벨 선택을 먼저 요청한다.
-> 결과는 USER_LEVEL에 맞는 출력 템플릿으로 전달하고 `GEO-종합보고서.md`로 저장한다.
+> 이 서브스킬은 `cogarch` 없이 직접 열어도 닫히는 standalone GEO 실행 계약이다.
+> 숨은 레벨 세션 상태를 요구하지 않는다. 요청에 수신자 맥락이 없으면 이 문서 안에서 `L1`(manager), `L2`(operator), `L3`(builder) 중 하나의 수신자 레벨을 직접 정하고 그 레벨에 맞춰 출력한다.
+> 결과는 선택한 수신자 레벨에 맞는 출력 템플릿으로 전달하고 `GEO-종합보고서.md`로 저장한다.
 
 ---
 
@@ -45,7 +46,7 @@ geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 - GEO-플랫폼-분석.md
 ```
 
-파일이 없는 경우: 사용자에게 먼저 `/geo audit [URL]`을 실행하도록 안내한다.
+파일이 없는 경우: 사용자에게 먼저 대상 URL의 전체 감사 결과를 준비하도록 안내한다.
 
 ---
 
@@ -243,7 +244,7 @@ geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 
 ---
 
-*체크리스트 완료 후 `/geo audit [URL]`을 다시 실행하여 점수 변화를 확인하세요.*
+*체크리스트 완료 후 같은 URL로 전체 감사를 다시 수행하여 점수 변화를 확인하세요.*
 ```
 
 ---
@@ -325,16 +326,16 @@ Date: [날짜]  |  URL: [URL]  |  Business Type: [유형]
 
 ## 재분석 명령어
 
-```bash
+```text
 # 전체 재분석
-/geo audit [URL]
+[URL] 전체 감사
 
 # 영역별 재분석
-/geo content [URL]
-/geo crawlers [URL]
-/geo citability [URL]
-/geo brand [URL]
-/geo platform [URL]
+[URL] 콘텐츠 품질 검토
+[URL] 크롤러 진단
+[URL] 인용 가능성 분석
+[URL] 브랜드 언급 분석
+[URL] 플랫폼 최적화 검토
 ```
 ```
 
