@@ -8,6 +8,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.9.0 - 2026-05-08
+
 - Refined the versioning boundary so auxiliary GitHub-sharing and social-preview
   surfaces do not automatically force a `minor` bump when the routed GEO
   contract, required portable artifacts, runtime adaptation, and release
