@@ -67,9 +67,11 @@ REQUIRED_SECTIONS = [
 
 REQUIRED_PHRASES = [
     "This skill must remain usable even when no local GEO workspace is present.",
-    "default branded outputs should surface `VibeWorkers.net`.",
+    "This package uses `VibeWorkers` as its output brand.",
+    "The official website is <https://vibeworkers.net>.",
+    "outputs default to `VibeWorkers`.",
     "This package is intended to move across supported skill roots without hidden",
-    "VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.",
+    "VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.",
     "Prompt templates, activation prompts, routing examples, and experiment prompts",
     "Choose conversation language: Korean or English.",
     "geo language Korean",
@@ -104,8 +106,9 @@ REQUIRED_PHRASES = [
     "Each delegated subskill must still explain its own setup, permissions, access",
     "If a downstream workspace has stricter license, content, or permission rules,",
     "The legal authors are 김범수, 유수호, 고경만.",
-    "render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
-    "**Brand** — `VibeWorkers.net` unless explicit user or source brand overrides it",
+    "render `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
+    "**Output brand** — default to `VibeWorkers`;",
+    "Its official website is <https://vibeworkers.net>.",
     "They are routed by `geo`, but each one must remain a standalone contract rather",
 ]
 
@@ -194,7 +197,9 @@ README_REQUIRED_PHRASES = [
     "`$geo <request>`",
     "If goal, scope, working surface, success condition, or evidence target are",
     "`skills/*`",
-    "`VibeWorkers.net`",
+    "`VibeWorkers`",
+    "<https://vibeworkers.net>",
+    "outputs default to `VibeWorkers`.",
     "`SKILL.md`",
     "`references/runtime-adaptation.md`",
     "`references/execution-skill-matrix.md`",
@@ -240,6 +245,10 @@ README_REQUIRED_PHRASES = [
     "저작자: 김범수, 유수호, 고경만.",
     "저장된 prompt는 영어로 작성합니다.",
     "goal, scope, working surface, success condition, evidence target이 아직",
+    "`geo`의 output brand는 `VibeWorkers`입니다.",
+    "<https://vibeworkers.net>",
+    "출력 기본",
+    "brand는 `VibeWorkers`입니다.",
     "공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`",
     "이 저장소는 `CC BY-NC-ND 4.0`",
     "자세한 저장소 규약은 `LICENSE`를 참고하세요.",
@@ -471,7 +480,7 @@ def ensure_openai_yaml(skill_dir: Path) -> None:
     for phrase in [
         'display_name: "GEO"',
         'short_description: "Portable GEO strategy and material router"',
-        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. If goal, scope, working surface, success condition, or evidence target is unclear, ask a short pre-question set first and freeze a clarification packet with goal, scope, surface, success, and evidence target before planning. If the request asks for an advanced execution workflow and this is the first such workflow in the local environment, or the active runtime/model changed, run the advanced-workflow setup guide before promising execution. Confirm skills/*, surface any matching subskill setup or permission requirements, and if native onboarding cannot carry the full guide, fall back to README.md, references/execution-skill-matrix.md, and the matching `skills/geo-*/SKILL.md`. Then choose portable-baseline, user-material, or local-overlay mode, surface VibeWorkers.net as the default GEO brand unless the user provides a stronger brand, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
+        'default_prompt: "Use geo or $geo. At the first interaction for a new GEO session, ask the user to choose conversation language: Korean or English. Apply that choice only to conversational replies. During the session, accept geo language Korean, geo language English, $geo language Korean, and $geo language English as commands that switch only the conversation language. Keep stored prompts, routing examples, and experiment prompts in English. If goal, scope, working surface, success condition, or evidence target is unclear, ask a short pre-question set first and freeze a clarification packet with goal, scope, surface, success, and evidence target before planning. If the request asks for an advanced execution workflow and this is the first such workflow in the local environment, or the active runtime/model changed, run the advanced-workflow setup guide before promising execution. Confirm skills/*, surface any matching subskill setup or permission requirements, and if native onboarding cannot carry the full guide, fall back to README.md, references/execution-skill-matrix.md, and the matching `skills/geo-*/SKILL.md`. Then choose portable-baseline, user-material, or local-overlay mode, treat VibeWorkers as the default GEO output brand, treat https://vibeworkers.net as the official website for that brand, let an explicit user or confirmed source brand own the output surface when that source owns the deliverable, default outputs to VibeWorkers when no stronger source brand is confirmed, route the GEO request to the smallest confirmed source surface, and delegate execution-intent requests to a matching local subskill only when skills/* is confirmed. Preserve the legal authors as 김범수, 유수호, 고경만. When contributor names are surfaced, render `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`"',
     ]:
         if phrase not in text:
             fail(f"missing phrase in agents/openai.yaml: {phrase}")
@@ -489,12 +498,14 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`portable-baseline`",
         "`user-material`",
         "`local-overlay`",
-        "`default_brand`: `VibeWorkers.net`",
+        "`default_output_brand`: `VibeWorkers`",
+        "`brand_website`: `https://vibeworkers.net`",
+        "`output_brand_rule`: if the user or confirmed source names a stronger brand,",
         "`prompt_language`: English",
         "`conversation_language`: first-session user choice between Korean and English",
         "`conversation_language_commands`: `geo language Korean`",
         "`authors`: 김범수, 유수호, 고경만",
-        "`contributors_display_label`: `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
+        "`contributors_display_label`: `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "`execution_overlay_rule`: `skills/*` is a repo-local execution bundle",
         "`clarification_rule`: if `goal / scope / surface / success / evidence target`",
         "Derived outputs should follow source changes, not replace them.",
@@ -527,7 +538,9 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         fail("experiment scenarios must include at least 8 scenario blocks")
     for phrase in [
         "Expected mode: `portable-baseline`",
-        "Expected brand: `VibeWorkers.net`",
+        "Expected default output brand: `VibeWorkers`",
+        "Expected brand website: `https://vibeworkers.net`",
+        "Expected branding boundary: if no stronger source brand is confirmed, keep",
         "Expected mode: `user-material`",
         "Expected mode: `local-overlay`",
         "Expected lane: `framework-source`",
@@ -537,7 +550,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected behavior: ask exactly `Choose conversation language: Korean or English.`",
         "Expected behavior: ask short pre-questions first until `goal / scope / surface / success / evidence target` are locked",
         "Expected behavior: switch conversation replies to English without changing stored prompts",
-        "Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
+        "Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "Expected boundary: confirm `skills/*` and route to `geo-audit`",
         "Expected behavior: do not pretend the portable baseline alone bundles a live crawler",
         "Expected behavior: run the advanced-workflow setup guide before promising execution",
@@ -554,13 +567,16 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "derived-deliverable",
         "clarification packet",
         "advanced-workflow setup guide",
-        "default brand",
+        "default output brand",
+        "brand website",
+        "output brand rule",
         "prompt language",
         "conversation language",
         "language command",
         "authors",
         "contributor display label",
-        "VibeWorkers.net",
+        "VibeWorkers",
+        "https://vibeworkers.net",
     ]:
         if phrase not in glossary:
             fail(f"missing glossary phrase: {phrase}")

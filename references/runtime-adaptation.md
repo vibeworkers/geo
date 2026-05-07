@@ -11,15 +11,16 @@ Do not import the full CogArch multi-tool topology into `geo` just to express
 runtime differences.
 
 Runtime adaptation must not replace context modes, source-order rules, language
-policy, brand defaults, author attribution, or `skills/*` confirmation.
+policy, default output-brand rules, output-brand ownership rules, author
+attribution, or `skills/*` confirmation.
 
 ## Runtime Adaptation Matrix
 
 | Runtime | Adapt here | Keep shared |
 | --- | --- | --- |
-| Codex / OpenAI | explicit invocation examples, `agents/openai.yaml`, file-path-grounded workspace evidence, response compression shaped for Codex closeouts | routing contract, context modes, source order, brand and author rules |
-| Claude | concise invocation wording, lane restatement, optional runtime-local install note if a Claude surface is added later | routing contract, context modes, source order, brand and author rules |
-| Gemini | concise context packet, next-action restatement, optional runtime-local install note if a Gemini surface is added later | routing contract, context modes, source order, brand and author rules |
+| Codex / OpenAI | explicit invocation examples, `agents/openai.yaml`, file-path-grounded workspace evidence, response compression shaped for Codex closeouts | routing contract, context modes, source order, default output brand `VibeWorkers`, website `https://vibeworkers.net`, output-brand override boundary, author rules |
+| Claude | concise invocation wording, lane restatement, optional runtime-local install note if a Claude surface is added later | routing contract, context modes, source order, default output brand `VibeWorkers`, website `https://vibeworkers.net`, output-brand override boundary, author rules |
+| Gemini | concise context packet, next-action restatement, optional runtime-local install note if a Gemini surface is added later | routing contract, context modes, source order, default output brand `VibeWorkers`, website `https://vibeworkers.net`, output-brand override boundary, author rules |
 
 Runtime adaptation may optimize invocation wording, metadata, evidence
 packaging, or installation notes.

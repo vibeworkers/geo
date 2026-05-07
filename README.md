@@ -123,7 +123,11 @@ those materials become the working source of truth.
 If goal, scope, working surface, success condition, or evidence target are
 still unclear, GEO asks a short pre-question set first and locks those
 completion conditions before planning.
-If you do not provide a stronger brand, outputs default to `VibeWorkers.net`.
+`geo` uses `VibeWorkers` as its output brand.
+The official website for that brand is <https://vibeworkers.net>.
+If your project, client, or confirmed source carries its own brand, that
+source brand should own the output surface instead. If no stronger source
+brand is supplied, outputs default to `VibeWorkers`.
 
 ### Optional Advanced Workflows
 
@@ -330,7 +334,11 @@ $geo language English
 goal, scope, working surface, success condition, evidence target이 아직
 불명확하면 GEO는 먼저 짧은 사전 질문으로 완료 조건을 잠근 뒤 계획을
 세웁니다.
-더 강한 brand를 별도로 주지 않으면 출력 기본 brand는 `VibeWorkers.net`입니다.
+`geo`의 output brand는 `VibeWorkers`입니다.
+해당 brand의 공식 웹 주소는 <https://vibeworkers.net>입니다.
+프로젝트, client, confirmed source에 자체 brand가 있으면 그 source brand가
+출력 surface를 소유해야 합니다. 더 강한 source brand가 없으면 출력 기본
+brand는 `VibeWorkers`입니다.
 
 ### 선택적 고급 Workflow
 

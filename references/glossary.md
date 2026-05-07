@@ -16,12 +16,14 @@
 | derived-deliverable | An HTML, slide, export, or build surface produced from an upstream source |
 | build precondition | Any required input that must exist before a derived deliverable refresh is promised |
 | clarification packet | A minimal pre-plan packet that locks `goal / scope / surface / success / evidence target` before deeper routing or plan creation |
-| default brand | `VibeWorkers.net`, unless the user or confirmed source names a stronger brand that should own the response surface |
+| default output brand | `VibeWorkers` is the default output brand for this GEO package |
+| brand website | `https://vibeworkers.net` is the official website for the `VibeWorkers` brand |
+| output brand rule | If the user or confirmed source names a stronger brand that owns the deliverable, surface that source brand; otherwise default the output brand to `VibeWorkers` |
 | prompt language | English for stored prompts, activation prompts, routing examples, and experiment prompts |
 | conversation language | Korean or English, selected at the first interaction of a new GEO session and applied only to LLM conversation |
 | language command | `geo language Korean`, `geo language English`, `$geo language Korean`, or `$geo language English`; changes only LLM conversation language |
 | authors | 김범수, 유수호, 고경만 |
-| contributor display label | `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.` when contributor provenance is surfaced |
+| contributor display label | `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.` when contributor provenance is surfaced |
 
 ## Editing defaults
 

@@ -4,10 +4,13 @@
 
 - `representative_skill`: `SKILL.md`
 - `default_mode`: `portable-baseline`
-- `default_brand`: `VibeWorkers.net`, unless the user or confirmed source
-  names a stronger brand
+- `default_output_brand`: `VibeWorkers`
+- `brand_website`: `https://vibeworkers.net`
+- `output_brand_rule`: if the user or confirmed source names a stronger brand,
+  that source brand owns the output surface; otherwise default outputs to
+  `VibeWorkers`
 - `authors`: 김범수, 유수호, 고경만
-- `contributors_display_label`: `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`
+- `contributors_display_label`: `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`
 - `prompt_language`: English for stored prompts, activation prompts, routing
   examples, and experiment prompts
 - `runtime_adaptation_reference`: `references/runtime-adaptation.md`

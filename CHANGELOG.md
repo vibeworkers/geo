@@ -8,6 +8,15 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.5.0 - 2026-05-07
+
+- Clarified that `VibeWorkers` is the default GEO output brand and
+  `https://vibeworkers.net` is the brand website; outputs use a stronger user
+  or confirmed source brand only when that source owns the deliverable.
+- Aligned `README.md`, `SKILL.md`, `agents/openai.yaml`, bundled references,
+  and `scripts/check_geo_skill.py` around the corrected default-brand and brand
+  website contract.
+
 ## 0.4.0 - 2026-05-07
 
 - Added user-facing runtime compatibility guidance to `README.md` so

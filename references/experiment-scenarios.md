@@ -7,7 +7,10 @@
 - Prompt: "How should I structure a GEO lecture from the foundation?"
 - Expected mode: `portable-baseline`
 - Expected lane: `framework-source`
-- Expected brand: `VibeWorkers.net`
+- Expected default output brand: `VibeWorkers`
+- Expected brand website: `https://vibeworkers.net`
+- Expected branding boundary: if no stronger source brand is confirmed, keep
+  `VibeWorkers` as the output brand
 - Expected boundary: stay useful without assuming a local GEO workspace
 
 ### Scenario 2: user-provided draft routing
@@ -72,7 +75,7 @@
 ### Scenario 11: contributor provenance wording
 
 - Prompt: "Who contributed to this GEO baseline?"
-- Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers.net 의 컨트리뷰터: 김범수, 유수호, 고경만.`
+- Expected behavior: when contributor names are surfaced, render exactly `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`
 
 ## Negative routing probes
 
