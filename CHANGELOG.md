@@ -8,6 +8,11 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.9.1 - 2026-05-08
+
+- Clarified that GEO release versions always use the three-part `X.Y.Z` form,
+  and that the active pre-1.0 line is still a three-part `0.Y.Z` structure.
+
 ## 0.9.0 - 2026-05-08
 
 - Refined the versioning boundary so auxiliary GitHub-sharing and social-preview

@@ -311,7 +311,10 @@ RESTORED_SUBSKILL_DISALLOWED_STRINGS = [
 VERSIONING_PROTOCOL_REQUIRED_PHRASES = [
     "# GEO Versioning Protocol",
     "Tag format: `X.Y.Z` without a leading `v`",
+    "Every normal release uses all three numeric parts, for example `0.9.0`, not",
+    "This package is still in the three-part `0.Y.Z` phase.",
     "Start the protocol-governed line at `0.1.0`.",
+    "Use the three-part form `0.Y.Z` with these rules:",
     "Historical tags `0.0.1` through `0.0.4` predate this protocol and remain",
     "Auxiliary delivery and sharing surfaces such as `docs/`, social-preview images,",
     "are not part of the portable GEO package contract unless a future protocol",
@@ -344,7 +347,7 @@ RELEASE_GATE_SCRIPT_REQUIRED_PHRASES = [
     "usage: check_geo_release.py <target-version>",
     "release decision requires branch main",
     "release decision requires a clean worktree",
-    "target version must match X.Y.Z without a leading v",
+    "target version must match the three-part form X.Y.Z without a leading v",
     "CHANGELOG contains non-empty Unreleased release notes",
     "release decision passed for",
 ]

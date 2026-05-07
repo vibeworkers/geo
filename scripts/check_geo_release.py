@@ -65,7 +65,7 @@ def git_output(repo_root: Path, *args: str) -> str:
 def parse_version(raw: str) -> Version:
     match = SEMVER_RE.fullmatch(raw)
     if not match:
-        fail("target version must match X.Y.Z without a leading v")
+        fail("target version must match the three-part form X.Y.Z without a leading v")
     return Version(*(int(part) for part in match.groups()))
 
 
@@ -110,7 +110,7 @@ def classify_bump(latest: Version, target: Version) -> str:
         if target == Version(1, 0, 0):
             return "major"
         fail(
-            "pre-1.0 release must be the next patch, the next minor, or 1.0.0"
+            "pre-1.0 release must use the next allowed three-part version: the next patch, the next minor, or 1.0.0"
         )
 
     if target == Version(latest.major, latest.minor, latest.patch + 1):

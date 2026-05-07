@@ -41,6 +41,8 @@ If these sources disagree, the git tag wins.
 ## Tag Format and Tag Type
 
 - Tag format: `X.Y.Z` without a leading `v`
+- Every normal release uses all three numeric parts, for example `0.9.0`, not
+  `0.9`
 - Pre-release format: `X.Y.Z-rc.N` or `X.Y.Z-beta.N`
 - New release tags should be annotated tags
 - Released tags are immutable and must never be moved or rewritten
@@ -59,10 +61,12 @@ immutable even though they mix annotated and lightweight tag styles.
 
 ## Pre-1.0 Policy
 
-This package is still in the `0.y.z` phase.
+This package is still in the three-part `0.Y.Z` phase.
+Here `0` is the major component, `Y` is the minor component, and `Z` is the
+patch component.
 Start the protocol-governed line at `0.1.0`.
 
-Use `0.Y.Z` with these rules:
+Use the three-part form `0.Y.Z` with these rules:
 
 - bump `Z` for backward-compatible clarifications and fixes that do not require
   consumers to change invocation, expected outputs, required files, routing
@@ -70,7 +74,7 @@ Use `0.Y.Z` with these rules:
 - bump `Y` and reset `Z` to `0` when the public package contract changes in a
   way that consumers, maintainers, or downstream automations need to notice
 
-Treat the following as `minor` changes while the major version is zero:
+Treat the following as `minor` changes while the major component is zero:
 
 - adding, removing, or renaming bundled references
 - adding, removing, or renaming execution subskills under `skills/*`
@@ -81,7 +85,7 @@ Treat the following as `minor` changes while the major version is zero:
   required package artifacts, or release procedure
 - changing the release checklist or version source priority
 
-Treat the following as `patch` changes while the major version is zero:
+Treat the following as `patch` changes while the major component is zero:
 
 - wording clarification without contract meaning drift
 - README or reference wording about auxiliary delivery, sharing, or social
@@ -142,7 +146,7 @@ The release decision gate validates at least these conditions:
 
 - current branch is `main`
 - the worktree is clean
-- the target version matches `X.Y.Z` without a leading `v`
+- the target version matches the three-part form `X.Y.Z` without a leading `v`
 - the target version is the next allowed bump from the latest normal release
   tag under this protocol
 - `CHANGELOG.md` contains either a dated target section or non-empty
