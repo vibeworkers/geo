@@ -270,13 +270,26 @@ Shared across Codex, Claude, and Gemini:
 
 Current runtime targets:
 
-- Codex / OpenAI: explicit `geo` or `$geo` activation; current native metadata
-  surface is `agents/openai.yaml`
-- Claude: keep the same routing contract, but optimize invocation wording or
-  lane restatement only in a Claude-local surface if one is added later
-- Gemini: keep the same routing contract, but optimize context-packet
-  compression or next-action restatement only in a Gemini-local surface if one
-  is added later
+- Codex / OpenAI: explicit `geo` or `$geo` activation; current shipped native
+  metadata surface is `agents/openai.yaml`
+- Claude: no dedicated runtime-local surface is bundled yet; use the shared
+  contract in `README.md` and this `SKILL.md` until a Claude-local surface is
+  added
+- Gemini: no dedicated runtime-local surface is bundled yet; use the shared
+  contract in `README.md` and this `SKILL.md` until a Gemini-local surface is
+  added
+
+Runtime-local first-use onboarding is allowed only when the target runtime
+exposes a native metadata, extension, or skill slot.
+
+That onboarding may adjust first-use wording, installation hints, or response
+packaging only.
+
+It must not fork context modes, source-order rules, language policy, or
+execution-bundle gates.
+
+The shared portable package must stay usable even when no runtime-local
+surface exists.
 
 Load `references/runtime-adaptation.md` only when the request is about
 cross-runtime behavior, install guidance, or runtime-specific prompt

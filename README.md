@@ -45,6 +45,20 @@ Advanced workflow installation:
    tools, network access, or export support.
 4. If you are using this repository checkout, that bundle is already included.
 
+### Runtime Compatibility
+
+`geo` uses one shared `geo <request>` or `$geo <request>` contract across
+Codex/ChatGPT, Claude, and Gemini.
+This repository currently ships native runtime metadata only for Codex /
+OpenAI in `agents/openai.yaml`.
+Claude and Gemini users should follow the shared GEO contract in this
+`README.md` and `SKILL.md`; if a runtime-local surface is added later, it
+will adjust first-use wording, installation hints, or response packaging only.
+Automatic first-use runtime guidance is possible only when that runtime
+exposes a native metadata, extension, or skill slot.
+See `references/runtime-adaptation.md` for current runtime-specific
+boundaries.
+
 ### Feature Guide
 
 Core router capabilities:
@@ -142,6 +156,7 @@ To make advanced workflows available:
 
 - `README.md`: project introduction, installation, and feature guide
 - `SKILL.md`: full GEO routing contract
+- `references/runtime-adaptation.md`: runtime compatibility and per-runtime boundaries
 - `references/execution-skill-matrix.md`: advanced execution workflow list
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
@@ -204,6 +219,19 @@ Advanced workflow 설치:
    `skills/geo-*/SKILL.md`를 읽습니다.
 4. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
    있습니다.
+
+### 런타임 호환성
+
+`geo`는 Codex/ChatGPT, Claude, Gemini에서 공통 `geo <request>` 또는
+`$geo <request>` 계약으로 사용합니다.
+현재 이 저장소는 Codex / OpenAI용 native runtime metadata만
+`agents/openai.yaml`로 포함합니다.
+Claude와 Gemini 사용자는 지금은 이 `README.md`와 `SKILL.md`의 공통 GEO
+계약을 따라 사용하고, 나중에 runtime-local surface가 추가되더라도 첫 실행
+안내, 설치 힌트, 응답 포장 정도만 달라집니다.
+자동 첫 실행 런타임 가이드는 해당 런타임이 native metadata, extension,
+skill slot을 제공할 때만 가능합니다.
+현재 런타임별 경계는 `references/runtime-adaptation.md`를 참고하세요.
 
 ### 기능 가이드
 
@@ -302,6 +330,7 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 
 - `README.md`: 프로젝트 소개, 설치, 기능 가이드
 - `SKILL.md`: 전체 GEO 라우팅 계약
+- `references/runtime-adaptation.md`: 런타임 호환성과 모델별 경계
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 

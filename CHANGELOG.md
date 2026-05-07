@@ -8,6 +8,14 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+- Added user-facing runtime compatibility guidance to `README.md` so
+  Codex/ChatGPT, Claude, and Gemini users can see the shared GEO contract and
+  current runtime-specific boundary at first read.
+- Clarified in `SKILL.md`, `references/runtime-adaptation.md`, and
+  `scripts/check_geo_skill.py` that the current shipped runtime-local surface
+  is `agents/openai.yaml`, while Claude/Gemini first-use onboarding remains
+  optional and host-runtime dependent.
+
 ## 0.3.0 - 2026-05-07
 
 ### Changed

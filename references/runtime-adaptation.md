@@ -24,6 +24,28 @@ policy, brand defaults, author attribution, or `skills/*` confirmation.
 Runtime adaptation may optimize invocation wording, metadata, evidence
 packaging, or installation notes.
 
+## Current Shipped Runtime Surfaces
+
+- Codex / OpenAI: `agents/openai.yaml` is bundled today.
+- Claude: no runtime-local surface is bundled in this repository yet, so use
+  the shared contract in `README.md` and `SKILL.md`.
+- Gemini: no runtime-local surface is bundled in this repository yet, so use
+  the shared contract in `README.md` and `SKILL.md`.
+
+## First-Use Runtime-Local Onboarding
+
+Runtime-local first-use onboarding may be added only when a runtime exposes a
+native metadata, extension, or skill slot.
+
+It may add a short first-use guide, invocation wording, installation hints, or
+response-shaping help.
+
+It must not replace the shared `geo` contract or require `cogarch`, hidden
+global files, or a hidden local path.
+
+The shared portable package must remain usable even when no runtime-local
+onboarding surface exists.
+
 ## Authoring Rule
 
 Update the shared contract first when a rule applies to every runtime.
