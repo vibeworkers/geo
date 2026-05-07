@@ -26,6 +26,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 - Expanded `README.md` with step-by-step installation, feature-by-feature
   usage guidance, workflow timing examples, and package provenance for the
   private `generateSkill` creation workflow.
+- Changed the repository license from `CC BY-ND 4.0` to `CC BY-NC-ND 4.0` and
+  aligned `LICENSE`, `README.md`, `SKILL.md`, and validator expectations.
 
 ## 0.2.0 - 2026-05-06
 

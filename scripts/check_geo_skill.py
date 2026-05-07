@@ -84,7 +84,7 @@ REQUIRED_PHRASES = [
     "No special bootstrap is required beyond installing this skill package in a",
     "No external API credential is required for the bundled portable baseline.",
     "No third-party licensed asset is required for the bundled routing baseline.",
-    "Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.",
+    "Repository-level reuse terms are declared in `LICENSE` under `CC BY-NC-ND 4.0`.",
     "Use one routed entry command surface instead of a multi-subcommand CLI.",
     "- `geo <request>`: explicit plain command activation",
     "- `$geo <request>`: explicit skill-marker activation",
@@ -176,7 +176,7 @@ README_REQUIRED_PHRASES = [
     "`skills/geo-*/SKILL.md`",
     "private `generateSkill` workflow derived from",
     "the public Skill Creator skill.",
-    "This repository is licensed under `CC BY-ND 4.0`",
+    "This repository is licensed under `CC BY-NC-ND 4.0`",
     "Authors: 김범수, 유수호, 고경만.",
     "See `LICENSE` for repository terms.",
     "### 이 프로젝트는 무엇인가",
@@ -202,10 +202,10 @@ README_REQUIRED_PHRASES = [
     "저장된 prompt는 영어로 작성합니다.",
     "goal, scope, working surface, success condition, evidence target이 아직",
     "공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`",
-    "이 저장소는 `CC BY-ND 4.0`",
+    "이 저장소는 `CC BY-NC-ND 4.0`",
     "자세한 저장소 규약은 `LICENSE`를 참고하세요.",
-    "Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>",
-    "Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>",
+    "Canonical deed: <https://creativecommons.org/licenses/by-nc-nd/4.0/>",
+    "Canonical legal code: <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode>",
 ]
 
 EXECUTION_MATRIX_REQUIRED_PHRASES = [
@@ -269,14 +269,15 @@ RELEASE_GATE_SCRIPT_REQUIRED_PHRASES = [
 ]
 
 LICENSE_REQUIRED_PHRASES = [
-    "Creative Commons Attribution-NoDerivatives 4.0 International",
-    "SPDX-License-Identifier: CC-BY-ND-4.0",
+    "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+    "SPDX-License-Identifier: CC-BY-NC-ND-4.0",
     "Authors: 김범수, 유수호, 고경만.",
     "Unless otherwise noted, the contents of this repository are licensed under the",
-    "You may share the material with proper attribution.",
+    "You may share the material with proper attribution for noncommercial purposes.",
+    "Commercial use is not permitted.",
     "you may not distribute the modified material.",
-    "https://creativecommons.org/licenses/by-nd/4.0/",
-    "https://creativecommons.org/licenses/by-nd/4.0/legalcode",
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode",
 ]
 
 RUNTIME_ADAPTATION_REQUIRED_PHRASES = [

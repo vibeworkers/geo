@@ -154,13 +154,13 @@ repository ships the resulting GEO package and its user-facing docs.
 
 ### License
 
-This repository is licensed under `CC BY-ND 4.0`
-(`Creative Commons Attribution-NoDerivatives 4.0 International`).
+This repository is licensed under `CC BY-NC-ND 4.0`
+(`Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International`).
 
 - Authors: 김범수, 유수호, 고경만.
 - See `LICENSE` for repository terms.
-- Canonical deed: <https://creativecommons.org/licenses/by-nd/4.0/>
-- Canonical legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>
+- Canonical deed: <https://creativecommons.org/licenses/by-nc-nd/4.0/>
+- Canonical legal code: <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode>
 
 ## 한국어
 
@@ -314,11 +314,11 @@ workflow로 생성되었습니다.
 
 ### 라이선스
 
-이 저장소는 `CC BY-ND 4.0`
-(`Creative Commons Attribution-NoDerivatives 4.0 International`) 라이선스를
-사용합니다.
+이 저장소는 `CC BY-NC-ND 4.0`
+(`Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International`)
+라이선스를 사용합니다.
 
 - 저작자: 김범수, 유수호, 고경만.
 - 자세한 저장소 규약은 `LICENSE`를 참고하세요.
-- 정본 deed: <https://creativecommons.org/licenses/by-nd/4.0/>
-- 정본 legal code: <https://creativecommons.org/licenses/by-nd/4.0/legalcode>
+- 정본 deed: <https://creativecommons.org/licenses/by-nc-nd/4.0/>
+- 정본 legal code: <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode>

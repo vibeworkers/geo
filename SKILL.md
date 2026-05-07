@@ -484,7 +484,7 @@ than a `cogarch`-dependent plugin.
 
 No third-party licensed asset is required for the bundled routing baseline.
 
-Repository-level reuse terms are declared in `LICENSE` under `CC BY-ND 4.0`.
+Repository-level reuse terms are declared in `LICENSE` under `CC BY-NC-ND 4.0`.
 
 The legal authors are 김범수, 유수호, 고경만.
 When contributor names are surfaced in conversational or derived outputs,
