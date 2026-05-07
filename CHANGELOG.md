@@ -8,6 +8,10 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.3.0 - 2026-05-07
+
+### Changed
+
 - Refocused `README.md` on user-facing project introduction and usage guidance.
 - Removed maintainer-oriented release and internal routing detail from
   `README.md`.
