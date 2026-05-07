@@ -8,6 +8,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.8.0 - 2026-05-07
+
 - Added English and Korean introduction images to `README.md`, plus a
   Pages-ready `docs/` sharing surface with Open Graph and schema.org metadata
   for GitHub-hosted project previews.
