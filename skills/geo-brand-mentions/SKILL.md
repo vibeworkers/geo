@@ -25,6 +25,12 @@ AI 모델은 자사 사이트만 학습하지 않는다.
 이것이 AI가 해당 브랜드를 "아는지" 여부를 결정한다.
 자사 사이트의 robots.txt를 아무리 최적화해도
 외부 언급이 없으면 AI 브랜드 인지도는 낮을 수 있다.
+다만 브랜드 언급 점수는 measured visibility가 아니다. AI answer inclusion,
+observed_citation, referral_signal, conversion_signal은
+`../../references/measurement-capture-template.md`로 별도 캡처해야 한다.
+private connector, logged-in user, user-provided context에서 보이는 브랜드
+언급은 `../../references/private-surface-routing.md`에 따라 public visibility
+주장과 분리한다.
 
 ---
 

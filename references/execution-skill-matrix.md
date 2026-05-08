@@ -82,3 +82,27 @@ appear automatically there. Otherwise, follow these steps manually.
    workflow from the portable baseline alone.
 5. Keep generated reports and exports downstream from the execution subskill
    that produced or justified them.
+
+## Reference-guided extensions
+
+These references do not add new standalone subskills. They constrain how the
+existing subskills should report outcome and commerce/action claims.
+
+| Reference | Use with | Purpose |
+| --- | --- | --- |
+| `references/measurement-loop.md` | `geo-audit`, `geo-brand-mentions`, `geo-citability`, `geo-compare`, `geo-platform-optimizer`, `geo-report`, `geo-proposal` | separate readiness, heuristic, observed answer, observed citation, referral, and conversion evidence |
+| `references/commerce-readiness.md` | `geo-schema`, `geo-platform-optimizer`, `geo-report`, `geo-proposal`, `geo-technical` | separate product/schema readiness from merchant, catalog, checkout, action, and measurement readiness |
+| `references/platform-truth-registry.md` | `geo-crawlers`, `geo-platform-optimizer`, `geo-compare`, `geo-prospect`, `geo-report` | source platform crawler and commerce mechanism claims from source_url, last_verified, confidence, and package_action |
+| `references/measurement-capture-template.md` | `geo-audit`, `geo-brand-mentions`, `geo-citability`, `geo-platform-optimizer`, `geo-report`, `geo-proposal` | make observed_answer, observed_citation, referral_signal, and conversion_signal captures repeatable |
+| `references/commerce-audit-worksheet.md` | `geo-schema`, `geo-platform-optimizer`, `geo-technical`, `geo-report`, `geo-proposal` | audit product, schema, merchant, catalog/feed, checkout/action, and measurement readiness |
+| `references/private-surface-routing.md` | `geo-audit`, `geo-brand-mentions`, `geo-platform-optimizer`, `geo-report`, `geo-proposal` | separate public crawler/search from private connector, logged-in user, and user-provided context evidence |
+| `references/regional-situational-routing.md` | `geo-audit`, `geo-compare`, `geo-platform-optimizer`, `geo-prospect`, `geo-report`, `geo-proposal` | adapt recommendations by region, language, vertical, brand maturity, and source-pack availability |
+| `references/policy-risk-gate.md` | `geo-crawlers`, `geo-content`, `geo-platform-optimizer`, `geo-report`, `geo-proposal`, `geo-technical` | check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility before recommendations |
+| `references/report-template-contract.md` | `geo-report`, `geo-report-pdf`, `geo-proposal`, `geo-audit` | require score_type, evidence_label, confidence, measurement_status, commerce_status, private_surface_status, regional_context, and policy_risk |
+| `references/implementation-completion-plan.md` | `geo`, `geo-report`, `geo-proposal` | close P2-P13 hardening with all_must_passed or failed_must_queue evidence |
+
+Use these references when the request asks whether GEO "worked", whether an AI
+platform cites a brand, whether shopping/action readiness exists, or whether a
+product/schema change can support commerce outcomes. Use the report and
+completion contracts when the user asks for a consolidated handoff or
+whole-system completion judgment.

@@ -22,11 +22,30 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 | 스킬 | 역할 |
 |---|---|
-| geo-audit | 5개 영역 분석을 오케스트레이션하고 종합 GEO 점수 산출 |
+| geo-audit | 6개 영역 분석을 오케스트레이션하고 종합 GEO 점수 산출 |
 | geo-report | 분석 결과를 수신자(레벨)에 맞는 보고서 형태로 재구성·저장 |
 
 geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 단독 실행 시에는 현재 폴더의 `GEO-*.md` 파일을 읽어 취합한다.
+
+---
+
+## 보고서 계약
+
+종합 보고서는 `../../references/report-template-contract.md`를 따른다.
+특히 score_type, evidence_label, confidence, evidence_path, last_verified,
+measurement_status, commerce_status, private_surface_status, regional_context,
+policy_risk를 누락하지 않는다.
+
+측정된 결과를 주장하려면 `../../references/measurement-capture-template.md`
+의 Prompt Panel, Run Metadata, Capture Table, Before/After Comparison을
+근거로 observed_answer, observed_citation, referral_signal,
+conversion_signal을 분리한다.
+
+commerce/action 주장은 `../../references/commerce-audit-worksheet.md`로,
+private/logged-in/connector 근거는 `../../references/private-surface-routing.md`로,
+regional/vertical 주장은 `../../references/regional-situational-routing.md`로,
+policy risk는 `../../references/policy-risk-gate.md`로 각각 닫는다.
 
 ---
 
@@ -42,7 +61,8 @@ geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 - GEO-콘텐츠-분석.md
 - GEO-인용가능성-분석.md
 - GEO-크롤러-분석.md
-- GEO-브랜드언급-분석.md
+- GEO-기술-분석.md
+- GEO-스키마-분석.md
 - GEO-플랫폼-분석.md
 ```
 
@@ -184,7 +204,8 @@ geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 | AI 인용 가능성 | [X]/100 | 좋음 / 주의 / 위험 |
 | AI 크롤러 접근 | [X]/100 | 좋음 / 주의 / 위험 |
 | 콘텐츠 품질 | [X]/100 | 좋음 / 주의 / 위험 |
-| 브랜드 언급 | [X]/100 | 좋음 / 주의 / 위험 |
+| 기술 SEO | [X]/100 | 좋음 / 주의 / 위험 |
+| 스키마 마크업 | [X]/100 | 좋음 / 주의 / 위험 |
 | 플랫폼 최적화 | [X]/100 | 좋음 / 주의 / 위험 |
 
 ---
@@ -236,7 +257,10 @@ geo-audit 직후 실행하면 최신 분석 결과를 반영한다.
 ### 콘텐츠 품질
 [3–5줄 요약]
 
-### 브랜드 언급
+### 기술 SEO
+[3–5줄 요약]
+
+### 스키마 마크업
 [3–5줄 요약]
 
 ### 플랫폼 최적화
@@ -319,7 +343,8 @@ Date: [날짜]  |  URL: [URL]  |  Business Type: [유형]
 - AI Citability: `GEO-인용가능성-분석.md`
 - Crawler Access: `GEO-크롤러-분석.md`
 - Content Quality: `GEO-콘텐츠-분석.md`
-- Brand Mentions: `GEO-브랜드언급-분석.md`
+- Technical SEO: `GEO-기술-분석.md`
+- Structured Data: `GEO-스키마-분석.md`
 - Platform Optimization: `GEO-플랫폼-분석.md`
 
 ---
@@ -334,7 +359,8 @@ Date: [날짜]  |  URL: [URL]  |  Business Type: [유형]
 [URL] 콘텐츠 품질 검토
 [URL] 크롤러 진단
 [URL] 인용 가능성 분석
-[URL] 브랜드 언급 분석
+[URL] 기술 SEO 분석
+[URL] 스키마 마크업 분석
 [URL] 플랫폼 최적화 검토
 ```
 ```

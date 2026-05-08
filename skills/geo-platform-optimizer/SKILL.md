@@ -24,11 +24,26 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 | 플랫폼 | 작동 방식 | 핵심 최적화 포인트 |
 |---|---|---|
-| Google AI Overviews | Google 인덱스 + Gemini 모델 | E-E-A-T, 구조화 데이터, Core Web Vitals |
+| Google AI Overviews | Google Search 인덱스 + Gemini 생성 | Googlebot 접근, 색인 가능성, E-E-A-T, 구조화 데이터, Core Web Vitals |
 | Perplexity AI | 실시간 웹 크롤링 + 인용 | 직접 답변 구조, 출처 명확성 |
-| ChatGPT | 학습 데이터 + 실시간 브라우징 | GPTBot 허용, 콘텐츠 깊이 |
+| ChatGPT | 학습 데이터 + Search 자동 크롤링 + 사용자 요청 가져오기 | GPTBot, OAI-SearchBot, ChatGPT-User 경로 구분, 콘텐츠 깊이 |
 | Microsoft Copilot | Bing 인덱스 기반 | Bing Webmaster Tools, Bingbot 허용 |
-| Grok (xAI) | X(Twitter) 데이터 + 실시간 검색 | X 계정 연결, GrokBot 허용 |
+| Grok (xAI) | X(Twitter) 데이터 + 실시간 검색 | X 계정 연결, Grok 계열 robots 토큰은 first-party 근거 확인 후 사용 |
+
+**Platform truth and measurement boundary**
+
+플랫폼별 crawler, search, user-triggered fetch, commerce action 메커니즘은
+`../../references/platform-truth-registry.md`의 source_url, last_verified,
+confidence, package_action 기준으로 보고한다. registry에서 `확인 필요`로
+표시된 항목은 implementation step이 아니라 verification step으로 남긴다.
+
+플랫폼 점수는 readiness/heuristic score다. 실제 AI answer inclusion,
+observed_citation, referral_signal, conversion_signal은
+`../../references/measurement-loop.md`와
+`../../references/measurement-capture-template.md`로 별도 캡처한다.
+private connector 또는 logged-in user 결과는
+`../../references/private-surface-routing.md`에 따라 public visibility와
+분리한다.
 
 ---
 
@@ -55,7 +70,9 @@ Google AI Overviews는 Google 검색 결과 상단에 AI가 직접 답변을 생
 
 | 신호 | 확인 항목 |
 |---|---|
-| Google-Extended 허용 | robots.txt에서 Google-Extended 차단 여부 |
+| Googlebot 접근 가능 | robots.txt에서 Googlebot 차단 여부 |
+| 색인 가능성 | noindex, canonical, sitemap, Search Console 색인 상태 |
+| Google-Extended 처리 | Gemini 학습/grounding 제어 토큰의 의도적 허용·차단 여부. Google Search 포함·순위 신호 아님 |
 | Featured Snippet 구조 | 정의 단락, 단계별 목록, 표 형식 콘텐츠 |
 | FAQ 스키마 | FAQPage JSON-LD 적용 여부 |
 | 페이지 속도 | Core Web Vitals LCP 2.5초 이내 여부 |
@@ -79,12 +96,14 @@ Perplexity는 질문에 대해 웹을 실시간 검색하고 출처를 명시하
 
 #### ChatGPT 평가
 
-ChatGPT는 학습 데이터(GPTBot)와 실시간 브라우징(ChatGPT-User) 두 경로를 통해 콘텐츠를 사용한다.
+ChatGPT는 학습 데이터(GPTBot), Search 노출용 자동 크롤링(OAI-SearchBot),
+사용자 요청 기반 가져오기(ChatGPT-User) 경로를 구분해 콘텐츠를 사용한다.
 
 | 신호 | 확인 항목 |
 |---|---|
 | GPTBot 허용 | robots.txt에서 GPTBot 차단 여부 |
-| ChatGPT-User 허용 | ChatGPT-User 차단 여부 |
+| OAI-SearchBot 허용 | ChatGPT Search 결과 노출용 자동 크롤러 차단 여부 |
+| ChatGPT-User 허용 | 사용자 요청 기반 가져오기 차단 여부. 자동 검색 색인 판단에는 OAI-SearchBot 사용 |
 | 콘텐츠 깊이 | 표면적 설명을 넘어 원리·사례·수치 포함 여부 |
 | Open Graph | og:title, og:description, og:url 완비 여부 |
 | 구조화된 데이터 | Article 스키마 적용 여부 |
@@ -111,9 +130,9 @@ X 계정과의 연결이 다른 플랫폼에 없는 고유한 최적화 포인�
 
 | 신호 | 확인 항목 |
 |---|---|
-| GrokBot 허용 | robots.txt에서 GrokBot 차단 여부 |
-| xAI-Grok 허용 | xAI-Grok 차단 여부 |
-| Grok-DeepSearch 허용 | Grok-DeepSearch 차단 여부 |
+| GrokBot 허용 | robots.txt에서 GrokBot 차단 여부. first-party 근거 확인 필요 |
+| xAI-Grok 허용 | xAI-Grok 차단 여부. first-party 근거 확인 필요 |
+| Grok-DeepSearch 허용 | Grok-DeepSearch 차단 여부. first-party 근거 확인 필요 |
 | X(Twitter) 계정 연결 | 공식 X 계정에서 사이트 URL 등록 여부 |
 | Twitter Card 메타 태그 | twitter:card, twitter:title, twitter:description 설정 여부 |
 | 실시간 콘텐츠 | 최신 정보·업데이트 게시 빈도 |
@@ -240,7 +259,9 @@ Bing Webmaster Tools, Twitter Card 등 플랫폼별 설정 방법을 단계별�
 ## 플랫폼별 상세 현황
 
 ### Google AI Overviews
-- Google-Extended 봇: [허용 / 차단]
+- Googlebot 접근: [허용 / 차단]
+- 색인 가능성: [정상 / 문제 있음]
+- Google-Extended: [허용 / 차단 / 의도적 미사용] — Gemini 학습/grounding 제어, Search 포함·순위와 분리
 - FAQ 스키마: [있음 / 없음]
 - 페이지 속도: [빠름 / 보통 / 느림]
 - 핵심 문제: [한 줄]
@@ -252,7 +273,7 @@ Bing Webmaster Tools, Twitter Card 등 플랫폼별 설정 방법을 단계별�
 - 핵심 문제: [한 줄]
 
 ### ChatGPT
-- GPTBot / ChatGPT-User: [허용 / 차단]
+- GPTBot / OAI-SearchBot / ChatGPT-User: [허용 / 차단]
 - Open Graph 태그: [완비 / 부족]
 - 핵심 문제: [한 줄]
 
@@ -262,7 +283,7 @@ Bing Webmaster Tools, Twitter Card 등 플랫폼별 설정 방법을 단계별�
 - 핵심 문제: [한 줄]
 
 ### Grok
-- GrokBot / xAI-Grok / Grok-DeepSearch: [허용 / 차단]
+- GrokBot / xAI-Grok / Grok-DeepSearch: [허용 / 차단 / 확인 필요]
 - X(Twitter) 계정 연결: [있음 / 없음]
 - Twitter Card: [설정 / 미설정]
 - 핵심 문제: [한 줄]
@@ -319,7 +340,9 @@ Date: [날짜]  |  URL: [URL]
 ### Google AI Overviews
 | Signal | Status | Detail |
 |---|---|---|
-| Google-Extended | Allowed / Blocked | [설명] |
+| Googlebot | Allowed / Blocked | [설명] |
+| Indexability | Pass / Fail | noindex, canonical, sitemap, Search Console 기준 |
+| Google-Extended | Allowed / Blocked / Not used | Gemini training/grounding control; not Google Search inclusion or ranking |
 | FAQ Schema | Present / Missing | [설명] |
 | LCP | [X]ms | Pass / Fail (기준: 2500ms) |
 | E-E-A-T | Strong / Weak | [설명] |
@@ -337,7 +360,8 @@ Date: [날짜]  |  URL: [URL]
 | Signal | Status | Detail |
 |---|---|---|
 | GPTBot | Allowed / Blocked | [설명] |
-| ChatGPT-User | Allowed / Blocked | [설명] |
+| OAI-SearchBot | Allowed / Blocked | ChatGPT Search result surfacing and automatic crawl |
+| ChatGPT-User | Allowed / Blocked | User-initiated fetch; not Search inclusion control |
 | OG Tags Complete | Yes / No | [설명] |
 | Article Schema | Present / Missing | [설명] |
 
@@ -353,8 +377,8 @@ Date: [날짜]  |  URL: [URL]
 | Signal | Status | Detail |
 |---|---|---|
 | GrokBot | Allowed / Blocked | [설명] |
-| xAI-Grok | Allowed / Blocked | [설명] |
-| Grok-DeepSearch | Allowed / Blocked | [설명] |
+| xAI-Grok | Allowed / Blocked / Verify first | first-party source not verified |
+| Grok-DeepSearch | Allowed / Blocked / Verify first | first-party source not verified |
 | Twitter Card | Present / Missing | [설명] |
 | X account linked | Yes / No | [설명] |
 

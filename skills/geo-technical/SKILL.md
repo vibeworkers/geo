@@ -19,6 +19,18 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ---
 
+## 기술 검토 경계
+
+기술 SEO 결과는 crawler/index readiness를 평가하지만, public AI visibility
+또는 conversion을 직접 증명하지 않는다. 측정 주장은
+`../../references/measurement-capture-template.md`로 닫는다.
+
+robots, terms, privacy, regulated claims, brand claims, commerce eligibility
+상태는 `../../references/policy-risk-gate.md`를 따른다. private connector,
+logged-in user, user-provided context가 포함되면
+`../../references/private-surface-routing.md`로 public/private claim을
+분리한다.
+
 ## L1 접근 안내 (L1이면 이 메시지 출력 후 중단)
 
 ```

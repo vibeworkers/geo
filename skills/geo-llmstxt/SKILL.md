@@ -15,6 +15,13 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 > `L1`로 판단되면 아래 안내 메시지를 출력하고 실행을 중단한다.
 > `L2` 또는 `L3`로 판단되면 아래 단계를 순서대로 실행한다.
 > 결과는 `GEO-llmstxt-분석.md`로 저장한다.
+> `llms.txt`는 AI용 콘텐츠 패키징을 돕는 보조 신호다. 파일 존재나 품질 점수는
+> 특정 AI 플랫폼의 수집, 인용, 검색 노출을 보장하지 않는다. 보고서에는
+> `heuristic / adoption-dependent` 신호로 표기한다.
+> 측정된 answer/citation/referral/conversion 주장은
+> `../../references/measurement-capture-template.md`로 별도 캡처하고,
+> robots/terms/privacy 경계는 `../../references/policy-risk-gate.md`로
+> 확인한다.
 
 ---
 
@@ -268,8 +275,8 @@ Date: [날짜]  |  Target: [도메인]
 
 ### [CRITICAL] llms.txt 없음
 현재: /llms.txt → 404
-영향: AI 크롤러(ClaudeBot, GPTBot, PerplexityBot 등)가 사이트 구조를 자동 파악해야 하므로
-      중요 페이지가 누락되거나 잘못 분류될 가능성 있음
+영향: AI용 요약·핵심 URL 패키징 신호가 부족하다. 단, `llms.txt` 부재만으로
+      특정 AI 플랫폼의 수집·인용·검색 노출 실패를 단정하지 않는다.
 해결: 아래 생성 스크립트 또는 수동으로 파일 생성 후 사이트 루트에 배포
 
 ### [WARNING] 사이트 설명 없음

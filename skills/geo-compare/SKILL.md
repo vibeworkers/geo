@@ -46,6 +46,14 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 | **페이지 콘텐츠** | 입력 URL | 스키마 마크업 / 콘텐츠 구조 / 페이지 기술 신호 | 30점 |
 
 사이트 설정과 페이지 콘텐츠는 성격이 다르므로 합산하지 않고 각각 표시한다.
+경쟁 비교에서 platform, regional, private, policy 차이가 보이면
+`../../references/platform-truth-registry.md`,
+`../../references/regional-situational-routing.md`,
+`../../references/private-surface-routing.md`,
+`../../references/policy-risk-gate.md` 중 해당 reference를 함께 표시한다.
+observed answer, citation, referral, conversion 비교는
+`../../references/measurement-capture-template.md`가 있을 때만 측정된
+결과로 보고한다.
 
 ---
 
@@ -185,16 +193,18 @@ for url in urls:
 
 | 확인 항목 | 배점 |
 |---|---|
-| 학습용 봇(GPTBot·ClaudeBot·anthropic-ai·GrokBot) 허용 | 4점 |
-| 검색용 봇(ChatGPT-User·PerplexityBot·Bingbot·xAI-Grok·Grok-DeepSearch) 허용 | 4점 |
-| Google-Extended 처리 명확 (허용·차단 중 하나로 명시) | 2점 |
+| 학습용 봇(GPTBot·ClaudeBot) 허용 또는 의도적 차단 근거 명시 | 2점 |
+| 검색/사용자 요청 봇(OAI-SearchBot·ChatGPT-User·Claude-SearchBot·Claude-User·PerplexityBot·Bingbot) 허용 | 4점 |
+| Googlebot 접근 및 색인 가능성 확보 | 2점 |
+| Google-Extended 처리 명확. Gemini 학습/grounding 제어이며 Google Search 포함·순위와 분리 | 1점 |
+| Grok 계열 토큰은 first-party 근거 확인 또는 `확인 필요`로 표기 | 1점 |
 
 **S2. AI 안내 파일 (0~10점)** — llms.txt 기반
 
 | 확인 항목 | 배점 |
 |---|---|
-| llms.txt 존재 | 5점 |
-| 사이트 설명·주요 URL·Sitemap 포함 (품질) | 3점 |
+| llms.txt 존재. heuristic / adoption-dependent 신호이며 AI 수집·인용을 보장하지 않음 | 3점 |
+| 사이트 설명·주요 URL·Sitemap 포함 (품질) | 5점 |
 | llms-full.txt 존재 | 2점 |
 
 **S3. 사이트 기술 기반 (0~10점)** — 도메인 루트 기반

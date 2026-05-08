@@ -71,3 +71,60 @@
 - Entry condition: the answer or change plan is ready.
 - Exit condition: at least one confirmed source surface proves the claim.
 - Fail condition: the response closes with generic GEO commentary only.
+
+## Gate 8: Measurement confidence boundary
+
+- Entry condition: the request asks whether GEO worked, whether an AI answer
+  includes or cites a brand/page, or whether referral/conversion changed.
+- Exit condition: the claim is labeled with the evidence ladder in
+  `references/measurement-loop.md`: readiness, heuristic, observed answer,
+  observed citation, referral, or conversion.
+- Fail condition: readiness scores, crawler access, schema validity, or
+  `llms.txt` presence are reported as measured AI visibility.
+
+## Gate 9: Commerce/action readiness boundary
+
+- Entry condition: the request touches shopping, product listings, checkout,
+  lead generation, instant-buy, or transaction/action readiness.
+- Exit condition: the answer separates product, schema, merchant, catalog,
+  checkout/action, and measurement readiness using
+  `references/commerce-readiness.md`.
+- Fail condition: Product schema alone is treated as commerce readiness or as
+  proof of platform transaction eligibility.
+
+## Gate 10: Private surface boundary
+
+- Entry condition: the request uses logged-in browsing, private connector data,
+  user-provided files, personalized context, or evidence that is not public.
+- Exit condition: the answer separates public crawler, public search, private
+  connector, logged-in user, and user-provided context surfaces using
+  `references/private-surface-routing.md`.
+- Fail condition: private connector or logged-in evidence is used as proof of
+  public GEO visibility.
+
+## Gate 11: Regional/situational boundary
+
+- Entry condition: the request names a region, language market, local platform,
+  regulated vertical, or brand maturity condition.
+- Exit condition: the answer uses `references/regional-situational-routing.md`
+  and regional or vertical claims must use a confirmed source pack.
+- Fail condition: platform-specific Naver, Kakao, Daum, or regulated-vertical
+  mechanisms are invented from the portable baseline alone.
+
+## Gate 12: Policy risk boundary
+
+- Entry condition: the recommendation touches crawler directives, scraping,
+  private evidence, regulated topics, brand claims, or transaction eligibility.
+- Exit condition: robots, terms, privacy, regulated claims, brand claims, and
+  commerce eligibility are checked with `references/policy-risk-gate.md`.
+- Fail condition: unknown policy status is presented as safe or approved.
+
+## Gate 13: Whole-system completion boundary
+
+- Entry condition: the request asks for broad hardening, multi-surface
+  implementation, package completion, or a final completion judgment.
+- Exit condition: the report records `system_scope`,
+  `completion_rubric_path_or_inline`, `current_score`, `all_must_passed` or
+  `failed_must_queue`, `verification_set`, and `report_artifact_path`.
+- Fail condition: completion is declared while a Must condition has no
+  evidence.

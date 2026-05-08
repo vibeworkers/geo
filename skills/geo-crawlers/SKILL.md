@@ -20,6 +20,14 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## 실행 단계
 
+### 0단계: 플랫폼 truth registry 확인
+
+AI crawler, search bot, user-triggered fetch, commerce/action token은
+`../../references/platform-truth-registry.md`의 source_url, last_verified,
+confidence, package_action 기준으로 분리한다. registry에서 `확인 필요`로
+표시된 Grok 계열 항목은 robots.txt 구현 권고가 아니라 추가 공식 근거
+수집 과제로 남긴다.
+
 ### 1단계: robots.txt 및 llms.txt 수집
 
 > **Claude Code 환경:** 아래 Bash 스크립트 실행 (HTTP 상태 코드 포함 정확한 수집)
@@ -57,22 +65,27 @@ WebFetch로 아래 URL을 순서대로 로드한다.
 
 ### 2단계: AI 봇 허용 현황 확인
 
-robots.txt에서 아래 봇의 허용/차단 여부를 각각 확인한다.
+robots.txt에서 아래 봇 또는 robots 제어 토큰의 허용/차단 여부를 각각 확인한다.
+2026-05-07 기준 공식 문서로 확인된 항목과, first-party 공식 근거가 아직 부족해
+`확인 필요`로 취급해야 하는 항목을 분리한다.
 
 #### 핵심 대상 — 상업적 점유율 상위 AI 서비스
 
-| 봇 이름 | User-agent | 서비스 | 용도 |
-|---|---|---|---|
-| GPTBot | `GPTBot` | OpenAI ChatGPT | 학습 |
-| ChatGPT-User | `ChatGPT-User` | ChatGPT 실시간 브라우징 | 검색 |
-| ClaudeBot | `ClaudeBot` | Anthropic Claude | 학습 |
-| anthropic-ai | `anthropic-ai` | Anthropic 데이터 수집 | 학습 |
-| Google-Extended | `Google-Extended` | Google Gemini · AI Overviews | 학습+검색 |
+| 봇/토큰 이름 | User-agent token | 서비스 | 용도 | 근거 수준 |
+|---|---|---|---|---|
+| GPTBot | `GPTBot` | OpenAI | 학습 | 공식 |
+| OAI-SearchBot | `OAI-SearchBot` | ChatGPT Search | 검색 노출용 자동 크롤링 | 공식 |
+| ChatGPT-User | `ChatGPT-User` | ChatGPT 사용자 동작 | 사용자 요청 기반 가져오기, 자동 검색 색인 아님 | 공식 |
+| ClaudeBot | `ClaudeBot` | Anthropic Claude | 학습 | 공식 |
+| Claude-SearchBot | `Claude-SearchBot` | Claude Search | 검색 품질/색인 | 공식 |
+| Claude-User | `Claude-User` | Claude 사용자 동작 | 사용자 요청 기반 가져오기 | 공식 |
+| Googlebot | `Googlebot` | Google Search · AI Overviews | 검색 색인 | 공식 |
+| Google-Extended | `Google-Extended` | Gemini Apps · Vertex AI Gemini | Gemini 학습/grounding 제어. Google Search 포함·순위 신호 아님 | 공식 |
 | PerplexityBot | `PerplexityBot` | Perplexity AI | 검색 |
 | Bingbot | `Bingbot` | Microsoft Copilot | 검색 |
-| GrokBot | `GrokBot` | xAI Grok | 학습 |
-| xAI-Grok | `xAI-Grok` | Grok 실시간 검색 | 검색 |
-| Grok-DeepSearch | `Grok-DeepSearch` | Grok 심층 검색 | 검색 |
+| GrokBot | `GrokBot` | xAI Grok | 학습 추정 | 확인 필요 |
+| xAI-Grok | `xAI-Grok` | Grok 실시간 검색 | 검색 추정 | 확인 필요 |
+| Grok-DeepSearch | `Grok-DeepSearch` | Grok 심층 검색 | 검색 추정 | 확인 필요 |
 
 **판정 기준**
 
@@ -89,8 +102,8 @@ robots.txt에서 아래 봇의 허용/차단 여부를 각각 확인한다.
 
 | 전략 | 허용 대상 | 차단 대상 | 적합한 상황 |
 |---|---|---|---|
-| A. 전체 허용 | 핵심 봇 전체 | — | GEO 최대화, 브랜드 노출 우선 |
-| B. 검색만 허용 | ChatGPT-User, PerplexityBot, Bingbot, Google-Extended, xAI-Grok, Grok-DeepSearch | GPTBot, ClaudeBot, anthropic-ai, GrokBot | 실시간 인용은 원하나 학습 데이터 제공은 거부 |
+| A. 전체 허용 | 공식 학습/검색/사용자 요청 봇 전체. Grok 계열은 근거 확인 후 선택 | — | GEO 최대화, 브랜드 노출 우선 |
+| B. 검색·사용자 요청만 허용 | OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, Googlebot, PerplexityBot, Bingbot | GPTBot, ClaudeBot, Google-Extended, GrokBot | 실시간 인용·검색 접근은 원하나 학습/grounding 데이터 제공은 거부 |
 | C. 선택적 허용 | 특정 서비스만 | 나머지 | 특정 AI 플랫폼 파트너십 등 |
 
 **전략별 GEO 영향**
@@ -107,22 +120,28 @@ robots.txt에서 아래 봇의 허용/차단 여부를 각각 확인한다.
 
 #### AI 봇 허용 상태 — 0~25점
 
-**핵심 대상 7개 봇**의 허용 현황을 기준으로 평가한다.
+**핵심 AI 접근 신호**의 허용 현황을 기준으로 평가한다. 검색 노출, 사용자 요청
+가져오기, 학습, Gemini grounding 제어는 같은 의미가 아니므로 결과 표에서 분리한다.
 
 | 신호 | 확인 항목 |
 |---|---|
-| GPTBot / ChatGPT-User 허용 | ChatGPT 관련 봇 차단 여부 |
-| ClaudeBot / anthropic-ai 허용 | Claude 관련 봇 차단 여부 |
-| Google-Extended 허용 | Gemini · AI Overviews 봇 차단 여부 |
+| GPTBot / OAI-SearchBot / ChatGPT-User 허용 | OpenAI 학습·검색·사용자 요청 경로 차단 여부 |
+| ClaudeBot / Claude-SearchBot / Claude-User 허용 | Anthropic 학습·검색·사용자 요청 경로 차단 여부 |
+| Googlebot 허용 | Google Search 색인 및 AI Overviews 후보 노출 차단 여부 |
+| Google-Extended 처리 명확 | Gemini 학습/grounding 제어 토큰 허용·차단 여부. Google Search 포함·순위와 분리 |
 | PerplexityBot 허용 | Perplexity 봇 차단 여부 |
 | Bingbot 허용 | Copilot 관련 봇 차단 여부 |
-| GrokBot / xAI-Grok / Grok-DeepSearch 허용 | Grok 관련 봇 차단 여부 |
+| GrokBot / xAI-Grok / Grok-DeepSearch 허용 | Grok 관련 추정 토큰 차단 여부. first-party 근거 확인 필요 |
 
-점수 산정: 허용된 핵심 봇 비율에 비례하여 0–25점 부여. 전체 차단 0점, 전체 허용 25점.
+점수 산정: 허용된 핵심 접근 신호 비율에 비례하여 0–25점 부여하되,
+`Google-Extended` 차단 자체를 Google Search 접근 차단으로 감점하지 않는다.
+검색, 사용자 요청, 학습, grounding 제어의 의미를 결과 설명에서 분리한다.
+전체 접근 신호 차단 0점, 전체 접근 신호 허용 25점.
 
 #### AI 안내 파일 — 0~25점
 
-AI 크롤러가 사이트 구조를 이해할 수 있도록 안내하는 파일 존재 여부와 품질을 평가한다.
+AI용 콘텐츠 패키징을 돕는 보조 파일 존재 여부와 품질을 평가한다. `llms.txt`는
+heuristic / adoption-dependent 신호이며 특정 AI 플랫폼의 수집·인용을 보장하지 않는다.
 
 | 신호 | 확인 항목 |
 |---|---|
@@ -271,16 +290,19 @@ AI 봇의 사이트 접근 여부를 일상 언어로 전달한다.
 
 | 봇 | 서비스 | 용도 | 현재 상태 | 조치 필요 |
 |---|---|---|---|---|
-| GPTBot | ChatGPT | 학습 | 허용 / 차단 | 예 / 아니오 |
-| ChatGPT-User | ChatGPT 브라우징 | 검색 | 허용 / 차단 | 예 / 아니오 |
+| GPTBot | OpenAI | 학습 | 허용 / 차단 | 예 / 아니오 |
+| OAI-SearchBot | ChatGPT Search | 검색 노출 | 허용 / 차단 | 예 / 아니오 |
+| ChatGPT-User | ChatGPT 사용자 동작 | 사용자 요청 가져오기 | 허용 / 차단 | 예 / 아니오 |
 | ClaudeBot | Claude | 학습 | 허용 / 차단 | 예 / 아니오 |
-| anthropic-ai | Claude | 학습 | 허용 / 차단 | 예 / 아니오 |
-| Google-Extended | Gemini / AI Overviews | 학습+검색 | 허용 / 차단 | 예 / 아니오 |
+| Claude-SearchBot | Claude Search | 검색 품질/색인 | 허용 / 차단 | 예 / 아니오 |
+| Claude-User | Claude 사용자 동작 | 사용자 요청 가져오기 | 허용 / 차단 | 예 / 아니오 |
+| Googlebot | Google Search / AI Overviews | 검색 색인 | 허용 / 차단 | 예 / 아니오 |
+| Google-Extended | Gemini Apps / Vertex AI Gemini | 학습·grounding 제어 | 허용 / 차단 | 예 / 아니오 |
 | PerplexityBot | Perplexity | 검색 | 허용 / 차단 | 예 / 아니오 |
 | Bingbot | Copilot | 검색 | 허용 / 차단 | 예 / 아니오 |
-| GrokBot | Grok | 학습 | 허용 / 차단 | 예 / 아니오 |
-| xAI-Grok | Grok 실시간 검색 | 검색 | 허용 / 차단 | 예 / 아니오 |
-| Grok-DeepSearch | Grok 심층 검색 | 검색 | 허용 / 차단 | 예 / 아니오 |
+| GrokBot | Grok | 학습 추정 | 허용 / 차단 / 확인 필요 | 예 / 아니오 |
+| xAI-Grok | Grok 실시간 검색 | 검색 추정 | 허용 / 차단 / 확인 필요 | 예 / 아니오 |
+| Grok-DeepSearch | Grok 심층 검색 | 검색 추정 | 허용 / 차단 / 확인 필요 | 예 / 아니오 |
 
 ---
 
@@ -361,15 +383,18 @@ Date: [날짜]  |  URL: [URL]
 | Bot | User-agent | Type | Status | Directive | Source |
 |---|---|---|---|---|---|
 | GPTBot | `GPTBot` | Training | Allowed / Blocked | [규칙] | robots.txt L[줄] |
-| ChatGPT-User | `ChatGPT-User` | Search | Allowed / Blocked | [규칙] | — |
+| OAI-SearchBot | `OAI-SearchBot` | Search | Allowed / Blocked | [규칙] | — |
+| ChatGPT-User | `ChatGPT-User` | User-initiated fetch | Allowed / Blocked | [규칙] | — |
 | ClaudeBot | `ClaudeBot` | Training | Allowed / Blocked | [규칙] | — |
-| anthropic-ai | `anthropic-ai` | Training | Allowed / Blocked | [규칙] | — |
-| Google-Extended | `Google-Extended` | Both | Allowed / Blocked | [규칙] | — |
+| Claude-SearchBot | `Claude-SearchBot` | Search | Allowed / Blocked | [규칙] | — |
+| Claude-User | `Claude-User` | User-initiated fetch | Allowed / Blocked | [규칙] | — |
+| Googlebot | `Googlebot` | Search indexing | Allowed / Blocked | [규칙] | — |
+| Google-Extended | `Google-Extended` | Gemini training/grounding control | Allowed / Blocked | [규칙] | — |
 | PerplexityBot | `PerplexityBot` | Search | Allowed / Blocked | [규칙] | — |
 | Bingbot | `Bingbot` | Search | Allowed / Blocked | [규칙] | — |
-| GrokBot | `GrokBot` | Training | Allowed / Blocked | [규칙] | — |
-| xAI-Grok | `xAI-Grok` | Search | Allowed / Blocked | [규칙] | — |
-| Grok-DeepSearch | `Grok-DeepSearch` | Search | Allowed / Blocked | [규칙] | — |
+| GrokBot | `GrokBot` | Training, unverified | Allowed / Blocked / Verify first | [규칙] | — |
+| xAI-Grok | `xAI-Grok` | Search, unverified | Allowed / Blocked / Verify first | [규칙] | — |
+| Grok-DeepSearch | `Grok-DeepSearch` | Search, unverified | Allowed / Blocked / Verify first | [규칙] | — |
 
 ---
 
@@ -386,10 +411,19 @@ Date: [날짜]  |  URL: [URL]
   User-agent: ChatGPT-User
   Allow: /
 
+  User-agent: OAI-SearchBot
+  Allow: /
+
   User-agent: ClaudeBot
   Allow: /
 
-  User-agent: anthropic-ai
+  User-agent: Claude-SearchBot
+  Allow: /
+
+  User-agent: Claude-User
+  Allow: /
+
+  User-agent: Googlebot
   Allow: /
 
   User-agent: Google-Extended
@@ -401,6 +435,7 @@ Date: [날짜]  |  URL: [URL]
   User-agent: Bingbot
   Allow: /
 
+  # Grok tokens — verify first-party docs or server-log evidence before use.
   User-agent: GrokBot
   Allow: /
 
@@ -422,17 +457,27 @@ Date: [날짜]  |  URL: [URL]
   User-agent: ClaudeBot
   Disallow: /
 
-  User-agent: anthropic-ai
+  User-agent: Google-Extended
   Disallow: /
 
+  # Grok tokens — verify first-party docs or server-log evidence before use.
   User-agent: GrokBot
   Disallow: /
 
   # Search bots — allowed
+  User-agent: OAI-SearchBot
+  Allow: /
+
   User-agent: ChatGPT-User
   Allow: /
 
-  User-agent: Google-Extended
+  User-agent: Claude-SearchBot
+  Allow: /
+
+  User-agent: Claude-User
+  Allow: /
+
+  User-agent: Googlebot
   Allow: /
 
   User-agent: PerplexityBot

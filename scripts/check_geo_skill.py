@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 REQUIRED_FILES = [
+    "AGENTS.md",
     "CHANGELOG.md",
     "README.md",
     "LICENSE",
@@ -18,6 +19,16 @@ REQUIRED_FILES = [
     "references/gate-conditions.md",
     "references/experiment-scenarios.md",
     "references/runtime-adaptation.md",
+    "references/measurement-loop.md",
+    "references/commerce-readiness.md",
+    "references/platform-truth-registry.md",
+    "references/measurement-capture-template.md",
+    "references/commerce-audit-worksheet.md",
+    "references/private-surface-routing.md",
+    "references/regional-situational-routing.md",
+    "references/policy-risk-gate.md",
+    "references/report-template-contract.md",
+    "references/implementation-completion-plan.md",
     "references/execution-skill-matrix.md",
     "references/versioning-protocol.md",
     "scripts/check_geo_release.py",
@@ -132,6 +143,19 @@ INLINE_GATE_PHRASES = [
     "do not skip the setup-guide pass when first-use or",
     "**Gate 7: Evidence closure**",
     "response ends with one concrete next action or one explicit blocker.",
+    "**Gate 8: Measurement confidence boundary**",
+    "`references/measurement-loop.md`: readiness,",
+    "heuristic, observed answer, observed citation, referral, or conversion.",
+    "**Gate 9: Commerce/action readiness boundary**",
+    "platform transaction eligibility.",
+    "**Gate 10: Private surface boundary**",
+    "public crawler, public search, private connector, logged-in user",
+    "**Gate 11: Regional/situational boundary**",
+    "regional or vertical claims must use a confirmed source pack",
+    "**Gate 12: Policy risk boundary**",
+    "robots, terms, privacy, regulated claims, brand claims",
+    "**Gate 13: Whole-system completion boundary**",
+    "completion_rubric_path_or_inline",
 ]
 
 DISALLOWED_STRINGS = [
@@ -213,6 +237,16 @@ README_REQUIRED_PHRASES = [
     "`SKILL.md`",
     "`references/runtime-adaptation.md`",
     "`references/execution-skill-matrix.md`",
+    "`references/measurement-loop.md`",
+    "`references/commerce-readiness.md`",
+    "`references/platform-truth-registry.md`",
+    "`references/measurement-capture-template.md`",
+    "`references/commerce-audit-worksheet.md`",
+    "`references/private-surface-routing.md`",
+    "`references/regional-situational-routing.md`",
+    "`references/policy-risk-gate.md`",
+    "`references/report-template-contract.md`",
+    "`references/implementation-completion-plan.md`",
     "`skills/geo-*/SKILL.md`",
     "private `generateSkill` workflow derived from",
     "the public Skill Creator skill.",
@@ -292,6 +326,17 @@ EXECUTION_MATRIX_REQUIRED_PHRASES = [
     "hidden global files or hidden session-state commands.",
     "## Standalone execution subskills",
     "| Skill | Primary use | Typical trigger | Local profile | Typical output |",
+    "## Reference-guided extensions",
+    "`references/measurement-loop.md`",
+    "`references/commerce-readiness.md`",
+    "`references/platform-truth-registry.md`",
+    "`references/measurement-capture-template.md`",
+    "`references/commerce-audit-worksheet.md`",
+    "`references/private-surface-routing.md`",
+    "`references/regional-situational-routing.md`",
+    "`references/policy-risk-gate.md`",
+    "`references/report-template-contract.md`",
+    "`references/implementation-completion-plan.md`",
 ]
 
 RESTORED_SUBSKILL_REQUIRED_PHRASES = [
@@ -307,6 +352,84 @@ RESTORED_SUBSKILL_DISALLOWED_STRINGS = [
     "~/.cogarch",
     "OPERATIONS.md",
 ]
+
+SUBSKILL_REFERENCE_REQUIRED = {
+    "geo-audit": [
+        "../../references/measurement-capture-template.md",
+        "../../references/commerce-audit-worksheet.md",
+        "../../references/private-surface-routing.md",
+        "../../references/regional-situational-routing.md",
+        "../../references/policy-risk-gate.md",
+        "../../references/report-template-contract.md",
+    ],
+    "geo-brand-mentions": [
+        "../../references/measurement-capture-template.md",
+        "../../references/private-surface-routing.md",
+    ],
+    "geo-citability": [
+        "../../references/measurement-capture-template.md",
+    ],
+    "geo-compare": [
+        "../../references/platform-truth-registry.md",
+        "../../references/regional-situational-routing.md",
+        "../../references/private-surface-routing.md",
+        "../../references/policy-risk-gate.md",
+        "../../references/measurement-capture-template.md",
+    ],
+    "geo-content": [
+        "../../references/policy-risk-gate.md",
+        "../../references/measurement-capture-template.md",
+    ],
+    "geo-crawlers": [
+        "../../references/platform-truth-registry.md",
+    ],
+    "geo-llmstxt": [
+        "../../references/measurement-capture-template.md",
+        "../../references/policy-risk-gate.md",
+    ],
+    "geo-platform-optimizer": [
+        "../../references/platform-truth-registry.md",
+        "../../references/measurement-capture-template.md",
+        "../../references/private-surface-routing.md",
+    ],
+    "geo-proposal": [
+        "../../references/platform-truth-registry.md",
+        "../../references/measurement-capture-template.md",
+        "../../references/commerce-audit-worksheet.md",
+        "../../references/private-surface-routing.md",
+        "../../references/regional-situational-routing.md",
+        "../../references/policy-risk-gate.md",
+        "../../references/report-template-contract.md",
+    ],
+    "geo-prospect": [
+        "../../references/platform-truth-registry.md",
+        "../../references/commerce-audit-worksheet.md",
+        "../../references/regional-situational-routing.md",
+        "../../references/policy-risk-gate.md",
+        "../../references/measurement-capture-template.md",
+    ],
+    "geo-report": [
+        "../../references/report-template-contract.md",
+        "../../references/measurement-capture-template.md",
+        "../../references/commerce-audit-worksheet.md",
+        "../../references/private-surface-routing.md",
+        "../../references/regional-situational-routing.md",
+        "../../references/policy-risk-gate.md",
+    ],
+    "geo-report-pdf": [
+        "../../references/report-template-contract.md",
+    ],
+    "geo-schema": [
+        "../../references/commerce-readiness.md",
+        "../../references/commerce-audit-worksheet.md",
+        "../../references/platform-truth-registry.md",
+    ],
+    "geo-technical": [
+        "../../references/measurement-capture-template.md",
+        "../../references/policy-risk-gate.md",
+        "../../references/private-surface-routing.md",
+    ],
+}
 
 VERSIONING_PROTOCOL_REQUIRED_PHRASES = [
     "# GEO Versioning Protocol",
@@ -379,6 +502,35 @@ RUNTIME_ADAPTATION_REQUIRED_PHRASES = [
     "If the runtime cannot surface that trigger or runtime/model identity natively,",
     "The shared portable package must remain usable even when no runtime-local",
     "Do not fork the whole skill package unless `geo` itself later becomes a",
+]
+
+PLATFORM_TRUTH_FILES = [
+    "skills/geo-crawlers/SKILL.md",
+    "skills/geo-platform-optimizer/SKILL.md",
+    "skills/geo-report-pdf/SKILL.md",
+    "skills/geo-compare/SKILL.md",
+    "skills/geo-prospect/SKILL.md",
+    "skills/geo-llmstxt/SKILL.md",
+]
+
+PLATFORM_TRUTH_REQUIRED_PHRASES = [
+    "OAI-SearchBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Googlebot",
+    "Google Search 포함",
+    "확인 필요",
+    "heuristic / adoption-dependent",
+]
+
+PLATFORM_TRUTH_DISALLOWED_STRINGS = [
+    "anthropic-ai",
+    "핵심 대상 7개",
+    "7개 봇",
+    "7 bots",
+    "학습+검색",
+    "Google-Extended | 이중",
+    "Google-Extended 봇: [허용 / 차단]",
 ]
 
 
@@ -454,6 +606,7 @@ def ensure_release_gate_script(skill_dir: Path) -> None:
 
 def ensure_no_stale_aliases(skill_dir: Path) -> None:
     for rel_path in [
+        "AGENTS.md",
         "CHANGELOG.md",
         "README.md",
         "LICENSE",
@@ -464,6 +617,16 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
         "references/runtime-adaptation.md",
+        "references/measurement-loop.md",
+        "references/commerce-readiness.md",
+        "references/platform-truth-registry.md",
+        "references/measurement-capture-template.md",
+        "references/commerce-audit-worksheet.md",
+        "references/private-surface-routing.md",
+        "references/regional-situational-routing.md",
+        "references/policy-risk-gate.md",
+        "references/report-template-contract.md",
+        "references/implementation-completion-plan.md",
         "references/execution-skill-matrix.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
@@ -476,6 +639,7 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
 
 def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
     for rel_path in [
+        "AGENTS.md",
         "CHANGELOG.md",
         "README.md",
         "LICENSE",
@@ -486,10 +650,27 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/gate-conditions.md",
         "references/experiment-scenarios.md",
         "references/runtime-adaptation.md",
+        "references/measurement-loop.md",
+        "references/commerce-readiness.md",
+        "references/platform-truth-registry.md",
+        "references/measurement-capture-template.md",
+        "references/commerce-audit-worksheet.md",
+        "references/private-surface-routing.md",
+        "references/regional-situational-routing.md",
+        "references/policy-risk-gate.md",
+        "references/report-template-contract.md",
+        "references/implementation-completion-plan.md",
         "references/execution-skill-matrix.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
+        text = read_text(skill_dir / rel_path)
+        for pattern in PORTABILITY_PATH_PATTERNS:
+            if pattern.search(text):
+                fail(f"absolute path leak found in {rel_path}: pattern {pattern.pattern}")
+
+    for skill_name in RESTORED_SUBSKILLS:
+        rel_path = f"skills/{skill_name}/SKILL.md"
         text = read_text(skill_dir / rel_path)
         for pattern in PORTABILITY_PATH_PATTERNS:
             if pattern.search(text):
@@ -520,6 +701,16 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     gate_conditions = read_text(skill_dir / "references/gate-conditions.md")
     experiments = read_text(skill_dir / "references/experiment-scenarios.md")
     runtime_adaptation = read_text(skill_dir / "references/runtime-adaptation.md")
+    measurement_loop = read_text(skill_dir / "references/measurement-loop.md")
+    commerce_readiness = read_text(skill_dir / "references/commerce-readiness.md")
+    platform_truth = read_text(skill_dir / "references/platform-truth-registry.md")
+    measurement_capture = read_text(skill_dir / "references/measurement-capture-template.md")
+    commerce_audit = read_text(skill_dir / "references/commerce-audit-worksheet.md")
+    private_surface = read_text(skill_dir / "references/private-surface-routing.md")
+    regional_situational = read_text(skill_dir / "references/regional-situational-routing.md")
+    policy_risk = read_text(skill_dir / "references/policy-risk-gate.md")
+    report_template = read_text(skill_dir / "references/report-template-contract.md")
+    implementation_completion = read_text(skill_dir / "references/implementation-completion-plan.md")
     glossary = read_text(skill_dir / "references/glossary.md")
     execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
 
@@ -536,6 +727,16 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`authors`: 김범수, 유수호, 고경만",
         "`contributors_display_label`: `VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.`",
         "`execution_overlay_rule`: `skills/*` is a repo-local execution bundle",
+        "`measurement_loop_reference`: `references/measurement-loop.md`",
+        "`commerce_readiness_reference`: `references/commerce-readiness.md`",
+        "`platform_truth_reference`: `references/platform-truth-registry.md`",
+        "`measurement_capture_reference`: `references/measurement-capture-template.md`",
+        "`commerce_audit_reference`: `references/commerce-audit-worksheet.md`",
+        "`private_surface_reference`: `references/private-surface-routing.md`",
+        "`regional_situational_reference`: `references/regional-situational-routing.md`",
+        "`policy_risk_reference`: `references/policy-risk-gate.md`",
+        "`report_template_reference`: `references/report-template-contract.md`",
+        "`implementation_completion_reference`: `references/implementation-completion-plan.md`",
         "`clarification_rule`: if `goal / scope / surface / success / evidence target`",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
@@ -543,6 +744,16 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "| advanced-workflow setup guide | `README.md`, `references/execution-skill-matrix.md`, matching",
         "`advanced_workflow_setup_rule`: when an advanced workflow is requested for",
         "Run the advanced-workflow setup guide before promising execution when",
+        "| measurement loop reference | `references/measurement-loop.md`",
+        "| commerce readiness reference | `references/commerce-readiness.md`",
+        "| platform truth registry | `references/platform-truth-registry.md`",
+        "| measurement capture template | `references/measurement-capture-template.md`",
+        "| commerce audit worksheet | `references/commerce-audit-worksheet.md`",
+        "| private surface routing | `references/private-surface-routing.md`",
+        "| regional situational routing | `references/regional-situational-routing.md`",
+        "| policy risk gate | `references/policy-risk-gate.md`",
+        "| report template contract | `references/report-template-contract.md`",
+        "| implementation completion plan | `references/implementation-completion-plan.md`",
     ]:
         if phrase not in concept_map:
             fail(f"missing concept-map phrase: {phrase}")
@@ -554,10 +765,22 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Gate 3: Context mode selection",
         "Gate 6: Derived-output readiness",
         "Gate 7: Evidence closure",
+        "Gate 8: Measurement confidence boundary",
+        "Gate 9: Commerce/action readiness boundary",
+        "Gate 10: Private surface boundary",
+        "Gate 11: Regional/situational boundary",
+        "Gate 12: Policy risk boundary",
+        "Gate 13: Whole-system completion boundary",
         "packet with `goal / scope / surface / success / evidence target` is locked.",
         "`execution-bundle`",
         "advanced-workflow",
         "runtime or model changed",
+        "readiness scores, crawler access, schema validity, or",
+        "Product schema alone is treated as commerce readiness",
+        "public crawler, public search, private",
+        "regional or vertical claims must use a confirmed source pack",
+        "robots, terms, privacy, regulated claims, brand claims",
+        "`completion_rubric_path_or_inline`",
     ]:
         if phrase not in gate_conditions:
             fail(f"missing gate condition phrase: {phrase}")
@@ -584,6 +807,14 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected behavior: do not pretend the portable baseline alone bundles a live crawler",
         "Expected behavior: run the advanced-workflow setup guide before promising execution",
         "Expected behavior: rerun the advanced-workflow setup guide before execution because runtime-local hints may differ",
+        "Expected boundary: classify readiness, heuristic, observed answer, observed citation, referral, and conversion separately",
+        "Expected boundary: Product schema alone does not prove commerce readiness",
+        "Expected boundary: use `references/platform-truth-registry.md` before implementation advice",
+        "Expected boundary: Do not use private evidence to claim public visibility",
+        "Expected boundary: regional or vertical claims must use a confirmed source pack",
+        "Expected boundary: check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility",
+        "Expected boundary: use `references/report-template-contract.md`",
+        "Expected boundary: use `references/implementation-completion-plan.md`",
     ]:
         if phrase not in experiments:
             fail(f"missing experiment phrase: {phrase}")
@@ -606,6 +837,20 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "contributor display label",
         "VibeWorkers",
         "https://vibeworkers.net",
+        "platform truth registry",
+        "measurement capture template",
+        "commerce audit worksheet",
+        "private surface routing",
+        "regional situational routing",
+        "policy risk gate",
+        "report template contract",
+        "implementation completion plan",
+        "readiness_signal",
+        "observed_answer",
+        "observed_citation",
+        "referral_signal",
+        "conversion_signal",
+        "policy risk",
     ]:
         if phrase not in glossary:
             fail(f"missing glossary phrase: {phrase}")
@@ -617,6 +862,144 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     for phrase in EXECUTION_MATRIX_REQUIRED_PHRASES:
         if phrase not in execution_matrix:
             fail(f"missing execution-matrix phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Measurement Loop",
+        "do not claim measured visibility",
+        "`readiness_signal`",
+        "`heuristic_signal`",
+        "`observed_answer`",
+        "`observed_citation`",
+        "`referral_signal`",
+        "`conversion_signal`",
+        "prompt panel",
+        "before/after",
+        "Treating `llms.txt` as guaranteed ingestion or citation.",
+    ]:
+        if phrase not in measurement_loop:
+            fail(f"missing measurement-loop phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Commerce Readiness",
+        "Product schema alone does not prove commerce readiness.",
+        "OpenAI Commerce",
+        "shopping research",
+        "merchant listing structured data",
+        "Instant Buy",
+        "price, availability, shipping, returns",
+        "Checkout/action",
+        "`catalog_readiness`",
+        "`measurement_readiness`",
+    ]:
+        if phrase not in commerce_readiness:
+            fail(f"missing commerce-readiness phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Platform Truth Registry",
+        "source_url",
+        "last_verified",
+        "confidence",
+        "package_action",
+        "OAI-SearchBot",
+        "Google-Extended",
+        "Claude-SearchBot",
+        "Claude-User",
+        "확인 필요",
+        "heuristic / adoption-dependent",
+    ]:
+        if phrase not in platform_truth:
+            fail(f"missing platform-truth phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Measurement Capture Template",
+        "Prompt Panel",
+        "Run Metadata",
+        "Capture Table",
+        "Before/After Comparison",
+        "evidence_label",
+        "observed_citation",
+        "conversion_signal",
+    ]:
+        if phrase not in measurement_capture:
+            fail(f"missing measurement-capture phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Commerce Audit Worksheet",
+        "Product Identity",
+        "Schema Readiness",
+        "Merchant Facts",
+        "Catalog / Feed",
+        "Checkout / Action",
+        "Measurement Readiness",
+        "platform_eligibility_status",
+    ]:
+        if phrase not in commerce_audit:
+            fail(f"missing commerce-audit phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Private Surface Routing",
+        "public_crawler_surface",
+        "private_connector_surface",
+        "logged_in_user_surface",
+        "user_provided_context_surface",
+        "permission profile",
+        "Do not use private evidence",
+    ]:
+        if phrase not in private_surface:
+            fail(f"missing private-surface phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Regional And Situational Routing",
+        "Naver",
+        "Kakao",
+        "Daum",
+        "regulated",
+        "new brand",
+        "mature brand",
+        "requires separate official evidence",
+    ]:
+        if phrase not in regional_situational:
+            fail(f"missing regional-situational phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Policy Risk Gate",
+        "robots",
+        "terms",
+        "privacy",
+        "regulated claims",
+        "brand claims",
+        "commerce eligibility",
+        "not legal advice",
+    ]:
+        if phrase not in policy_risk:
+            fail(f"missing policy-risk phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Report Template Contract",
+        "score_type",
+        "evidence_label",
+        "confidence",
+        "measurement_status",
+        "commerce_status",
+        "private_surface_status",
+        "regional_context",
+        "policy_risk",
+    ]:
+        if phrase not in report_template:
+            fail(f"missing report-template phrase: {phrase}")
+
+    for phrase in [
+        "# GEO P2-P13 Implementation Completion Plan",
+        "RQ1",
+        "RQ13",
+        "P2-P13 Sequence",
+        "completion_judgment",
+        "all_must_passed",
+        "failed_must_queue",
+        "verification set",
+    ]:
+        if phrase not in implementation_completion:
+            fail(f"missing implementation-completion phrase: {phrase}")
 
     for line in experiments.splitlines():
         if line.startswith("- Prompt:") and re.search(r"[가-힣]", line):
@@ -656,9 +1039,25 @@ def ensure_restored_execution_bundle(skill_dir: Path) -> None:
         for phrase in RESTORED_SUBSKILL_REQUIRED_PHRASES:
             if phrase not in text:
                 fail(f"missing standalone subskill phrase in {skill_name}: {phrase}")
+        for phrase in SUBSKILL_REFERENCE_REQUIRED.get(skill_name, []):
+            if phrase not in text:
+                fail(f"missing P2-P13 reference in restored skill {skill_name}: {phrase}")
         for disallowed in RESTORED_SUBSKILL_DISALLOWED_STRINGS:
             if disallowed in text:
                 fail(f"hidden dependency leaked into restored skill {skill_name}: {disallowed}")
+
+
+def ensure_platform_truth_contract(skill_dir: Path) -> None:
+    combined = "\n".join(read_text(skill_dir / rel_path) for rel_path in PLATFORM_TRUTH_FILES)
+
+    for phrase in PLATFORM_TRUTH_REQUIRED_PHRASES:
+        if phrase not in combined:
+            fail(f"missing platform truth phrase: {phrase}")
+
+    for phrase in PLATFORM_TRUTH_DISALLOWED_STRINGS:
+        if phrase in combined:
+            fail(f"stale platform truth phrase found: {phrase}")
+
 
 def main() -> None:
     if len(sys.argv) > 2:
@@ -679,6 +1078,7 @@ def main() -> None:
     ensure_openai_yaml(skill_dir)
     ensure_reference_contract(skill_dir)
     ensure_restored_execution_bundle(skill_dir)
+    ensure_platform_truth_contract(skill_dir)
 
     print("[ok] geo skill package and portable contract are consistent")
 

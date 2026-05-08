@@ -1,8 +1,8 @@
 ---
 name: geo-audit
 description: >
-  GEO + SEO 전체 감사. 대상 사이트를 5개 영역(AI 가시성, 플랫폼 최적화,
-  기술 SEO, 콘텐츠 품질, 스키마 마크업)으로 종합 분석하고
+  GEO + SEO 전체 감사. 대상 사이트를 6개 영역(AI 크롤러 접근, AI 인용 가능성,
+  콘텐츠 품질, 기술 SEO, 스키마 마크업, 플랫폼 최적화)으로 종합 분석하고
   GEO 점수(0-100)와 우선순위별 개선 과제를 제공한다.
   모든 레벨(L1/L2/L3)에서 동일한 깊이로 분석하며 출력 방식만 달라진다.
   트리거: "전체 감사", "사이트 분석", "종합 점검", "audit".
@@ -42,7 +42,7 @@ WebFetch로 홈페이지를 로드하고 다음을 추출한다.
 
 ---
 
-### 2단계: 5개 영역 순차 분석
+### 2단계: 6개 영역 순차 분석
 
 모든 레벨에서 동일하게 실행한다. 각 영역 분석 시 해당 서브스킬의 지시를 따른다.
 
@@ -52,7 +52,8 @@ WebFetch로 홈페이지를 로드하고 다음을 추출한다.
 | 2 | AI 인용 가능성 | geo-citability | 인용 점수 /100 |
 | 3 | 콘텐츠 품질 / E-E-A-T | geo-content | 콘텐츠 점수 /100 |
 | 4 | 기술 SEO | geo-technical | 기술 점수 /100 |
-| 5 | 플랫폼 최적화 | geo-platform-optimizer | 플랫폼 점수 /100 |
+| 5 | 스키마 마크업 | geo-schema | 스키마 점수 /100 |
+| 6 | 플랫폼 최적화 | geo-platform-optimizer | 플랫폼 점수 /100 |
 
 ---
 
@@ -63,6 +64,29 @@ GEO 점수 = (인용 점수 × 0.25) + (크롤러 점수 × 0.20) +
            (콘텐츠 점수 × 0.20) + (기술 점수 × 0.15) +
            (스키마 점수 × 0.10) + (플랫폼 점수 × 0.10)
 ```
+
+**결과 경계**
+
+- GEO 점수는 readiness/heuristic 중심의 운영 점수다. 측정된 AI 노출,
+  citation, referral, conversion으로 표현하려면
+  `../../references/measurement-loop.md`와
+  `../../references/measurement-capture-template.md`의 evidence_label을
+  별도로 기록한다.
+- shopping, checkout, lead, Instant Buy, product listing 주장은
+  `../../references/commerce-readiness.md`와
+  `../../references/commerce-audit-worksheet.md`를 통해 product, schema,
+  merchant, catalog/feed, checkout/action, measurement readiness로 분리한다.
+- private connector, logged-in user, user-provided context가 포함되면
+  `../../references/private-surface-routing.md`에 따라 public visibility
+  claim을 분리한다.
+- regional, vertical, brand-maturity 조건은
+  `../../references/regional-situational-routing.md`로 표시한다.
+- robots, terms, privacy, regulated claims, brand claims, commerce eligibility
+  상태는 `../../references/policy-risk-gate.md`로 닫는다.
+- 최종 종합 보고서는 `../../references/report-template-contract.md`의
+  score_type, evidence_label, confidence, measurement_status,
+  commerce_status, private_surface_status, regional_context, policy_risk
+  필드를 포함한다.
 
 **점수 등급표**
 
@@ -167,6 +191,7 @@ GEO 점수 = (인용 점수 × 0.25) + (크롤러 점수 × 0.20) +
 | AI 크롤러 접근 | [X]/100 | 좋음 / 주의 / 위험 |
 | 콘텐츠 품질 | [X]/100 | 좋음 / 주의 / 위험 |
 | 기술 SEO | [X]/100 | 좋음 / 주의 / 위험 |
+| 스키마 마크업 | [X]/100 | 좋음 / 주의 / 위험 |
 | 플랫폼 최적화 | [X]/100 | 좋음 / 주의 / 위험 |
 
 ---
@@ -241,7 +266,7 @@ Date: [날짜]  |  URL: [URL]  |  Business Type: [유형]
 | Category | Raw Score | Weight | Weighted Score |
 |---|---|---|---|
 | AI Citability | [X]/100 | 25% | [X] |
-| Brand Authority | [X]/100 | 20% | [X] |
+| Crawler Access | [X]/100 | 20% | [X] |
 | Content Quality | [X]/100 | 20% | [X] |
 | Technical | [X]/100 | 15% | [X] |
 | Structured Data | [X]/100 | 10% | [X] |
@@ -276,6 +301,9 @@ Date: [날짜]  |  URL: [URL]  |  Business Type: [유형]
 
 ### Technical SEO
 [geo-technical 전체 출력]
+
+### Structured Data
+[geo-schema 전체 출력]
 
 ### Platform Optimization
 [geo-platform-optimizer 전체 출력]

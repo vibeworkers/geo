@@ -39,6 +39,29 @@ GEO 제안서는 분석 결과 파일을 종합하여 기술 구현 계획을 �
 
 ## 실행 단계
 
+### 0단계: 제안 범위와 완료 조건 잠금
+
+제안서는 개선 작업을 약속하는 문서이므로 아래 참조를 먼저 적용한다.
+
+- 플랫폼별 crawler/action 메커니즘:
+  `../../references/platform-truth-registry.md`
+- 측정 계획과 before/after capture:
+  `../../references/measurement-capture-template.md`
+- commerce/action readiness:
+  `../../references/commerce-audit-worksheet.md`
+- private/logged-in/connector/user-provided context:
+  `../../references/private-surface-routing.md`
+- regional/vertical/brand-maturity routing:
+  `../../references/regional-situational-routing.md`
+- robots, terms, privacy, regulated claims, brand claims, commerce eligibility:
+  `../../references/policy-risk-gate.md`
+- 제안서 metadata와 claim labels:
+  `../../references/report-template-contract.md`
+
+제안서의 Sprint 완료 기준은 readiness, heuristic, observed_answer,
+observed_citation, referral_signal, conversion_signal 중 무엇을 목표로
+하는지 명시해야 한다.
+
 ### 1단계: 분석 파일 수집
 
 현재 디렉토리에서 기존 GEO 분석 결과 파일을 수집한다.

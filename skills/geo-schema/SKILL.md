@@ -54,6 +54,17 @@ GEO 영향도 기준으로 우선순위를 정한다.
 | LocalBusiness | 조건부 | 지역 비즈니스 | 오프라인 사업체 위치·연락처 |
 | Product | 조건부 | 제품·서비스 페이지 | 가격·평점·가용성 |
 
+**Commerce readiness boundary**
+
+Product schema는 commerce readiness의 한 구성 요소일 뿐이다.
+shopping, merchant listing, checkout/action, lead, Instant Buy 같은 주장은
+`../../references/commerce-readiness.md`와
+`../../references/commerce-audit-worksheet.md`를 사용해 product, schema,
+merchant, catalog/feed, checkout/action, measurement readiness로 분리한다.
+플랫폼별 transaction eligibility는
+`../../references/platform-truth-registry.md`와 공식 또는 user-provided
+evidence가 있을 때만 high confidence로 표시한다.
+
 ---
 
 ## 실행 단계

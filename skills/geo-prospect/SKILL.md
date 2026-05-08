@@ -40,13 +40,20 @@ GEO 잠재 고객 스캔은 영업·컨설팅 목적의 기술 분석 작업입�
 
 geo-prospect는 전체 감사 workflow보다 가볍고 빠르다.
 영업 판단에 필요한 핵심 신호 10개만 확인하여 개선 여지를 측정한다.
+prospect 결과는 readiness/heuristic 영업 신호다. platform truth는
+`../../references/platform-truth-registry.md`, commerce/action 가능성은
+`../../references/commerce-audit-worksheet.md`, regional/vertical 차이는
+`../../references/regional-situational-routing.md`, policy risk는
+`../../references/policy-risk-gate.md`로 표시한다. 측정된 answer/citation,
+referral, conversion은 `../../references/measurement-capture-template.md`
+가 있을 때만 보고한다.
 
 | 신호 | 확인 방법 | 배점 |
 |---|---|---|
 | HTTPS 적용 | HTTP→HTTPS 리다이렉트 | 10점 |
-| robots.txt — AI 봇 허용 | 학습용 + 검색용 봇 차단 여부 | 20점 |
-| llms.txt 존재 | 사이트 루트 확인 | 15점 |
-| sitemap.xml 존재 | 사이트 루트 확인 | 10점 |
+| robots.txt — AI 봇/토큰 허용 | 학습용 + 검색용 봇 차단 여부와 의미 구분 | 25점 |
+| llms.txt 존재 | heuristic / adoption-dependent 보조 신호 | 5점 |
+| sitemap.xml 존재 | 사이트 루트 확인 | 15점 |
 | JSON-LD 스키마 | 홈페이지 스키마 블록 수 | 15점 |
 | Open Graph 태그 | og:title·og:description·og:image | 10점 |
 | Twitter Card | twitter:card 태그 | 5점 |
@@ -118,7 +125,7 @@ for domain in domains:
     except: r_data['signals']['https'] = False
 
     # 루트 파일 확인
-    for path, key, pts in [('/robots.txt','robots',0), ('/llms.txt','llms',15), ('/sitemap.xml','sitemap',10)]:
+    for path, key, pts in [('/robots.txt','robots',0), ('/llms.txt','llms',5), ('/sitemap.xml','sitemap',15)]:
         try:
             res = requests.get(origin + path, headers={'User-Agent':'GEO-Prospect/1.0'}, timeout=10)
             exists = res.status_code == 200
@@ -126,15 +133,26 @@ for domain in domains:
             if exists and key != 'robots': r_data['score'] += pts
         except: r_data['signals'][key] = {'exists': False, 'content': ''}
 
-    # robots.txt AI 봇 허용 여부 (20점)
+    # robots.txt AI 봇/토큰 허용 여부 (25점)
     robots_content = r_data['signals'].get('robots', {}).get('content', '')
-    ai_bots = ['GPTBot', 'ClaudeBot', 'anthropic-ai', 'GrokBot',
-               'ChatGPT-User', 'PerplexityBot', 'Bingbot',
-               'xAI-Grok', 'Grok-DeepSearch', 'Google-Extended']
-    disallowed = [b for b in ai_bots if 'Disallow' in robots_content and b in robots_content]
-    allowed_count = len(ai_bots) - len(disallowed)
-    bot_score = int(allowed_count / len(ai_bots) * 20)
-    r_data['signals']['ai_bots'] = {'allowed': allowed_count, 'total': len(ai_bots), 'disallowed': disallowed}
+    access_bots = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
+                   'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+                   'Googlebot', 'PerplexityBot', 'Bingbot']
+    policy_tokens = ['Google-Extended']
+    unverified_ai_tokens = ['GrokBot', 'xAI-Grok', 'Grok-DeepSearch']
+    disallowed = [b for b in access_bots if 'Disallow' in robots_content and b in robots_content]
+    allowed_count = len(access_bots) - len(disallowed)
+    bot_score = int(allowed_count / len(access_bots) * 25)
+    policy_seen = [b for b in policy_tokens if b in robots_content]
+    unverified_seen = [b for b in unverified_ai_tokens if b in robots_content]
+    r_data['signals']['ai_bots'] = {
+        'allowed': allowed_count,
+        'total': len(access_bots),
+        'disallowed': disallowed,
+        'policy_tokens_seen': policy_seen,
+        'unverified_seen': unverified_seen,
+        'note': 'Google-Extended controls Gemini training/grounding, not Google Search inclusion or ranking.'
+    }
     r_data['score'] += bot_score
 
     # 홈페이지 HTML 분석
@@ -228,9 +246,9 @@ for domain, d in results.items():
 | 신호 | 상태 | 점수 |
 |---|---|---|
 | HTTPS + HTTP 리다이렉트 | ✅ / ❌ | [X]/10 |
-| AI 봇 허용 (robots.txt) | [N]/6개 허용 | [X]/20 |
-| llms.txt | ✅ / ❌ | [X]/15 |
-| sitemap.xml | ✅ / ❌ | [X]/10 |
+| AI 봇/토큰 허용 (robots.txt) | [N]/9개 접근 신호 허용 + Google-Extended 의미 별도 확인 | [X]/25 |
+| llms.txt | ✅ / ❌ — heuristic / adoption-dependent | [X]/5 |
+| sitemap.xml | ✅ / ❌ | [X]/15 |
 | JSON-LD 스키마 | [N]개 블록 | [X]/15 |
 | Open Graph 완비 | ✅ / ❌ | [X]/10 |
 | Twitter Card | ✅ / ❌ | [X]/5 |

@@ -39,6 +39,11 @@ PDF 보고서 생성은 로컬 변환 도구가 필요한 작업입니다.
 ## PDF 변환 도구 안내
 
 본 스킬은 마크다운 파일을 생성한다. PDF 변환은 로컬 도구로 처리한다.
+PDF-ready markdown도 `../../references/report-template-contract.md`의
+score_type, evidence_label, confidence, measurement_status, commerce_status,
+private_surface_status, regional_context, policy_risk 필드를 유지해야 한다.
+PDF 변환은 형식 변경일 뿐이며 readiness, heuristic, observed answer,
+observed citation, referral, conversion claim을 바꾸지 않는다.
 
 | 도구 | 설치 | 변환 명령어 |
 |---|---|---|
@@ -218,10 +223,14 @@ author: "[담당자 또는 팀명]"
 | 봇 | 용도 | 현재 상태 |
 |---|---|---|
 | GPTBot | 학습 | 허용 / 차단 |
+| OAI-SearchBot | ChatGPT Search 노출 | 허용 / 차단 |
+| ChatGPT-User | 사용자 요청 가져오기 | 허용 / 차단 |
 | ClaudeBot | 학습 | 허용 / 차단 |
-| ChatGPT-User | 검색 | 허용 / 차단 |
+| Claude-SearchBot | Claude 검색 품질/색인 | 허용 / 차단 |
+| Claude-User | 사용자 요청 가져오기 | 허용 / 차단 |
+| Googlebot | Google Search / AI Overviews 색인 | 허용 / 차단 |
 | PerplexityBot | 검색 | 허용 / 차단 |
-| Google-Extended | 이중 | 허용 / 차단 |
+| Google-Extended | Gemini 학습/grounding 제어. Search 포함·순위 신호 아님 | 허용 / 차단 / 의도적 미사용 |
 
 ---
 

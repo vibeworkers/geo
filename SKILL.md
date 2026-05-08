@@ -105,7 +105,17 @@ These commands update only the LLM conversation language.
 
 If this skill summary drifts, see the portable GEO routing baseline defined in
 `references/concept-map.md`, `references/gate-conditions.md`,
-`references/runtime-adaptation.md`, and
+`references/runtime-adaptation.md`,
+`references/measurement-loop.md`,
+`references/commerce-readiness.md`, and
+`references/platform-truth-registry.md`,
+`references/measurement-capture-template.md`,
+`references/commerce-audit-worksheet.md`,
+`references/private-surface-routing.md`,
+`references/regional-situational-routing.md`,
+`references/policy-risk-gate.md`,
+`references/report-template-contract.md`,
+`references/implementation-completion-plan.md`, and
 `references/execution-skill-matrix.md`.
 
 The bundled term contract is defined in `references/glossary.md`.
@@ -132,6 +142,16 @@ Use the smallest confirmed source surface that can answer the request:
   `references/concept-map.md`
   `references/gate-conditions.md`
   `references/experiment-scenarios.md`
+  `references/measurement-loop.md`
+  `references/commerce-readiness.md`
+  `references/platform-truth-registry.md`
+  `references/measurement-capture-template.md`
+  `references/commerce-audit-worksheet.md`
+  `references/private-surface-routing.md`
+  `references/regional-situational-routing.md`
+  `references/policy-risk-gate.md`
+  `references/report-template-contract.md`
+  `references/implementation-completion-plan.md`
 - user-provided working sources:
   pasted notes, attached docs, explicit file paths, or named deliverables from
   the user
@@ -363,6 +383,47 @@ optimization.
    Exit: at least one confirmed source surface proves the claim, and the
    response ends with one concrete next action or one explicit blocker.
    Fail: do not close with generic GEO commentary only.
+8. **Gate 8: Measurement confidence boundary**
+   Entry: the request asks whether GEO worked, whether an AI answer includes or
+   cites a brand/page, or whether referral/conversion changed.
+   Exit: label the claim with `references/measurement-loop.md`: readiness,
+   heuristic, observed answer, observed citation, referral, or conversion.
+   Fail: do not report readiness scores, crawler access, schema validity, or
+   `llms.txt` presence as measured AI visibility.
+9. **Gate 9: Commerce/action readiness boundary**
+   Entry: the request touches shopping, product listings, checkout, lead
+   generation, instant-buy, or transaction/action readiness.
+   Exit: separate product, schema, merchant, catalog, checkout/action, and
+   measurement readiness with `references/commerce-readiness.md`.
+   Fail: do not treat Product schema alone as commerce readiness or as proof of
+   platform transaction eligibility.
+10. **Gate 10: Private surface boundary**
+    Entry: the request uses logged-in browsing, connectors, user-provided
+    documents, personalized answers, or private evidence.
+    Exit: separate public crawler, public search, private connector, logged-in user,
+    and user-provided context surfaces with
+    `references/private-surface-routing.md`.
+    Fail: do not use private evidence to claim public GEO visibility.
+11. **Gate 11: Regional/situational boundary**
+    Entry: the request names a region, language market, local platform,
+    vertical, or brand-maturity condition.
+    Exit: classify the situation with
+    `references/regional-situational-routing.md`; regional or vertical claims must use a confirmed source pack.
+    Fail: do not invent Naver, Kakao, Daum, or regulated-vertical platform
+    mechanisms without official or user-provided evidence.
+12. **Gate 12: Policy risk boundary**
+    Entry: the recommendation touches crawl permissions, scraping, private data,
+    regulated topics, brand superiority, or transaction eligibility.
+    Exit: check robots, terms, privacy, regulated claims, brand claims, and
+    commerce eligibility with `references/policy-risk-gate.md`.
+    Fail: do not present unknown policy status as safe or approved.
+13. **Gate 13: Whole-system completion boundary**
+    Entry: the request asks for broad improvement, package hardening,
+    completion judgment, or multi-surface implementation.
+    Exit: record `system_scope`, `completion_rubric_path_or_inline`,
+    `current_score`, `all_must_passed` or `failed_must_queue`,
+    `verification_set`, and `report_artifact_path`.
+    Fail: do not declare completion when any Must condition lacks evidence.
 
 ## Rubric
 
@@ -372,6 +433,24 @@ Must:
 - keep `VibeWorkers` as the default output brand, expose <https://vibeworkers.net> as its official website, and let a user or confirmed source brand own the output surface only when that source actually owns the deliverable
 - keep gate conditions inline in the main `Workflow` surface
 - ground the answer in the smallest confirmed source surface
+- separate readiness, heuristic, observed answer, observed citation, referral,
+  and conversion claims before reporting measured GEO outcomes
+- separate Product schema validity from commerce/action readiness before
+  reporting shopping, checkout, or transaction readiness
+- separate platform truth from assumptions with
+  `references/platform-truth-registry.md`
+- use `references/measurement-capture-template.md` before closing observed
+  answer, observed citation, referral, or conversion claims
+- use `references/private-surface-routing.md` before mixing public, private,
+  logged-in, connector, or user-provided context evidence
+- use `references/regional-situational-routing.md` before regional, vertical,
+  or brand-maturity recommendations
+- use `references/policy-risk-gate.md` before presenting crawl, privacy,
+  regulated, brand, or transaction recommendations as safe
+- use `references/report-template-contract.md` for consolidated reports,
+  proposals, and PDF-ready handoffs
+- use `references/implementation-completion-plan.md` for P2-P13 package
+  hardening or whole-system completion claims
 - route execution-intent requests through a confirmed local execution bundle
   only after `skills/*` is checked
 - keep prompt templates, activation prompts, routing examples, and experiment
@@ -389,6 +468,12 @@ Should:
 - reuse bundled references only when stronger user or local material is absent
 - keep the answer compact and lane-explicit
 - separate confirmed evidence from hypothesis-only guidance
+- route measured outcome claims through `references/measurement-loop.md`
+- route commerce/action claims through `references/commerce-readiness.md`
+- include report metadata fields for score, evidence, confidence,
+  measurement, commerce, private surface, regional context, and policy risk
+- treat regional platform advice as pending until an official or user-provided
+  source pack exists
 
 ## Code / LLM Boundary
 
@@ -404,6 +489,13 @@ Should:
   report-output, code, or schema language rule.
 - Do not reject a valid mid-session language command when the requested target
   is Korean or English.
+- Do not treat a platform token as confirmed when the platform truth registry
+  marks it `확인 필요`.
+- Do not claim public visibility from private, logged-in, connector, or
+  user-provided context evidence.
+- Do not present regional platform mechanisms without a confirmed source pack.
+- Do not present robots, terms, privacy, regulated, brand, or commerce
+  eligibility status as safe when the policy-risk gate is unknown.
 - Do not treat derived outputs as the default edit surface.
 - Do not claim a build or export refresh is ready without checking
   prerequisites.
@@ -438,7 +530,9 @@ Default representative answer shape:
 5. **Owning source(s)** — the smallest confirmed source set
 6. **Boundary** — what should not be edited or inferred here
 7. **Evidence** — one fact from the confirmed source surface
-8. **Next action** — one concrete routed step
+8. **Measurement / commerce / private / regional / policy status** — include
+   only the relevant fields for the request
+9. **Next action** — one concrete routed step
 
 Keep the default answer compact unless the user asks for depth.
 
@@ -572,6 +666,16 @@ Runtime-fact exception:
 - `references/gate-conditions.md`
 - `references/experiment-scenarios.md`
 - `references/runtime-adaptation.md`
+- `references/measurement-loop.md`
+- `references/commerce-readiness.md`
+- `references/platform-truth-registry.md`
+- `references/measurement-capture-template.md`
+- `references/commerce-audit-worksheet.md`
+- `references/private-surface-routing.md`
+- `references/regional-situational-routing.md`
+- `references/policy-risk-gate.md`
+- `references/report-template-contract.md`
+- `references/implementation-completion-plan.md`
 - `references/execution-skill-matrix.md`
 - `scripts/check_geo_skill.py`
 

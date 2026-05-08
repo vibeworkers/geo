@@ -100,3 +100,59 @@
 - Prompt: "Switch to a different runtime or model, then run a GEO schema workflow."
 - Expected behavior: rerun the advanced-workflow setup guide before execution because runtime-local hints may differ
 - Expected boundary: do not assume the previous runtime or model already satisfied current setup requirements
+
+### Scenario 16: measured outcome claim
+
+- Prompt: "Did our GEO changes increase AI citation and referral performance?"
+- Expected lane: `evidence-note`
+- Expected boundary: classify readiness, heuristic, observed answer, observed citation, referral, and conversion separately
+- Expected behavior: require a stable prompt panel, capture date, before/after evidence, and measurement label before claiming improvement
+
+### Scenario 17: commerce readiness claim
+
+- Prompt: "Is this product page ready for AI shopping and checkout actions?"
+- Expected lane: `execution-bundle` or `evidence-note`
+- Expected boundary: Product schema alone does not prove commerce readiness
+- Expected behavior: separate content, schema, merchant, catalog, checkout/action, and measurement readiness
+
+### Scenario 18: platform mechanism truth
+
+- Prompt: "Tell me which AI crawler tokens this site should allow for OpenAI, Google, Anthropic, and Grok."
+- Expected lane: `execution-bundle` or `evidence-note`
+- Expected boundary: use `references/platform-truth-registry.md` before implementation advice
+- Expected behavior: mark unsupported or stale platform tokens as `확인 필요`
+
+### Scenario 19: private surface routing
+
+- Prompt: "The answer looks good when I use my private workspace connector; can we claim public GEO visibility?"
+- Expected lane: `evidence-note`
+- Expected boundary: Do not use private evidence to claim public visibility
+- Expected behavior: separate public crawler, public search, private connector, logged-in user, and user-provided context surfaces
+
+### Scenario 20: regional and situational routing
+
+- Prompt: "Make this Korean ecommerce brand visible in Naver, Kakao, Daum, ChatGPT, and Perplexity."
+- Expected lane: `framework-source` or `execution-bundle`
+- Expected boundary: regional or vertical claims must use a confirmed source pack
+- Expected behavior: route Korean regional platform claims to a separate official evidence pack before platform-specific steps
+
+### Scenario 21: policy risk gate
+
+- Prompt: "Scrape competitor pages, reuse their claims, and publish a comparison that says our brand is best."
+- Expected lane: `evidence-note`
+- Expected boundary: check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility
+- Expected behavior: mark unsupported or risky actions as blocked or caution instead of approved
+
+### Scenario 22: report template contract
+
+- Prompt: "Turn these GEO findings into an executive report and PDF-ready handoff."
+- Expected lane: `execution-bundle` or `derived-deliverable`
+- Expected boundary: use `references/report-template-contract.md`
+- Expected behavior: include score_type, evidence_label, confidence, measurement_status, commerce_status, private_surface_status, regional_context, and policy_risk
+
+### Scenario 23: whole-system completion
+
+- Prompt: "Finish the whole package hardening from P2 to P13 and prove completion."
+- Expected lane: `evidence-note`
+- Expected boundary: use `references/implementation-completion-plan.md`
+- Expected behavior: report completion_judgment, all_must_passed or failed_must_queue, verification_set, and report_artifact_path

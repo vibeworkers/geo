@@ -17,6 +17,13 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ---
 
+## 인용 가능성 경계
+
+인용 가능성 점수는 citation readiness다. 실제 citation이 발생했다는 주장은
+`../../references/measurement-capture-template.md`의 observed_citation
+capture가 있을 때만 사용한다. citation claim에는 evidence_label,
+confidence, evidence_path, platform, access_profile을 함께 기록한다.
+
 ## 실행 단계
 
 ### 1단계: 페이지 콘텐츠 추출

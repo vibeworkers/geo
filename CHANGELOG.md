@@ -8,6 +8,24 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+- Added platform-truth, measurement-loop, commerce-readiness, private-surface,
+  regional/situational, policy-risk, report-template, and implementation
+  completion reference contracts so GEO claims separate readiness, heuristic,
+  observed answer/citation, referral, conversion, and unresolved risk.
+- Corrected platform crawler guidance for OpenAI, Google, and Anthropic:
+  `OAI-SearchBot`, `GPTBot`, `ChatGPT-User`, `ClaudeBot`,
+  `Claude-SearchBot`, and `Claude-User` are separated by role; `Googlebot`
+  remains the Google Search crawler surface, while `Google-Extended` is not
+  treated as a Google Search inclusion or ranking control.
+- Marked Grok-related crawler controls as requiring first-party verification
+  before platform-specific implementation advice.
+- Aligned audit, crawler, platform optimizer, schema, prospect, proposal,
+  report, and PDF-report subskills around confidence labels, evidence paths,
+  report metadata, commerce/action readiness, and no-overclaim boundaries.
+- Expanded `scripts/check_geo_skill.py` to validate the new reference contracts,
+  subskill reference wiring, portability scans, and stale platform-truth
+  regressions.
+
 ## 0.9.1 - 2026-05-08
 
 - Clarified that GEO release versions always use the three-part `X.Y.Z` form,

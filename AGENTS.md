@@ -4,7 +4,7 @@ This root is the portable GEO skill package checkout. Keep root guidance
 focused on the portable routing contract, bundled reference integrity, and the
 optional advanced subskill bundle.
 
-Representative surface: `/Volumes/Extend/Projects/DevWorkspace/geo/SKILL.md`
+Representative surface: `SKILL.md`
 
 ## Structure & Scope
 

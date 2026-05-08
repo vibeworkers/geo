@@ -17,6 +17,14 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ---
 
+## 콘텐츠 claim 경계
+
+콘텐츠 품질과 E-E-A-T 점수는 readiness/heuristic 신호다. brand superiority,
+regulated claims, medical/legal/finance advice, privacy-sensitive claims는
+`../../references/policy-risk-gate.md`로 확인한다. 실제 AI answer inclusion
+이나 observed_citation은 `../../references/measurement-capture-template.md`
+로 캡처해야 한다.
+
 ## 실행 단계
 
 ### 1단계: 페이지 콘텐츠 추출

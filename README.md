@@ -232,6 +232,16 @@ If advanced workflows are not available or do not start as expected:
 - `references/versioning-protocol.md`: release rules and the three-part `X.Y.Z` version structure
 - `references/runtime-adaptation.md`: runtime compatibility and per-runtime boundaries
 - `references/execution-skill-matrix.md`: advanced execution workflow list
+- `references/measurement-loop.md`: evidence ladder for measured GEO outcome claims
+- `references/commerce-readiness.md`: commerce/action readiness boundary
+- `references/platform-truth-registry.md`: verified platform/crawler/source claim registry
+- `references/measurement-capture-template.md`: repeatable answer, citation, referral, and conversion capture template
+- `references/commerce-audit-worksheet.md`: product, schema, merchant, catalog, checkout/action, and measurement worksheet
+- `references/private-surface-routing.md`: public, private, logged-in, connector, and user-provided context boundary
+- `references/regional-situational-routing.md`: regional, vertical, and brand-maturity routing boundary
+- `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, and commerce eligibility gate
+- `references/report-template-contract.md`: required report metadata and claim-label contract
+- `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, and completion plan
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
 ### System Notes
@@ -487,6 +497,16 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/versioning-protocol.md`: 릴리즈 규칙과 3단계 `X.Y.Z` 버전 구조
 - `references/runtime-adaptation.md`: 런타임 호환성과 모델별 경계
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
+- `references/measurement-loop.md`: 측정된 GEO 성과 주장용 evidence ladder
+- `references/commerce-readiness.md`: commerce/action readiness 경계
+- `references/platform-truth-registry.md`: 검증된 platform/crawler/source claim registry
+- `references/measurement-capture-template.md`: answer, citation, referral, conversion 반복 측정 template
+- `references/commerce-audit-worksheet.md`: product, schema, merchant, catalog, checkout/action, measurement worksheet
+- `references/private-surface-routing.md`: public, private, logged-in, connector, user-provided context 경계
+- `references/regional-situational-routing.md`: regional, vertical, brand-maturity routing 경계
+- `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, commerce eligibility gate
+- `references/report-template-contract.md`: report metadata와 claim-label 계약
+- `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, completion plan
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 
 ### 시스템 개요
