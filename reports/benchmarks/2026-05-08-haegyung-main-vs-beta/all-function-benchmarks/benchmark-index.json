@@ -1,0 +1,240 @@
+{
+  "generated_at": "2026-05-07T21:24:51.510254+00:00",
+  "target": "https://haegyung.com",
+  "comparison_mode": "clean main@a652637 vs beta@2d896ac readiness surface",
+  "source_artifacts": [
+    "data/comparison.json",
+    "data/browser-performance.json"
+  ],
+  "reports": [
+    {
+      "skill": "geo-audit",
+      "path": "all-function-benchmarks/reports/geo-audit.benchmark.md",
+      "main_score": 28.6,
+      "beta_score": 100.0,
+      "delta": 71.4,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_six_domains",
+        "audit_measurement_boundary",
+        "audit_report_contract",
+        "policy_private_boundaries",
+        "regional_commerce_boundaries"
+      ],
+      "added_lines": 33,
+      "removed_lines": 5
+    },
+    {
+      "skill": "geo-brand-mentions",
+      "path": "all-function-benchmarks/reports/geo-brand-mentions.benchmark.md",
+      "main_score": 40.0,
+      "beta_score": 100.0,
+      "delta": 60.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "policy_private_boundaries",
+        "regional_commerce_boundaries"
+      ],
+      "added_lines": 6,
+      "removed_lines": 0
+    },
+    {
+      "skill": "geo-citability",
+      "path": "all-function-benchmarks/reports/geo-citability.benchmark.md",
+      "main_score": 50.0,
+      "beta_score": 100.0,
+      "delta": 50.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "audit_report_contract"
+      ],
+      "added_lines": 7,
+      "removed_lines": 0
+    },
+    {
+      "skill": "geo-compare",
+      "path": "all-function-benchmarks/reports/geo-compare.benchmark.md",
+      "main_score": 40.0,
+      "beta_score": 100.0,
+      "delta": 60.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "crawler_search_user_split",
+        "regional_commerce_boundaries"
+      ],
+      "added_lines": 15,
+      "removed_lines": 5
+    },
+    {
+      "skill": "geo-content",
+      "path": "all-function-benchmarks/reports/geo-content.benchmark.md",
+      "main_score": 50.0,
+      "beta_score": 100.0,
+      "delta": 50.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "policy_private_boundaries"
+      ],
+      "added_lines": 8,
+      "removed_lines": 0
+    },
+    {
+      "skill": "geo-crawlers",
+      "path": "all-function-benchmarks/reports/geo-crawlers.benchmark.md",
+      "main_score": 28.6,
+      "beta_score": 100.0,
+      "delta": 71.4,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "crawler_search_user_split",
+        "google_extended_correct_boundary",
+        "grok_uncertainty_marked",
+        "stale_anthropic_ai_removed",
+        "policy_private_boundaries"
+      ],
+      "added_lines": 82,
+      "removed_lines": 37
+    },
+    {
+      "skill": "geo-llmstxt",
+      "path": "all-function-benchmarks/reports/geo-llmstxt.benchmark.md",
+      "main_score": 50.0,
+      "beta_score": 100.0,
+      "delta": 50.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "policy_private_boundaries"
+      ],
+      "added_lines": 9,
+      "removed_lines": 2
+    },
+    {
+      "skill": "geo-platform-optimizer",
+      "path": "all-function-benchmarks/reports/geo-platform-optimizer.benchmark.md",
+      "main_score": 25.0,
+      "beta_score": 100.0,
+      "delta": 75.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "crawler_search_user_split",
+        "audit_measurement_boundary",
+        "google_extended_correct_boundary",
+        "grok_uncertainty_marked",
+        "policy_private_boundaries",
+        "regional_commerce_boundaries"
+      ],
+      "added_lines": 40,
+      "removed_lines": 16
+    },
+    {
+      "skill": "geo-proposal",
+      "path": "all-function-benchmarks/reports/geo-proposal.benchmark.md",
+      "main_score": 33.3,
+      "beta_score": 100.0,
+      "delta": 66.7,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_report_contract",
+        "regional_commerce_boundaries",
+        "policy_private_boundaries",
+        "validator_checks_subskill_references"
+      ],
+      "added_lines": 23,
+      "removed_lines": 0
+    },
+    {
+      "skill": "geo-prospect",
+      "path": "all-function-benchmarks/reports/geo-prospect.benchmark.md",
+      "main_score": 40.0,
+      "beta_score": 100.0,
+      "delta": 60.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "regional_commerce_boundaries",
+        "policy_private_boundaries"
+      ],
+      "added_lines": 33,
+      "removed_lines": 15
+    },
+    {
+      "skill": "geo-report",
+      "path": "all-function-benchmarks/reports/geo-report.benchmark.md",
+      "main_score": 33.3,
+      "beta_score": 100.0,
+      "delta": 66.7,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_report_contract",
+        "audit_measurement_boundary",
+        "policy_private_boundaries",
+        "regional_commerce_boundaries"
+      ],
+      "added_lines": 32,
+      "removed_lines": 6
+    },
+    {
+      "skill": "geo-report-pdf",
+      "path": "all-function-benchmarks/reports/geo-report-pdf.benchmark.md",
+      "main_score": 50.0,
+      "beta_score": 100.0,
+      "delta": 50.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_report_contract",
+        "validator_checks_subskill_references"
+      ],
+      "added_lines": 11,
+      "removed_lines": 2
+    },
+    {
+      "skill": "geo-schema",
+      "path": "all-function-benchmarks/reports/geo-schema.benchmark.md",
+      "main_score": 40.0,
+      "beta_score": 100.0,
+      "delta": 60.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_six_domains",
+        "regional_commerce_boundaries",
+        "validator_checks_subskill_references"
+      ],
+      "added_lines": 11,
+      "removed_lines": 0
+    },
+    {
+      "skill": "geo-technical",
+      "path": "all-function-benchmarks/reports/geo-technical.benchmark.md",
+      "main_score": 40.0,
+      "beta_score": 100.0,
+      "delta": 60.0,
+      "criteria": [
+        "skill_exists",
+        "validator_pass",
+        "audit_measurement_boundary",
+        "policy_private_boundaries",
+        "validator_checks_subskill_references"
+      ],
+      "added_lines": 12,
+      "removed_lines": 0
+    }
+  ]
+}

@@ -27,6 +27,18 @@ Additional guidance is included for:
 - GitHub-ready intro images in this README plus shareable landing pages with
   Open Graph and schema.org metadata under `docs/`
 
+### Related Cross-Project Use
+
+On 2026-05-08, `references/commerce-readiness.md` was reused in the
+`AgenticEra-ContentsMarketing` textbook refresh together with fitCrafting
+source material, official Google/OpenAI shopping docs, and Consensus research.
+The sibling project's own workspace keeps the detailed output and evidence
+pack; this portable package records only the reuse boundary, not machine-local
+absolute paths.
+The role of `geo` in that refresh was to keep content readiness, merchant
+readiness, action readiness, and measurement readiness separated instead of
+collapsing them into one generic "AI commerce" claim.
+
 ### What This Project Is
 
 `geo` is a portable skill package for GEO strategy, teaching-material design,
@@ -242,6 +254,7 @@ If advanced workflows are not available or do not start as expected:
 - `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, and commerce eligibility gate
 - `references/report-template-contract.md`: required report metadata and claim-label contract
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, and completion plan
+- `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: versioned Korean benchmark report and source metrics for `haegyung.com`
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
 ### System Notes
@@ -294,6 +307,18 @@ workflow로 연결하는 portable GEO skill 패키지입니다.
 - 문제 해결과 workflow별 실행 문서
 - 이 README의 GitHub용 소개 이미지와 `docs/` 아래 Open Graph /
   schema.org 공유 페이지
+
+### 교차 프로젝트 사용 기록
+
+2026-05-08 기준 `references/commerce-readiness.md`는 fitCrafting source,
+Google/OpenAI 공식 shopping 문서, Consensus research와 함께
+`AgenticEra-ContentsMarketing` 교재 refresh에 재사용됐다.
+상세 산출물과 evidence pack은 해당 sibling project workspace가 소유하며,
+이 portable package에는 machine-local absolute path를 기록하지 않고 재사용
+경계만 남긴다.
+이때 `geo`의 역할은 content readiness, merchant readiness, action readiness,
+measurement readiness를 한 덩어리 "AI commerce" 주장으로 뭉개지지 않게
+분리하는 기준을 제공하는 것이었다.
 
 ### 이 프로젝트는 무엇인가
 
@@ -507,6 +532,7 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, commerce eligibility gate
 - `references/report-template-contract.md`: report metadata와 claim-label 계약
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, completion plan
+- `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: `haegyung.com`용 versioned 한글 벤치마크 리포트와 source metrics
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 
 ### 시스템 개요

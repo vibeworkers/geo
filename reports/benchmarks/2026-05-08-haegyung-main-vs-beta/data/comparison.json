@@ -1,0 +1,314 @@
+{
+  "target": "https://haegyung.com",
+  "branches": [
+    {
+      "name": "main-clean-baseline",
+      "root": "git-worktree:main-clean-baseline",
+      "branch": "HEAD",
+      "rev": "a652637",
+      "status": [
+        "## HEAD (no branch)"
+      ],
+      "validator": {
+        "cmd": "python3 scripts/check_geo_skill.py",
+        "returncode": 0,
+        "stdout": "[ok] geo skill package and portable contract are consistent",
+        "stderr": "",
+        "elapsed_ms": 49.6
+      },
+      "reference_count": 7,
+      "references": [
+        "references/concept-map.md",
+        "references/execution-skill-matrix.md",
+        "references/experiment-scenarios.md",
+        "references/gate-conditions.md",
+        "references/glossary.md",
+        "references/runtime-adaptation.md",
+        "references/versioning-protocol.md"
+      ],
+      "checks": {
+        "validator_pass": true,
+        "new_reference_set_complete": false,
+        "audit_six_domains": false,
+        "audit_measurement_boundary": false,
+        "audit_report_contract": false,
+        "crawler_search_user_split": false,
+        "google_extended_correct_boundary": false,
+        "grok_uncertainty_marked": false,
+        "stale_anthropic_ai_removed": false,
+        "policy_private_boundaries": false,
+        "regional_commerce_boundaries": false,
+        "validator_checks_subskill_references": false
+      },
+      "score": 10,
+      "score_max": 100
+    },
+    {
+      "name": "beta",
+      "root": "repo-root",
+      "branch": "beta",
+      "rev": "2d896ac",
+      "normalization_note": "Original probe ran before the beta commit; beta@2d896ac contains the same GEO readiness surface.",
+      "status": [
+        "## beta"
+      ],
+      "validator": {
+        "cmd": "python3 scripts/check_geo_skill.py",
+        "returncode": 0,
+        "stdout": "[ok] geo skill package and portable contract are consistent",
+        "stderr": "",
+        "elapsed_ms": 87.9
+      },
+      "reference_count": 17,
+      "references": [
+        "references/commerce-audit-worksheet.md",
+        "references/commerce-readiness.md",
+        "references/concept-map.md",
+        "references/execution-skill-matrix.md",
+        "references/experiment-scenarios.md",
+        "references/gate-conditions.md",
+        "references/glossary.md",
+        "references/implementation-completion-plan.md",
+        "references/measurement-capture-template.md",
+        "references/measurement-loop.md",
+        "references/platform-truth-registry.md",
+        "references/policy-risk-gate.md",
+        "references/private-surface-routing.md",
+        "references/regional-situational-routing.md",
+        "references/report-template-contract.md",
+        "references/runtime-adaptation.md",
+        "references/versioning-protocol.md"
+      ],
+      "checks": {
+        "validator_pass": true,
+        "new_reference_set_complete": true,
+        "audit_six_domains": true,
+        "audit_measurement_boundary": true,
+        "audit_report_contract": true,
+        "crawler_search_user_split": true,
+        "google_extended_correct_boundary": true,
+        "grok_uncertainty_marked": true,
+        "stale_anthropic_ai_removed": true,
+        "policy_private_boundaries": true,
+        "regional_commerce_boundaries": true,
+        "validator_checks_subskill_references": true
+      },
+      "score": 100,
+      "score_max": 100
+    }
+  ],
+  "site": {
+    "target_url": "https://haegyung.com",
+    "captured_at": "2026-05-07T21:01:17Z",
+    "homepage": {
+      "status_code": 200,
+      "final_url": "https://www.haegyung.com/",
+      "response_ms_runs": [
+        4016.0,
+        2558.5,
+        1577.6
+      ],
+      "response_ms_median": 2558.5,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Server": "cloudflare",
+        "last-modified": "Thu, 07 May 2026 13:01:25 GMT",
+        "Cache-Control": "max-age=0, s-maxage=2592000"
+      },
+      "html_bytes": 700038
+    },
+    "head": {
+      "title": "해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+      "title_length": 33,
+      "description": "낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+      "description_length": 28,
+      "robots_meta": "follow, index",
+      "viewport": "width=device-width, initial-scale=1",
+      "canonical": "https://www.haegyung.com/",
+      "html_lang": "ko-KR",
+      "og": {
+        "title": "해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+        "description": "낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+        "image": "",
+        "site_name": "뮤직아카이브",
+        "url": "https://www.haegyung.com/",
+        "type": "website"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+        "description": "낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.",
+        "image": ""
+      }
+    },
+    "structure": {
+      "h1_count": 5,
+      "h1": [
+        "착각하지 마세요 – 2010년 부터 착각중인 당신에게-",
+        "LLM을 통한 성과의 에센스 “증강지능과 인지적 프롬프트”",
+        "시스템1vs2란 허상: 기존 프롬프트 엔지니어링의 한계",
+        "관련 연구 및 설명",
+        "📌 서문: 왜 이 글을 쓰는가?"
+      ],
+      "h2_count": 166,
+      "h2_sample": [
+        "프롬프트 리뷰 EP01: “이 분야의 모든 전문가가 공유하는 다섯 가지 핵심 멘탈 모델”라는 프롬프트를 효과적으로 개선하자.",
+        "바로 답부터 말하면",
+        "왜 이 질문이 자꾸 그럴듯한 오답을 부르는가",
+        "펼쳐보기 1: “이 분야”는 생각보다 큰 빈칸이다",
+        "펼쳐보기 2: “모든 전문가”는 멋있지만 너무 강한 표현이다",
+        "펼처보기 3: “공유하는”은 “완전히 같다”는 뜻이 아니다",
+        "펼쳐보기 4: “핵심 멘탈 모델”이라는 표현 자체가 틀린 것은 아니다",
+        "펼쳐보기 5: “다섯 가지”는 분석 결과보다 출력 형식에 가깝다",
+        "결국 이 프롬프트의 핵심 문제는 무엇인가",
+        "더 나은 프롬프트는 이렇게 바뀐다"
+      ],
+      "schema_block_count": 1,
+      "schema_types": [
+        "CollectionPage",
+        "ImageObject",
+        "MusicGroup",
+        "SearchAction",
+        "WebSite"
+      ],
+      "image_count": 54,
+      "images_missing_alt_count": 0,
+      "missing_alt_sample": [],
+      "anchor_count": 258,
+      "internal_anchor_count": 192,
+      "external_anchor_count": 66,
+      "script_count": 33,
+      "noscript_text_length": 0
+    },
+    "root_files": {
+      "/robots.txt": {
+        "url": "https://haegyung.com/robots.txt",
+        "ok": true,
+        "status_code": 200,
+        "final_url": "https://www.haegyung.com/robots.txt",
+        "elapsed_ms": 3190.0,
+        "headers": {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Server": "cloudflare",
+          "Cache-Control": "max-age=2592000, s-maxage=2592000",
+          "last-modified": "Thu, 07 May 2026 21:01:12 GMT"
+        },
+        "history": [
+          {
+            "status_code": 301,
+            "url": "https://haegyung.com/robots.txt",
+            "location": "https://www.haegyung.com/robots.txt"
+          }
+        ],
+        "text_sample": "Sitemap: https://www.haegyung.com/sitemap.xml\nSitemap: https://www.haegyung.com/news-sitemap.xml\nUser-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://www.haegyung.com/sitemap_index.xml\n",
+        "text_length": 217
+      },
+      "/llms.txt": {
+        "url": "https://haegyung.com/llms.txt",
+        "ok": true,
+        "status_code": 200,
+        "final_url": "https://haegyung.com/llms.txt",
+        "elapsed_ms": 1297.9,
+        "headers": {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Server": "cloudflare",
+          "x-robots-tag": "noindex, nofollow",
+          "last-modified": "Thu, 07 May 2026 21:01:13 GMT",
+          "Cache-Control": "max-age=2592000, s-maxage=2592000"
+        },
+        "history": [],
+        "text_sample": "Generated by Rank Math SEO, this is an llms.txt file designed to help LLMs better understand and index this website.\n\n# 뮤직아카이브: 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\n\n## Sitemaps\n[XML Sitemap](https://www.haegyung.com/sitemap_index.xml): Includes all crawlable and indexable pages.\n\n## 글\n- [프롬프트 리뷰 EP01: &ldquo;이 분야의 모든 전문가가 공유하는 다섯 가지 핵심 멘탈 모델&rdquo;라는 프롬프트를 효과적으로 개선하자.](https://www.haegyung.com/%ed%94%84%eb%a1%ac%ed%94%84%ed%8a%b8-%eb%a6%ac%eb%b7%b0-01-%ec%a0%84%eb%ac%b8%ea%b0%80%ea%b0%80-%ea%b3%b5%ec%9c%a0%ed%95%98%eb%8a%94-%eb%a9%98%ed%83%88%eb%aa%a8%eb%8d%b8/): haegyung.com 의 모든 글은, LLM 과 협력적 글쓰기를 통하여 작성된 글이며,근거 기반 프롬프트 리뷰 는 한국어 버전은 이곳에, 영문버전은 Augmentedtechnology SUBSTACK 에 발행됩니다.\n- [AI 의사결정지원(DSS)이 실패하는 이유: 신뢰 설계 부재](https://www.haegyung.com/ko-ai-decision-support-trust/): AI 의사결정지원이 실패하는 이유는 &ldquo;모델이 나빠서&rdquo;만이 아니다.우리가 신뢰를 설계하지 않았기 때문이다.\n- [바이브 코딩 과몰입(터널)에서 빠져나오는 방법](https://www.haegyung.com/vibe-coding-overfocus-escape-practice-guide/): 이 글을 쓰게 된 이유는, 바이브 코딩을 하다&nbsp;&lsquo;한참 동안&rsquo;&nbsp;한 작업에 깊게 묶여 있다는 이야기를 여러 번 들었기 때문입니다. 제 경험상 그런 상태는 생각보다 쉽게 반복되진 않아서, 혹시 소진으로 이어질까 염려가 됐습니다. 그래서 이 방식을 쓰는 분들이 지금이 몰입인지 과몰입인지 스스로 점검하고,&nbsp;의도적인 몰입이 주는 효과와 가치를 함께 나누고 싶었습니다.\n- [프로그래밍을 넘어:머신이 인간",
+        "text_length": 14525
+      },
+      "/sitemap.xml": {
+        "url": "https://haegyung.com/sitemap.xml",
+        "ok": true,
+        "status_code": 200,
+        "final_url": "https://haegyung.com/sitemap.xml",
+        "elapsed_ms": 1130.7,
+        "headers": {
+          "Content-Type": "text/xml; charset=UTF-8",
+          "Server": "cloudflare",
+          "Cache-Control": "max-age=0, s-maxage=2592000"
+        },
+        "history": [],
+        "text_sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!--generator='jetpack-15.8'-->\n<!--Jetpack_Sitemap_Buffer_Master_XMLWriter-->\n<?xml-stylesheet type=\"text/xsl\" href=\"//www.haegyung.com/sitemap-index.xsl\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n <sitemap>\n  <loc>https://www.haegyung.com/sitemap-1.xml</loc>\n  <lastmod>2026-03-24T15:11:48Z</lastmod>\n </sitemap>\n <sitemap>\n  <loc>https://www.haegyung.com/image-sitemap-1.xml</loc>\n  <lastmod>2026-03-22T09:56:27Z</lastmod>\n </sitemap>\n</sitemapindex>\n",
+        "text_length": 520
+      },
+      "/sitemap_index.xml": {
+        "url": "https://haegyung.com/sitemap_index.xml",
+        "ok": true,
+        "status_code": 200,
+        "final_url": "https://haegyung.com/sitemap_index.xml",
+        "elapsed_ms": 1489.7,
+        "headers": {
+          "Content-Type": "text/xml; charset=UTF-8",
+          "Server": "cloudflare",
+          "x-robots-tag": "noindex",
+          "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0, s-maxage=2592000"
+        },
+        "history": [],
+        "text_sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"//www.haegyung.com/main-sitemap.xsl\"?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\t<sitemap>\n\t\t<loc>https://www.haegyung.com/post-sitemap.xml</loc>\n\t\t<lastmod>2026-03-24T15:11:48+00:00</lastmod>\n\t</sitemap>\n\t<sitemap>\n\t\t<loc>https://www.haegyung.com/page-sitemap.xml</loc>\n\t\t<lastmod>2026-02-24T18:39:31+00:00</lastmod>\n\t</sitemap>\n\t<sitemap>\n\t\t<loc>https://www.haegyung.com/category-sitemap.xml</loc>\n\t\t<lastmod>2026-03-24T15:11:48+00:00</lastmod>\n\t</sitemap>\n\t<sitemap>\n\t\t<loc>https://www.haegyung.com/video-sitemap.xml</loc>\n\t\t<lastmod>2024-08-25T13:57:03+00:00</lastmod>\n\t</sitemap>\n\t<sitemap>\n\t\t<loc>https://www.haegyung.com/local-sitemap.xml</loc>\n\t\t<lastmod>2024-07-07T05:30:54+00:00</lastmod>\n\t</sitemap>\n</sitemapindex>\n<!-- XML Sitemap generated by Rank Math SEO Plugin (c) Rank Math - rankmath.com -->",
+        "text_length": 913
+      }
+    },
+    "robots_access": {
+      "GPTBot": true,
+      "OAI-SearchBot": true,
+      "ChatGPT-User": true,
+      "ClaudeBot": true,
+      "Claude-SearchBot": true,
+      "Claude-User": true,
+      "Googlebot": true,
+      "Google-Extended": true,
+      "PerplexityBot": true,
+      "Bingbot": true,
+      "GrokBot": true,
+      "xAI-Grok": true,
+      "Grok-DeepSearch": true
+    },
+    "llms": {
+      "exists": true,
+      "bytes": 14525,
+      "has_sitemap": true,
+      "has_site_url": true
+    },
+    "sitemap": {
+      "exists": true,
+      "url_count_sampled": 2
+    },
+    "redirects": {
+      "http_root": {
+        "url": "http://haegyung.com/",
+        "ok": true,
+        "status_code": 301,
+        "final_url": "http://haegyung.com/",
+        "elapsed_ms": 591.0,
+        "headers": {
+          "Content-Type": "text/html",
+          "Server": "cloudflare",
+          "Location": "https://haegyung.com/"
+        },
+        "history": [],
+        "text_sample": "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+        "text_length": 162
+      },
+      "www_root": {
+        "url": "https://www.haegyung.com/",
+        "ok": true,
+        "status_code": 200,
+        "final_url": "https://www.haegyung.com/",
+        "elapsed_ms": 382.0,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "Server": "cloudflare",
+          "last-modified": "Thu, 07 May 2026 13:01:25 GMT",
+          "Cache-Control": "max-age=0, s-maxage=2592000"
+        },
+        "history": [],
+        "text_sample": "<!DOCTYPE html>\n<html lang=\"ko-KR\" prefix=\"og: https://ogp.me/ns#\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- Rank Math 프로 검색 엔진 최적화 - https://rankmath.com/ -->\n<title>해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.</title>\n<meta name=\"description\" content=\"낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\"/>\n<meta name=\"robots\" content=\"follow, index\"/>\n<link rel=\"canonical\" href=\"https://www.haegyung.com/\" />\n<link rel=\"next\" href=\"https://www.haegyung.com/page/2/\" />\n<meta property=\"og:locale\" content=\"ko_KR\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:title\" content=\"해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\" />\n<meta property=\"og:description\" content=\"낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\" />\n<meta property=\"og:url\" content=\"https://www.haegyung.com/\" />\n<meta property=\"og:site_name\" content=\"뮤직아카이브\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"해경 - 낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\" />\n<meta name=\"twitter:description\" content=\"낮이건 밤이건 우리의 길을 비추는 존재를 빚어간다.\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema-pro\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"MusicGroup\",\"@id\":\"",
+        "text_length": 699534
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "target": "https://haegyung.com",
+  "capturedAt": "2026-05-07T21:04:14.565Z",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "wallMs": 5509,
+      "url": "https://www.haegyung.com/",
+      "metrics": {
+        "navigation": {
+          "startTime": 0,
+          "domContentLoadedEventEnd": 4177.5,
+          "loadEventEnd": 5506.19999999553,
+          "responseStart": 3017.6999999955297,
+          "responseEnd": 3338.1999999955297,
+          "transferSize": 147903,
+          "encodedBodySize": 147603,
+          "decodedBodySize": 700038
+        },
+        "resourceCount": 87,
+        "resourceCountByType": {
+          "link": 9,
+          "script": 29,
+          "img": 29,
+          "fetch": 5,
+          "iframe": 3,
+          "xmlhttprequest": 12
+        },
+        "resourceTransferSize": 893969,
+        "resourceEncodedBodySize": 884669,
+        "resourceDecodedBodySize": 2117920,
+        "documentScrollHeight": 153738,
+        "h1Count": 5,
+        "h2Count": 166,
+        "imageCount": 135,
+        "scriptCount": 43
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "wallMs": 4892,
+      "url": "https://www.haegyung.com/",
+      "metrics": {
+        "navigation": {
+          "startTime": 0,
+          "domContentLoadedEventEnd": 3649.2000000029802,
+          "loadEventEnd": 4889.89999999851,
+          "responseStart": 2416.39999999851,
+          "responseEnd": 2730.5,
+          "transferSize": 147356,
+          "encodedBodySize": 147056,
+          "decodedBodySize": 700038
+        },
+        "resourceCount": 89,
+        "resourceCountByType": {
+          "link": 9,
+          "script": 31,
+          "img": 29,
+          "fetch": 4,
+          "iframe": 4,
+          "xmlhttprequest": 12
+        },
+        "resourceTransferSize": 909387,
+        "resourceEncodedBodySize": 899487,
+        "resourceDecodedBodySize": 2218311,
+        "documentScrollHeight": 220029,
+        "h1Count": 5,
+        "h2Count": 166,
+        "imageCount": 135,
+        "scriptCount": 43
+      }
+    }
+  ]
+}
