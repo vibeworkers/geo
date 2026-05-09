@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0",
   "run_id": "haegyung-observed-outcome-initial-20260509",
-  "captured_at": "2026-05-09T13:35:00Z",
+  "captured_at": "2026-05-09T13:39:48Z",
   "operator": "codex",
   "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
   "benchmark_pack": "reports/benchmarks/2026-05-08-haegyung-main-vs-beta",
@@ -10,13 +10,13 @@
     "entity": "Haegyung (해경)",
     "language": "ko-KR source surface; English stored prompts",
     "measurement_lane": "observed outcome",
-    "current_status": "public_search_precheck_captured_chatgpt_public_default_negative_perplexity_public_positive_exact_chatgpt_search_and_gemini_pending"
+    "current_status": "public_search_precheck_captured_chatgpt_public_default_negative_perplexity_public_positive_google_ai_overviews_public_negative_exact_chatgpt_search_pending"
   },
   "claim_boundary": {
     "readiness_result": "main 10/100, beta 100/100",
     "public_search_precheck": "captured",
-    "named_ai_platform_observed_answer": "observed_for_perplexity_public_P1_P2_P3",
-    "named_ai_platform_observed_citation": "observed_for_perplexity_public_P1_P2; P3 target URL not expanded",
+    "named_ai_platform_observed_answer": "observed_for_perplexity_public_P1_P2_P3; not_observed_for_chatgpt_public_default_or_google_ai_overviews_public",
+    "named_ai_platform_observed_citation": "observed_for_perplexity_public_P1_P2; Perplexity P3 target URL not expanded; not_observed_for_chatgpt_public_default_or_google_ai_overviews_public",
     "referral_signal": "not_measured",
     "conversion_signal": "not_measured",
     "headline_rule": "do not combine readiness score with observed outcome until named platform captures exist"
@@ -81,7 +81,7 @@
         "P2",
         "P3"
       ],
-      "status": "pending_platform_capture"
+      "status": "google_search_ai_overview_public_captured_negative; standalone Gemini app not measured in this bundle"
     }
   ],
   "artifacts": [
@@ -90,7 +90,8 @@
     "observed-outcomes/observed-answer-captures.json",
     "observed-outcomes/observed-citation-evidence.md",
     "observed-outcomes/chatgpt-public-capture-20260509.md",
-    "observed-outcomes/perplexity-public-capture-20260509.md"
+    "observed-outcomes/perplexity-public-capture-20260509.md",
+    "observed-outcomes/google-ai-overviews-public-capture-20260509.md"
   ],
   "chatgpt_public_default_probe": {
     "status": "captured_negative",
@@ -106,6 +107,14 @@
     "access_profile": "public logged-out",
     "result_boundary": "P1 and P2 are target-positive observed_citation rows. P3 is target-positive observed_answer only because the source URL was not expanded in the visible capture.",
     "evidence_path": "observed-outcomes/perplexity-public-capture-20260509.md"
+  },
+  "google_ai_overviews_public_capture": {
+    "status": "captured_negative",
+    "checked_at": "2026-05-09T13:39:48Z",
+    "access_profile": "public signed-out Google Search",
+    "standalone_gemini_app_measured": false,
+    "result_boundary": "P1 to P3 triggered Google Search AI Overview, but none produced target-positive observed_answer or observed_citation for haegyung.com. P2 showed haegyung.com only as a regular web result below the AI Overview.",
+    "evidence_path": "observed-outcomes/google-ai-overviews-public-capture-20260509.md"
   },
   "public_source_precheck": {
     "status": "captured",

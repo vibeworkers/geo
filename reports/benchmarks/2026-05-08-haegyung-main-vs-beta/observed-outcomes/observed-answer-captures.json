@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "run_id": "haegyung-observed-outcome-initial-20260509",
-  "generated_at": "2026-05-09T13:35:00Z",
-  "measurement_status": "partial_named_platform_capture_positive_perplexity_exact_chatgpt_search_and_gemini_pending",
-  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers. ChatGPT public default rows are measured platform probes, but they are negative target captures and must not be counted as positive observed_answer or observed_citation for haegyung.com. Perplexity public rows P1 and P2 are target-positive observed_citation captures; P3 is target-positive observed_answer only because the source URL was not expanded in the visible capture.",
+  "generated_at": "2026-05-09T13:39:48Z",
+  "measurement_status": "partial_named_platform_capture_positive_perplexity_google_aio_negative_exact_chatgpt_search_pending",
+  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers. ChatGPT public default rows and Google AI Overview public rows are measured platform probes, but they are negative target captures and must not be counted as positive observed_answer or observed_citation for haegyung.com. Perplexity public rows P1 and P2 are target-positive observed_citation captures; P3 is target-positive observed_answer only because the source URL was not expanded in the visible capture. Google AI Overview P2 showed haegyung.com as a regular web result below the AI Overview, which is SERP visibility only, not observed AI Overview answer or citation.",
   "target": {
     "entity": "Haegyung (해경)",
     "target_url": "https://haegyung.com",
@@ -140,6 +140,76 @@
       "evidence_label": "observed_answer",
       "confidence": "medium",
       "evidence_path": "observed-outcomes/perplexity-public-capture-20260509.md#p3"
+    },
+    {
+      "prompt_id": "P1",
+      "platform": "Google AI Overviews",
+      "platform_surface": "Google Search public AI Overview; standalone Gemini app not measured",
+      "access_profile": "public signed-out",
+      "region_language": "isolated browser session; English Google UI; IP-based Ohio footer varied during capture",
+      "captured_at": "2026-05-09T13:39:48Z",
+      "prompt_text": "Who is Haegyung (해경)? Give a concise summary and cite the official website if you can verify it.",
+      "answer_status": "captured_non_target_or_ambiguous_entity",
+      "answer_summary": "The public AI Overview did not identify the target haegyung.com source. Initial and repeat observations resolved the query to non-target meanings such as Korea Coast Guard and Lim Haekyung from Love Jinx.",
+      "citation_status": "non_target_sources_no_target_citation",
+      "visible_citation_urls": [],
+      "visible_source_link_labels": [
+        "Manta",
+        "Love Jinx | Yaoi Wiki | Fandom",
+        "해양경찰청 누리집"
+      ],
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/google-ai-overviews-public-capture-20260509.md#p1"
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "Google AI Overviews",
+      "platform_surface": "Google Search public AI Overview; standalone Gemini app not measured",
+      "access_profile": "public signed-out",
+      "region_language": "isolated browser session; English Google UI; IP-based Ohio footer",
+      "captured_at": "2026-05-09T13:39:48Z",
+      "prompt_text": "Find the official website or official source for Haegyung (해경) and explain why you believe it is official.",
+      "answer_status": "captured_wrong_entity",
+      "answer_summary": "The AI Overview interpreted Haegyung / 해경 as Korea Coast Guard and stated that the official website is kcg.go.kr, with .go.kr and government-agency rationale.",
+      "citation_status": "wrong_entity_source_cited_no_target_citation",
+      "visible_citation_urls": [
+        "https://www.kcg.go.kr/",
+        "https://www.kcg.go.kr/english/main.do"
+      ],
+      "serp_target_visibility": "haegyung.com appeared as a regular web result below the AI Overview, not as an AI Overview answer or citation.",
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/google-ai-overviews-public-capture-20260509.md#p2"
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "Google AI Overviews",
+      "platform_surface": "Google Search public AI Overview; standalone Gemini app not measured",
+      "access_profile": "public signed-out",
+      "region_language": "isolated browser session; English Google UI; IP-based Ohio footer",
+      "captured_at": "2026-05-09T13:39:48Z",
+      "prompt_text": "Show me a source from Haegyung (해경)'s official website that describes its music, activities, or recent updates.",
+      "answer_status": "captured_wrong_entity",
+      "answer_summary": "The AI Overview resolved the request to Korea Coast Guard Orchestra activities and related Korea Coast Guard / 해양경찰청 notices rather than the target haegyung.com source.",
+      "citation_status": "wrong_entity_source_cited_no_target_citation",
+      "visible_citation_urls": [],
+      "visible_source_link_labels": [
+        "Korea Coast Guard",
+        "해양경찰청"
+      ],
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/google-ai-overviews-public-capture-20260509.md#p3"
     }
   ],
   "pending_capture_matrix": [
@@ -169,36 +239,6 @@
       "access_profile": "search-enabled or logged-in",
       "answer_status": "pending_exact_search_mode_capture",
       "citation_status": "pending_exact_search_mode_capture",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P1",
-      "platform": "Gemini / AI Overviews",
-      "access_profile": "public browser",
-      "answer_status": "pending",
-      "citation_status": "pending",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P2",
-      "platform": "Gemini / AI Overviews",
-      "access_profile": "public browser",
-      "answer_status": "pending",
-      "citation_status": "pending",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P3",
-      "platform": "Gemini / AI Overviews",
-      "access_profile": "public browser",
-      "answer_status": "pending",
-      "citation_status": "pending",
       "evidence_label": "not_measured",
       "confidence": "n/a",
       "evidence_path": ""

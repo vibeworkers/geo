@@ -8,13 +8,13 @@
 답변/인용 결과를 담기 위한 observed outcome lane이다.
 
 현재 상태는 `public_search_precheck`, `chatgpt.com` 공개 비로그인 기본 표면의
-negative capture, 그리고 Perplexity 공개 비로그인 표면의 partial positive
-capture까지다. ChatGPT capture는 명시적 ChatGPT Search-mode로 확정되지
-않았고, `haegyung.com` target observed answer/citation도 아니다. Perplexity
-capture는 P1/P2에서 target-positive observed citation을 보였지만, Gemini와
-exact ChatGPT Search-mode는 아직 pending이다. 따라서 이 디렉터리는
-`beta 100/100`을 cross-platform observed visibility claim으로 승격하지
-않는다.
+negative capture, Perplexity 공개 비로그인 표면의 partial positive capture,
+그리고 Google Search AI Overview 공개 표면의 negative capture까지다. ChatGPT
+capture는 명시적 ChatGPT Search-mode로 확정되지 않았고, `haegyung.com`
+target observed answer/citation도 아니다. Perplexity capture는 P1/P2에서
+target-positive observed citation을 보였지만, Google AI Overview는 P1/P2/P3
+모두 target-negative였다. 따라서 이 디렉터리는 `beta 100/100`을
+cross-platform observed visibility claim으로 승격하지 않는다.
 
 ## 파일 인벤토리
 
@@ -26,6 +26,8 @@ exact ChatGPT Search-mode는 아직 pending이다. 따라서 이 디렉터리는
   negative capture for `P1` to `P3`
 - `perplexity-public-capture-20260509.md`: public logged-out Perplexity partial
   positive capture for `P1` to `P3`
+- `google-ai-overviews-public-capture-20260509.md`: public Google Search AI
+  Overview negative capture for `P1` to `P3`
 
 ## Claim Boundary
 
@@ -36,7 +38,8 @@ exact ChatGPT Search-mode는 아직 pending이다. 따라서 이 디렉터리는
 | ChatGPT public default answer | captured negative | target not identified; non-target sources cited |
 | ChatGPT Search observed answer | pending | exact Search-mode surface not measured |
 | Perplexity observed answer/citation | captured partial positive | P1/P2 observed citation; P3 observed answer only |
-| Gemini / AI Overviews observed answer/citation | pending | not measured |
+| Google AI Overviews observed answer/citation | captured negative | target not identified; non-target sources cited |
+| standalone Gemini app observed answer/citation | not in baseline matrix | separate run needed only if this is split from AI Overviews |
 | referral / conversion | pending | not measured |
 
 ## Prompt Panel
@@ -51,9 +54,10 @@ Stored prompts remain English for cross-platform repeatability.
 
 ## Next Capture Rule
 
-The next operator should run `P1` to `P3` on exact ChatGPT Search-mode and
-Gemini / AI Overviews, and may rerun Perplexity P3 to expand the hidden source
-URL. Save:
+The next operator should run `P1` to `P3` on exact ChatGPT Search-mode, and may
+rerun Perplexity P3 to expand the hidden source URL. If the standalone Gemini
+app must be separated from Google Search AI Overview, record it as a distinct
+surface. Save:
 
 - exact platform name and access profile
 - region and language state

@@ -18,6 +18,11 @@ ChatGPT Search-mode evidence로 확정되지 않았고, `haegyung.com`을 인용
 visible Links tab에 나타난 `observed_citation`이고, P3는 source URL이
 확장되지 않아 `observed_answer`로만 분류했다.
 
+별도 Google Search AI Overview 공개 표면 negative capture는
+`google-ai-overviews-public-capture-20260509.md`에 저장했다. P1/P2/P3 모두
+`haegyung.com` target observed answer/citation이 아니며, P2에서만
+`haegyung.com`이 AI Overview 아래 일반 웹 결과로 노출됐다.
+
 ## Source Candidates
 
 | source | URL | use |
@@ -48,7 +53,9 @@ visible Links tab에 나타난 `observed_citation`이고, P3는 source URL이
 
 ## Next Required Evidence
 
-For exact ChatGPT Search-mode and Gemini / AI Overviews, save the actual
-answer/citation surface for `P1`, `P2`, and `P3`. For Perplexity, rerun `P3` if
-an expanded visible source URL is required. Only rows that include the target
-answer or target citation may use `observed_answer` or `observed_citation`.
+For exact ChatGPT Search-mode, save the actual answer/citation surface for
+`P1`, `P2`, and `P3`. For Perplexity, rerun `P3` if an expanded visible source
+URL is required. If standalone Gemini app measurement is required, keep it
+separate from the already captured Google Search AI Overview surface. Only rows
+that include the target answer or target citation may use `observed_answer` or
+`observed_citation`.

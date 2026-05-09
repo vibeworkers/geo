@@ -12,7 +12,7 @@
 | confidence | `high` |
 | evidence_path | `GEO-benchmark-report-main-vs-beta.ko.md`, `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `references/measurement-loop.md`, `references/measurement-capture-template.md`, `references/report-template-contract.md` |
 | last_verified | `2026-05-09` |
-| measurement_status | `partial positive observed capture` |
+| measurement_status | `partial positive observed capture with Google AI Overview negative capture` |
 | commerce_status | `not applicable` |
 | private_surface_status | `public only` |
 | regional_context | `named language: ko-KR; stored prompts: English` |
@@ -22,19 +22,20 @@
 
 `beta 100/100`은 readiness 결과로만 유효하다. `haegyung.com`의 observed
 outcome lane은 `chatgpt.com` 공개 비로그인 기본 표면에서 negative capture
-1세트, Perplexity 공개 비로그인 표면에서 partial positive capture 1세트를
-얻었다.
+1세트, Perplexity 공개 비로그인 표면에서 partial positive capture 1세트,
+Google Search AI Overview 공개 표면에서 negative capture 1세트를 얻었다.
 
 이 기준선은 두 레인을 분리해 유지한다.
 
 - readiness lane: `main 10/100`, `beta 100/100`
 - observed outcome lane: `Perplexity P1/P2 observed citation`, `Perplexity P3
-  observed answer only`, `ChatGPT public default negative`, exact ChatGPT Search
-  and Gemini still pending
+  observed answer only`, `ChatGPT public default negative`, `Google AI
+  Overviews public negative`, exact ChatGPT Search still pending
 
 target-positive capture는 생겼지만, 아직 cross-platform headline score를
-발행하지 않는다. exact ChatGPT Search와 Gemini / AI Overviews가 남아 있고,
-referral/conversion evidence도 없다.
+발행하지 않는다. exact ChatGPT Search-mode가 남아 있고,
+referral/conversion evidence도 없다. standalone Gemini app을 Google Search
+AI Overview와 분리해야 한다면 별도 surface로 추가 측정해야 한다.
 
 ## 2. Scope And Evidence
 
@@ -57,6 +58,8 @@ claim이 아니다.
   Panel, Run Metadata, Capture Table, and Before/After Comparison.
 - `observed-outcomes/perplexity-public-capture-20260509.md` records the first
   target-positive observed platform rows.
+- `observed-outcomes/google-ai-overviews-public-capture-20260509.md` records a
+  negative public Google Search AI Overview row set.
 
 ## 3. Platform Truth And Access Profile
 
@@ -66,7 +69,7 @@ Observed outcome 점검은 public surface부터 시작해야 한다.
 | --- | --- | --- | --- |
 | ChatGPT Search | `public` or `logged-in` | `observed_answer`, `observed_citation` | Record account state because result composition can vary. |
 | Perplexity | `public` or `logged-in` | `observed_citation` | Capture visible source URLs, not only answer text. |
-| Gemini / AI Overviews | `public browser` | `observed_answer`, `observed_citation` | Region and trigger volatility must be recorded. |
+| Google AI Overviews | `public browser` | `observed_answer`, `observed_citation` | Public Search AI Overview captured negative; region and trigger volatility must be recorded. |
 
 후속 run이 private connector, internal analytics, account-only surface를
 사용하면 evidence를 `public only` 상태 밖으로 분리하고 별도 label로
@@ -74,8 +77,10 @@ Observed outcome 점검은 public surface부터 시작해야 한다.
 
 ## 4. Measurement Status
 
-현재 상태는 `partial positive observed capture`다. Perplexity P1/P2는
-`observed_citation`, P3는 `observed_answer`로만 분류한다.
+현재 상태는 `partial positive observed capture with Google AI Overview negative
+capture`다. Perplexity P1/P2는 `observed_citation`, P3는 `observed_answer`로만
+분류한다. Google AI Overview P1/P2/P3는 모두 target-negative이므로 positive
+observed label을 붙이지 않는다.
 
 첫 measured lane은 commerce panel이 아니라 entity-discovery 및 source-proof
 panel로 시작해야 한다. 현재 public evidence만으로는 `haegyung.com`을
@@ -94,10 +99,11 @@ Stored prompt는 플랫폼 간 재실행 안정성을 위해 영어로 유지한
 
 ### Minimum Run Set
 
-- baseline capture: exact `ChatGPT Search`, `Perplexity`, `Gemini / AI Overviews`
+- baseline capture: exact `ChatGPT Search`, `Perplexity`, `Google AI Overviews`
 - prompts per platform: `P1`, `P2`, `P3`
 - optional delta prompt after content or structure changes: `P4`
-- minimum baseline matrix: `3 platforms x 3 prompts = 9 captured runs`
+- minimum baseline matrix: `3 platforms x 3 prompts = 9 captured runs`; after
+  this capture, exact ChatGPT Search-mode is the remaining baseline gap
 
 ## 5. Run Metadata And Capture Table Requirements
 
@@ -138,7 +144,8 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
 
 - `readiness`: `main 10/100`, `beta 100/100`
 - `observed outcome`: `Perplexity public P1/P2 observed citation; Perplexity P3
-  observed answer only; exact ChatGPT Search and Gemini pending`
+  observed answer only; ChatGPT public default negative; Google AI Overviews
+  public negative; exact ChatGPT Search pending`
 
 위험한 summary 예시는 아래와 같다.
 
@@ -153,7 +160,8 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
 1. Capture `P1` to `P3` on exact `ChatGPT Search` and save answer plus
    citation evidence.
 2. Rerun Perplexity `P3` only if the expanded visible source URL is required.
-3. Capture the same panel on `Gemini / AI Overviews` with region noted.
+3. If needed, capture standalone Gemini app separately from Google Search AI
+   Overview and keep it as a distinct surface.
 4. Classify each target-positive row as `observed_answer` or
    `observed_citation`; keep wrong-entity rows outside positive observed
    labels.
@@ -170,6 +178,8 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
   `observed_answer` to `observed_citation`
 - exact ChatGPT Search-mode capture remains pending; public default ChatGPT
   captured `P1` to `P3` as wrong-entity/target-absent negative evidence
+- Google AI Overviews public captured `P1` to `P3` as wrong-entity,
+  ambiguous-entity, or target-absent negative evidence
 - no referral log
 - no conversion signal
 - initial scaffold and public-source precheck:
@@ -178,8 +188,9 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
   `observed-outcomes/chatgpt-public-capture-20260509.md`
 - Perplexity public partial positive capture:
   `observed-outcomes/perplexity-public-capture-20260509.md`
+- Google AI Overviews public negative capture:
+  `observed-outcomes/google-ai-overviews-public-capture-20260509.md`
 
 다음 검증은 `observed-outcomes/observed-answer-captures.json`의 pending
-matrix에 exact ChatGPT Search와 Gemini / AI Overviews 실제 답변 및 visible
-citation을 채우고, 필요하면 Perplexity P3 source URL을 확장하는 데 초점을 둬야
-한다.
+matrix에 exact ChatGPT Search 실제 답변 및 visible citation을 채우고, 필요하면
+Perplexity P3 source URL을 확장하는 데 초점을 둬야 한다.
