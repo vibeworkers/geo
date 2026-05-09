@@ -1,17 +1,87 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "run_id": "haegyung-observed-outcome-initial-20260509",
-  "generated_at": "2026-05-09T12:14:16Z",
-  "measurement_status": "ready_to_measure_named_ai_platforms",
-  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers.",
-  "named_ai_platform_captures": [],
+  "generated_at": "2026-05-09T13:22:41Z",
+  "measurement_status": "partial_platform_probe_capture_negative_search_mode_pending",
+  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers. ChatGPT public default rows are measured platform probes, but they are negative target captures and must not be counted as positive observed_answer or observed_citation for haegyung.com.",
+  "target": {
+    "entity": "Haegyung (해경)",
+    "target_url": "https://haegyung.com",
+    "target_boundary": "The intended target is the Haegyung / 해경 public source at haegyung.com, not the Korean Coast Guard abbreviation sense of 해경."
+  },
+  "named_ai_platform_captures": [
+    {
+      "prompt_id": "P1",
+      "platform": "ChatGPT public default",
+      "platform_surface": "chatgpt.com public logged-out default chat; explicit Search mode not confirmed",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:22:41Z",
+      "prompt_text": "Who is Haegyung (해경)? Give a concise summary and cite the official website if you can verify it.",
+      "answer_status": "captured_wrong_entity",
+      "answer_summary": "The answer interpreted Haegyung / 해경 as the South Korean Coast Guard / Korea Coast Guard rather than the target haegyung.com source.",
+      "citation_status": "wrong_entity_source_cited_no_target_citation",
+      "visible_citation_urls": [
+        "https://www.kcg.go.kr"
+      ],
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/chatgpt-public-capture-20260509.md#p1"
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "ChatGPT public default",
+      "platform_surface": "chatgpt.com public logged-out default chat; explicit Search mode not confirmed",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:22:41Z",
+      "prompt_text": "Find the official website or official source for Haegyung (해경) and explain why you believe it is official.",
+      "answer_status": "captured_wrong_entity",
+      "answer_summary": "The answer asked a clarification question but proceeded by assuming 해경 meant the Republic of Korea Coast Guard.",
+      "citation_status": "wrong_entity_source_cited_no_target_citation",
+      "visible_citation_urls": [
+        "https://www.kcg.go.kr/"
+      ],
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/chatgpt-public-capture-20260509.md#p2"
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "ChatGPT public default",
+      "platform_surface": "chatgpt.com public logged-out default chat; explicit Search mode not confirmed",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:22:41Z",
+      "prompt_text": "Show me a source from Haegyung (해경)'s official website that describes its music, activities, or recent updates.",
+      "answer_status": "captured_no_target_source",
+      "answer_summary": "The answer stated it lacked live browsing access, then suggested Korean Coast Guard and Korean Navy sources rather than a haegyung.com music or activity source.",
+      "citation_status": "non_target_sources_cited_no_target_citation",
+      "visible_citation_urls": [
+        "https://www.kcg.go.kr",
+        "https://www.navy.mil.kr"
+      ],
+      "target_entity_included": false,
+      "target_url_cited": false,
+      "positive_evidence_ladder_label": null,
+      "evidence_label": "not_observed_target_answer_or_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/chatgpt-public-capture-20260509.md#p3"
+    }
+  ],
   "pending_capture_matrix": [
     {
       "prompt_id": "P1",
       "platform": "ChatGPT Search",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
+      "access_profile": "search-enabled or logged-in",
+      "answer_status": "pending_exact_search_mode_capture",
+      "citation_status": "pending_exact_search_mode_capture",
       "evidence_label": "not_measured",
       "confidence": "n/a",
       "evidence_path": ""
@@ -19,9 +89,9 @@
     {
       "prompt_id": "P2",
       "platform": "ChatGPT Search",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
+      "access_profile": "search-enabled or logged-in",
+      "answer_status": "pending_exact_search_mode_capture",
+      "citation_status": "pending_exact_search_mode_capture",
       "evidence_label": "not_measured",
       "confidence": "n/a",
       "evidence_path": ""
@@ -29,9 +99,9 @@
     {
       "prompt_id": "P3",
       "platform": "ChatGPT Search",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
+      "access_profile": "search-enabled or logged-in",
+      "answer_status": "pending_exact_search_mode_capture",
+      "citation_status": "pending_exact_search_mode_capture",
       "evidence_label": "not_measured",
       "confidence": "n/a",
       "evidence_path": ""

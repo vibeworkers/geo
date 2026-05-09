@@ -8,6 +8,11 @@
 public search/source precheck이며, ChatGPT Search, Perplexity, Gemini /
 AI Overviews 결과로 승격하지 않는다.
 
+별도 `chatgpt.com` 공개 비로그인 기본 표면 negative capture는
+`chatgpt-public-capture-20260509.md`에 저장했다. 이 capture는 명시적
+ChatGPT Search-mode evidence로 확정되지 않았고, `haegyung.com`을 인용하지
+않았다.
+
 ## Source Candidates
 
 | source | URL | use |
@@ -38,6 +43,7 @@ AI Overviews 결과로 승격하지 않는다.
 
 ## Next Required Evidence
 
-For each of ChatGPT Search, Perplexity, and Gemini / AI Overviews, save the
-actual answer/citation surface for `P1`, `P2`, and `P3`. Only those saved rows
-may use `observed_answer` or `observed_citation`.
+For each of exact ChatGPT Search-mode, Perplexity, and Gemini / AI Overviews,
+save the actual answer/citation surface for `P1`, `P2`, and `P3`. Only rows
+that include the target answer or target citation may use `observed_answer` or
+`observed_citation`.

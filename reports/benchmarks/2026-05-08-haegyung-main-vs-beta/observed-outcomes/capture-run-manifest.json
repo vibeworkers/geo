@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0",
   "run_id": "haegyung-observed-outcome-initial-20260509",
-  "captured_at": "2026-05-09T12:14:16Z",
+  "captured_at": "2026-05-09T13:22:41Z",
   "operator": "codex",
   "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
   "benchmark_pack": "reports/benchmarks/2026-05-08-haegyung-main-vs-beta",
@@ -10,13 +10,13 @@
     "entity": "Haegyung (해경)",
     "language": "ko-KR source surface; English stored prompts",
     "measurement_lane": "observed outcome",
-    "current_status": "public_search_precheck_captured_named_ai_platforms_pending"
+    "current_status": "public_search_precheck_captured_chatgpt_public_default_negative_exact_search_mode_pending"
   },
   "claim_boundary": {
     "readiness_result": "main 10/100, beta 100/100",
     "public_search_precheck": "captured",
-    "named_ai_platform_observed_answer": "not_measured",
-    "named_ai_platform_observed_citation": "not_measured",
+    "named_ai_platform_observed_answer": "not_observed_for_target_in_chatgpt_public_default",
+    "named_ai_platform_observed_citation": "not_observed_for_target_in_chatgpt_public_default",
     "referral_signal": "not_measured",
     "conversion_signal": "not_measured",
     "headline_rule": "do not combine readiness score with observed outcome until named platform captures exist"
@@ -55,13 +55,13 @@
   "pending_platform_matrix": [
     {
       "platform": "ChatGPT Search",
-      "access_profile": "public or logged-in",
+      "access_profile": "search-enabled or logged-in",
       "prompt_ids": [
         "P1",
         "P2",
         "P3"
       ],
-      "status": "pending_platform_capture"
+      "status": "pending_exact_search_mode_capture; public default probe captured negative"
     },
     {
       "platform": "Perplexity",
@@ -88,8 +88,17 @@
     "observed-outcomes/README.md",
     "observed-outcomes/capture-run-manifest.json",
     "observed-outcomes/observed-answer-captures.json",
-    "observed-outcomes/observed-citation-evidence.md"
+    "observed-outcomes/observed-citation-evidence.md",
+    "observed-outcomes/chatgpt-public-capture-20260509.md"
   ],
+  "chatgpt_public_default_probe": {
+    "status": "captured_negative",
+    "checked_at": "2026-05-09T13:22:41Z",
+    "access_profile": "public logged-out",
+    "search_mode_confirmed": false,
+    "result_boundary": "No positive observed_answer or observed_citation for haegyung.com. The prompt panel resolved to the Korean Coast Guard or adjacent non-target sources.",
+    "evidence_path": "observed-outcomes/chatgpt-public-capture-20260509.md"
+  },
   "public_source_precheck": {
     "status": "captured",
     "checked_at": "2026-05-09T12:14:16Z",
