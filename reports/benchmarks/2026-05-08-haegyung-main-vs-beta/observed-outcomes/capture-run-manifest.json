@@ -1,0 +1,119 @@
+{
+  "manifest_version": "1.0",
+  "run_id": "haegyung-observed-outcome-initial-20260509",
+  "captured_at": "2026-05-09T12:14:16Z",
+  "operator": "codex",
+  "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
+  "benchmark_pack": "reports/benchmarks/2026-05-08-haegyung-main-vs-beta",
+  "scope": {
+    "target_url": "https://haegyung.com",
+    "entity": "Haegyung (해경)",
+    "language": "ko-KR source surface; English stored prompts",
+    "measurement_lane": "observed outcome",
+    "current_status": "public_search_precheck_captured_named_ai_platforms_pending"
+  },
+  "claim_boundary": {
+    "readiness_result": "main 10/100, beta 100/100",
+    "public_search_precheck": "captured",
+    "named_ai_platform_observed_answer": "not_measured",
+    "named_ai_platform_observed_citation": "not_measured",
+    "referral_signal": "not_measured",
+    "conversion_signal": "not_measured",
+    "headline_rule": "do not combine readiness score with observed outcome until named platform captures exist"
+  },
+  "prompt_panel": [
+    {
+      "prompt_id": "P1",
+      "prompt_text": "Who is Haegyung (해경)? Give a concise summary and cite the official website if you can verify it.",
+      "intent": "entity discovery",
+      "expected_evidence": [
+        "observed_answer",
+        "official-site mention",
+        "citation path"
+      ]
+    },
+    {
+      "prompt_id": "P2",
+      "prompt_text": "Find the official website or official source for Haegyung (해경) and explain why you believe it is official.",
+      "intent": "official-source retrieval",
+      "expected_evidence": [
+        "observed_citation",
+        "source reasoning",
+        "homepage inclusion"
+      ]
+    },
+    {
+      "prompt_id": "P3",
+      "prompt_text": "Show me a source from Haegyung (해경)'s official website that describes its music, activities, or recent updates.",
+      "intent": "source proof",
+      "expected_evidence": [
+        "observed_citation",
+        "page-level source inclusion"
+      ]
+    }
+  ],
+  "pending_platform_matrix": [
+    {
+      "platform": "ChatGPT Search",
+      "access_profile": "public or logged-in",
+      "prompt_ids": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "status": "pending_platform_capture"
+    },
+    {
+      "platform": "Perplexity",
+      "access_profile": "public or logged-in",
+      "prompt_ids": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "status": "pending_platform_capture"
+    },
+    {
+      "platform": "Gemini / AI Overviews",
+      "access_profile": "public browser",
+      "prompt_ids": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "status": "pending_platform_capture"
+    }
+  ],
+  "artifacts": [
+    "observed-outcomes/README.md",
+    "observed-outcomes/capture-run-manifest.json",
+    "observed-outcomes/observed-answer-captures.json",
+    "observed-outcomes/observed-citation-evidence.md"
+  ],
+  "public_source_precheck": {
+    "status": "captured",
+    "checked_at": "2026-05-09T12:14:16Z",
+    "sources": [
+      {
+        "label": "official root",
+        "url": "https://www.haegyung.com/",
+        "use": "homepage candidate and live source surface"
+      },
+      {
+        "label": "official profile",
+        "url": "https://www.haegyung.com/introduce/",
+        "use": "profile and role source"
+      },
+      {
+        "label": "official music-archives profile",
+        "url": "https://www.haegyung.com/music-archives/%EC%86%8C%EA%B0%9C/",
+        "use": "source-proof page for roles and activities"
+      },
+      {
+        "label": "external profile",
+        "url": "https://about.me/ThinkHacker",
+        "use": "third-party corroboration linking to haegyung.com"
+      }
+    ]
+  }
+}

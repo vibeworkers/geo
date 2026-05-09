@@ -150,11 +150,15 @@ observed capture가 생기기 전까지 안전한 summary format은 아래와 �
 
 현재 갭:
 
-- no `observed_answer` capture
-- no `observed_citation` capture
+- no named AI platform `observed_answer` capture
+- no named AI platform `observed_citation` capture
 - no referral log
 - no conversion signal
+- initial scaffold and public-source precheck:
+  `observed-outcomes/README.md`
 
-다음 검증은 같은 benchmark bundle 아래 첫 portable capture artifact를 만들어
-observed lane을 `ready to measure`에서 `observed_answer` 또는
-`observed_citation`으로 이동시키는 데 초점을 둬야 한다.
+다음 검증은 `observed-outcomes/observed-answer-captures.json`의 pending
+matrix에 ChatGPT Search, Perplexity, Gemini / AI Overviews 실제 답변과
+visible citation을 채워 observed lane을 `ready to measure`에서
+`observed_answer` 또는 `observed_citation`으로 이동시키는 데 초점을 둬야
+한다.

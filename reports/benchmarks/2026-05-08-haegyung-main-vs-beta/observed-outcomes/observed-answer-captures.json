@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "run_id": "haegyung-observed-outcome-initial-20260509",
+  "generated_at": "2026-05-09T12:14:16Z",
+  "measurement_status": "ready_to_measure_named_ai_platforms",
+  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers.",
+  "named_ai_platform_captures": [],
+  "pending_capture_matrix": [
+    {
+      "prompt_id": "P1",
+      "platform": "ChatGPT Search",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "ChatGPT Search",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "ChatGPT Search",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P1",
+      "platform": "Perplexity",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "Perplexity",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "Perplexity",
+      "access_profile": "public or logged-in",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P1",
+      "platform": "Gemini / AI Overviews",
+      "access_profile": "public browser",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "Gemini / AI Overviews",
+      "access_profile": "public browser",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "Gemini / AI Overviews",
+      "access_profile": "public browser",
+      "answer_status": "pending",
+      "citation_status": "pending",
+      "evidence_label": "not_measured",
+      "confidence": "n/a",
+      "evidence_path": ""
+    }
+  ],
+  "public_search_precheck_rows": [
+    {
+      "prompt_id": "P1",
+      "platform": "generic web search",
+      "access_profile": "public search index",
+      "answer_status": "source candidates found",
+      "citation_status": "official root and profile pages found",
+      "brand_position": "official root result and profile source visible",
+      "evidence_label": "readiness_signal",
+      "confidence": "medium",
+      "evidence_path": "observed-outcomes/observed-citation-evidence.md"
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "generic web search",
+      "access_profile": "public search index",
+      "answer_status": "official source candidate found",
+      "citation_status": "official introduce page and external profile link found",
+      "brand_position": "haegyung.com appears as official-source candidate",
+      "evidence_label": "readiness_signal",
+      "confidence": "medium",
+      "evidence_path": "observed-outcomes/observed-citation-evidence.md"
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "generic web search",
+      "access_profile": "public search index",
+      "answer_status": "page-level source candidate found",
+      "citation_status": "official music-archives profile page found",
+      "brand_position": "official page describes roles and activities",
+      "evidence_label": "readiness_signal",
+      "confidence": "medium",
+      "evidence_path": "observed-outcomes/observed-citation-evidence.md"
+    }
+  ]
+}

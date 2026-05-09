@@ -11,6 +11,7 @@ This directory preserves the Korean benchmark report and source metrics for the
 - `benchmark-process-remediation-checklist.ko.md`
 - `benchmark-process-builder-replay-20260509.ko.md`
 - `haegyung-observed-outcome-baseline.ko.md`
+- `observed-outcomes/README.md`
 - `run-manifest.json`
 - `run-manifest.template.json`
 
@@ -61,3 +62,7 @@ evidence and the before vs to be table.
 See `haegyung-observed-outcome-baseline.ko.md` for the follow-up measurement
 lane boundary. It keeps the current `beta 100/100` result scoped to readiness
 until observed answer or citation captures exist.
+
+The first observed-outcome scaffold lives under `observed-outcomes/`. It stores
+the prompt panel, pending named-platform capture matrix, and public search
+precheck evidence without upgrading the report to observed visibility.
