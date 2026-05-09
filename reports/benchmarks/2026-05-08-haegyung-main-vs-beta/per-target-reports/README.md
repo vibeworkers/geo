@@ -12,10 +12,14 @@
 
 ## 근거 파일
 
-- `data/comparison.json`
+- `data/branch-readiness.json`
+- `data/site-http-head-snapshot.json`
 - `data/browser-performance.json`
-- `not-versioned/haegyung-desktop.png`
-- `not-versioned/haegyung-mobile.png`
+- `data/comparison.json` (원본 combined artifact)
+
+임시 실행에서 생성된 대형 screenshot capture는 versioned evidence pack에
+포함하지 않았다. 현재 보존본에서는 JSON/Markdown에 남긴 수치와 해석만 공식
+근거로 사용한다.
 
 ## 비교 범위
 

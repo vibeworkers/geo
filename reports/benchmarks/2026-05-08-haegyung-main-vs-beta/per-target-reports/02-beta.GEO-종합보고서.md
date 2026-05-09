@@ -10,7 +10,7 @@
 | score_type | `readiness` |
 | evidence_label | `local_contract_validation + live_public_site_snapshot` |
 | confidence | `high` |
-| evidence_path | `data/comparison.json`, `data/browser-performance.json` |
+| evidence_path | `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json` |
 | last_verified | `2026-05-07T21:04:14Z` |
 | measurement_status | `ready to measure` |
 | commerce_status | `not applicable` |
@@ -35,7 +35,7 @@
 | validator elapsed | `87.9ms` |
 | reference count | `17` |
 | readiness score | `100/100` |
-| 기준 파일 | `data/comparison.json` |
+| 기준 파일 | `data/branch-readiness.json`, `data/site-http-head-snapshot.json` |
 
 추가된 핵심 reference set:
 
@@ -83,8 +83,10 @@ robots.txt 기준 주요 봇 접근은 모두 허용으로 파싱됐습니다. �
 
 시각 증거:
 
-- `not-versioned/haegyung-desktop.png`
-- `not-versioned/haegyung-mobile.png`
+- desktop/mobile full-page capture는 실행 시점에 생성됐지만, 이 versioned
+  evidence pack에는 보존하지 않았다
+- 같은 실행의 보존 근거는 `data/browser-performance.json`과 본 리포트의
+  추출 metric table에 남아 있다
 
 PageSpeed Insights는 mobile/desktop 모두 HTTP `429 quota exceeded`로 Core Web Vitals를 확보하지 못했습니다.
 

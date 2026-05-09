@@ -1,0 +1,103 @@
+{
+  "source_artifact": "data/comparison.json",
+  "derived_at": "2026-05-09",
+  "derivation_purpose": "audit split view of branch readiness from the preserved combined comparison artifact",
+  "target": "https://haegyung.com",
+  "branches": [
+    {
+      "name": "main-clean-baseline",
+      "root": "git-worktree:main-clean-baseline",
+      "branch": "HEAD",
+      "rev": "a652637",
+      "status": [
+        "## HEAD (no branch)"
+      ],
+      "validator": {
+        "cmd": "python3 scripts/check_geo_skill.py",
+        "returncode": 0,
+        "stdout": "[ok] geo skill package and portable contract are consistent",
+        "stderr": "",
+        "elapsed_ms": 49.6
+      },
+      "reference_count": 7,
+      "references": [
+        "references/concept-map.md",
+        "references/execution-skill-matrix.md",
+        "references/experiment-scenarios.md",
+        "references/gate-conditions.md",
+        "references/glossary.md",
+        "references/runtime-adaptation.md",
+        "references/versioning-protocol.md"
+      ],
+      "checks": {
+        "validator_pass": true,
+        "new_reference_set_complete": false,
+        "audit_six_domains": false,
+        "audit_measurement_boundary": false,
+        "audit_report_contract": false,
+        "crawler_search_user_split": false,
+        "google_extended_correct_boundary": false,
+        "grok_uncertainty_marked": false,
+        "stale_anthropic_ai_removed": false,
+        "policy_private_boundaries": false,
+        "regional_commerce_boundaries": false,
+        "validator_checks_subskill_references": false
+      },
+      "score": 10,
+      "score_max": 100
+    },
+    {
+      "name": "beta",
+      "root": "repo-root",
+      "branch": "beta",
+      "rev": "2d896ac",
+      "normalization_note": "Original probe ran before the beta commit; beta@2d896ac contains the same GEO readiness surface.",
+      "status": [
+        "## beta"
+      ],
+      "validator": {
+        "cmd": "python3 scripts/check_geo_skill.py",
+        "returncode": 0,
+        "stdout": "[ok] geo skill package and portable contract are consistent",
+        "stderr": "",
+        "elapsed_ms": 87.9
+      },
+      "reference_count": 17,
+      "references": [
+        "references/commerce-audit-worksheet.md",
+        "references/commerce-readiness.md",
+        "references/concept-map.md",
+        "references/execution-skill-matrix.md",
+        "references/experiment-scenarios.md",
+        "references/gate-conditions.md",
+        "references/glossary.md",
+        "references/implementation-completion-plan.md",
+        "references/measurement-capture-template.md",
+        "references/measurement-loop.md",
+        "references/platform-truth-registry.md",
+        "references/policy-risk-gate.md",
+        "references/private-surface-routing.md",
+        "references/regional-situational-routing.md",
+        "references/report-template-contract.md",
+        "references/runtime-adaptation.md",
+        "references/versioning-protocol.md"
+      ],
+      "checks": {
+        "validator_pass": true,
+        "new_reference_set_complete": true,
+        "audit_six_domains": true,
+        "audit_measurement_boundary": true,
+        "audit_report_contract": true,
+        "crawler_search_user_split": true,
+        "google_extended_correct_boundary": true,
+        "grok_uncertainty_marked": true,
+        "stale_anthropic_ai_removed": true,
+        "policy_private_boundaries": true,
+        "regional_commerce_boundaries": true,
+        "validator_checks_subskill_references": true
+      },
+      "score": 100,
+      "score_max": 100
+    }
+  ]
+}

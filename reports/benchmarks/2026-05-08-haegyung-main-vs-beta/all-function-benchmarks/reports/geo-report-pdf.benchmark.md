@@ -10,7 +10,7 @@
 | score_type | `readiness` |
 | evidence_label | `local_skill_contract_diff + live_public_site_snapshot` |
 | confidence | `high` |
-| evidence_path | `skills/geo-report-pdf/SKILL.md`, `data/comparison.json`, `data/browser-performance.json` |
+| evidence_path | `skills/geo-report-pdf/SKILL.md`, `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json` |
 | last_verified | `2026-05-07T21:04:14Z` |
 | measurement_status | `ready to measure` |
 | commerce_status | `not applicable` |
@@ -91,4 +91,3 @@
 ## 8. 판정
 
 판정: **beta 우세**. `geo-report-pdf` 기준으로 beta는 `100.0/100`, main은 `50.0/100`이다.
-

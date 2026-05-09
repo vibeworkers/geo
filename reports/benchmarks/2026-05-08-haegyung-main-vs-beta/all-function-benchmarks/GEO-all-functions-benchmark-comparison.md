@@ -10,7 +10,7 @@
 | score_type | `readiness` |
 | evidence_label | `all_subskill_contract_diff + live_public_site_snapshot + search_snapshot` |
 | confidence | `high` |
-| evidence_path | `all-function-benchmarks/reports/*.benchmark.md` |
+| evidence_path | `all-function-benchmarks/benchmark-index.json`, `all-function-benchmarks/reports/*.benchmark.md`, `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json` |
 | last_verified | `2026-05-07T21:04:14Z` |
 | measurement_status | `ready to measure` |
 | commerce_status | `not applicable` |

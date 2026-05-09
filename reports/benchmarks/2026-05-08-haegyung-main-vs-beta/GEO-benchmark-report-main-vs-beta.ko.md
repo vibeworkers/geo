@@ -11,7 +11,7 @@
 | 비교 브랜치 | `beta@2d896ac` |
 | 비교 목적 | GEO 스킬 패키지가 사이트 진단과 리포트 산출을 얼마나 안정적으로 수행할 수 있는지 비교 |
 | 측정 유형 | branch readiness, all-function readiness, local validator runtime, live browser probe |
-| 핵심 근거 | `data/comparison.json`, `data/browser-performance.json`, `all-function-benchmarks/benchmark-index.json` |
+| 핵심 근거 | `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json`, `all-function-benchmarks/benchmark-index.json` |
 
 ## 2. Executive Summary
 
@@ -210,8 +210,10 @@ PageSpeed Insights API는 HTTP `429 quota exceeded`로 실패했기 때문에 Co
 
 | 산출물 | 역할 |
 | --- | --- |
-| `data/comparison.json` | branch readiness와 라이브 사이트 HTTP/head/structure 스냅샷 |
+| `data/branch-readiness.json` | branch readiness split audit view |
+| `data/site-http-head-snapshot.json` | 라이브 사이트 HTTP/head/structure split audit view |
 | `data/browser-performance.json` | 브라우저 성능 probe 지표 |
+| `data/comparison.json` | 원본 combined artifact |
 | `all-function-benchmarks/benchmark-index.json` | 14개 GEO 기능별 benchmark index |
 | `all-function-benchmarks/GEO-all-functions-benchmark-comparison.md` | 전체 기능 비교 리포트 |
 | `per-target-reports/*.md` | branch comparison과 대상별 GEO 종합 리포트 |

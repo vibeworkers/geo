@@ -1,0 +1,91 @@
+{
+  "manifest_version": "1.0",
+  "run_id": "<benchmark-run-id>",
+  "captured_at": "<ISO-8601 datetime>",
+  "operator": "<name-or-handle>",
+  "cwd": "/absolute/path/to/repo-root",
+  "benchmark_pack": "reports/benchmarks/<yyyy-mm-dd-slug>",
+  "comparison_mode": "<e.g. clean main@<sha> vs beta@<sha> readiness surface>",
+  "comparison_scope": {
+    "target_url": "https://example.com",
+    "surface_type": "readiness",
+    "report_language": "ko-KR"
+  },
+  "targets": [
+    {
+      "label": "main-clean-baseline",
+      "branch": "main",
+      "rev": "<git-sha>",
+      "worktree_root": "/absolute/path/to/worktree",
+      "clean_worktree": true,
+      "measured_target": true,
+      "reported_target": true,
+      "normalization_note": ""
+    },
+    {
+      "label": "beta",
+      "branch": "beta",
+      "rev": "<git-sha>",
+      "worktree_root": "/absolute/path/to/worktree",
+      "clean_worktree": true,
+      "measured_target": true,
+      "reported_target": true,
+      "normalization_note": ""
+    }
+  ],
+  "commands": [
+    {
+      "order": 1,
+      "cmd": "python3 scripts/check_geo_skill.py",
+      "cwd": "/absolute/path/to/repo-root",
+      "purpose": "validate portable GEO contract",
+      "output_artifacts": [
+        "data/comparison.json"
+      ]
+    },
+    {
+      "order": 2,
+      "cmd": "<browser probe command>",
+      "cwd": "/absolute/path/to/repo-root",
+      "purpose": "capture browser-performance metrics",
+      "output_artifacts": [
+        "data/browser-performance.json"
+      ]
+    }
+  ],
+  "tool_versions": {
+    "python3": "<python-version>",
+    "git": "<git-version>",
+    "node": "<node-version-or-n/a>",
+    "browser_probe_tool": "<tool-name-and-version-or-n/a>"
+  },
+  "output_paths": [
+    "data/comparison.json",
+    "data/browser-performance.json",
+    "all-function-benchmarks/benchmark-index.json",
+    "all-function-benchmarks/GEO-all-functions-benchmark-comparison.md",
+    "per-target-reports/00-branch-comparison.GEO-\ube44\uad50\ubcf4\uace0\uc11c.md",
+    "per-target-reports/01-main-clean-baseline.GEO-\uc885\ud569\ubcf4\uace0\uc11c.md",
+    "per-target-reports/02-beta.GEO-\uc885\ud569\ubcf4\uace0\uc11c.md",
+    "GEO-benchmark-report-main-vs-beta.ko.md"
+  ],
+  "ephemeral_evidence": [
+    {
+      "path": "<optional-nonversioned-path>",
+      "captured_at": "<ISO-8601 datetime>",
+      "sha256": "<sha256-or-unknown>",
+      "preservation_status": "not committed",
+      "replacement_evidence": [
+        "<versioned-artifact-path>"
+      ]
+    }
+  ],
+  "process_status": {
+    "measured_target_matches_reported_target": true,
+    "inventory_contains_only_existing_versioned_files": true,
+    "clean_replay_required": false
+  },
+  "notes": [
+    "<freeform process note>"
+  ]
+}

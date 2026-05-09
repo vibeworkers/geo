@@ -3,7 +3,8 @@
   "target": "https://haegyung.com",
   "comparison_mode": "clean main@a652637 vs beta@2d896ac readiness surface",
   "source_artifacts": [
-    "data/comparison.json",
+    "data/branch-readiness.json",
+    "data/site-http-head-snapshot.json",
     "data/browser-performance.json"
   ],
   "reports": [

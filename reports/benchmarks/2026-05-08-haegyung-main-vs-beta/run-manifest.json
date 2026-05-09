@@ -1,0 +1,136 @@
+{
+  "manifest_version": "1.0",
+  "run_id": "geo-benchmark-main-vs-beta-20260507-provisional",
+  "captured_at": "2026-05-07T21:24:51.510254+00:00",
+  "operator": "unknown (retrofilled from preserved artifacts on 2026-05-09)",
+  "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
+  "benchmark_pack": "reports/benchmarks/2026-05-08-haegyung-main-vs-beta",
+  "comparison_mode": "clean main@a652637 vs beta@2d896ac readiness surface",
+  "comparison_scope": {
+    "target_url": "https://haegyung.com",
+    "surface_type": "readiness",
+    "report_language": "ko-KR"
+  },
+  "targets": [
+    {
+      "label": "main-clean-baseline",
+      "branch": "HEAD",
+      "rev": "a652637",
+      "worktree_root": "git-worktree:main-clean-baseline (absolute path not preserved in artifacts)",
+      "clean_worktree": true,
+      "measured_target": true,
+      "reported_target": true,
+      "normalization_note": ""
+    },
+    {
+      "label": "beta",
+      "branch": "beta",
+      "rev": "2d896ac",
+      "worktree_root": "/Volumes/Extend/Projects/DevWorkspace/geo",
+      "clean_worktree": null,
+      "measured_target": false,
+      "reported_target": true,
+      "normalization_note": "Original probe ran before the beta commit; preserved artifacts state that beta@2d896ac contains the same readiness surface."
+    }
+  ],
+  "artifact_timestamps": {
+    "site_snapshot_captured_at": "2026-05-07T21:01:17Z",
+    "browser_probe_captured_at": "2026-05-07T21:04:14.565Z",
+    "benchmark_index_generated_at": "2026-05-07T21:24:51.510254+00:00"
+  },
+  "commands": [
+    {
+      "order": 1,
+      "cmd": "python3 scripts/check_geo_skill.py",
+      "cwd": "git-worktree:main-clean-baseline (absolute path not preserved in artifacts)",
+      "purpose": "validate portable GEO contract on main-clean-baseline",
+      "provenance_status": "preserved in data/comparison.json",
+      "output_artifacts": [
+        "data/comparison.json"
+      ]
+    },
+    {
+      "order": 2,
+      "cmd": "python3 scripts/check_geo_skill.py",
+      "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
+      "purpose": "validate portable GEO contract on beta",
+      "provenance_status": "preserved in data/comparison.json",
+      "output_artifacts": [
+        "data/comparison.json"
+      ]
+    },
+    {
+      "order": 3,
+      "cmd": "<unknown browser probe command>",
+      "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
+      "purpose": "capture browser-performance metrics",
+      "provenance_status": "output preserved, command string not preserved",
+      "output_artifacts": [
+        "data/browser-performance.json"
+      ]
+    },
+    {
+      "order": 4,
+      "cmd": "<unknown benchmark synthesis command>",
+      "cwd": "/Volumes/Extend/Projects/DevWorkspace/geo",
+      "purpose": "render per-target, per-function, and top-level benchmark reports",
+      "provenance_status": "outputs preserved, command string not preserved",
+      "output_artifacts": [
+        "all-function-benchmarks/benchmark-index.json",
+        "all-function-benchmarks/GEO-all-functions-benchmark-comparison.md",
+        "per-target-reports/00-branch-comparison.GEO-비교보고서.md",
+        "per-target-reports/01-main-clean-baseline.GEO-종합보고서.md",
+        "per-target-reports/02-beta.GEO-종합보고서.md",
+        "GEO-benchmark-report-main-vs-beta.ko.md"
+      ]
+    }
+  ],
+  "tool_versions": {
+    "python3": "unknown",
+    "git": "unknown",
+    "node": "unknown",
+    "browser_probe_tool": "unknown"
+  },
+  "output_paths": [
+    "data/comparison.json",
+    "data/browser-performance.json",
+    "all-function-benchmarks/benchmark-index.json",
+    "all-function-benchmarks/GEO-all-functions-benchmark-comparison.md",
+    "per-target-reports/00-branch-comparison.GEO-비교보고서.md",
+    "per-target-reports/01-main-clean-baseline.GEO-종합보고서.md",
+    "per-target-reports/02-beta.GEO-종합보고서.md",
+    "GEO-benchmark-report-main-vs-beta.ko.md"
+  ],
+  "ephemeral_evidence": [
+    {
+      "path": "not-versioned/haegyung-desktop.png",
+      "captured_at": "unknown",
+      "sha256": "unknown",
+      "preservation_status": "not committed",
+      "replacement_evidence": [
+        "data/browser-performance.json",
+        "per-target-reports/02-beta.GEO-종합보고서.md"
+      ]
+    },
+    {
+      "path": "not-versioned/haegyung-mobile.png",
+      "captured_at": "unknown",
+      "sha256": "unknown",
+      "preservation_status": "not committed",
+      "replacement_evidence": [
+        "data/browser-performance.json",
+        "per-target-reports/02-beta.GEO-종합보고서.md"
+      ]
+    }
+  ],
+  "process_status": {
+    "measured_target_matches_reported_target": false,
+    "inventory_contains_only_existing_versioned_files": true,
+    "clean_replay_required": true
+  },
+  "notes": [
+    "This manifest was retrofilled on 2026-05-09 from preserved artifacts rather than captured during the original run.",
+    "Known timestamps come from preserved JSON and report artifacts; unknown command strings and tool versions were not inferred.",
+    "The beta entry remains provisional because the preserved notes state that the original probe ran before the beta commit."
+  ]
+}

@@ -10,7 +10,7 @@
 | score_type | `readiness` |
 | evidence_label | `per_target_report_synthesis + local_contract_validation + live_public_site_snapshot` |
 | confidence | `high` |
-| evidence_path | `per-target-reports/01-main-clean-baseline.GEO-종합보고서.md`, `per-target-reports/02-beta.GEO-종합보고서.md` |
+| evidence_path | `per-target-reports/01-main-clean-baseline.GEO-종합보고서.md`, `per-target-reports/02-beta.GEO-종합보고서.md`, `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json` |
 | last_verified | `2026-05-07T21:04:14Z` |
 | measurement_status | `ready to measure` |
 | commerce_status | `not applicable` |

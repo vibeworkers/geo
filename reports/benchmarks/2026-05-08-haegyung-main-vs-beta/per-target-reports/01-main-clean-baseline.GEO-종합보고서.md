@@ -10,7 +10,7 @@
 | score_type | `readiness` |
 | evidence_label | `local_contract_validation + live_public_site_snapshot` |
 | confidence | `high` |
-| evidence_path | `data/comparison.json`, `data/browser-performance.json` |
+| evidence_path | `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `data/browser-performance.json` |
 | last_verified | `2026-05-07T21:04:14Z` |
 | measurement_status | `ready to measure` |
 | commerce_status | `not applicable` |
@@ -34,7 +34,7 @@
 | validator elapsed | `49.6ms` |
 | reference count | `7` |
 | readiness score | `10/100` |
-| 기준 파일 | `data/comparison.json` |
+| 기준 파일 | `data/branch-readiness.json`, `data/site-http-head-snapshot.json` |
 
 ## 3. Platform Truth And Access Profile
 
@@ -92,4 +92,3 @@ PageSpeed Insights는 mobile/desktop 모두 HTTP `429 quota exceeded`로 Core We
 ## 9. Remaining Gaps And Next Verification
 
 `main-clean-baseline`은 validator pass 외의 비교 진단 Must 대부분을 충족하지 못합니다. 이 브랜치는 “기준선”으로는 유용하지만, 현재 사이트 진단 결과를 설명하는 실행 표면으로는 부족합니다.
-
