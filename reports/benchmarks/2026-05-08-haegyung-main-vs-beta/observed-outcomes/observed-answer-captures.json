@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "run_id": "haegyung-observed-outcome-initial-20260509",
-  "generated_at": "2026-05-09T13:22:41Z",
-  "measurement_status": "partial_platform_probe_capture_negative_search_mode_pending",
-  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers. ChatGPT public default rows are measured platform probes, but they are negative target captures and must not be counted as positive observed_answer or observed_citation for haegyung.com.",
+  "generated_at": "2026-05-09T13:35:00Z",
+  "measurement_status": "partial_named_platform_capture_positive_perplexity_exact_chatgpt_search_and_gemini_pending",
+  "capture_boundary": "Rows labeled public_search_precheck are not observed AI platform answers. ChatGPT public default rows are measured platform probes, but they are negative target captures and must not be counted as positive observed_answer or observed_citation for haegyung.com. Perplexity public rows P1 and P2 are target-positive observed_citation captures; P3 is target-positive observed_answer only because the source URL was not expanded in the visible capture.",
   "target": {
     "entity": "Haegyung (해경)",
     "target_url": "https://haegyung.com",
@@ -73,6 +73,73 @@
       "evidence_label": "not_observed_target_answer_or_citation",
       "confidence": "high",
       "evidence_path": "observed-outcomes/chatgpt-public-capture-20260509.md#p3"
+    },
+    {
+      "prompt_id": "P1",
+      "platform": "Perplexity",
+      "platform_surface": "perplexity.ai public search",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:35:00Z",
+      "prompt_text": "Who is Haegyung (해경)? Give a concise summary and cite the official website if you can verify it.",
+      "answer_status": "captured_target_entity_answer",
+      "answer_summary": "The answer identified Haegyung / 해경 as a Korean professional and creator and cited haegyung.com as the relevant official-looking source.",
+      "citation_status": "target_url_visible_in_links_tab",
+      "visible_citation_urls": [
+        "https://www.haegyung.com/introduce/"
+      ],
+      "target_entity_included": true,
+      "target_url_cited": true,
+      "positive_evidence_ladder_label": "observed_citation",
+      "answer_inclusion_label": "observed_answer",
+      "evidence_label": "observed_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/perplexity-public-capture-20260509.md#p1"
+    },
+    {
+      "prompt_id": "P2",
+      "platform": "Perplexity",
+      "platform_surface": "perplexity.ai public search",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:35:00Z",
+      "prompt_text": "Find the official website or official source for Haegyung (해경) and explain why you believe it is official.",
+      "answer_status": "captured_target_official_source_candidate",
+      "answer_summary": "The answer identified haegyung.com as the best official-looking source and caveated that independent registry or contact-page proof was not found.",
+      "citation_status": "target_url_visible_in_links_tab",
+      "visible_citation_urls": [
+        "https://www.haegyung.com"
+      ],
+      "target_entity_included": true,
+      "target_url_cited": true,
+      "positive_evidence_ladder_label": "observed_citation",
+      "answer_inclusion_label": "observed_answer",
+      "evidence_label": "observed_citation",
+      "confidence": "high",
+      "evidence_path": "observed-outcomes/perplexity-public-capture-20260509.md#p2"
+    },
+    {
+      "prompt_id": "P3",
+      "platform": "Perplexity",
+      "platform_surface": "perplexity.ai public search",
+      "access_profile": "public logged-out",
+      "region_language": "isolated browser session; English UI; English prompt with Korean alias",
+      "captured_at": "2026-05-09T13:35:00Z",
+      "prompt_text": "Show me a source from Haegyung (해경)'s official website that describes its music, activities, or recent updates.",
+      "answer_status": "captured_target_answer_partial_source_proof",
+      "answer_summary": "The answer pointed to Haegyung's official site and summarized the homepage identity snippet, but did not prove a visible expanded URL in this capture.",
+      "citation_status": "target_source_link_visible_url_not_expanded",
+      "visible_citation_urls": [],
+      "visible_source_link_labels": [
+        "해경",
+        "haegyung"
+      ],
+      "target_entity_included": true,
+      "target_url_cited": null,
+      "positive_evidence_ladder_label": "observed_answer",
+      "evidence_label": "observed_answer",
+      "confidence": "medium",
+      "evidence_path": "observed-outcomes/perplexity-public-capture-20260509.md#p3"
     }
   ],
   "pending_capture_matrix": [
@@ -102,36 +169,6 @@
       "access_profile": "search-enabled or logged-in",
       "answer_status": "pending_exact_search_mode_capture",
       "citation_status": "pending_exact_search_mode_capture",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P1",
-      "platform": "Perplexity",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P2",
-      "platform": "Perplexity",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
-      "evidence_label": "not_measured",
-      "confidence": "n/a",
-      "evidence_path": ""
-    },
-    {
-      "prompt_id": "P3",
-      "platform": "Perplexity",
-      "access_profile": "public or logged-in",
-      "answer_status": "pending",
-      "citation_status": "pending",
       "evidence_label": "not_measured",
       "confidence": "n/a",
       "evidence_path": ""

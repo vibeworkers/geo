@@ -13,6 +13,11 @@ AI Overviews 결과로 승격하지 않는다.
 ChatGPT Search-mode evidence로 확정되지 않았고, `haegyung.com`을 인용하지
 않았다.
 
+별도 Perplexity 공개 비로그인 positive/partial capture는
+`perplexity-public-capture-20260509.md`에 저장했다. P1/P2는 target URL이
+visible Links tab에 나타난 `observed_citation`이고, P3는 source URL이
+확장되지 않아 `observed_answer`로만 분류했다.
+
 ## Source Candidates
 
 | source | URL | use |
@@ -43,7 +48,7 @@ ChatGPT Search-mode evidence로 확정되지 않았고, `haegyung.com`을 인용
 
 ## Next Required Evidence
 
-For each of exact ChatGPT Search-mode, Perplexity, and Gemini / AI Overviews,
-save the actual answer/citation surface for `P1`, `P2`, and `P3`. Only rows
-that include the target answer or target citation may use `observed_answer` or
-`observed_citation`.
+For exact ChatGPT Search-mode and Gemini / AI Overviews, save the actual
+answer/citation surface for `P1`, `P2`, and `P3`. For Perplexity, rerun `P3` if
+an expanded visible source URL is required. Only rows that include the target
+answer or target citation may use `observed_answer` or `observed_citation`.
