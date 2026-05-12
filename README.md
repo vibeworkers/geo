@@ -255,6 +255,9 @@ If advanced workflows are not available or do not start as expected:
 - `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, and commerce eligibility gate
 - `references/report-template-contract.md`: required report metadata and claim-label contract
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, and completion plan
+- `references/cogarch-alignment.md`: optional governance alignment for evidence closure, owner split, actor-first handoff, and portable knowledge packets
+- `references/sequence-dependent-autopilot.md`: end-to-end process autopilot for all-in requests such as `전부 해줘`, `전체 진행`, and `do everything`
+- `docs/beta-a-geo-guide.ko.md`: Korean beta-A guide covering feature names, effects, mechanisms, evidence, and the end-to-end GEO process
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: versioned Korean benchmark report and source metrics for `haegyung.com`
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
@@ -534,6 +537,9 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/policy-risk-gate.md`: robots, terms, privacy, regulated claims, brand claims, commerce eligibility gate
 - `references/report-template-contract.md`: report metadata와 claim-label 계약
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, completion plan
+- `references/cogarch-alignment.md`: evidence closure, owner split, actor-first handoff, portable knowledge packet용 선택적 governance alignment
+- `references/sequence-dependent-autopilot.md`: `전부 해줘`, `전체 진행`, `do everything` 같은 전체 수행 요청용 end-to-end process autopilot
+- `docs/beta-a-geo-guide.ko.md`: beta-A 기능 이름, 효과, 메커니즘, 근거와 전체 GEO 프로세스를 정리한 한글 설명서
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: `haegyung.com`용 versioned 한글 벤치마크 리포트와 source metrics
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 

@@ -31,6 +31,8 @@ REQUIRED_FILES = [
     "references/implementation-completion-plan.md",
     "references/user-level-workflow-guide.md",
     "references/execution-skill-matrix.md",
+    "references/cogarch-alignment.md",
+    "references/sequence-dependent-autopilot.md",
     "references/versioning-protocol.md",
     "scripts/check_geo_release.py",
     "scripts/check_geo_skill.py",
@@ -62,6 +64,7 @@ REQUIRED_SECTIONS = [
     "## Project Topology Contract",
     "## Canonical SoT",
     "## Request Classification",
+    "## Sequence-Dependent Autopilot",
     "## Clarification-First Intake",
     "## Trigger Probes",
     "## Command Surface",
@@ -157,6 +160,10 @@ INLINE_GATE_PHRASES = [
     "robots, terms, privacy, regulated claims, brand claims",
     "**Gate 13: Whole-system completion boundary**",
     "completion_rubric_path_or_inline",
+    "**Gate 14: Sequence-dependent autopilot**",
+    "ordered dependency graph",
+    "all_must_passed=true",
+    "failed_must_queue",
 ]
 
 DISALLOWED_STRINGS = [
@@ -249,6 +256,8 @@ README_REQUIRED_PHRASES = [
     "`references/report-template-contract.md`",
     "`references/implementation-completion-plan.md`",
     "`references/user-level-workflow-guide.md`",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
     "`skills/geo-*/SKILL.md`",
     "private `generateSkill` workflow derived from",
     "the public Skill Creator skill.",
@@ -299,6 +308,8 @@ README_REQUIRED_PHRASES = [
     "다른 런타임이나 모델로 바꿨다면 기존 상태를 그대로 가정하지 말고 setup",
     "이전 세션에서 먼저 실행해 둔 명령을 요구하지 않습니다",
     "저작자: 김범수, 유수호, 고경만.",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
     "저장된 prompt는 영어로 작성합니다.",
     "goal, scope, working surface, success condition, evidence target이 아직",
     "`geo`의 output brand는 `VibeWorkers`입니다.",
@@ -339,6 +350,8 @@ EXECUTION_MATRIX_REQUIRED_PHRASES = [
     "`references/policy-risk-gate.md`",
     "`references/report-template-contract.md`",
     "`references/implementation-completion-plan.md`",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
 ]
 
 RESTORED_SUBSKILL_REQUIRED_PHRASES = [
@@ -631,6 +644,8 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/implementation-completion-plan.md",
         "references/user-level-workflow-guide.md",
         "references/execution-skill-matrix.md",
+        "references/cogarch-alignment.md",
+        "references/sequence-dependent-autopilot.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -665,6 +680,8 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/implementation-completion-plan.md",
         "references/user-level-workflow-guide.md",
         "references/execution-skill-matrix.md",
+        "references/cogarch-alignment.md",
+        "references/sequence-dependent-autopilot.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -717,6 +734,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     implementation_completion = read_text(skill_dir / "references/implementation-completion-plan.md")
     glossary = read_text(skill_dir / "references/glossary.md")
     execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
+    cogarch_alignment = read_text(skill_dir / "references/cogarch-alignment.md")
+    sequence_autopilot = read_text(skill_dir / "references/sequence-dependent-autopilot.md")
 
     for phrase in [
         "`portable-baseline`",
@@ -741,7 +760,9 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`policy_risk_reference`: `references/policy-risk-gate.md`",
         "`report_template_reference`: `references/report-template-contract.md`",
         "`implementation_completion_reference`: `references/implementation-completion-plan.md`",
+        "`sequence_dependent_autopilot_reference`: `references/sequence-dependent-autopilot.md`",
         "`clarification_rule`: if `goal / scope / surface / success / evidence target`",
+        "`sequence_dependent_autopilot_rule`: when the user asks for all processes,",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
         "| clarification packet | minimal pre-plan packet with `goal / scope / surface / success / evidence target`",
@@ -758,6 +779,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "| policy risk gate | `references/policy-risk-gate.md`",
         "| report template contract | `references/report-template-contract.md`",
         "| implementation completion plan | `references/implementation-completion-plan.md`",
+        "| sequence-dependent autopilot | `references/sequence-dependent-autopilot.md`",
     ]:
         if phrase not in concept_map:
             fail(f"missing concept-map phrase: {phrase}")
@@ -775,6 +797,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Gate 11: Regional/situational boundary",
         "Gate 12: Policy risk boundary",
         "Gate 13: Whole-system completion boundary",
+        "Gate 14: Sequence-dependent autopilot",
         "packet with `goal / scope / surface / success / evidence target` is locked.",
         "`execution-bundle`",
         "advanced-workflow",
@@ -785,6 +808,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "regional or vertical claims must use a confirmed source pack",
         "robots, terms, privacy, regulated claims, brand claims",
         "`completion_rubric_path_or_inline`",
+        "ordered dependency graph",
+        "`all_must_passed=true`",
     ]:
         if phrase not in gate_conditions:
             fail(f"missing gate condition phrase: {phrase}")
@@ -819,6 +844,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected boundary: check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility",
         "Expected boundary: use `references/report-template-contract.md`",
         "Expected boundary: use `references/implementation-completion-plan.md`",
+        "Expected boundary: use `references/sequence-dependent-autopilot.md`",
+        "Expected behavior: build an ordered dependency graph",
     ]:
         if phrase not in experiments:
             fail(f"missing experiment phrase: {phrase}")
@@ -988,15 +1015,56 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "private_surface_status",
         "regional_context",
         "policy_risk",
+        "Claim boundary ledger",
+        "Actor-first handoff",
+        "measured facts",
+        "interpretation",
+        "assumptions",
+        "unknowns",
     ]:
         if phrase not in report_template:
             fail(f"missing report-template phrase: {phrase}")
 
     for phrase in [
+        "# GEO Cogarch Alignment Contract",
+        "compatibility, not inheritance",
+        "without depending on `cogarch`, `~/.cogarch`",
+        "Goal -> Rubric -> Iteration -> Score -> Next Action",
+        "measured / interpretation / assumption / unknown",
+        "owner split",
+        "actor-first handoff",
+        "portable knowledge packet",
+        "The package fails portability if this alignment requires `cogarch`",
+    ]:
+        if phrase not in cogarch_alignment:
+            fail(f"missing cogarch-alignment phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Sequence-Dependent Autopilot",
+        "guided completion",
+        "`전부 해줘`",
+        "`전체 진행`",
+        "`전체 수행`",
+        "`do everything`",
+        "`continue until complete`",
+        "ordered dependency graph",
+        "Execute next unblocked phase",
+        "Verify phase",
+        "Record ledger",
+        "all_must_passed=true",
+        "failed_must_queue",
+        "Do not require the user to know the names of subskills",
+    ]:
+        if phrase not in sequence_autopilot:
+            fail(f"missing sequence-autopilot phrase: {phrase}")
+
+    for phrase in [
         "# GEO P2-P13 Implementation Completion Plan",
         "RQ1",
         "RQ13",
+        "RQ14",
         "P2-P13 Sequence",
+        "P14",
         "completion_judgment",
         "all_must_passed",
         "failed_must_queue",

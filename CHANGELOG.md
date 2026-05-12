@@ -8,6 +8,20 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+- Added `references/cogarch-alignment.md` as a portable governance alignment
+  contract that borrows evidence closure, owner split, actor-first handoff, and
+  knowledge-packet discipline without introducing a runtime dependency on
+  `cogarch`, `~/.cogarch`, or `OPERATIONS.md`.
+- Expanded the GEO report contract with a claim-boundary ledger and
+  actor-first handoff section so measured facts, interpretation, assumptions,
+  unknowns, and next-action ownership stay separable.
+- Wired the new alignment reference into `SKILL.md`, `README.md`,
+  `references/execution-skill-matrix.md`, and `scripts/check_geo_skill.py`.
+- Added `references/sequence-dependent-autopilot.md` so all-in requests such
+  as `전부 해줘`, `전체 진행`, and `do everything` run through an ordered
+  dependency graph, phase verification, ledger recording, and completion
+  judgment instead of stopping at a plan.
+
 ## 0.10.0 - 2026-05-12
 
 - Added a user-level workflow guide distilled from the older

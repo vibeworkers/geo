@@ -156,3 +156,10 @@
 - Expected lane: `evidence-note`
 - Expected boundary: use `references/implementation-completion-plan.md`
 - Expected behavior: report completion_judgment, all_must_passed or failed_must_queue, verification_set, and report_artifact_path
+
+### Scenario 24: sequence-dependent autopilot
+
+- Prompt: "Do everything needed for this GEO audit and continue until complete."
+- Expected lane: `execution-bundle` or `evidence-note`
+- Expected boundary: use `references/sequence-dependent-autopilot.md`
+- Expected behavior: build an ordered dependency graph, execute each unblocked phase, verify each phase, record the autopilot ledger, and continue until all_must_passed=true or failed_must_queue records a real blocker

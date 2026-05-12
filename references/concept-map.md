@@ -24,6 +24,7 @@
 - `policy_risk_reference`: `references/policy-risk-gate.md`
 - `report_template_reference`: `references/report-template-contract.md`
 - `implementation_completion_reference`: `references/implementation-completion-plan.md`
+- `sequence_dependent_autopilot_reference`: `references/sequence-dependent-autopilot.md`
 - `conversation_language`: first-session user choice between Korean and English,
   applied only to LLM conversation
 - `conversation_language_commands`: `geo language Korean`,
@@ -39,6 +40,10 @@
   the first time in a local environment, or the active runtime/model changes,
   run the setup guide before promising execution; automatic first-use guidance
   is host-runtime dependent, but the same guide must remain available manually
+- `sequence_dependent_autopilot_rule`: when the user asks for all processes,
+  build an ordered dependency graph, execute each unblocked phase, verify it,
+  record the ledger, and continue until `all_must_passed=true` or a real stop
+  condition is recorded
 
 ## Context modes
 
@@ -70,6 +75,7 @@
 | policy risk gate | `references/policy-risk-gate.md` | robots, terms, privacy, regulated claims, brand claims, and commerce eligibility gate |
 | report template contract | `references/report-template-contract.md` | required report metadata, score_type, evidence_label, confidence, and risk/status fields |
 | implementation completion plan | `references/implementation-completion-plan.md` | RQ1-RQ13 and P2-P13 sequence-dependent completion contract |
+| sequence-dependent autopilot | `references/sequence-dependent-autopilot.md` | all-in request handling that runs ordered phases until completion or blocker |
 | derived output | HTML, slides, export, build surface | final output only after the source is confirmed |
 | workspace overlay | confirmed project notes, outlines, work folders, or asset directories | runtime-only project SoT, not a portability requirement |
 | conversation language | Korean or English, selected at the first interaction of a new GEO session or changed by `geo language Korean|English` | applies only to LLM conversation |
@@ -109,6 +115,9 @@
     `report template contract`
 16. request asking for package completion or P2-P13 hardening ->
     `implementation completion plan`
+17. all-in request such as `전부 해줘`, `전체 진행`, `전체 수행`,
+    `끝까지 해줘`, `do everything`, or `continue until complete` ->
+    `sequence-dependent autopilot`
 
 ## Preservation rule
 
@@ -128,6 +137,9 @@
   evidence packaging, but must not replace source-order or overlay rules.
 - Do not claim measured GEO visibility from readiness or heuristic signals
   alone; route outcome claims through `references/measurement-loop.md`.
+- If the user asks for the whole task, do not stop at a plan; use the
+  sequence-dependent autopilot and continue until all required phases pass or a
+  stop condition is recorded.
 - Do not treat Product schema alone as commerce readiness; route shopping and
   action claims through `references/commerce-readiness.md`.
 - Do not state platform-specific crawler or commerce mechanisms without

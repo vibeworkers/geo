@@ -117,9 +117,21 @@ existing subskills should report outcome and commerce/action claims.
 | `references/policy-risk-gate.md` | `geo-crawlers`, `geo-content`, `geo-platform-optimizer`, `geo-report`, `geo-proposal`, `geo-technical` | check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility before recommendations |
 | `references/report-template-contract.md` | `geo-report`, `geo-report-pdf`, `geo-proposal`, `geo-audit` | require score_type, evidence_label, confidence, measurement_status, commerce_status, private_surface_status, regional_context, and policy_risk |
 | `references/implementation-completion-plan.md` | `geo`, `geo-report`, `geo-proposal` | close P2-P13 hardening with all_must_passed or failed_must_queue evidence |
+| `references/cogarch-alignment.md` | `geo`, `geo-audit`, `geo-report`, `geo-proposal`, `geo-platform-optimizer`, `geo-technical` | apply optional governance alignment for evidence closure, owner split, actor-first handoff, and portable knowledge packets without requiring `cogarch` |
+| `references/sequence-dependent-autopilot.md` | `geo`, `geo-audit`, `geo-report`, `geo-proposal`, `geo-report-pdf`, `geo-schema`, `geo-technical` | run all-in requests through an ordered dependency graph, phase execution, verification, ledger recording, and completion judgment |
 
 Use these references when the request asks whether GEO "worked", whether an AI
 platform cites a brand, whether shopping/action readiness exists, or whether a
 product/schema change can support commerce outcomes. Use the report and
 completion contracts when the user asks for a consolidated handoff or
 whole-system completion judgment.
+
+Use `references/cogarch-alignment.md` when a workflow needs stronger
+governance discipline, reusable knowledge packaging, or actor-specific handoff.
+It can shape the report loop and ownership boundary, but advanced workflows
+must remain executable without hidden global files.
+
+Use `references/sequence-dependent-autopilot.md` when the user asks GEO to do
+the whole task without naming the individual workflow steps. The representative
+router should select the next unblocked process, verify it, and keep going
+until every required phase passes or a real stop condition is recorded.
