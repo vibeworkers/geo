@@ -1,0 +1,245 @@
+[
+  {
+    "slug": "coupang",
+    "url": "https://www.coupang.com/",
+    "generated_at": "2026-05-12T13:18:05.427570+00:00",
+    "platform_sources": {
+      "openai": "https://developers.openai.com/api/docs/bots",
+      "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+      "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    "robots": {
+      "url": "https://www.coupang.com/robots.txt",
+      "status": 403,
+      "final_url": "https://www.coupang.com/robots.txt",
+      "content_type": "text/html",
+      "error": "HTTPError: 403 Forbidden",
+      "sitemaps": [],
+      "body_excerpt": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;robots&#46;txt\" on this server.<P>\nReference&#32;&#35;18&#46;288fe79&#46;1778591885&#46;1a270c0b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;288fe79&#46;1778591885&#46;1a270c0b</P>\n</BODY>\n</HTML>\n"
+    },
+    "robots_policy": {
+      "Googlebot": null,
+      "OAI-SearchBot": null,
+      "GPTBot": null,
+      "ChatGPT-User": null,
+      "ClaudeBot": null,
+      "Claude-SearchBot": null,
+      "Claude-User": null
+    },
+    "homepage": {
+      "url": "https://www.coupang.com/",
+      "status": 403,
+      "final_url": "https://www.coupang.com/",
+      "content_type": "text/html",
+      "server": "AkamaiGHost",
+      "challenge_signal": "18.4d88fe79.1778591885.144eda69",
+      "error": "HTTPError: 403 Forbidden",
+      "body_bytes_sampled": 369
+    },
+    "html": {
+      "title": "Access Denied",
+      "meta_description": null,
+      "meta_robots": null,
+      "canonical": null,
+      "open_graph_count": 0,
+      "json_ld_block_count": 0,
+      "json_ld_types": []
+    },
+    "classification": {
+      "readiness_score": 35,
+      "confidence": "low",
+      "search_access_ready": false,
+      "merchant_schema_on_root": false,
+      "discovery_schema_on_root": false,
+      "blockers": [
+        "홈페이지 HTTP 접근이 4xx/5xx 또는 네트워크 오류로 확인되어 public fetch 안정성이 낮음",
+        "robots.txt를 정상 판독하지 못해 crawler control 증거가 불완전함",
+        "OAI-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음",
+        "Claude-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음"
+      ]
+    }
+  },
+  {
+    "slug": "gmarket",
+    "url": "https://www.gmarket.co.kr/",
+    "generated_at": "2026-05-12T13:18:05.519622+00:00",
+    "platform_sources": {
+      "openai": "https://developers.openai.com/api/docs/bots",
+      "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+      "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    "robots": {
+      "url": "https://www.gmarket.co.kr/robots.txt",
+      "status": 403,
+      "final_url": "https://www.gmarket.co.kr/robots.txt",
+      "content_type": "text/html; charset=UTF-8",
+      "error": "HTTPError: 403 Forbidden",
+      "sitemaps": [],
+      "body_excerpt": "<html>\n<head>\n<meta charset=\"utf-8\">\n<title>G마켓 - 쇼핑을 바꾸는 쇼핑</title>\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width, height=device-height\">\n<style>\n  body, html {\n    height: 100%; /* 전체 높이를 100%로 설정 */\n    margin: 0; /* 기본 마진 제거 */\n    padding: 0; /* 기본 패딩 제거 */\n  }\n  #wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100%; /* 높이를 100%로 설정하여 수직 중앙 정렬 */\n    text-align: center; /* 텍스트 중앙 정렬 */\n  }\n  .wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%; /* 전체 너비를 100%로 설정 */\n  }\n  img {\n    max-width: 100%; /* 이미지 최대 너비 제한 */\n    height: auto; /* 이미지 높이 자동 조절 */\n  }\n</style>\n<meta http-equiv=\"refresh\" content=\"360\">\n</head>\n<body>\n<div id=\"wrap\">\n  <div id=\"container\">\n    <div class=\"content\">\n      <section>\n        <div class=\"msg_error error404\">\n          <div class=\"img_error\">\n            <span class=\"bg_warning_red\" title=\"에러이미지\"></span>\n            <img class=\"m_hide\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAADiCAYAAACWaxQqAAAhp0lEQVR42u3dC5xcVX3A8YOiooDUAhrC7p0lJNk7kxDAaC0qJaBgi1paFK1tUXygYAHf0KooYH3VFotKNUo/2BhENsnO3DubTXguye7OzCYBhOCjieURwisIBBJICCTb/zlnZh/Jzsy9d+7Mzu7+vp/P+WweO3fuY+b+73n9j1IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOY0qF6u1rRNUwVnvupvPUP1Jz4tZbHqdzZKeUHlnEH5+byU9VIWqlzi46ovcbrqPfJYtW76YbKF/TiJAABU09N2gFqbOF4VJNDmnEUSVO+Sn3+UslutSQyqO6Ton3kTeG3RQbggZe2I/+93XpR/f0wCckF+LlT51nPUaidlAjoAACgG3YHEKRJUr5JAeq8EzBdNINVloBhscyMCbpCif1+/rhS01yX0v+2Qf1un8olvqnzbWwjGAICpaa0zQ4LhVyUorjfBshRwwwbbMEFZB+Q7TVDfLbXsgvy8SK1OHMHFAABMfoWWeVLTlWZh56mhoNvvNLbkRtSO886jKtf6PeljPpqLAwCYfHSAKzg/kbK9GPgaH3jHKrr/2NaKn5Q/f1uaxKdxsQAAE192+mskuF0iwe0JE3hzTRJ49y75YiAuJB6QpvFPqA76iAEAE7bWmzhBAlreBN5CkwbevYtuEtcjqvOJbrUqkeQiAgAmjkH1MqlRXixB9zkTzPqdiVfWmf7pLarP+QgXFADQ/FZPO1yamZc0VT9vLf3DdirUVWa6FAAATSkvTbb5xJ0m+PY7k6Pkin3DudZlKtfyai4yAKC5mP5eZ5Npup0swXdkuUuOq8/5PhcaANA8VrecZPpL10zS4Duc8vJFSWn5Ni44AGD85RJvVQMyxWgyB99SsU3rHVx0AMD46m+dKwOUHm5o8M2NyPWcH/H3Rs0V7peavh5oBgDAuNAZo3KyeEK9pxkVilOC7ijOz9XBts/ZKf/3jJStUraZ1Y8Kxd8prYhUv5zSe1Rf65v4AAAAGq8j9UoJRl11G+1cKDb3Fkytc5MEPV/+/TIJvB8wg736jmpXvTMc1XNki6xs1Cajk4+R/ztVlh08X37/p1LukN/fMSpox1kLXiXN7gAANJwOhvUIvgNDSwc+JNOZrpYAfKrqdV4Xev/0UoNmSpRzofRR3y5/3hXLvGRb+94hAX8mHwIAQGP1JU6WQPlCrEk2Ss3MeeceqcWep9ZNPyzeB4bWN9uFIBJba8pHbfq6E782LQAAADTMzTMOkUAUb7+vbWreLEH9AnX3Gw6s78ODNF3rJuqCPEBEOQazalLr5/ggAAAaqz/xTROE4upLXWMWPViseqc7ja3Ft54oQTgXqjZsE4zcqfraD+aDgFi1dLxaJdOXKtf/nnIz5Utqhfz0P8QJA6aaPmeOBM1tsTQ9rzG13m0S/D41bsdjl0n8jsxh3l11GpWppSfuN+cAiJtz3etUMvO0mnPToEqtLF/m9gxKIF7CCQOmXgC+IZaBV2uLTc69LQuapFb/PtmfjebY7ApIw4swlKY0FZyValXLLD4EqIu29J9IY"
+    },
+    "robots_policy": {
+      "Googlebot": null,
+      "OAI-SearchBot": null,
+      "GPTBot": null,
+      "ChatGPT-User": null,
+      "ClaudeBot": null,
+      "Claude-SearchBot": null,
+      "Claude-User": null
+    },
+    "homepage": {
+      "url": "https://www.gmarket.co.kr/",
+      "status": 403,
+      "final_url": "https://www.gmarket.co.kr/",
+      "content_type": "text/html; charset=UTF-8",
+      "server": "cloudflare",
+      "challenge_signal": "challenge",
+      "error": "HTTPError: 403 Forbidden",
+      "body_bytes_sampled": 22366
+    },
+    "html": {
+      "title": "G마켓 - 쇼핑을 바꾸는 쇼핑",
+      "meta_description": null,
+      "meta_robots": null,
+      "canonical": null,
+      "open_graph_count": 0,
+      "json_ld_block_count": 0,
+      "json_ld_types": []
+    },
+    "classification": {
+      "readiness_score": 35,
+      "confidence": "low",
+      "search_access_ready": false,
+      "merchant_schema_on_root": false,
+      "discovery_schema_on_root": false,
+      "blockers": [
+        "홈페이지 HTTP 접근이 4xx/5xx 또는 네트워크 오류로 확인되어 public fetch 안정성이 낮음",
+        "robots.txt를 정상 판독하지 못해 crawler control 증거가 불완전함",
+        "OAI-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음",
+        "Claude-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음"
+      ]
+    }
+  },
+  {
+    "slug": "musinsa",
+    "url": "https://www.musinsa.com/",
+    "generated_at": "2026-05-12T13:18:06.095279+00:00",
+    "platform_sources": {
+      "openai": "https://developers.openai.com/api/docs/bots",
+      "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+      "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    "robots": {
+      "url": "https://www.musinsa.com/robots.txt",
+      "status": 200,
+      "final_url": "https://www.musinsa.com/robots.txt",
+      "content_type": "text/plain; charset=UTF-8",
+      "error": null,
+      "sitemaps": [
+        "https://www.musinsa.com/sitemap-musinsa-index.xml"
+      ],
+      "body_excerpt": "##############################\n# MSS robots.txt\n# Last Updated: 2025.10.24\n##############################\n\n##############################\n# Group 1: Fully Granted\n##############################\nUser-agent: Applebot\nUser-agent: facebookexternalhit\nUser-agent: Twitterbot\nUser-agent: OAI-SearchBot\nUser-agent: ChatGPT-User\nUser-agent: Claude-User\nUser-agent: Claude-SearchBot\nUser-agent: Perplexity-User\nAllow: /\n\n##############################\n# Group 2: Partially Granted\n##############################\nUser-agent: Googlebot\nUser-agent: Googlebot-Image\nUser-agent: Storebot-Google\nUser-agent: Yeti\nUser-agent: NaverBot\nUser-agent: Daum\nUser-agent: Daumoa\nUser-agent: Bingbot\nUser-agent: ZumBot\nUser-agent: DuckDuckBot\nUser-agent: Yandexbot\nUser-agent: Slurp\nUser-agent: CCBot\nUser-agent: GPTBot\nUser-agent: Meta-WebIndexer\nUser-agent: Google-Extended\nUser-agent: ClaudeBot\nUser-agent: Meta-ExternalAgent\nUser-agent: PerplexityBot\nUser-agent: Amazonbot\nAllow: /\nDisallow: /auth/\nDisallow: /fashiontalk/\nDisallow: /festival/\nDisallow: /like/\nDisallow: /mypage/\nDisallow: /showcase/\nDisallow: /app/coupon/coupon_result/\n\n##############################\n# Group 3: Blocked\n##############################\nUser-agent: *\nDisallow: /\n\nSitemap: https://www.musinsa.com/sitemap-musinsa-index.xml\n"
+    },
+    "robots_policy": {
+      "Googlebot": true,
+      "OAI-SearchBot": true,
+      "GPTBot": true,
+      "ChatGPT-User": true,
+      "ClaudeBot": true,
+      "Claude-SearchBot": true,
+      "Claude-User": true
+    },
+    "homepage": {
+      "url": "https://www.musinsa.com/",
+      "status": 200,
+      "final_url": "https://www.musinsa.com/main/musinsa/recommend",
+      "content_type": "text/html; charset=utf-8",
+      "server": "cloudflare",
+      "challenge_signal": null,
+      "error": null,
+      "body_bytes_sampled": 66014
+    },
+    "html": {
+      "title": "무신사",
+      "meta_description": "패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.",
+      "meta_robots": null,
+      "canonical": "https://www.musinsa.com/main/musinsa/recommend",
+      "open_graph_count": 4,
+      "json_ld_block_count": 0,
+      "json_ld_types": []
+    },
+    "classification": {
+      "readiness_score": 90,
+      "confidence": "medium",
+      "search_access_ready": true,
+      "merchant_schema_on_root": false,
+      "discovery_schema_on_root": false,
+      "blockers": [
+        "수집된 루트 HTML에서 Product/Offer 계열 merchant schema가 확인되지 않음"
+      ]
+    }
+  },
+  {
+    "slug": "oliveyoung",
+    "url": "https://www.oliveyoung.co.kr/",
+    "generated_at": "2026-05-12T13:18:06.322009+00:00",
+    "platform_sources": {
+      "openai": "https://developers.openai.com/api/docs/bots",
+      "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+      "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    "robots": {
+      "url": "https://www.oliveyoung.co.kr/robots.txt",
+      "status": 403,
+      "final_url": "https://www.oliveyoung.co.kr/robots.txt",
+      "content_type": "text/html; charset=UTF-8",
+      "error": "HTTPError: 403 Forbidden",
+      "sitemaps": [],
+      "body_excerpt": "<!DOCTYPE html>\n<html lang=\"ko\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n    <meta http-equiv=\"Pragma\" content=\"no-cache\" />\n    <meta http-equiv=\"Cache-Control\" content=\"no-cache\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"format-detection\" content=\"telephone=no\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"\n    />\n    <title>잠시만 기다려 주세요 - 올리브영</title>\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n      }\n\n      html,\n      body {\n        height: 100%;\n        overflow-x: hidden;\n      }\n\n      body {\n        font-family: \"Apple SD Gothic Neo\", -apple-system, BlinkMacSystemFont,\n          \"Segoe UI\", sans-serif;\n        background: #ffffff;\n        width: 100%;\n        margin: 0 auto;\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        min-height: 100dvh;\n      }\n\n      /* Main Container */\n      .container {\n        display: flex;\n        flex-direction: column;\n        width: 100%;\n        min-height: 100dvh;\n        background: #ffffff;\n      }\n\n      /* Main Content - 안내 영역 */\n      .main-section {\n        flex: 1;\n        width: 100%;\n        background: #ffffff;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        min-height: 428px; /* 기존398px */\n        padding: 80px 20px 50px 20px; /* 작은사이즈 폰 대응 상단 여백 조정 */\n      }\n\n      .content-wrapper {\n        width: 100%;\n        max-width: 300px;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        gap: 40px;\n      }\n\n      /* Text Section - 항상 중앙 정렬 */\n      .text-section {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n        width: 100%;\n        max-width: 217px;\n      }\n\n      .title-section {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n      }\n\n      /* 로고 - 항상 중앙 정렬 */\n      .logo {\n        width: 185px;\n        height: 22px;\n        background-image: url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg1IiBoZWlnaHQ9IjIzIiB2aWV3Qm94PSIwIDAgMTg1IDIzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMjUuMTM1MyAxNy44OTIyTDI3LjQ4NTMgMS40NjI4OUgyMi45MTk3TDIwLjA2NzkgMjEuNTM3MUgzMi4xMDg0TDMyLjYxMDIgMTcuODkyMkgyNS4xMzUzWiIgZmlsbD0iIzEzMTUxOCIvPgo8cGF0aCBkPSJNMzguNjM3OSAxLjQ2Mjg5TDM1Ljc0NTYgMjEuNTM3MUg0MC4zNzZMNDMuMjcxIDEuNDYyODlIMzguNjM3OVoiIGZpbGw9IiMxMzE1MTgiLz4KPHBhdGggZD0iTTU5LjY4NzYgMS40NjI4OUw1My4zOTIxIDE1LjY3MzRMNTEuMzE0NiAxLjQ2Mjg5SDQ3LjAzMzdMNTAuNjM1MiAyMS41MzcxSDU0LjU2OTlMNjMuOTY1OSAxLjQ2Mjg5SDU5LjY4NzZaIiBmaWxsPSIjMTMxNTE4Ii8+CjxwYXRoIGQ9Ik0xNS44NjQ5IDMuMjc3MDVDMTQuNjM3OCAxLjgzODkzIDEyLjY2MTYgMC44NjQzNTkgMTAuMjM2NCAwLjgzN"
+    },
+    "robots_policy": {
+      "Googlebot": null,
+      "OAI-SearchBot": null,
+      "GPTBot": null,
+      "ChatGPT-User": null,
+      "ClaudeBot": null,
+      "Claude-SearchBot": null,
+      "Claude-User": null
+    },
+    "homepage": {
+      "url": "https://www.oliveyoung.co.kr/",
+      "status": 403,
+      "final_url": "https://www.oliveyoung.co.kr/",
+      "content_type": "text/html; charset=UTF-8",
+      "server": "cloudflare",
+      "challenge_signal": null,
+      "error": "HTTPError: 403 Forbidden",
+      "body_bytes_sampled": 48926
+    },
+    "html": {
+      "title": "잠시만 기다려 주세요 - 올리브영",
+      "meta_description": null,
+      "meta_robots": null,
+      "canonical": null,
+      "open_graph_count": 0,
+      "json_ld_block_count": 0,
+      "json_ld_types": []
+    },
+    "classification": {
+      "readiness_score": 35,
+      "confidence": "low",
+      "search_access_ready": false,
+      "merchant_schema_on_root": false,
+      "discovery_schema_on_root": false,
+      "blockers": [
+        "홈페이지 HTTP 접근이 4xx/5xx 또는 네트워크 오류로 확인되어 public fetch 안정성이 낮음",
+        "robots.txt를 정상 판독하지 못해 crawler control 증거가 불완전함",
+        "OAI-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음",
+        "Claude-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음"
+      ]
+    }
+  }
+]

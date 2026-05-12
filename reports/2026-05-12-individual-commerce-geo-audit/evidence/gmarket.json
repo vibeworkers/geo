@@ -1,0 +1,61 @@
+{
+  "slug": "gmarket",
+  "url": "https://www.gmarket.co.kr/",
+  "generated_at": "2026-05-12T13:18:05.519622+00:00",
+  "platform_sources": {
+    "openai": "https://developers.openai.com/api/docs/bots",
+    "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+    "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+    "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  "robots": {
+    "url": "https://www.gmarket.co.kr/robots.txt",
+    "status": 403,
+    "final_url": "https://www.gmarket.co.kr/robots.txt",
+    "content_type": "text/html; charset=UTF-8",
+    "error": "HTTPError: 403 Forbidden",
+    "sitemaps": [],
+    "body_excerpt": "<html>\n<head>\n<meta charset=\"utf-8\">\n<title>G마켓 - 쇼핑을 바꾸는 쇼핑</title>\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, width=device-width, height=device-height\">\n<style>\n  body, html {\n    height: 100%; /* 전체 높이를 100%로 설정 */\n    margin: 0; /* 기본 마진 제거 */\n    padding: 0; /* 기본 패딩 제거 */\n  }\n  #wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100%; /* 높이를 100%로 설정하여 수직 중앙 정렬 */\n    text-align: center; /* 텍스트 중앙 정렬 */\n  }\n  .wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%; /* 전체 너비를 100%로 설정 */\n  }\n  img {\n    max-width: 100%; /* 이미지 최대 너비 제한 */\n    height: auto; /* 이미지 높이 자동 조절 */\n  }\n</style>\n<meta http-equiv=\"refresh\" content=\"360\">\n</head>\n<body>\n<div id=\"wrap\">\n  <div id=\"container\">\n    <div class=\"content\">\n      <section>\n        <div class=\"msg_error error404\">\n          <div class=\"img_error\">\n            <span class=\"bg_warning_red\" title=\"에러이미지\"></span>\n            <img class=\"m_hide\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAADiCAYAAACWaxQqAAAhp0lEQVR42u3dC5xcVX3A8YOiooDUAhrC7p0lJNk7kxDAaC0qJaBgi1paFK1tUXygYAHf0KooYH3VFotKNUo/2BhENsnO3DubTXguye7OzCYBhOCjieURwisIBBJICCTb/zlnZh/Jzsy9d+7Mzu7+vp/P+WweO3fuY+b+73n9j1IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgOY0qF6u1rRNUwVnvupvPUP1Jz4tZbHqdzZKeUHlnEH5+byU9VIWqlzi46ovcbrqPfJYtW76YbKF/TiJAABU09N2gFqbOF4VJNDmnEUSVO+Sn3+UslutSQyqO6Ton3kTeG3RQbggZe2I/+93XpR/f0wCckF+LlT51nPUaidlAjoAACgG3YHEKRJUr5JAeq8EzBdNINVloBhscyMCbpCif1+/rhS01yX0v+2Qf1un8olvqnzbWwjGAICpaa0zQ4LhVyUorjfBshRwwwbbMEFZB+Q7TVDfLbXsgvy8SK1OHMHFAABMfoWWeVLTlWZh56mhoNvvNLbkRtSO886jKtf6PeljPpqLAwCYfHSAKzg/kbK9GPgaH3jHKrr/2NaKn5Q/f1uaxKdxsQAAE192+mskuF0iwe0JE3hzTRJ49y75YiAuJB6QpvFPqA76iAEAE7bWmzhBAlreBN5CkwbevYtuEtcjqvOJbrUqkeQiAgAmjkH1MqlRXixB9zkTzPqdiVfWmf7pLarP+QgXFADQ/FZPO1yamZc0VT9vLf3DdirUVWa6FAAATSkvTbb5xJ0m+PY7k6Pkin3DudZlKtfyai4yAKC5mP5eZ5Npup0swXdkuUuOq8/5PhcaANA8VrecZPpL10zS4Duc8vJFSWn5Ni44AGD85RJvVQMyxWgyB99SsU3rHVx0AMD46m+dKwOUHm5o8M2NyPWcH/H3Rs0V7peavh5oBgDAuNAZo3KyeEK9pxkVilOC7ijOz9XBts/ZKf/3jJStUraZ1Y8Kxd8prYhUv5zSe1Rf65v4AAAAGq8j9UoJRl11G+1cKDb3Fkytc5MEPV/+/TIJvB8wg736jmpXvTMc1XNki6xs1Cajk4+R/ztVlh08X37/p1LukN/fMSpox1kLXiXN7gAANJwOhvUIvgNDSwc+JNOZrpYAfKrqdV4Xev/0UoNmSpRzofRR3y5/3hXLvGRb+94hAX8mHwIAQGP1JU6WQPlCrEk2Ss3MeeceqcWep9ZNPyzeB4bWN9uFIBJba8pHbfq6E782LQAAADTMzTMOkUAUb7+vbWreLEH9AnX3Gw6s78ODNF3rJuqCPEBEOQazalLr5/ggAAAaqz/xTROE4upLXWMWPViseqc7ja3Ft54oQTgXqjZsE4zcqfraD+aDgFi1dLxaJdOXKtf/nnIz5Utqhfz0P8QJA6aaPmeOBM1tsTQ9rzG13m0S/D41bsdjl0n8jsxh3l11GpWppSfuN+cAiJtz3etUMvO0mnPToEqtLF/m9gxKIF7CCQOmXgC+IZaBV2uLTc69LQuapFb/PtmfjebY7ApIw4swlKY0FZyValXLLD4EqIu29J9IY"
+  },
+  "robots_policy": {
+    "Googlebot": null,
+    "OAI-SearchBot": null,
+    "GPTBot": null,
+    "ChatGPT-User": null,
+    "ClaudeBot": null,
+    "Claude-SearchBot": null,
+    "Claude-User": null
+  },
+  "homepage": {
+    "url": "https://www.gmarket.co.kr/",
+    "status": 403,
+    "final_url": "https://www.gmarket.co.kr/",
+    "content_type": "text/html; charset=UTF-8",
+    "server": "cloudflare",
+    "challenge_signal": "challenge",
+    "error": "HTTPError: 403 Forbidden",
+    "body_bytes_sampled": 22366
+  },
+  "html": {
+    "title": "G마켓 - 쇼핑을 바꾸는 쇼핑",
+    "meta_description": null,
+    "meta_robots": null,
+    "canonical": null,
+    "open_graph_count": 0,
+    "json_ld_block_count": 0,
+    "json_ld_types": []
+  },
+  "classification": {
+    "readiness_score": 35,
+    "confidence": "low",
+    "search_access_ready": false,
+    "merchant_schema_on_root": false,
+    "discovery_schema_on_root": false,
+    "blockers": [
+      "홈페이지 HTTP 접근이 4xx/5xx 또는 네트워크 오류로 확인되어 public fetch 안정성이 낮음",
+      "robots.txt를 정상 판독하지 못해 crawler control 증거가 불완전함",
+      "OAI-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음",
+      "Claude-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음"
+    ]
+  }
+}

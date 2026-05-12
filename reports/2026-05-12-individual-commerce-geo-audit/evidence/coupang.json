@@ -1,0 +1,61 @@
+{
+  "slug": "coupang",
+  "url": "https://www.coupang.com/",
+  "generated_at": "2026-05-12T13:18:05.427570+00:00",
+  "platform_sources": {
+    "openai": "https://developers.openai.com/api/docs/bots",
+    "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+    "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+    "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  "robots": {
+    "url": "https://www.coupang.com/robots.txt",
+    "status": 403,
+    "final_url": "https://www.coupang.com/robots.txt",
+    "content_type": "text/html",
+    "error": "HTTPError: 403 Forbidden",
+    "sitemaps": [],
+    "body_excerpt": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;robots&#46;txt\" on this server.<P>\nReference&#32;&#35;18&#46;288fe79&#46;1778591885&#46;1a270c0b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;288fe79&#46;1778591885&#46;1a270c0b</P>\n</BODY>\n</HTML>\n"
+  },
+  "robots_policy": {
+    "Googlebot": null,
+    "OAI-SearchBot": null,
+    "GPTBot": null,
+    "ChatGPT-User": null,
+    "ClaudeBot": null,
+    "Claude-SearchBot": null,
+    "Claude-User": null
+  },
+  "homepage": {
+    "url": "https://www.coupang.com/",
+    "status": 403,
+    "final_url": "https://www.coupang.com/",
+    "content_type": "text/html",
+    "server": "AkamaiGHost",
+    "challenge_signal": "18.4d88fe79.1778591885.144eda69",
+    "error": "HTTPError: 403 Forbidden",
+    "body_bytes_sampled": 369
+  },
+  "html": {
+    "title": "Access Denied",
+    "meta_description": null,
+    "meta_robots": null,
+    "canonical": null,
+    "open_graph_count": 0,
+    "json_ld_block_count": 0,
+    "json_ld_types": []
+  },
+  "classification": {
+    "readiness_score": 35,
+    "confidence": "low",
+    "search_access_ready": false,
+    "merchant_schema_on_root": false,
+    "discovery_schema_on_root": false,
+    "blockers": [
+      "홈페이지 HTTP 접근이 4xx/5xx 또는 네트워크 오류로 확인되어 public fetch 안정성이 낮음",
+      "robots.txt를 정상 판독하지 못해 crawler control 증거가 불완전함",
+      "OAI-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음",
+      "Claude-SearchBot의 루트 URL 접근이 robots 기준 허용으로 확인되지 않음"
+    ]
+  }
+}

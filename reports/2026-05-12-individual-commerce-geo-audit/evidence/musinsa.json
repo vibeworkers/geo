@@ -1,0 +1,60 @@
+{
+  "slug": "musinsa",
+  "url": "https://www.musinsa.com/",
+  "generated_at": "2026-05-12T13:18:06.095279+00:00",
+  "platform_sources": {
+    "openai": "https://developers.openai.com/api/docs/bots",
+    "google_crawlers": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers",
+    "google_merchant": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+    "anthropic": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  "robots": {
+    "url": "https://www.musinsa.com/robots.txt",
+    "status": 200,
+    "final_url": "https://www.musinsa.com/robots.txt",
+    "content_type": "text/plain; charset=UTF-8",
+    "error": null,
+    "sitemaps": [
+      "https://www.musinsa.com/sitemap-musinsa-index.xml"
+    ],
+    "body_excerpt": "##############################\n# MSS robots.txt\n# Last Updated: 2025.10.24\n##############################\n\n##############################\n# Group 1: Fully Granted\n##############################\nUser-agent: Applebot\nUser-agent: facebookexternalhit\nUser-agent: Twitterbot\nUser-agent: OAI-SearchBot\nUser-agent: ChatGPT-User\nUser-agent: Claude-User\nUser-agent: Claude-SearchBot\nUser-agent: Perplexity-User\nAllow: /\n\n##############################\n# Group 2: Partially Granted\n##############################\nUser-agent: Googlebot\nUser-agent: Googlebot-Image\nUser-agent: Storebot-Google\nUser-agent: Yeti\nUser-agent: NaverBot\nUser-agent: Daum\nUser-agent: Daumoa\nUser-agent: Bingbot\nUser-agent: ZumBot\nUser-agent: DuckDuckBot\nUser-agent: Yandexbot\nUser-agent: Slurp\nUser-agent: CCBot\nUser-agent: GPTBot\nUser-agent: Meta-WebIndexer\nUser-agent: Google-Extended\nUser-agent: ClaudeBot\nUser-agent: Meta-ExternalAgent\nUser-agent: PerplexityBot\nUser-agent: Amazonbot\nAllow: /\nDisallow: /auth/\nDisallow: /fashiontalk/\nDisallow: /festival/\nDisallow: /like/\nDisallow: /mypage/\nDisallow: /showcase/\nDisallow: /app/coupon/coupon_result/\n\n##############################\n# Group 3: Blocked\n##############################\nUser-agent: *\nDisallow: /\n\nSitemap: https://www.musinsa.com/sitemap-musinsa-index.xml\n"
+  },
+  "robots_policy": {
+    "Googlebot": true,
+    "OAI-SearchBot": true,
+    "GPTBot": true,
+    "ChatGPT-User": true,
+    "ClaudeBot": true,
+    "Claude-SearchBot": true,
+    "Claude-User": true
+  },
+  "homepage": {
+    "url": "https://www.musinsa.com/",
+    "status": 200,
+    "final_url": "https://www.musinsa.com/main/musinsa/recommend",
+    "content_type": "text/html; charset=utf-8",
+    "server": "cloudflare",
+    "challenge_signal": null,
+    "error": null,
+    "body_bytes_sampled": 66014
+  },
+  "html": {
+    "title": "무신사",
+    "meta_description": "패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.",
+    "meta_robots": null,
+    "canonical": "https://www.musinsa.com/main/musinsa/recommend",
+    "open_graph_count": 4,
+    "json_ld_block_count": 0,
+    "json_ld_types": []
+  },
+  "classification": {
+    "readiness_score": 90,
+    "confidence": "medium",
+    "search_access_ready": true,
+    "merchant_schema_on_root": false,
+    "discovery_schema_on_root": false,
+    "blockers": [
+      "수집된 루트 HTML에서 Product/Offer 계열 merchant schema가 확인되지 않음"
+    ]
+  }
+}
