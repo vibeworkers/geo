@@ -9,9 +9,11 @@ public search/source precheck이며, ChatGPT Search, Perplexity, Gemini /
 AI Overviews 결과로 승격하지 않는다.
 
 별도 `chatgpt.com` 공개 비로그인 기본 표면 negative capture는
-`chatgpt-public-capture-20260509.md`에 저장했다. 이 capture는 명시적
-ChatGPT Search-mode evidence로 확정되지 않았고, `haegyung.com`을 인용하지
-않았다.
+`chatgpt-public-capture-20260509.md`에 저장했다. 또한 `model=search` 쿼리
+파라미터로 접근한 공개 표면 capture를
+`chatgpt-search-public-capture-20260509.md`에 저장했지만, 이 역시 명시적
+Search-mode UI 확정이 안 돼 `haegyung.com` 인용 근거는 없고 여전히
+`not_observed_target_answer_or_citation`이다.
 
 별도 Perplexity 공개 비로그인 positive/partial capture는
 `perplexity-public-capture-20260509.md`에 저장했다. P1/P2는 target URL이
@@ -54,7 +56,8 @@ visible Links tab에 나타난 `observed_citation`이고, P3는 source URL이
 ## Next Required Evidence
 
 For exact ChatGPT Search-mode, save the actual answer/citation surface for
-`P1`, `P2`, and `P3`. For Perplexity, rerun `P3` if an expanded visible source
+`P1`, `P2`, and `P3` (기존 query-parameter 시도는 보조 근거로만 보관). For
+Perplexity, rerun `P3` if an expanded visible source
 URL is required. If standalone Gemini app measurement is required, keep it
 separate from the already captured Google Search AI Overview surface. Only rows
 that include the target answer or target citation may use `observed_answer` or

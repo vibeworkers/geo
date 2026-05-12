@@ -8,12 +8,13 @@
 답변/인용 결과를 담기 위한 observed outcome lane이다.
 
 현재 상태는 `public_search_precheck`, `chatgpt.com` 공개 비로그인 기본 표면의
-negative capture, Perplexity 공개 비로그인 표면의 partial positive capture,
-그리고 Google Search AI Overview 공개 표면의 negative capture까지다. ChatGPT
-capture는 명시적 ChatGPT Search-mode로 확정되지 않았고, `haegyung.com`
-target observed answer/citation도 아니다. Perplexity capture는 P1/P2에서
-target-positive observed citation을 보였지만, Google AI Overview는 P1/P2/P3
-모두 target-negative였다. 따라서 이 디렉터리는 `beta 100/100`을
+negative capture, `model=search` 쿼리파라미터 시도 capture, Perplexity 공개
+비로그인 표면의 partial positive capture, 그리고 Google Search AI Overview 공개
+표면의 negative capture까지다. `model=search` 시도는 명시적 ChatGPT
+Search-mode UI가 확인되지 않아 `haegyung.com` target observed answer/citation
+은 아니지만, 분명한 non-target negative 근거로 기록했다. Perplexity capture는
+P1/P2에서 target-positive observed citation을 보였지만, Google AI Overview는
+P1/P2/P3 모두 target-negative였다. 따라서 이 디렉터리는 `beta 100/100`을
 cross-platform observed visibility claim으로 승격하지 않는다.
 
 ## 파일 인벤토리
@@ -24,6 +25,8 @@ cross-platform observed visibility claim으로 승격하지 않는다.
 - `observed-citation-evidence.md`: public source and citation-candidate notes
 - `chatgpt-public-capture-20260509.md`: public logged-out ChatGPT default-chat
   negative capture for `P1` to `P3`
+- `chatgpt-search-public-capture-20260509.md`: `model=search` 쿼리 시도 capture
+  (non-confirmed mode, non-target negative)
 - `perplexity-public-capture-20260509.md`: public logged-out Perplexity partial
   positive capture for `P1` to `P3`
 - `google-ai-overviews-public-capture-20260509.md`: public Google Search AI
@@ -36,7 +39,7 @@ cross-platform observed visibility claim으로 승격하지 않는다.
 | readiness | complete | `main 10/100`, `beta 100/100` readiness comparison |
 | public search precheck | captured | official-source candidates and source-proof candidates exist |
 | ChatGPT public default answer | captured negative | target not identified; non-target sources cited |
-| ChatGPT Search observed answer | pending | exact Search-mode surface not measured |
+| ChatGPT Search observed answer | partial | model=search query-param probe captured negative; exact Search-mode still pending |
 | Perplexity observed answer/citation | captured partial positive | P1/P2 observed citation; P3 observed answer only |
 | Google AI Overviews observed answer/citation | captured negative | target not identified; non-target sources cited |
 | standalone Gemini app observed answer/citation | not in baseline matrix | separate run needed only if this is split from AI Overviews |

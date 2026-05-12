@@ -12,7 +12,7 @@
 | confidence | `high` |
 | evidence_path | `GEO-benchmark-report-main-vs-beta.ko.md`, `data/branch-readiness.json`, `data/site-http-head-snapshot.json`, `references/measurement-loop.md`, `references/measurement-capture-template.md`, `references/report-template-contract.md` |
 | last_verified | `2026-05-09` |
-| measurement_status | `partial positive observed capture with Google AI Overview negative capture` |
+| measurement_status | `partial positive observed capture with Google AI Overview and ChatGPT query-parameter negative capture` |
 | commerce_status | `not applicable` |
 | private_surface_status | `public only` |
 | regional_context | `named language: ko-KR; stored prompts: English` |
@@ -22,20 +22,23 @@
 
 `beta 100/100`은 readiness 결과로만 유효하다. `haegyung.com`의 observed
 outcome lane은 `chatgpt.com` 공개 비로그인 기본 표면에서 negative capture
-1세트, Perplexity 공개 비로그인 표면에서 partial positive capture 1세트,
+1세트, `chatgpt.com` query-parameter 탐색 표면에서 non-confirmed negative 1세트,
+Perplexity 공개 비로그인 표면에서 partial positive capture 1세트,
 Google Search AI Overview 공개 표면에서 negative capture 1세트를 얻었다.
 
 이 기준선은 두 레인을 분리해 유지한다.
 
 - readiness lane: `main 10/100`, `beta 100/100`
 - observed outcome lane: `Perplexity P1/P2 observed citation`, `Perplexity P3
-  observed answer only`, `ChatGPT public default negative`, `Google AI
-  Overviews public negative`, exact ChatGPT Search still pending
+  observed answer only`, `ChatGPT public default negative`, `ChatGPT Search
+  query-parameter negative`, `Google AI Overviews public negative`, exact ChatGPT
+  Search still pending
 
 target-positive capture는 생겼지만, 아직 cross-platform headline score를
-발행하지 않는다. exact ChatGPT Search-mode가 남아 있고,
-referral/conversion evidence도 없다. standalone Gemini app을 Google Search
-AI Overview와 분리해야 한다면 별도 surface로 추가 측정해야 한다.
+발행하지 않는다. exact ChatGPT Search-mode가 남아 있고, 현재는 query-parameter
+시도만으로 non-confirmed negative를 받았다. referral/conversion evidence도
+없다. standalone Gemini app을 Google Search AI Overview와 분리해야 한다면 별도
+surface로 추가 측정해야 한다.
 
 ## 2. Scope And Evidence
 
@@ -56,6 +59,8 @@ claim이 아니다.
   `readiness_signal` to `conversion_signal`.
 - `references/measurement-capture-template.md` defines the required Prompt
   Panel, Run Metadata, Capture Table, and Before/After Comparison.
+- `observed-outcomes/chatgpt-search-public-capture-20260509.md` records a
+  non-confirmed `model=search` negative probe.
 - `observed-outcomes/perplexity-public-capture-20260509.md` records the first
   target-positive observed platform rows.
 - `observed-outcomes/google-ai-overviews-public-capture-20260509.md` records a
@@ -77,9 +82,11 @@ Observed outcome 점검은 public surface부터 시작해야 한다.
 
 ## 4. Measurement Status
 
-현재 상태는 `partial positive observed capture with Google AI Overview negative
-capture`다. Perplexity P1/P2는 `observed_citation`, P3는 `observed_answer`로만
-분류한다. Google AI Overview P1/P2/P3는 모두 target-negative이므로 positive
+현재 상태는 `partial positive observed capture with Google AI Overview and query-parameter
+negative capture`다. Perplexity P1/P2는 `observed_citation`, P3는
+`observed_answer`로만 분류한다. ChatGPT `model=search` 시도는
+`mode confirmation not captured` 조건이 붙은 negative이며 target-negative이다.
+Google AI Overview P1/P2/P3는 모두 target-negative이므로 positive
 observed label을 붙이지 않는다.
 
 첫 measured lane은 commerce panel이 아니라 entity-discovery 및 source-proof
@@ -144,8 +151,9 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
 
 - `readiness`: `main 10/100`, `beta 100/100`
 - `observed outcome`: `Perplexity public P1/P2 observed citation; Perplexity P3
-  observed answer only; ChatGPT public default negative; Google AI Overviews
-  public negative; exact ChatGPT Search pending`
+  observed answer only; ChatGPT public default negative; ChatGPT Search
+  query-parameter negative (mode unconfirmed); Google AI Overviews public negative;
+  exact ChatGPT Search pending`
 
 위험한 summary 예시는 아래와 같다.
 
@@ -178,6 +186,9 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
   `observed_answer` to `observed_citation`
 - exact ChatGPT Search-mode capture remains pending; public default ChatGPT
   captured `P1` to `P3` as wrong-entity/target-absent negative evidence
+- query-parameter capture is recorded in
+  `observed-outcomes/chatgpt-search-public-capture-20260509.md` and remains
+  non-confirmed mode
 - Google AI Overviews public captured `P1` to `P3` as wrong-entity,
   ambiguous-entity, or target-absent negative evidence
 - no referral log
@@ -186,6 +197,8 @@ rerun window가 recrawl 또는 platform refresh를 반영하기에 너무 짧으
   `observed-outcomes/README.md`
 - public default ChatGPT negative capture:
   `observed-outcomes/chatgpt-public-capture-20260509.md`
+- query-parameter (non-confirmed mode) ChatGPT Search capture:
+  `observed-outcomes/chatgpt-search-public-capture-20260509.md`
 - Perplexity public partial positive capture:
   `observed-outcomes/perplexity-public-capture-20260509.md`
 - Google AI Overviews public negative capture:
