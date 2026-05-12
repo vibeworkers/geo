@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "coupang",
+    "home_status": 403,
+    "home_elapsed_ms": 157,
+    "robots_status": 403,
+    "llms_status": 403,
+    "sitemap_status": 403,
+    "sitemap_index_status": 403,
+    "title": "Access Denied",
+    "og_site_name": null,
+    "schema_types": [],
+    "jsonld_count": 0
+  },
+  {
+    "slug": "gmarket",
+    "home_status": 403,
+    "home_elapsed_ms": 62,
+    "robots_status": 403,
+    "llms_status": 403,
+    "sitemap_status": 403,
+    "sitemap_index_status": 403,
+    "title": "G마켓 - 쇼핑을 바꾸는 쇼핑",
+    "og_site_name": null,
+    "schema_types": [],
+    "jsonld_count": 0
+  },
+  {
+    "slug": "musinsa",
+    "home_status": 200,
+    "home_elapsed_ms": 627,
+    "robots_status": 200,
+    "llms_status": 404,
+    "sitemap_status": 404,
+    "sitemap_index_status": 404,
+    "title": "무신사",
+    "og_site_name": null,
+    "schema_types": [],
+    "jsonld_count": 0
+  },
+  {
+    "slug": "oliveyoung",
+    "home_status": 403,
+    "home_elapsed_ms": 71,
+    "robots_status": 403,
+    "llms_status": 403,
+    "sitemap_status": 403,
+    "sitemap_index_status": 403,
+    "title": "잠시만 기다려 주세요 - 올리브영",
+    "og_site_name": null,
+    "schema_types": [],
+    "jsonld_count": 0
+  }
+]

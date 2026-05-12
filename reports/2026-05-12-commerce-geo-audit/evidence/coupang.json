@@ -1,0 +1,207 @@
+{
+  "slug": "coupang",
+  "url": "https://www.coupang.com/",
+  "base": "https://www.coupang.com",
+  "captured_at": "2026-05-12 Asia/Seoul",
+  "fetches": {
+    "/": {
+      "url": "https://www.coupang.com/",
+      "status": 403,
+      "final_url": "https://www.coupang.com/",
+      "headers": {
+        "Server": "AkamaiGHost",
+        "Mime-Version": "1.0",
+        "Content-Type": "text/html",
+        "Content-Length": "369",
+        "Expires": "Tue, 12 May 2026 12:12:07 GMT",
+        "X-Reference-Error": "18.4c88fe79.1778587927.1aa2dfe8",
+        "Date": "Tue, 12 May 2026 12:12:07 GMT",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000"
+      },
+      "elapsed_ms": 157,
+      "error": "HTTP Error 403: Forbidden",
+      "text_sample": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;\" on this server.<P>\nReference&#32;&#35;18&#46;4c88fe79&#46;1778587927&#46;1aa2dfe8\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4c88fe79&#46;1778587927&#46;1aa2dfe8</P>\n</BODY>\n</HTML>\n"
+    },
+    "/robots.txt": {
+      "url": "https://www.coupang.com/robots.txt",
+      "status": 403,
+      "final_url": "https://www.coupang.com/robots.txt",
+      "headers": {
+        "Server": "AkamaiGHost",
+        "Mime-Version": "1.0",
+        "Content-Type": "text/html",
+        "Content-Length": "379",
+        "Expires": "Tue, 12 May 2026 12:12:08 GMT",
+        "X-Reference-Error": "18.ae88fe79.1778587928.721831",
+        "Date": "Tue, 12 May 2026 12:12:08 GMT",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000"
+      },
+      "elapsed_ms": 45,
+      "error": "HTTP Error 403: Forbidden",
+      "text_sample": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;robots&#46;txt\" on this server.<P>\nReference&#32;&#35;18&#46;ae88fe79&#46;1778587928&#46;721831\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;ae88fe79&#46;1778587928&#46;721831</P>\n</BODY>\n</HTML>\n"
+    },
+    "/llms.txt": {
+      "url": "https://www.coupang.com/llms.txt",
+      "status": 403,
+      "final_url": "https://www.coupang.com/llms.txt",
+      "headers": {
+        "Server": "AkamaiGHost",
+        "Mime-Version": "1.0",
+        "Content-Type": "text/html",
+        "Content-Length": "377",
+        "Expires": "Tue, 12 May 2026 12:12:09 GMT",
+        "X-Reference-Error": "18.8588fe79.1778587929.672306",
+        "Date": "Tue, 12 May 2026 12:12:09 GMT",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000"
+      },
+      "elapsed_ms": 58,
+      "error": "HTTP Error 403: Forbidden",
+      "text_sample": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;llms&#46;txt\" on this server.<P>\nReference&#32;&#35;18&#46;8588fe79&#46;1778587929&#46;672306\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;8588fe79&#46;1778587929&#46;672306</P>\n</BODY>\n</HTML>\n"
+    },
+    "/sitemap.xml": {
+      "url": "https://www.coupang.com/sitemap.xml",
+      "status": 403,
+      "final_url": "https://www.coupang.com/sitemap.xml",
+      "headers": {
+        "Server": "AkamaiGHost",
+        "Mime-Version": "1.0",
+        "Content-Type": "text/html",
+        "Content-Length": "384",
+        "Expires": "Tue, 12 May 2026 12:12:09 GMT",
+        "X-Reference-Error": "18.6788fe79.1778587929.1660a1ad",
+        "Date": "Tue, 12 May 2026 12:12:09 GMT",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000"
+      },
+      "elapsed_ms": 63,
+      "error": "HTTP Error 403: Forbidden",
+      "text_sample": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;sitemap&#46;xml\" on this server.<P>\nReference&#32;&#35;18&#46;6788fe79&#46;1778587929&#46;1660a1ad\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6788fe79&#46;1778587929&#46;1660a1ad</P>\n</BODY>\n</HTML>\n"
+    },
+    "/sitemap_index.xml": {
+      "url": "https://www.coupang.com/sitemap_index.xml",
+      "status": 403,
+      "final_url": "https://www.coupang.com/sitemap_index.xml",
+      "headers": {
+        "Server": "AkamaiGHost",
+        "Mime-Version": "1.0",
+        "Content-Type": "text/html",
+        "Content-Length": "392",
+        "Expires": "Tue, 12 May 2026 12:12:10 GMT",
+        "X-Reference-Error": "18.4f88fe79.1778587930.f9bf2c1",
+        "Date": "Tue, 12 May 2026 12:12:10 GMT",
+        "Connection": "close",
+        "Strict-Transport-Security": "max-age=31536000"
+      },
+      "elapsed_ms": 112,
+      "error": "HTTP Error 403: Forbidden",
+      "text_sample": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;coupang&#46;com&#47;sitemap&#95;index&#46;xml\" on this server.<P>\nReference&#32;&#35;18&#46;4f88fe79&#46;1778587930&#46;f9bf2c1\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f88fe79&#46;1778587930&#46;f9bf2c1</P>\n</BODY>\n</HTML>\n"
+    }
+  },
+  "html_analysis": {
+    "title": "Access Denied",
+    "h1": [
+      "Access Denied"
+    ],
+    "meta_sample": {},
+    "og_site_name": null,
+    "description": null,
+    "robots_meta": null,
+    "canonical": [],
+    "jsonld_count": 0,
+    "schema_types": [],
+    "schema_parse_errors": 0,
+    "link_count_sampled": 0
+  },
+  "robots_analysis": {
+    "agents": {
+      "GPTBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "OAI-SearchBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "ChatGPT-User": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "ClaudeBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Claude-SearchBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Claude-User": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Googlebot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Google-Extended": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "PerplexityBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Bingbot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "GrokBot": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "xAI-Grok": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Grok-DeepSearch": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "*": {
+        "status": "no_specific_rules",
+        "disallow": [],
+        "allow": [],
+        "crawl_delay": []
+      }
+    },
+    "sitemaps": []
+  }
+}

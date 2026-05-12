@@ -244,6 +244,7 @@ If advanced workflows are not available or do not start as expected:
 - `references/versioning-protocol.md`: release rules and the three-part `X.Y.Z` version structure
 - `references/runtime-adaptation.md`: runtime compatibility and per-runtime boundaries
 - `references/execution-skill-matrix.md`: advanced execution workflow list
+- `references/user-level-workflow-guide.md`: manager/operator/builder output guidance for advanced workflows
 - `references/measurement-loop.md`: evidence ladder for measured GEO outcome claims
 - `references/commerce-readiness.md`: commerce/action readiness boundary
 - `references/platform-truth-registry.md`: verified platform/crawler/source claim registry
@@ -522,6 +523,7 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/versioning-protocol.md`: 릴리즈 규칙과 3단계 `X.Y.Z` 버전 구조
 - `references/runtime-adaptation.md`: 런타임 호환성과 모델별 경계
 - `references/execution-skill-matrix.md`: 고급 실행 workflow 목록
+- `references/user-level-workflow-guide.md`: 고급 workflow의 manager/operator/builder 출력 가이드
 - `references/measurement-loop.md`: 측정된 GEO 성과 주장용 evidence ladder
 - `references/commerce-readiness.md`: commerce/action readiness 경계
 - `references/platform-truth-registry.md`: 검증된 platform/crawler/source claim registry

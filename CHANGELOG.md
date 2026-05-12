@@ -8,6 +8,9 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+- Added a user-level workflow guide distilled from the older
+  `geo-seo-skills-kr` onboarding docs, preserving manager/operator/builder
+  output guidance without restoring hidden slash-command session state.
 - Added platform-truth, measurement-loop, commerce-readiness, private-surface,
   regional/situational, policy-risk, report-template, and implementation
   completion reference contracts so GEO claims separate readiness, heuristic,

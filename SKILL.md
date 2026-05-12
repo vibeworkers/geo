@@ -115,7 +115,8 @@ If this skill summary drifts, see the portable GEO routing baseline defined in
 `references/regional-situational-routing.md`,
 `references/policy-risk-gate.md`,
 `references/report-template-contract.md`,
-`references/implementation-completion-plan.md`, and
+`references/implementation-completion-plan.md`,
+`references/user-level-workflow-guide.md`, and
 `references/execution-skill-matrix.md`.
 
 The bundled term contract is defined in `references/glossary.md`.
@@ -152,6 +153,7 @@ Use the smallest confirmed source surface that can answer the request:
   `references/policy-risk-gate.md`
   `references/report-template-contract.md`
   `references/implementation-completion-plan.md`
+  `references/user-level-workflow-guide.md`
 - user-provided working sources:
   pasted notes, attached docs, explicit file paths, or named deliverables from
   the user
@@ -676,6 +678,7 @@ Runtime-fact exception:
 - `references/policy-risk-gate.md`
 - `references/report-template-contract.md`
 - `references/implementation-completion-plan.md`
+- `references/user-level-workflow-guide.md`
 - `references/execution-skill-matrix.md`
 - `scripts/check_geo_skill.py`
 

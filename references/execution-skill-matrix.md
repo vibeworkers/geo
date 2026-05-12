@@ -32,6 +32,23 @@ appear automatically there. Otherwise, follow these steps manually.
 - If a workflow needs extra tools or export steps, read the matching subskill's
   `SKILL.md`.
 
+## User-level output guide
+
+Use `references/user-level-workflow-guide.md` when a workflow must adapt the
+same finding for a manager, operator, or builder.
+
+The guide preserves the earlier practical onboarding pattern:
+
+- `L1` manager output uses business language and handoff notes for another
+  team.
+- `L2` operator output uses CMS, hosting, file, and verification steps.
+- `L3` builder output uses code, schema, CLI checks, automation, and export
+  commands.
+
+The profile only changes explanation and action packaging. It must not reduce
+analysis depth, bypass clarification-first intake, or turn readiness evidence
+into a measured visibility claim.
+
 ## Troubleshooting
 
 - If no advanced workflow is available, verify that `skills/*` is present in

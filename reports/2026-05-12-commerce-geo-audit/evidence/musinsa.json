@@ -1,0 +1,414 @@
+{
+  "slug": "musinsa",
+  "url": "https://www.musinsa.com/",
+  "base": "https://www.musinsa.com",
+  "captured_at": "2026-05-12 Asia/Seoul",
+  "fetches": {
+    "/": {
+      "url": "https://www.musinsa.com/",
+      "status": 200,
+      "final_url": "https://www.musinsa.com/main/musinsa/recommend",
+      "headers": {
+        "Date": "Tue, 12 May 2026 12:12:15 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "vary": "Accept-Encoding",
+        "set-cookie": "__cf_bm=wJIyG_fdrqz8Br4bNCuCnFVyLGyUjbnvdHxDe0wiq1w-1778587935.3469887-1.0.1.1-r_YVhJRdioq3KWIxBd.wBHe8ERe1TOjgZio0cWlbsOB9klu09.ClCgPLJEWO_qMOXFqqWjV0Dat6.yWdlYqwOSbvkuesbJL0KfrWCLSJNlbJ89vMYgClWHwsilAnBnsU; HttpOnly; SameSite=None; Secure; Path=/; Domain=musinsa.com; Expires=Tue, 12 May 2026 12:42:15 GMT",
+        "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+        "x-cache": "Miss from cloudfront",
+        "via": "1.1 48283955a47e27de2f30b7fc4699cc7e.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "MRS53-P4",
+        "x-amz-cf-id": "5ptFu6TR9F7p1PcZugOAZSL7ZtdeGrgQx_kYekLONte80SkDqWpPzA==",
+        "cf-cache-status": "DYNAMIC",
+        "Server": "cloudflare",
+        "CF-RAY": "9fa954a3e9e9ea20-ICN",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "elapsed_ms": 627,
+      "text_sample": "<!DOCTYPE html><html lang=\"ko\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><title data-next-head=\"\">무신사</title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" data-next-head=\"\"/><meta name=\"description\" content=\"패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.\" data-next-head=\"\"/><meta property=\"og:type\" content=\"website\" data-next-head=\"\"/><meta property=\"og:title\" content=\"무신사\" data-rh=\"true\" data-next-head=\"\"/><meta property=\"og:description\" content=\"패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.\" data-next-head=\"\"/><meta name=\"naver-site-verification\" content=\"f99cba16599b1962d3c6591871ee289510141ff8\" data-next-head=\"\"/><meta name=\"og:image\" property=\"og:image\" content=\"https://image.msscdn.net/static/assets/bi/og/og_musinsa.png\" data-next-head=\"\"/><link rel=\"canonical\" href=\"https://www.musinsa.com/main/musinsa/recommend\" data-next-head=\"\"/><link rel=\"modulepreload\" href=\"https://static.msscdn.net/static/v2/search-home/search-home.js\" data-next-head=\"\"/><link rel=\"modulepreload\" href=\"https://static.msscdn.net/static/v2/pc/home/home.js\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"ko-KR\" href=\"https://www.musinsa.com/main/musinsa/recommend\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-AU\" href=\"https://global.musinsa.com/au/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-CA\" href=\"https://global.musinsa.com/ca/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-HK\" href=\"https://global.musinsa.com/hk/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-ID\" href=\"https://global.musinsa.com/id/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"ja-JP\" href=\"https://global.musinsa.com/jp/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-MY\" href=\"https://global.musinsa.com/my/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-NZ\" href=\"https://global.musinsa.com/nz/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-PH\" href=\"https://global.musinsa.com/ph/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-SG\" href=\"https://global.musinsa.com/sg/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-TH\" href=\"https://global.musinsa.com/th/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"zh-TW\" href=\"https://global.musinsa.com/tw/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"en-US\" href=\"https://global.musinsa.com/us/main/fashion\" data-next-head=\"\"/><link rel=\"alternate\" hrefLang=\"vi-VN\" href=\"https://global.musinsa.com/vn/main/fashion\" data-next-head=\"\"/><link href=\"https://static.msscdn.net/static/common/layout-pc/style.css\" type=\"text/css\" rel=\"stylesheet\"/><link href=\"https://static.msscdn.net/platform/css/common-mobile.css\" type=\"text/css\" rel=\"stylesheet\"/><link rel=\"stylesheet\" type=\"text/css\" href=\"https://static.msscdn.net/static/mds/2.0.0/mds.css\"/><link rel=\"icon\" type=\"image/svg+xml\" href=\"https://image.msscdn.net/static/assets/bi/favicon/favicon.svg\"/><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"https://image.msscdn.net/static/assets/bi/favicon/favicon-32x32.png\"/><link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"https://image.msscdn.net/static/assets/bi/favicon/favicon-96x96.png\"/><link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://image.msscdn.net/static/assets/bi/favicon/favicon-192x192.png\"/><link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\"/><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"https://image.msscdn.net/static/assets/bi/favicon/favicon-180x180.png\"/><style>\n              #__next {\n                height: 100%;\n              }\n            </style><script id=\"store\" data-nscript=\"beforeInteractive\">\n          window.__MSS_FE__ = {\n            store: {\n              data: {\"defaultCode\":\"musinsa\",\"store\":[{\"title\":\"무신사\",\"titleEng\":\"\",\"code\":\"musinsa\",\"backgroundColor\":\"#000000\",\"storeLogo\":\"https://image.msscdn.net/display/images/2025/10/22/b23fdcbb277a47a6a7743ce2b7acf0c7.png\",\"musinsaLogo\":\"https://image.msscdn.net/display/images/2025/10/22/d9647c20f3cb47f8af1b7d4a360b936b.png\",\"goodsDetailLogo\":\"https://image.msscdn.net/display/images/2024/07/19/e6d1f7cb7b5544929ac6dcdf92c5b821.png\",\"shareDesc\":\"패션의 모든 것, 다 무신사랑 해!\",\"pan\":[{\"title\":\"콘텐츠\",\"type\":\"magazine\",\"url\":\"https://www.musinsa.com/main/musinsa/magazine\",\"api\":\"https://api.musinsa.com/api2/hm/v2/pans/contents/modules?storeCode=musinsa\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v2/pans/contents/modules?storeCode=musinsa\",\"screen\":{\"page_id\":\"/main/musinsa/magazine\",\"page_title\":\"매거진판\",\"page_path\":\"/magazine\",\"page_location\":\"https://www.musinsa.com/main/musinsa/magazine\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"추천\",\"type\":\"recommend\",\"url\":\"https://www.musinsa.com/main/musinsa/recommend\",\"api\":\"https://api.musinsa.com/api2/hm/v8/pans/recommend?storeCode=musinsa\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v8/pans/recommend?storeCode=musinsa\",\"screen\":{\"page_id\":\"/main/musinsa/recommend\",\"page_title\":\"추천판\",\"page_path\":\"/recommend\",\"page_location\":\"https://www.musinsa.com/main/musinsa/recommend\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"랭킹\",\"type\":\"ranking\",\"url\":\"https://www.musinsa.com/main/musinsa/ranking\",\"api\":\"https://client.musinsa.com/api/home/v5/pans/ranking?storeCode=musinsa\",\"webApi\":\"https://client.musinsa.com/api/home/web/v5/pans/ranking?storeCode=musinsa\",\"screen\":{\"page_id\":\"/main/musinsa/ranking\",\"page_title\":\"랭킹판\",\"page_path\":\"/ranking\",\"page_location\":\"https://www.musinsa.com/main/musinsa/ranking\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"세일\",\"type\":\"sale\",\"url\":\"https://www.musinsa.com/main/musinsa/sale\",\"api\":\"https://api.musinsa.com/api2/hm/v3/pans/sale/modules?storeCode=musinsa\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v3/pans/sale/modules?storeCode=musinsa\",\"screen\":{\"page_id\":\"/main/musinsa/sale\",\"page_title\":\"세일판\",\"page_path\":\"/sale\",\"page_location\":\"https://www.musinsa.com/main/musinsa/sale\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/campaign/2026beautyfesta2\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/campaign/2026beautyfesta2\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/04/29/eecc08c99b7948d3b620c1f54f704449.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/campaign/2605_02_brandweek\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/campaign/2605_02_brandweek\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/05/08/b9deb2d0bb3744db9d19fdfc3a8c59f2.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/campaign/26ss_msssupersale\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/campaign/26ss_msssupersale\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/05/12/d95a97762a5047de862a73c2da774f48.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/main/used/recommend\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/main/used/recommend\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/04/06/c73510a18c49448b96c13f96971b2ffa.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/offline\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/offline\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/04/01/6cf108dd18dd4a0eac0832e0916f9b0d.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/menu?storeCode=musinsa&tabId=fan\",\"screen\":{\"page_id\":\"/main/musinsa/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/menu?storeCode=musinsa&tabId=fan\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/04/01/0e4dc3c5827e440290e2f155f4d529cf.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true},{\"title\":\"발매\",\"type\":\"release\",\"url\":\"https://www.musinsa.com/main/musinsa/release\",\"api\":\"https://api.musinsa.com/api2/hm/v1/pans/release?storeCode=musinsa\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v1/pans/release?storeCode=musinsa\",\"screen\":{\"page_id\":\"/main/musinsa/release\",\"page_title\":\"발매판\",\"page_path\":\"/release\",\"page_location\":\"https://www.musinsa.com/main/musinsa/release\"},\"highlights\":[],\"isEmphasis\":false}],\"defaultType\":\"recommend\"},{\"title\":\"뷰티\",\"titleEng\":\"\",\"code\":\"beauty\",\"backgroundColor\":\"Gradient\",\"storeLogo\":\"https://image.msscdn.net/display/images/2025/10/22/6b984d3ce48e463eb784979554df6629.png\",\"musinsaLogo\":\"https://image.msscdn.net/display/images/2025/10/22/b3d30284058a4de2b128af581c23e6e5.png\",\"goodsDetailLogo\":\"https://image.msscdn.net/display/images/2024/07/16/c1ecb619a5d94cb9911690e5f6ca7a2c.png\",\"shareDesc\":\"스타일리시 뷰티 스토어 \\\"MUSINSA BEAUTY\\\"\\n'무신사 뷰티'는 나만의 아름다움을 완성하는 스타일리시 뷰티 스토어입니다. \\n이분법적인 성별 구분을 뛰어넘어, 세상의 모든 아름다움을 존중하고 포용하는 것이 무신사 뷰티의 철학입니다.\",\"pan\":[{\"title\":\"추천\",\"type\":\"recommend\",\"url\":\"https://www.musinsa.com/main/beauty/recommend\",\"api\":\"https://api.musinsa.com/api2/hm/v8/pans/recommend?storeCode=beauty\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v8/pans/recommend?storeCode=beauty\",\"screen\":{\"page_id\":\"/main/beauty/recommend\",\"page_title\":\"추천판\",\"page_path\":\"/recommend\",\"page_location\":\"https://www.musinsa.com/main/beauty/recommend\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"랭킹\",\"type\":\"ranking\",\"url\":\"https://www.musinsa.com/main/beauty/ranking\",\"api\":\"https://client.musinsa.com/api/home/v5/pans/ranking?storeCode=beauty\",\"webApi\":\"https://client.musinsa.com/api/home/web/v5/pans/ranking?storeCode=beauty\",\"screen\":{\"page_id\":\"/main/beauty/ranking\",\"page_title\":\"랭킹판\",\"page_path\":\"/ranking\",\"page_location\":\"https://www.musinsa.com/main/beauty/ranking\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"세일\",\"type\":\"sale\",\"url\":\"https://www.musinsa.com/main/beauty/sale\",\"api\":\"https://api.musinsa.com/api2/hm/v3/pans/sale/modules?storeCode=beauty\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v3/pans/sale/modules?storeCode=beauty\",\"screen\":{\"page_id\":\"/main/beauty/sale\",\"page_title\":\"세일판\",\"page_path\":\"/sale\",\"page_location\":\"https://www.musinsa.com/main/beauty/sale\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"발매\",\"type\":\"release\",\"url\":\"https://www.musinsa.com/main/beauty/release\",\"api\":\"https://api.musinsa.com/api2/hm/v1/pans/release?storeCode=beauty\",\"webApi\":\"https://api.musinsa.com/api2/hm/web/v1/pans/release?storeCode=beauty\",\"screen\":{\"page_id\":\"/main/beauty/release\",\"page_title\":\"발매판\",\"page_path\":\"/release\",\"page_location\":\"https://www.musinsa.com/main/beauty/release\"},\"highlights\":[],\"isEmphasis\":false},{\"title\":\"무뷰페\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/campaign/2026beautyfesta2\",\"screen\":{\"page_id\":\"/main/beauty/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/campaign/2026beautyfesta2\"},\"highlights\":[],\"isEmphasis\":true},{\"title\":\"\",\"type\":\"custom_basic\",\"url\":\"https://www.musinsa.com/offline?shopType=beauty&regions=\",\"screen\":{\"page_id\":\"/main/beauty/custom\",\"page_title\":\"커스텀판\",\"page_path\":\"/custom\",\"page_location\":\"https://www.musinsa.com/offline?shopType=beauty&regions=\"},\"highlights\":[],\"panLogoImage\":{\"imageType\":\"image\",\"url\":\"https://image.msscdn.net/display/images/2026/05/06/9ead44c5964241df8db67c0ed4d104f2.png\",\"altText\":\"커스텀판\"},\"isEmphasis\":true}],\"default"
+    },
+    "/robots.txt": {
+      "url": "https://www.musinsa.com/robots.txt",
+      "status": 200,
+      "final_url": "https://www.musinsa.com/robots.txt",
+      "headers": {
+        "Date": "Tue, 12 May 2026 12:12:16 GMT",
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "vary": "Accept-Encoding",
+        "set-cookie": "__cf_bm=uyHpxaFHh0JRqJZnpiILZO3cuqflHYn8GXA0bkvAq20-1778587936.6271408-1.0.1.1-2VVcSuxnBjRi04V.QHhHNzUfBsLcGxfWB8mtZ9BivdZz93tb.bK1sDkHJZVhvo7xSDqTUWPAE5wRKooUMCyQiYefTG3YcEwdSCEPonGFPoQDxE845vWXAeCg7Ykg_Y6U; HttpOnly; SameSite=None; Secure; Path=/; Domain=musinsa.com; Expires=Tue, 12 May 2026 12:42:16 GMT",
+        "Cache-Control": "public, max-age=3600",
+        "x-cache": "Miss from cloudfront",
+        "via": "1.1 38b03cae9ebcb4a584f2fa7ce0d966d0.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "ICN53-P1",
+        "x-amz-cf-id": "qlCg-K52BmmCiIsEQupLKtOto9NZWzPOCYrKuXcFqGyRjAa4CHLb-Q==",
+        "cf-cache-status": "DYNAMIC",
+        "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+        "Server": "cloudflare",
+        "CF-RAY": "9fa954abed8ed1f1-ICN",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "elapsed_ms": 56,
+      "text_sample": "##############################\n# MSS robots.txt\n# Last Updated: 2025.10.24\n##############################\n\n##############################\n# Group 1: Fully Granted\n##############################\nUser-agent: Applebot\nUser-agent: facebookexternalhit\nUser-agent: Twitterbot\nUser-agent: OAI-SearchBot\nUser-agent: ChatGPT-User\nUser-agent: Claude-User\nUser-agent: Claude-SearchBot\nUser-agent: Perplexity-User\nAllow: /\n\n##############################\n# Group 2: Partially Granted\n##############################\nUser-agent: Googlebot\nUser-agent: Googlebot-Image\nUser-agent: Storebot-Google\nUser-agent: Yeti\nUser-agent: NaverBot\nUser-agent: Daum\nUser-agent: Daumoa\nUser-agent: Bingbot\nUser-agent: ZumBot\nUser-agent: DuckDuckBot\nUser-agent: Yandexbot\nUser-agent: Slurp\nUser-agent: CCBot\nUser-agent: GPTBot\nUser-agent: Meta-WebIndexer\nUser-agent: Google-Extended\nUser-agent: ClaudeBot\nUser-agent: Meta-ExternalAgent\nUser-agent: PerplexityBot\nUser-agent: Amazonbot\nAllow: /\nDisallow: /auth/\nDisallow: /fashiontalk/\nDisallow: /festival/\nDisallow: /like/\nDisallow: /mypage/\nDisallow: /showcase/\nDisallow: /app/coupon/coupon_result/\n\n##############################\n# Group 3: Blocked\n##############################\nUser-agent: *\nDisallow: /\n\nSitemap: https://www.musinsa.com/sitemap-musinsa-index.xml\n"
+    },
+    "/llms.txt": {
+      "url": "https://www.musinsa.com/llms.txt",
+      "status": 404,
+      "final_url": "https://www.musinsa.com/llms.txt",
+      "headers": {
+        "Date": "Tue, 12 May 2026 12:12:17 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "6074",
+        "Connection": "close",
+        "Cf-Ray": "9fa954b0aa35305f-ICN",
+        "Cache-Control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "Referrer-Policy": "same-origin",
+        "Server-Timing": "cfEdge;dur=10,cfOrigin;dur=9",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "elapsed_ms": 58,
+      "error": "HTTP Error 404: Not Found",
+      "text_sample": "<!DOCTYPE html>\n<html lang=\"ko\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover\"\n    />\n    <title>무신사</title>\n    <style>\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 400;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.svg#Pretendard-Regular)\n            format(\"svg\");\n      }\n\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 500;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.svg#Pretendard-Medium)\n            format(\"svg\");\n      }\n\n      * {\n        font-family: \"Pretendard, Apple SD Gothic Neo, sans-serif\";\n        color: #000;\n        margin: 0;\n        padding: 0;\n      }\n\n      html,\n      body {\n        height: 100%;\n        background: #f5f5f5;\n      }\n\n      body {\n        height: 100%;\n      }\n\n      .error-container {\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding-bottom: constant(safe-area-inset-bottom);\n        padding-bottom: env(safe-area-inset-bottom);\n      }\n      .appbar {\n        display: flex;\n        box-sizing: border-box;\n        width: 100%;\n        height: 52px;\n        padding: 0px 16px;\n        justify-content: center;\n        align-items: center;\n        flex-shrink: 0;\n      }\n      .appbar-image {\n        width: auto;\n        height: 24px;\n      }\n      .error-wrap {\n        display: flex;\n        flex: 1;\n        width: 100%;\n        padding: 40px 16px;\n        box-sizing: border-box;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 12px;\n        flex-shrink: 0;\n      }\n      .message-wrap {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        gap: 2px;\n      }\n\n      .message-wrap > strong {\n        text-align: center;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 20px;\n      }\n      .message-wrap > p {\n        color: var(--gray-gray-600666666, #666);\n        text-align: center;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 18px;\n      }\n\n      .button-wrap {\n        display: flex;\n        gap: 8px;\n      }\n\n      .button-wrap > .button {\n        display: flex;\n        padding: 9px 12px;\n        justify-content: center;\n        align-items: center;\n        align-self: stretch;\n        text-decoration: none;\n        border-radius: 4px;\n        border: 1px solid var(--gray-gray-300-e-0-e-0-e-0, #e0e0e0);\n        background: var(--white, #fff);\n        color: var(--black, var(--MDS-2_Color-Black, #000));\n        /* Body/13_medium */\n        font-family: Pretendard;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 18px;\n      }\n\n      .error-network-text > p {\n        color: #777;\n        font-size: 14px;\n        line-height: 20px;\n      }\n\n      .error-network-text > .btn {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 40px auto 5px;\n        background-color: #000;\n        color: #fff;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n\n      .error-network-text > .link {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 0 auto;\n        background-color: #fff;\n        color: #777;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n    </style>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/jquery-3.4.1.min.js\"\n      type=\"text/javascript\"\n    ></script>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/appscript.js\"\n      type=\"text/javascript\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"error-container\">\n      <h1 class=\"appbar\">\n        <img src=\"https://image.msscdn.net/static/assets/bi/error_logo_musinsa.png\" class=\"appbar-image\" alt=\"MUSINSA\" />\n      </h1>\n      <div class=\"error-wrap\">\n        <div class=\"message-wrap\">\n          <strong>페이지를 찾을 수 없습니다.</strong>\n          <p>\n            페이지 주소가 잘못되었거나 알 수 없는 오류가 발생했습니다.<br />\n            입력한 주소를 다시 확인해 주세요.\n          </p>\n        </div>\n        <div class=\"button-wrap\">\n          <a\n            class=\"button\"\n            href=\"javascript:void(0)\"\n            onclick=\"AppInterface.historyBack()\"\n            >이전 페이지</a\n          >\n          <a class=\"button\" href=\"https://www.musinsa.com\">무신사 홈</a>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>\n"
+    },
+    "/sitemap.xml": {
+      "url": "https://www.musinsa.com/sitemap.xml",
+      "status": 404,
+      "final_url": "https://www.musinsa.com/sitemap.xml",
+      "headers": {
+        "Date": "Tue, 12 May 2026 12:12:18 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "6074",
+        "Connection": "close",
+        "Cf-Ray": "9fa954b57cfc62a2-ICN",
+        "Cache-Control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "Referrer-Policy": "same-origin",
+        "Server-Timing": "cfEdge;dur=3,cfOrigin;dur=11",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "elapsed_ms": 57,
+      "error": "HTTP Error 404: Not Found",
+      "text_sample": "<!DOCTYPE html>\n<html lang=\"ko\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover\"\n    />\n    <title>무신사</title>\n    <style>\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 400;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.svg#Pretendard-Regular)\n            format(\"svg\");\n      }\n\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 500;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.svg#Pretendard-Medium)\n            format(\"svg\");\n      }\n\n      * {\n        font-family: \"Pretendard, Apple SD Gothic Neo, sans-serif\";\n        color: #000;\n        margin: 0;\n        padding: 0;\n      }\n\n      html,\n      body {\n        height: 100%;\n        background: #f5f5f5;\n      }\n\n      body {\n        height: 100%;\n      }\n\n      .error-container {\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding-bottom: constant(safe-area-inset-bottom);\n        padding-bottom: env(safe-area-inset-bottom);\n      }\n      .appbar {\n        display: flex;\n        box-sizing: border-box;\n        width: 100%;\n        height: 52px;\n        padding: 0px 16px;\n        justify-content: center;\n        align-items: center;\n        flex-shrink: 0;\n      }\n      .appbar-image {\n        width: auto;\n        height: 24px;\n      }\n      .error-wrap {\n        display: flex;\n        flex: 1;\n        width: 100%;\n        padding: 40px 16px;\n        box-sizing: border-box;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 12px;\n        flex-shrink: 0;\n      }\n      .message-wrap {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        gap: 2px;\n      }\n\n      .message-wrap > strong {\n        text-align: center;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 20px;\n      }\n      .message-wrap > p {\n        color: var(--gray-gray-600666666, #666);\n        text-align: center;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 18px;\n      }\n\n      .button-wrap {\n        display: flex;\n        gap: 8px;\n      }\n\n      .button-wrap > .button {\n        display: flex;\n        padding: 9px 12px;\n        justify-content: center;\n        align-items: center;\n        align-self: stretch;\n        text-decoration: none;\n        border-radius: 4px;\n        border: 1px solid var(--gray-gray-300-e-0-e-0-e-0, #e0e0e0);\n        background: var(--white, #fff);\n        color: var(--black, var(--MDS-2_Color-Black, #000));\n        /* Body/13_medium */\n        font-family: Pretendard;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 18px;\n      }\n\n      .error-network-text > p {\n        color: #777;\n        font-size: 14px;\n        line-height: 20px;\n      }\n\n      .error-network-text > .btn {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 40px auto 5px;\n        background-color: #000;\n        color: #fff;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n\n      .error-network-text > .link {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 0 auto;\n        background-color: #fff;\n        color: #777;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n    </style>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/jquery-3.4.1.min.js\"\n      type=\"text/javascript\"\n    ></script>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/appscript.js\"\n      type=\"text/javascript\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"error-container\">\n      <h1 class=\"appbar\">\n        <img src=\"https://image.msscdn.net/static/assets/bi/error_logo_musinsa.png\" class=\"appbar-image\" alt=\"MUSINSA\" />\n      </h1>\n      <div class=\"error-wrap\">\n        <div class=\"message-wrap\">\n          <strong>페이지를 찾을 수 없습니다.</strong>\n          <p>\n            페이지 주소가 잘못되었거나 알 수 없는 오류가 발생했습니다.<br />\n            입력한 주소를 다시 확인해 주세요.\n          </p>\n        </div>\n        <div class=\"button-wrap\">\n          <a\n            class=\"button\"\n            href=\"javascript:void(0)\"\n            onclick=\"AppInterface.historyBack()\"\n            >이전 페이지</a\n          >\n          <a class=\"button\" href=\"https://www.musinsa.com\">무신사 홈</a>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>\n"
+    },
+    "/sitemap_index.xml": {
+      "url": "https://www.musinsa.com/sitemap_index.xml",
+      "status": 404,
+      "final_url": "https://www.musinsa.com/sitemap_index.xml",
+      "headers": {
+        "Date": "Tue, 12 May 2026 12:12:18 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "6074",
+        "Connection": "close",
+        "Cf-Ray": "9fa954ba3f405503-ICN",
+        "Cache-Control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "Referrer-Policy": "same-origin",
+        "Server-Timing": "cfEdge;dur=4,cfOrigin;dur=16",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Server": "cloudflare",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "elapsed_ms": 76,
+      "error": "HTTP Error 404: Not Found",
+      "text_sample": "<!DOCTYPE html>\n<html lang=\"ko\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta\n      name=\"viewport\"\n      content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover\"\n    />\n    <title>무신사</title>\n    <style>\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 400;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Regular.svg#Pretendard-Regular)\n            format(\"svg\");\n      }\n\n      @font-face {\n        font-family: \"Pretendard\";\n        font-style: normal;\n        font-weight: 500;\n        src: url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot);\n        src: local(\"🙂\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.eot?#iefix)\n            format(\"embedded-opentype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff2)\n            format(\"woff2\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.woff)\n            format(\"woff\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.ttf)\n            format(\"truetype\"),\n          url(//static.msscdn.net/platform/fonts/Pretendard-Medium.svg#Pretendard-Medium)\n            format(\"svg\");\n      }\n\n      * {\n        font-family: \"Pretendard, Apple SD Gothic Neo, sans-serif\";\n        color: #000;\n        margin: 0;\n        padding: 0;\n      }\n\n      html,\n      body {\n        height: 100%;\n        background: #f5f5f5;\n      }\n\n      body {\n        height: 100%;\n      }\n\n      .error-container {\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding-bottom: constant(safe-area-inset-bottom);\n        padding-bottom: env(safe-area-inset-bottom);\n      }\n      .appbar {\n        display: flex;\n        box-sizing: border-box;\n        width: 100%;\n        height: 52px;\n        padding: 0px 16px;\n        justify-content: center;\n        align-items: center;\n        flex-shrink: 0;\n      }\n      .appbar-image {\n        width: auto;\n        height: 24px;\n      }\n      .error-wrap {\n        display: flex;\n        flex: 1;\n        width: 100%;\n        padding: 40px 16px;\n        box-sizing: border-box;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 12px;\n        flex-shrink: 0;\n      }\n      .message-wrap {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        gap: 2px;\n      }\n\n      .message-wrap > strong {\n        text-align: center;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 20px;\n      }\n      .message-wrap > p {\n        color: var(--gray-gray-600666666, #666);\n        text-align: center;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 18px;\n      }\n\n      .button-wrap {\n        display: flex;\n        gap: 8px;\n      }\n\n      .button-wrap > .button {\n        display: flex;\n        padding: 9px 12px;\n        justify-content: center;\n        align-items: center;\n        align-self: stretch;\n        text-decoration: none;\n        border-radius: 4px;\n        border: 1px solid var(--gray-gray-300-e-0-e-0-e-0, #e0e0e0);\n        background: var(--white, #fff);\n        color: var(--black, var(--MDS-2_Color-Black, #000));\n        /* Body/13_medium */\n        font-family: Pretendard;\n        font-size: 13px;\n        font-style: normal;\n        font-weight: 500;\n        line-height: 18px;\n      }\n\n      .error-network-text > p {\n        color: #777;\n        font-size: 14px;\n        line-height: 20px;\n      }\n\n      .error-network-text > .btn {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 40px auto 5px;\n        background-color: #000;\n        color: #fff;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n\n      .error-network-text > .link {\n        display: block;\n        width: 130px;\n        height: 50px;\n        margin: 0 auto;\n        background-color: #fff;\n        color: #777;\n        font-size: 14px;\n        line-height: 50px;\n        font-weight: bold;\n        text-decoration: none;\n        text-align: center;\n      }\n    </style>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/jquery-3.4.1.min.js\"\n      type=\"text/javascript\"\n    ></script>\n    <script\n      src=\"https://static.msscdn.net/static/member/js/appscript.js\"\n      type=\"text/javascript\"\n    ></script>\n  </head>\n\n  <body>\n    <div class=\"error-container\">\n      <h1 class=\"appbar\">\n        <img src=\"https://image.msscdn.net/static/assets/bi/error_logo_musinsa.png\" class=\"appbar-image\" alt=\"MUSINSA\" />\n      </h1>\n      <div class=\"error-wrap\">\n        <div class=\"message-wrap\">\n          <strong>페이지를 찾을 수 없습니다.</strong>\n          <p>\n            페이지 주소가 잘못되었거나 알 수 없는 오류가 발생했습니다.<br />\n            입력한 주소를 다시 확인해 주세요.\n          </p>\n        </div>\n        <div class=\"button-wrap\">\n          <a\n            class=\"button\"\n            href=\"javascript:void(0)\"\n            onclick=\"AppInterface.historyBack()\"\n            >이전 페이지</a\n          >\n          <a class=\"button\" href=\"https://www.musinsa.com\">무신사 홈</a>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>\n"
+    }
+  },
+  "html_analysis": {
+    "title": "무신사",
+    "h1": [],
+    "meta_sample": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.",
+      "og:type": "website",
+      "og:title": "무신사",
+      "og:description": "패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.",
+      "naver-site-verification": "f99cba16599b1962d3c6591871ee289510141ff8",
+      "og:image": "https://image.msscdn.net/static/assets/bi/og/og_musinsa.png"
+    },
+    "og_site_name": null,
+    "description": "패션의 모든 것, 다 무신사랑 해! 무신사에서 다양한 혜택과 스타일 팁을 확인해보세요.",
+    "robots_meta": null,
+    "canonical": [
+      "https://www.musinsa.com/main/musinsa/recommend"
+    ],
+    "jsonld_count": 0,
+    "schema_types": [],
+    "schema_parse_errors": 0,
+    "link_count_sampled": 0
+  },
+  "robots_analysis": {
+    "agents": {
+      "GPTBot": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "OAI-SearchBot": {
+        "status": "has_rules",
+        "disallow": [],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "ChatGPT-User": {
+        "status": "has_rules",
+        "disallow": [],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "ClaudeBot": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "Claude-SearchBot": {
+        "status": "has_rules",
+        "disallow": [],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "Claude-User": {
+        "status": "has_rules",
+        "disallow": [],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "Googlebot": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "Google-Extended": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "PerplexityBot": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "Bingbot": {
+        "status": "has_rules",
+        "disallow": [
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/",
+          "/like/",
+          "/mypage/",
+          "/showcase/",
+          "/app/coupon/coupon_result/",
+          "/auth/",
+          "/fashiontalk/",
+          "/festival/"
+        ],
+        "allow": [
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/",
+          "/"
+        ],
+        "crawl_delay": []
+      },
+      "GrokBot": {
+        "status": "blocked_root",
+        "disallow": [
+          "/"
+        ],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "xAI-Grok": {
+        "status": "blocked_root",
+        "disallow": [
+          "/"
+        ],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "Grok-DeepSearch": {
+        "status": "blocked_root",
+        "disallow": [
+          "/"
+        ],
+        "allow": [],
+        "crawl_delay": []
+      },
+      "*": {
+        "status": "blocked_root",
+        "disallow": [
+          "/"
+        ],
+        "allow": [],
+        "crawl_delay": []
+      }
+    },
+    "sitemaps": [
+      "https://www.musinsa.com/sitemap-musinsa-index.xml"
+    ]
+  }
+}
