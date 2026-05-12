@@ -1,0 +1,5 @@
+site,url,overall,grade,crawler_access,citability,content_quality,technical_seo,structured_data,platform_optimization,top_issue,top_action
+Coupang,https://www.coupang.com/,52,보통,38,55,66,62,35,42,"AI-specific bots likely blocked by User-agent:* Disallow:/","Add explicit OAI-SearchBot/PerplexityBot/Claude-SearchBot public path policy"
+Gmarket,https://www.gmarket.co.kr/,53,보통,49,58,64,58,35,45,"GPTBot limited but search AI bots not clearly enabled","Expand robots policy from GPTBot-only to AI search bots"
+Musinsa,https://www.musinsa.com/,75,양호+,88,72,82,69,50,82,"Great robots policy but product/root rendering needs validation","Test core product/brand/category URLs by AI crawler and add llms.txt"
+Olive Young,https://www.oliveyoung.co.kr/,70,양호,82,68,76,63,45,73,"AI bots allowed but JS-heavy surfaces and schema need validation","Validate product/category pages and implement Product/FAQ/HowTo schema"
