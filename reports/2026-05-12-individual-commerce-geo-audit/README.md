@@ -13,3 +13,5 @@
 | Olive Young | 35 | 403 | 403 | 미확인 | 미확인 | 미확인 | [report](./oliveyoung.GEO-개별-감사-리포트.md) |
 
 이 요약은 public live capture 기반 readiness 비교다. AI 답변 노출, citation, referral, conversion은 별도 측정 전까지 주장하지 않는다.
+
+기존 `mixed` 종합 감사까지 합친 최종 문서는 [GEO-통합보고서.md](</Volumes/Extend/Projects/DevWorkspace/geo/reports/2026-05-12-commerce-geo-audit/GEO-통합보고서.md>)를 참조한다.
