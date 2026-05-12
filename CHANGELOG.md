@@ -8,6 +8,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.10.0 - 2026-05-12
+
 - Added a user-level workflow guide distilled from the older
   `geo-seo-skills-kr` onboarding docs, preserving manager/operator/builder
   output guidance without restoring hidden slash-command session state.
