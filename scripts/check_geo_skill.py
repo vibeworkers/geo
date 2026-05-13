@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "references/execution-skill-matrix.md",
     "references/cogarch-alignment.md",
     "references/sequence-dependent-autopilot.md",
+    "references/organic-capability-system.md",
     "references/versioning-protocol.md",
     "scripts/check_geo_release.py",
     "scripts/check_geo_skill.py",
@@ -127,6 +128,12 @@ REQUIRED_PHRASES = [
     "**Output brand** — default to `VibeWorkers`;",
     "Its official website is <https://vibeworkers.net>.",
     "They are routed by `geo`, but each one must remain a standalone contract rather",
+    "`references/organic-capability-system.md` keeps deep-audit-ecommerce and KR2",
+    "physical compatibility path for the `deep-audit-ecommerce` capability",
+    "`packages/geo-seo-skills-kr2/` is the KR2 capability",
+    "one source-order decision, one evidence",
+    "Gate 15: Organic capability composition",
+    "compose `deep-audit-ecommerce` and `kr2` as needed under the root",
 ]
 
 INLINE_GATE_PHRASES = [
@@ -166,6 +173,9 @@ INLINE_GATE_PHRASES = [
     "ordered dependency graph",
     "all_must_passed=true",
     "failed_must_queue",
+    "**Gate 15: Organic capability composition**",
+    "one evidence ledger, one completion",
+    "judgment, and one report contract.",
 ]
 
 DISALLOWED_STRINGS = [
@@ -261,6 +271,12 @@ README_REQUIRED_PHRASES = [
     "`references/user-level-workflow-guide.md`",
     "`references/cogarch-alignment.md`",
     "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
+    "### beta Organic System Integration",
+    "### beta 유기적 시스템 통합",
+    "`docs/beta/organic-beta-integration.ko.md`",
+    "`packages/geo-seo-skills-kr2/`",
+    "geo core -> capability selection -> shared evidence ledger -> one report contract",
     "`skills/geo-*/SKILL.md`",
     "private `generateSkill` workflow derived from",
     "the public Skill Creator skill.",
@@ -314,6 +330,7 @@ README_REQUIRED_PHRASES = [
     "저작자: 김범수, 유수호, 고경만.",
     "`references/cogarch-alignment.md`",
     "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
     "저장된 prompt는 영어로 작성합니다.",
     "goal, scope, working surface, success condition, evidence target이 아직",
     "`geo`의 output brand는 `VibeWorkers`입니다.",
@@ -356,6 +373,11 @@ EXECUTION_MATRIX_REQUIRED_PHRASES = [
     "`references/implementation-completion-plan.md`",
     "`references/cogarch-alignment.md`",
     "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
+    "## Organic capability composition",
+    "`packages/geo-deep-audit-ecommerce/`",
+    "`packages/geo-seo-skills-kr2/`",
+    "one source-order decision, one evidence",
 ]
 
 RESTORED_SUBSKILL_REQUIRED_PHRASES = [
@@ -653,6 +675,7 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/execution-skill-matrix.md",
         "references/cogarch-alignment.md",
         "references/sequence-dependent-autopilot.md",
+        "references/organic-capability-system.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -689,6 +712,7 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/execution-skill-matrix.md",
         "references/cogarch-alignment.md",
         "references/sequence-dependent-autopilot.md",
+        "references/organic-capability-system.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -743,6 +767,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
     cogarch_alignment = read_text(skill_dir / "references/cogarch-alignment.md")
     sequence_autopilot = read_text(skill_dir / "references/sequence-dependent-autopilot.md")
+    organic_capability = read_text(skill_dir / "references/organic-capability-system.md")
 
     for phrase in [
         "`portable-baseline`",
@@ -1064,6 +1089,23 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     ]:
         if phrase not in sequence_autopilot:
             fail(f"missing sequence-autopilot phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Organic Capability System",
+        "`geo` is the single representative system.",
+        "The physical folders under `skills/` and `packages/` are ownership and",
+        "| Commerce capability | `packages/geo-deep-audit-ecommerce/`",
+        "| KR2 capability | `packages/geo-seo-skills-kr2/`",
+        "`deep-audit-ecommerce`.",
+        "`kr2`.",
+        "one evidence ledger and one report contract",
+        "Do not upgrade `Readiness` or `Heuristic` to `Measured` unless direct",
+        "Do not make `cogarch`, `~/.cogarch`, `OPERATIONS.md`, or hidden session",
+        "It must be a single GEO judgment flow:",
+        "This keeps beta-A's execution discipline and beta-B's KR2 capability active",
+    ]:
+        if phrase not in organic_capability:
+            fail(f"missing organic-capability phrase: {phrase}")
 
     for phrase in [
         "# GEO P2-P13 Implementation Completion Plan",
