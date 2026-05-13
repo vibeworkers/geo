@@ -141,21 +141,25 @@ Portable baseline installation:
 
 1. Install this package in a supported skill root, or keep this repository
    checkout intact as one package.
-2. Keep `SKILL.md`, `README.md`, `agents/`, `references/`, `scripts/`, and
-   `LICENSE` together.
+2. Keep `SKILL.md`, `README.md`, `agents/`, `references/`, `scripts/`,
+   `packages/`, and `LICENSE` together.
 3. Run `python3 scripts/check_geo_skill.py` to verify that the package is
    consistent.
 4. Start the skill with `geo <request>` or `$geo <request>`.
 
 Advanced workflow installation:
 
-1. Keep the repo-owned `skills/` directory in the same checkout or
-   installation.
+1. Keep the repo-owned `skills/` and `packages/` directories in the same
+   checkout or installation.
 2. Confirm that subskills such as `skills/geo-audit` and `skills/geo-schema`
    are present.
-3. Read the matching `skills/geo-*/SKILL.md` when a workflow needs extra
-   tools, network access, or export support.
-4. If you are using this repository checkout, that bundle is already included.
+3. Confirm that organic capability packages such as
+   `packages/geo-deep-audit-ecommerce/` and `packages/geo-seo-skills-kr2/` are
+   present.
+4. Read the matching `skills/geo-*/SKILL.md` or package-level `SKILL.md` and
+   references when a workflow needs extra tools, network access, ecommerce
+   judgment, KR2 judgment, or export support.
+5. If you are using this repository checkout, that bundle is already included.
 
 ### GitHub Sharing and Preview
 
@@ -220,6 +224,15 @@ Advanced execution workflows available with `skills/*`:
 | `geo-schema` | generates or validates JSON-LD schema | when a page needs schema markup or schema correction | `geo create JSON-LD for this product page.` |
 | `geo-technical` | diagnoses technical SEO and implementation risks | when rendering, performance, architecture, or indexing issues block GEO | `geo run a technical GEO review for example.com.` |
 
+Organic capability workflows use `packages/*` through the same root `geo`
+route:
+
+| Capability path | What it adds | When to use | How it closes |
+| --- | --- | --- | --- |
+| `packages/geo-deep-audit-ecommerce/` | ecommerce and commerce-readiness judgment | when the target is a product, category, merchant, catalog, checkout, or shopping surface | import commerce evidence into one `geo` ledger |
+| `packages/geo-seo-skills-kr2/` | Korean, multilingual, platform, crawler, realtime, tracker, batch, and `/geo-code` judgment | when the request depends on Korean or platform-specific AI readiness | import KR2 evidence into one `geo` ledger |
+| deep-audit-ecommerce + KR2 | combined commerce and Korean/platform judgment | when ecommerce work also involves Korean, multilingual, crawler, realtime, tracking, or `/geo-code` concerns | produce one report contract, not two pasted reports |
+
 ### How To Use
 
 Stored prompts are written in English.
@@ -266,11 +279,16 @@ prospect, and technical review workflows.
 Each `skills/geo-*` subskill owns its own workflow contract.
 The representative `geo` router selects a subskill, but you should be able to
 read and use that subskill directly from the files included in this package.
+When local package capabilities under `packages/*` are present, GEO also routes
+deep-audit-ecommerce and KR2 as one organic capability stack under the root
+`geo` contract.
 
 ### Enable Advanced Workflows
 
 Advanced workflows are available only when the local `skills/*` bundle is part
 of your GEO installation or checkout.
+Organic capability workflows also require the local `packages/*` capability
+directories to stay with the checkout.
 If you are using this repository checkout, that bundle is already included.
 Think of advanced-workflow setup as the getting-started guide for this
 environment.
@@ -286,8 +304,13 @@ here, in
 To make advanced workflows available:
 
 - keep the `skills/` directory together with this package
+- keep the `packages/` directory together with this package when ecommerce,
+  commerce-readiness, KR2, Korean, multilingual, platform, crawler, realtime,
+  tracking, batch, or `/geo-code` capability is needed
 - verify that subskills such as `skills/geo-audit` and `skills/geo-schema` are
   present
+- verify that `packages/geo-deep-audit-ecommerce/` and
+  `packages/geo-seo-skills-kr2/` are present for organic capability composition
 - start through `geo <request>` or `$geo <request>` and ask for a concrete
   audit, crawler, schema, compare, report, proposal, prospect, or technical
   review task
@@ -302,8 +325,12 @@ If advanced workflows are not available or do not start as expected:
 
 - verify that `skills/` is present in the same checkout or installation as this
   package
+- verify that `packages/geo-deep-audit-ecommerce/` and
+  `packages/geo-seo-skills-kr2/` are present when the request needs ecommerce,
+  commerce-readiness, KR2, Korean, multilingual, platform, crawler, realtime,
+  tracking, batch, or `/geo-code` capability
 - if you copied only `README.md` and `SKILL.md`, reinstall from a GEO checkout
-  or package that also includes `skills/*`
+  or package that also includes `skills/*` and the required `packages/*`
 - if you are unsure which workflow to use, start with a plain request through
   `geo <request>` or `$geo <request>` and let the router choose the matching
   subskill
@@ -341,6 +368,7 @@ If advanced workflows are not available or do not start as expected:
 - `references/organic-capability-system.md`: organic composition contract for deep-audit-ecommerce and KR2 inside one `geo` system
 - `docs/beta-a-geo-guide.ko.md`: Korean beta-A guide covering feature names, effects, mechanisms, evidence, and the end-to-end GEO process
 - `docs/beta/organic-beta-integration.ko.md`: Korean beta integration guide for the single-system design
+- `packages/geo-deep-audit-ecommerce/`: ecommerce and commerce-readiness capability package with raw audit evidence, evidence boundaries, source index, scorecard, and summarizer
 - `packages/geo-seo-skills-kr2/`: KR2 capability package with evidence boundaries, source index, function matrix, and local Code extensions
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: versioned Korean benchmark report and source metrics for `haegyung.com`
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
@@ -351,14 +379,13 @@ If advanced workflows are not available or do not start as expected:
 `SKILL.md` owns the routing contract, `skills/geo-*` own advanced execution
 workflows, and `references/runtime-adaptation.md` records runtime-specific
 boundaries.
-This package was implemented with a private `generateSkill` workflow derived
-from the public Skill Creator skill and a Cognitive Architecture based skill
-design.
+Implementation provenance is summarized below.
 
 ### Package Provenance
 
 This package was created with a private `generateSkill` workflow derived from
 the public Skill Creator skill.
+It also uses a Cognitive Architecture based skill design.
 The private creator workflow is not included in this repository; this
 repository ships the resulting GEO package and its user-facing docs.
 
@@ -568,20 +595,24 @@ Portable baseline 설치:
 1. 이 패키지를 지원되는 skill root에 설치하거나, 이 저장소 checkout 전체를
    하나의 패키지로 유지합니다.
 2. `SKILL.md`, `README.md`, `agents/`, `references/`, `scripts/`,
-   `LICENSE`를 함께 유지합니다.
+   `packages/`, `LICENSE`를 함께 유지합니다.
 3. `python3 scripts/check_geo_skill.py`를 실행해 패키지 정합성을
    확인합니다.
 4. `geo <request>` 또는 `$geo <request>`로 시작합니다.
 
 Advanced workflow 설치:
 
-1. repo 소유 `skills/` 디렉터리를 같은 checkout 또는 installation 안에
-   함께 둡니다.
+1. repo 소유 `skills/`와 `packages/` 디렉터리를 같은 checkout 또는
+   installation 안에 함께 둡니다.
 2. `skills/geo-audit`, `skills/geo-schema` 같은 서브스킬이 실제로 있는지
    확인합니다.
-3. workflow에 추가 도구, 네트워크 접근, export 지원이 필요하면 해당
-   `skills/geo-*/SKILL.md`를 읽습니다.
-4. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
+3. `packages/geo-deep-audit-ecommerce/`,
+   `packages/geo-seo-skills-kr2/` 같은 organic capability package가 실제로
+   있는지 확인합니다.
+4. workflow에 추가 도구, 네트워크 접근, ecommerce 판단, KR2 판단, export
+   지원이 필요하면 해당 `skills/geo-*/SKILL.md` 또는 package-level
+   `SKILL.md`와 references를 읽습니다.
+5. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
    있습니다.
 
 ### GitHub 공유와 미리보기
@@ -644,6 +675,15 @@ skill slot을 제공하고 현재 활성 런타임 또는 모델 정체성을 �
 | `geo-schema` | JSON-LD schema를 생성하거나 검증합니다 | 페이지에 schema markup이 필요하거나 오류를 고쳐야 할 때 | `geo create JSON-LD for this product page.` |
 | `geo-technical` | 기술 SEO와 구현 리스크를 진단합니다 | 렌더링, 성능, 구조, 인덱싱 문제가 GEO를 막고 있을 때 | `geo run a technical GEO review for example.com.` |
 
+Organic capability workflow는 같은 루트 `geo` route 안에서 `packages/*`를
+사용합니다.
+
+| Capability path | 무엇을 더하는가 | 언제 쓰는가 | 어떻게 닫는가 |
+| --- | --- | --- | --- |
+| `packages/geo-deep-audit-ecommerce/` | ecommerce와 commerce-readiness 판단 | product, category, merchant, catalog, checkout, shopping surface가 대상일 때 | commerce evidence를 하나의 `geo` ledger에 합칩니다 |
+| `packages/geo-seo-skills-kr2/` | 한국어, 다국어, platform, crawler, realtime, tracker, batch, `/geo-code` 판단 | 한국어 또는 platform별 AI readiness가 핵심일 때 | KR2 evidence를 하나의 `geo` ledger에 합칩니다 |
+| deep-audit-ecommerce + KR2 | commerce와 한국어/platform 판단의 결합 | ecommerce 작업이 한국어, 다국어, crawler, realtime, tracking, `/geo-code` 문제를 함께 가질 때 | 두 보고서를 붙이지 않고 하나의 report contract로 닫습니다 |
+
 ### 사용하는 방법
 
 저장된 prompt는 영어로 작성합니다.
@@ -690,11 +730,15 @@ compare, report, proposal, prospect, technical review 같은 고급 workflow로
 각 `skills/geo-*` 서브스킬은 자기 workflow 계약을 직접 소유합니다.
 대표 `geo` 라우터는 해당 서브스킬로 연결하지만, 서브스킬 자체는
 이 패키지에 포함된 문서와 파일만으로도 읽고 따라갈 수 있어야 합니다.
+`packages/*` 아래 local package capability가 있으면 GEO는 deep-audit-ecommerce와
+KR2도 루트 `geo` 계약 아래 하나의 organic capability stack으로 라우팅합니다.
 
 ### 고급 Workflow 준비
 
 고급 workflow는 로컬 `skills/*` 번들이 현재 GEO 설치본 또는 checkout에 함께
 있을 때만 사용할 수 있습니다.
+Organic capability workflow는 로컬 `packages/*` capability 디렉터리도 checkout과
+함께 유지되어야 합니다.
 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어 있습니다.
 고급 workflow setup은 이 환경에서 처음 시작할 때 보는 사용 가이드라고
 이해하면 됩니다.
@@ -709,8 +753,13 @@ guide를 먼저 따라갈 수 있습니다.
 고급 workflow를 사용할 수 있게 하려면:
 
 - `skills/` 디렉터리를 이 패키지와 함께 유지합니다
+- ecommerce, commerce-readiness, KR2, 한국어, 다국어, platform, crawler,
+  realtime, tracking, batch, `/geo-code` capability가 필요하면 `packages/`
+  디렉터리도 이 패키지와 함께 유지합니다
 - `skills/geo-audit`, `skills/geo-schema` 같은 서브스킬이 실제로 있는지
   확인합니다
+- organic capability composition이 필요하면 `packages/geo-deep-audit-ecommerce/`와
+  `packages/geo-seo-skills-kr2/`가 실제로 있는지 확인합니다
 - `geo <request>` 또는 `$geo <request>`로 시작한 뒤 audit, crawler,
   schema, compare, report, proposal, prospect, technical review처럼 구체적인
   실행 요청을 합니다
@@ -726,8 +775,12 @@ guide를 먼저 따라갈 수 있습니다.
 
 - `skills/` 디렉터리가 이 패키지와 같은 checkout 또는 설치본 안에 있는지
   확인합니다
+- ecommerce, commerce-readiness, KR2, 한국어, 다국어, platform, crawler,
+  realtime, tracking, batch, `/geo-code` capability가 필요한 요청이면
+  `packages/geo-deep-audit-ecommerce/`와 `packages/geo-seo-skills-kr2/`가
+  실제로 있는지 확인합니다
 - `README.md`와 `SKILL.md`만 따로 복사했다면 `skills/*`가 함께 포함된 GEO
-  checkout 또는 패키지로 다시 설치합니다
+  checkout 또는 필요한 `packages/*`가 함께 포함된 패키지로 다시 설치합니다
 - 어떤 workflow를 써야 할지 모르겠으면 `geo <request>` 또는 `$geo <request>`로
   평문 요청을 먼저 주고, 라우터가 맞는 서브스킬을 고르게 둡니다
 - GEO가 먼저 clarification question을 하면 답한 뒤에 audit, schema,
@@ -764,6 +817,7 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/organic-capability-system.md`: deep-audit-ecommerce와 KR2를 하나의 `geo` 시스템 안에서 결합하는 organic composition 계약
 - `docs/beta-a-geo-guide.ko.md`: beta-A 기능 이름, 효과, 메커니즘, 외부 근거, 근거 기반 설계/구현 입증 증거와 전체 GEO 프로세스를 정리한 한글 설명서
 - `docs/beta/organic-beta-integration.ko.md`: 단일 시스템 설계를 설명하는 한글 beta 통합 가이드
+- `packages/geo-deep-audit-ecommerce/`: raw audit evidence, evidence boundary, source index, scorecard, summarizer를 갖춘 ecommerce와 commerce-readiness capability package
 - `packages/geo-seo-skills-kr2/`: evidence boundary, source index, function matrix, local Code extension을 갖춘 KR2 capability package
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: `haegyung.com`용 versioned 한글 벤치마크 리포트와 source metrics
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
@@ -773,13 +827,12 @@ guide를 먼저 따라갈 수 있습니다.
 `geo`는 하나의 대표 라우터를 가진 portable skill 패키지로 묶여 있습니다.
 `SKILL.md`는 라우팅 계약을 소유하고, `skills/geo-*`는 고급 실행 workflow를
 소유하며, `references/runtime-adaptation.md`는 런타임별 경계를 기록합니다.
-이 패키지는 공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`
-workflow와 Cognitive Architecture 기반 skill 설계를 바탕으로 구현되었습니다.
+구현 provenance는 아래 패키지 생성 배경에 정리했습니다.
 
 ### 패키지 생성 배경
 
 이 패키지는 공개 Skill Creator 스킬을 참고한 비공개 `generateSkill`
-workflow로 생성되었습니다.
+workflow와 Cognitive Architecture 기반 skill 설계를 바탕으로 생성되었습니다.
 비공개 생성 workflow 자체는 이 저장소에 포함되지 않으며, 이 저장소에는
 결과물인 GEO 패키지와 사용자 문서가 포함됩니다.
 
