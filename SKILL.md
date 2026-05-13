@@ -186,10 +186,10 @@ Use the smallest confirmed source surface that can answer the request:
   graph, execute each unblocked phase, verify it, record the ledger, and
   continue until all required phases pass or a real stop condition applies
 - organic capability system:
-  `references/organic-capability-system.md` keeps deep-audit-ecommerce and KR2
-  as capabilities inside one `geo` system; physical folders are maintenance
-  boundaries, while routing, evidence ledger, completion judgment, and report
-  contract remain unified under the representative `geo` surface
+  `references/organic-capability-system.md` treats deep-audit-ecommerce and
+  KR2 as capability inputs to one `geo` system; integration takes priority over
+  preserving separate reports, and physical folders are only maintenance
+  boundaries
 - derived deliverables:
   HTML, slides, exports, or build surfaces only after the upstream working
   source is known
@@ -226,9 +226,9 @@ When a local package capability under `packages/*` is involved, keep the user
 request inside one `geo` workflow. `packages/geo-deep-audit-ecommerce/` is the
 physical compatibility path for the `deep-audit-ecommerce` capability, and
 `packages/geo-seo-skills-kr2/` is the KR2 capability. They may be maintained in
-separate folders, but they must share one source-order decision, one evidence
-ledger, one completion judgment, and one report contract for a single user
-request.
+separate folders, but the folders do not preserve separate user-facing report
+tracks. For a single user request, use one source-order decision, one evidence
+ledger, one completion judgment, and one report contract.
 
 ## Sequence-Dependent Autopilot
 

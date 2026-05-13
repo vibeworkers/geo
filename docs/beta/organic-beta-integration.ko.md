@@ -38,6 +38,8 @@ geo
 - `beta-A`는 별도 기능이 아니라 `geo` 전체의 실행 엔진이다.
 - `beta-B`는 별도 제품이 아니라 `geo` 안의 KR2 판단 능력이다.
 - `deep-audit-ecommerce`는 `geo` 안의 commerce 도메인 판단 능력이다.
+- 통합이 우선이다. deep-audit 보고서와 KR2 보고서를 각각 보존하는 것은
+  필수 조건이 아니며, 단일 판단에 필요한 근거만 통합 흐름으로 흡수한다.
 - 같은 요청 안에서 deep-audit과 KR2가 모두 필요하면 하나의 evidence ledger와
   하나의 report contract를 사용한다.
 - KR2가 ecommerce 사이트를 다룰 때는 deep-audit commerce rubric을 불러온다.
@@ -48,10 +50,10 @@ geo
 
 ## beta 성공 기준
 
-- 기존 `main`의 deep-audit-ecommerce 효과가 유지된다.
+- 기존 `main`의 deep-audit-ecommerce 효과가 통합 workflow 안에서 호출된다.
 - `beta-A`의 sequence-dependent autopilot, completion gate, CogArch-compatible
-  reasoning contract가 유지된다.
+  reasoning contract가 통합 판단의 실행 엔진으로 작동한다.
 - `beta-B`의 KR2 package, 21개 subskill, source index, function matrix, evidence
-  checker가 유지된다.
+  checker가 통합 판단의 근거와 실행 능력으로 작동한다.
 - 두 capability가 별도 closeout을 만들지 않고 하나의 `geo` 판단 흐름으로 닫힌다.
 - `cogarch`는 alignment reference일 뿐 portable 실행 필수조건이 아니다.

@@ -107,12 +107,13 @@ packages that happen to live in one repository.
 
 `beta-A` supplies the root operating contract: clarification, source priority,
 sequence-dependent autopilot, evidence closure, and completion judgment.
-`beta-B` supplies the KR2 capability for Korean, multilingual, platform,
-crawler, AI-readiness, realtime, tracker, batch, and `/geo-code` work.
-The existing deep-audit-ecommerce work remains a `geo` sub-capability for
+`beta-B` contributes KR2 judgment for Korean, multilingual, platform, crawler,
+AI-readiness, realtime, tracker, batch, and `/geo-code` work.
+The existing deep-audit-ecommerce work contributes commerce judgment for
 ecommerce and commerce readiness.
 
-The folders stay separate for maintenance, but the workflow is unified:
+The folders stay separate for maintenance, but integration is the priority and
+the workflow is unified:
 
 ```text
 geo core -> capability selection -> shared evidence ledger -> one report contract
@@ -533,11 +534,12 @@ AI 답변 노출이나 conversion이 실제로 증가했다는 실측 근거는 
 `beta-A`는 clarification, source priority, sequence-dependent autopilot,
 evidence closure, completion judgment를 제공하는 루트 운영 계약입니다.
 `beta-B`는 한국어, 다국어, platform, crawler, AI-readiness, realtime,
-tracker, batch, `/geo-code` 작업을 담당하는 KR2 capability입니다.
-기존 deep-audit-ecommerce 작업은 ecommerce와 commerce readiness를 담당하는
-`geo` 하위 capability로 유지됩니다.
+tracker, batch, `/geo-code` 판단 능력을 `geo`에 제공합니다.
+기존 deep-audit-ecommerce 작업은 ecommerce와 commerce readiness 판단 능력을
+`geo`에 제공합니다.
 
-폴더는 유지보수 경계를 위해 분리하지만, 실행 workflow는 하나로 닫습니다.
+폴더는 유지보수 경계를 위해 분리하지만, 개별 보고서 보존보다 통합이
+우선이며 실행 workflow는 하나로 닫습니다.
 
 ```text
 geo core -> capability selection -> shared evidence ledger -> one report contract

@@ -29,12 +29,12 @@ The root `geo` system owns:
 | KR2 capability | `packages/geo-seo-skills-kr2/` | Korean, multilingual, platform, crawler, AI-readiness, and local Code extension capability |
 | Local execution bundle | `skills/geo-*` | Portable execution workflows routed by the representative `geo` surface |
 
-`packages/geo-deep-audit-ecommerce/` keeps its current physical compatibility
-path. Its semantic capability handle inside the `geo` system is
-`deep-audit-ecommerce`.
+`packages/geo-deep-audit-ecommerce/` is a physical compatibility path, not a
+separate report track. Its semantic capability handle inside the `geo` system
+is `deep-audit-ecommerce`.
 
-`packages/geo-seo-skills-kr2/` keeps its package identity for portability. Its
-semantic capability handle inside the `geo` system is `kr2`.
+`packages/geo-seo-skills-kr2/` is a portable package path, not a separate
+report track. Its semantic capability handle inside the `geo` system is `kr2`.
 
 ## Composition Rules
 
@@ -72,7 +72,8 @@ semantic capability handle inside the `geo` system is `kr2`.
 ## Closeout Rule
 
 For a single user request, the final result must not be a pasted bundle of a
-deep-audit report plus a KR2 report. It must be a single GEO judgment flow:
+deep-audit report plus a KR2 report. Integration takes priority over preserving both reports.
+It must be a single GEO judgment flow:
 
 1. scope and source surfaces
 2. capability path used
@@ -84,5 +85,5 @@ deep-audit report plus a KR2 report. It must be a single GEO judgment flow:
 8. verification evidence
 9. unresolved blockers
 
-This keeps beta-A's execution discipline and beta-B's KR2 capability active as
-one organic `geo` system.
+This makes beta-A's execution discipline, KR2 judgment, and commerce judgment
+serve one organic `geo` system.

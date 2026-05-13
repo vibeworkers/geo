@@ -16,8 +16,9 @@ a separate `/geo ...` slash-command surface.
 ownership boundary, not a user-facing product split.
 
 Use `references/organic-capability-system.md` when a request needs more than
-one capability. The root router keeps one source-order decision, one evidence
-ledger, one completion judgment, and one report contract.
+one capability. The root router gives integration priority over separate
+report preservation: one source-order decision, one evidence ledger, one
+completion judgment, and one report contract.
 
 | Capability | Physical surface | Use inside the organic `geo` system |
 | --- | --- | --- |

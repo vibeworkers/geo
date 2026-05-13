@@ -128,9 +128,10 @@ REQUIRED_PHRASES = [
     "**Output brand** — default to `VibeWorkers`;",
     "Its official website is <https://vibeworkers.net>.",
     "They are routed by `geo`, but each one must remain a standalone contract rather",
-    "`references/organic-capability-system.md` keeps deep-audit-ecommerce and KR2",
+    "`references/organic-capability-system.md` treats deep-audit-ecommerce and",
     "physical compatibility path for the `deep-audit-ecommerce` capability",
     "`packages/geo-seo-skills-kr2/` is the KR2 capability",
+    "separate user-facing report",
     "one source-order decision, one evidence",
     "Gate 15: Organic capability composition",
     "compose `deep-audit-ecommerce` and `kr2` as needed under the root",
@@ -1099,10 +1100,11 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`deep-audit-ecommerce`.",
         "`kr2`.",
         "one evidence ledger and one report contract",
+        "Integration takes priority over preserving both reports",
         "Do not upgrade `Readiness` or `Heuristic` to `Measured` unless direct",
         "Do not make `cogarch`, `~/.cogarch`, `OPERATIONS.md`, or hidden session",
         "It must be a single GEO judgment flow:",
-        "This keeps beta-A's execution discipline and beta-B's KR2 capability active",
+        "serve one organic `geo` system",
     ]:
         if phrase not in organic_capability:
             fail(f"missing organic-capability phrase: {phrase}")
