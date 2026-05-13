@@ -46,6 +46,86 @@ evidence work, and optional local execution workflows.
 It can start from bundled references, but it is designed to work with the
 user's real notes, drafts, files, and source materials when they are provided.
 
+### beta-A Evidence-Based Design
+
+The `beta-A` branch turns `geo` from a descriptive router into a
+sequence-dependent GEO execution package.
+`beta-A` is not a separate skill name. It is represented by the separate
+branch, worktree, or folder boundary, so the representative skill name and
+runtime entrypoint remain `geo`.
+Its core claim is deliberately limited and evidence-scoped.
+Here, external evidence means outside official documentation, standards,
+academic literature, or established engineering principles. Repository files
+are evidence-based design and implementation proof surfaces: they show where
+`beta-A` encodes those principles and how the package validates the contract.
+They are not proof of market outcomes.
+
+| Claim | What `beta-A` proves | What it does not prove |
+| --- | --- | --- |
+| Package capability | The repository contains a portable routing contract, execution references, validator checks, and Korean beta-A guide. | It does not prove that a specific brand gained AI answer visibility. |
+| Process capability | All-in requests such as `do everything`, `전체 진행`, or `전부 해줘` can be converted into ordered phases. | It does not remove the need for human approval at destructive, credential, payment, or external-decision steps. |
+| Evidence discipline | Readiness, heuristic scores, observed answers, observed citations, referrals, and conversions are separated. | It does not treat readiness as measured market outcome. |
+| Portability | Hidden `cogarch` state is not required for normal GEO package use. | It does not ship private generator internals or machine-local runtime state. |
+
+The mechanism is a staged control loop.
+
+| Stage | Mechanism | Evidence-based design / implementation proof surface |
+| --- | --- | --- |
+| Intake | Lock `goal`, `scope`, `surface`, `success`, and `evidence target` before broad execution. | NIST AI RMF / EBSE principles encoded in `SKILL.md` and `references/gate-conditions.md` |
+| Routing | Classify the request into source mode, lane, and optional `skills/geo-*` workflow. | ISO/IEC/IEEE 42010, Parnas, and W3C PROV principles encoded in `SKILL.md` and `references/execution-skill-matrix.md` |
+| Dependency ordering | Convert whole-process requests into an ordered dependency graph. | NIST AI RMF lifecycle/risk control encoded in `references/sequence-dependent-autopilot.md` |
+| Execution | Run only the next unblocked phase and record owner, status, and evidence. | W3C PROV / EBSE traceability encoded in `references/sequence-dependent-autopilot.md` and `references/cogarch-alignment.md` |
+| Claim control | Separate measured facts, interpretation, assumptions, and unknowns. | EBSE, TREC-style evaluation, and causal-inference boundaries encoded in `references/report-template-contract.md` and `references/measurement-loop.md` |
+| Completion | Close with `completion_judgment`, `all_must_passed`, `failed_must_queue`, and verification evidence. | EBSE verification and package contract validation encoded in `references/implementation-completion-plan.md` and `scripts/check_geo_skill.py` |
+
+The external basis is a set of public, inspectable principles rather than
+private project notes.
+
+| External principle | Source | beta-A design implication |
+| --- | --- | --- |
+| Architecture descriptions should express system structure, relationships, and viewpoints. | [ISO/IEC/IEEE 42010:2022](https://www.iso.org/standard/74393.html) | Treat identity, context mode, lane, and handoff surfaces as explicit architecture contract elements. |
+| Modular decomposition improves understandability and change control when responsibilities are separated by design decisions. | [Parnas 1972](https://doi.org/10.1145/361598.361623) | Keep the representative router separate from advanced `skills/geo-*` execution workflows. |
+| Provenance supports quality, reliability, and trustworthiness assessment. | [W3C PROV Overview](https://www.w3.org/TR/prov-overview/) | Track source, phase, actor, evidence, and downstream artifact boundaries. |
+| Retrieval evaluation requires topics, documents, and relevance judgments rather than unsupported visibility claims. | [NIST TREC overview](https://trec.nist.gov/about.html) | Treat AI visibility as an observed/captured outcome, not as a readiness claim. |
+| Software engineering decisions should integrate best available evidence, practice context, and limitations. | [Evidence-Based Software Engineering](https://doi.org/10.1109/ICSE.2004.1317449) | Require claim labels, verification sets, failed queues, and explicit unknowns. |
+| Structured data helps machines understand page content, but platform behavior is governed by platform documentation. | [Google structured data docs](https://developers.google.com/search/docs/guides/search-gallery), [Schema.org](https://schema.org/) | Separate schema validity from rich-result, AI-answer, or commerce outcome claims. |
+| Crawler access and indexing controls are technical preconditions with specific semantics. | [Google robots.txt reference](https://developers.google.com/search/reference/robots_txt) | Keep crawler, indexing, `robots.txt`, and `noindex` checks as distinct gates. |
+| Content quality evaluation depends on experience, expertise, authoritativeness, trust, and purpose. | [Google Search quality guidance](https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t) | Keep content quality, source credibility, and claim trustworthiness visible in reports. |
+| AI risk management should document context, measurement, limitations, and human-AI interaction boundaries. | [NIST AI RMF resources](https://airc.nist.gov/AI_RMF_Knowledge_Base) | Use stop conditions, failed queues, human approval boundaries, and explicit unknowns. |
+
+Academic and professional evidence work should therefore treat `beta-A` as a
+methodological package: it formalizes source precedence, phase ordering,
+claim labeling, validation, and handoff.
+See `docs/beta-a-geo-guide.ko.md` for the Korean full guide with feature
+names, effects, mechanisms, external evidence, and evidence-based design /
+implementation proof.
+
+### beta Organic System Integration
+
+The beta branch treats `geo` as one organic system, not as two separate
+packages that happen to live in one repository.
+
+`beta-A` supplies the root operating contract: clarification, source priority,
+sequence-dependent autopilot, evidence closure, and completion judgment.
+`beta-B` supplies the KR2 capability for Korean, multilingual, platform,
+crawler, AI-readiness, realtime, tracker, batch, and `/geo-code` work.
+The existing deep-audit-ecommerce work remains a `geo` sub-capability for
+ecommerce and commerce readiness.
+
+The folders stay separate for maintenance, but the workflow is unified:
+
+```text
+geo core -> capability selection -> shared evidence ledger -> one report contract
+```
+
+For ecommerce requests with Korean, multilingual, platform, crawler, realtime,
+or tracking concerns, `geo` composes deep-audit-ecommerce and KR2 in one
+workflow. For KR2 requests against an ecommerce or commerce property, `geo`
+imports the deep-audit-ecommerce rubric before closing readiness.
+
+See `references/organic-capability-system.md` and
+`docs/beta/organic-beta-integration.ko.md`.
+
 ### Why It Exists
 
 GEO work often gets split across notes, drafts, evidence documents, reusable
@@ -257,7 +337,10 @@ If advanced workflows are not available or do not start as expected:
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, and completion plan
 - `references/cogarch-alignment.md`: optional governance alignment for evidence closure, owner split, actor-first handoff, and portable knowledge packets
 - `references/sequence-dependent-autopilot.md`: end-to-end process autopilot for all-in requests such as `전부 해줘`, `전체 진행`, and `do everything`
+- `references/organic-capability-system.md`: organic composition contract for deep-audit-ecommerce and KR2 inside one `geo` system
 - `docs/beta-a-geo-guide.ko.md`: Korean beta-A guide covering feature names, effects, mechanisms, evidence, and the end-to-end GEO process
+- `docs/beta/organic-beta-integration.ko.md`: Korean beta integration guide for the single-system design
+- `packages/geo-seo-skills-kr2/`: KR2 capability package with evidence boundaries, source index, function matrix, and local Code extensions
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: versioned Korean benchmark report and source metrics for `haegyung.com`
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
@@ -326,10 +409,147 @@ measurement readiness를 한 덩어리 "AI commerce" 주장으로 뭉개지지 �
 
 ### 이 프로젝트는 무엇인가
 
-`geo`는 GEO 전략, 교육 자료 설계, 근거 작업, 그리고 선택적인 로컬 실행
-workflow를 위한 portable skill 패키지입니다.
+`geo`는 GEO 전략, 교육 자료 설계, 외부 근거 기반 판단, 그리고 선택적인
+로컬 실행 workflow를 위한 portable skill 패키지입니다.
 bundled reference만으로 시작할 수도 있지만, 사용자의 실제 note, draft, file,
 source material이 주어지면 그 자료를 기준으로 동작하도록 설계되어 있습니다.
+
+### beta-A 구조적 입증 문서
+
+`beta-A`의 핵심 주장은 "GEO를 잘한다"가 아니라, 더 좁고 검증 가능한
+명제입니다.
+
+`beta-A`는 GEO 작업을 source 확인, routing, 순서의존적 실행, 검증,
+claim 분리, handoff, 완료 판단으로 나누는 portable execution package입니다.
+`beta-A`는 별도 스킬명이 아닙니다. 별도 브랜치, worktree, 폴더가 beta-A
+변형을 구분하므로 대표 스킬명과 runtime 진입점은 계속 `geo`입니다.
+
+이 README에서 `근거`는 현재 저장소의 파일이 아니라, 우리 외부의 공식
+문서, 표준, 학술 문헌, 또는 공학적으로 타당한 원리를 뜻합니다.
+현재 저장소의 파일, 계약, validator, reference 문서는 외부 근거 자체가
+아니라 `근거 기반 설계/구현 입증 증거`입니다. 즉 아래 표의 마지막 열은
+"외부 근거와 공학 원리가 현재 beta-A 기능 구조에 실제로 반영돼 있다"는
+점을 보여주는 구현 surface와 검증 surface입니다. 특정 외부 플랫폼에서
+AI 답변 노출이나 conversion이 실제로 증가했다는 실측 근거는 아닙니다.
+
+#### 1. 핵심 명제와 입증 경계
+
+| 구분 | beta-A가 입증하는 것 | beta-A가 입증하지 않는 것 | 판단 기준 |
+| --- | --- | --- | --- |
+| 방법론 | GEO 작업을 반복 가능한 단계와 gate로 분해할 수 있음 | 특정 시장 성과가 자동 발생함 | 단계, gate, validator 존재 |
+| 실행성 | `전부 해줘`, `전체 진행` 같은 요청을 ordered process로 바꿀 수 있음 | 사용자 승인 없이 위험 작업까지 자동 수행함 | stop condition과 failed queue |
+| 근거/측정 분리 | readiness, heuristic, observed outcome을 분리할 수 있음 | readiness를 실측 성과로 대체함 | evidence label과 claim ledger |
+| 이식성 | 숨은 local state 없이 패키지 파일만으로 읽히고 검증될 수 있음 | private generator나 cogarch runtime을 포함함 | portable contract와 validator |
+
+#### 2. 기능 이름, 효과, 메커니즘, 근거 기반 설계/구현 입증 증거
+
+마지막 열은 단순 파일 목록이 아닙니다. 각 기능이 어떤 외부 근거 또는
+공학 원리에 의해 정당화되고, 그 원리가 beta-A의 어느 구현 surface와
+검증 surface에 반영돼 있는지를 요약합니다. 상세 매핑은
+`docs/beta-a-geo-guide.ko.md`의 `전체 기능 및 근거 기반 구현 매칭 표`를
+기준으로 합니다.
+
+| 기능 이름 | 효과 | 메커니즘 | 근거 기반 설계/구현 입증 증거 |
+| --- | --- | --- | --- |
+| 대표 GEO router | 사용자가 하나의 entrypoint로 시작할 수 있음 | `geo <request>` / `$geo <request>` 요청을 context mode와 lane으로 분류 | ISO/IEC/IEEE 42010, Parnas, W3C PROV, NIST AI RMF 원리가 `SKILL.md` `Identity`, `Context Modes`, `Request Classification`에 반영되고 `scripts/check_geo_skill.py`가 필수 계약 섹션을 검증 |
+| Clarification-first intake | 모호한 목표로 바로 실행하는 위험 감소 | `goal`, `scope`, `surface`, `success`, `evidence target`을 먼저 고정 | NIST AI RMF와 EBSE의 context/evidence decision 원리가 `SKILL.md`와 `references/gate-conditions.md` Gate 2에 반영 |
+| Source-order 보호 | 원본보다 downstream 산출물을 먼저 고치는 오류 방지 | user material, local source, bundled reference의 우선순위를 구분 | W3C PROV와 EBSE의 provenance/source precedence 원리가 `SKILL.md`와 `references/concept-map.md`에 반영 |
+| Execution skill matrix | 감사, schema, report, proposal을 전용 workflow로 연결 | 요청 의도와 `skills/*` 존재를 확인한 뒤 matching subskill 선택 | Parnas의 modular decomposition 원리가 `references/execution-skill-matrix.md`의 router/subskill 책임 분리에 반영 |
+| Sequence-dependent autopilot | 사용자가 절차를 몰라도 전체 수행 가능 | all-in trigger를 dependency graph, phase execution, verification으로 변환 | NIST AI RMF와 EBSE의 bounded process/evidence closure 원리가 `references/sequence-dependent-autopilot.md`에 반영되고 validator가 autopilot phrase를 검증 |
+| Cogarch alignment | 넓은 요청을 실행 가능한 판단 루프로 닫음 | Goal, Rubric, Iteration, Score, Next Action 구조를 GEO에 맞게 적용 | EBSE decision cycle과 ISO stakeholder/viewpoint 원리가 `references/cogarch-alignment.md`의 evidence closure, owner split, actor-first handoff에 반영 |
+| Claim boundary ledger | 과장된 GEO claim 방지 | 사실, 해석, 가정, 불확실성을 별도 ledger로 기록 | EBSE와 experimental design의 claim/interpretation separation 원리가 `references/report-template-contract.md`에 반영 |
+| Measurement loop | 실측 성과와 준비 상태를 분리 | observed answer, citation, referral, conversion capture를 별도 상태로 둠 | NIST TREC의 retrieval evaluation 구조와 causal inference 경계가 `references/measurement-loop.md`와 `SKILL.md` Gate 8에 반영 |
+| Commerce/action readiness | schema validity를 commerce 성과로 오인하지 않음 | product, schema, merchant, catalog, checkout, measurement readiness 분리 | JSON-LD, Schema.org, Google structured data/merchant 문서의 eligibility 경계가 `references/commerce-readiness.md`와 `references/commerce-audit-worksheet.md`에 반영 |
+| Policy risk gate | 정책/법적 위험을 workflow 안에서 노출 | robots, terms, privacy, regulated claim, brand claim, commerce eligibility 점검 | RFC 9309, platform crawler 문서, NIST AI RMF risk-control 원리가 `references/policy-risk-gate.md`와 `SKILL.md` Gate 12에 반영 |
+| Completion boundary | 완료를 감으로 선언하지 않음 | `completion_judgment`, `all_must_passed`, `failed_must_queue`, `verification_set` 요구 | EBSE verification/limitation 원리와 NIST AI RMF evaluation boundary가 `references/implementation-completion-plan.md`와 `SKILL.md` Gate 13에 반영 |
+| Validator hardening | 문서 계약 누락을 자동으로 감지 | 필수 reference, gate, phrase, portability 조건 검사 | architecture contract와 reproducibility 원리가 `scripts/check_geo_skill.py`에 반영되고 `python3 scripts/check_geo_skill.py`로 검증 |
+
+#### 3. 순서의존적 실행 메커니즘
+
+| 순서 | 단계 | 입력 | 처리 | 출력 |
+| --- | --- | --- | --- | --- |
+| 1 | Intake | 사용자 요청 | 목표와 evidence target 고정 | clarification packet |
+| 2 | Source selection | 파일, URL, pasted text, bundled reference | source of truth와 downstream output 분리 | source mode |
+| 3 | Lane routing | 요청 의도 | framework, working source, evidence, asset, execution, deliverable lane 선택 | owning lane |
+| 4 | Autopilot trigger | `전체 진행`, `전부 해줘`, `do everything` | 전체 수행 요청 여부 판정 | autopilot on/off |
+| 5 | Dependency graph | 선택된 lane과 workflow | 먼저 해야 할 phase와 blocked phase 분리 | ordered phase list |
+| 6 | Phase execution | 다음 unblocked phase | 최소 안전 단위 실행 | artifact 또는 evidence |
+| 7 | Verification | validator, report contract, capture template | 통과/실패와 구현 검증 기록 | verification set |
+| 8 | Ledger | 측정값과 판단 | 사실, 해석, 가정, 불확실성 분리 | claim boundary ledger |
+| 9 | Handoff | 수신자 profile | manager/operator/builder용 결과 포장 | actor-first handoff |
+| 10 | Closeout | phase 결과 전체 | 완료 또는 blocker 선언 | completion judgment |
+
+#### 4. 증거와 판단 수준
+
+| 수준 | 의미 | beta-A에서의 사용 |
+| --- | --- | --- |
+| External evidence | 공식 문서, 표준, 학술 문헌, 공학 원리 | 기능의 필요성과 판단 경계 정당화 |
+| Evidence-based design / implementation proof | 실제 저장소 파일, validator, reference 계약 | 외부 근거와 공학 원리가 beta-A 기능 구조에 반영됐는지 판단 |
+| Methodological principle | 단계화, gate, source precedence, claim labeling | 학문적/전문적 설명 구조 |
+| Observational evidence | 특정 prompt, 날짜, source URL, capture artifact | AI answer/citation/referral 같은 실측 claim에만 사용 |
+| Interpretive judgment | 측정 결과가 의미하는 전략적 판단 | 보고서의 interpretation section에만 배치 |
+| Assumption | 아직 검증되지 않았지만 작업상 임시 채택한 조건 | assumptions ledger에 명시 |
+| Unknown | 현재 외부 근거, 근거 기반 설계/구현 입증 증거, 관측 증거로 알 수 없는 내용 | unknowns 또는 failed queue에 명시 |
+
+#### 5. 외부 원리 근거
+
+`beta-A`는 GEO를 단일 점수나 단일 최적화 기법으로 보지 않습니다.
+대신 정보 검색, 출처 신뢰성, 구조화 데이터, 문서 품질, platform policy,
+측정 가능성, 실행 가능성을 분리된 변수로 다룹니다.
+
+아래 표의 외부 근거는 beta-A가 내부적으로 정리한 주장보다 상위의 판단
+기반입니다. 즉 저장소 파일은 이 원리들이 beta-A에 구현되었는지를 보여주는
+증거이고, 원리 자체의 타당성은 외부 표준, 공식 문서, 학술/공학 관행에
+기반합니다.
+
+| 외부 원리 | 외부 근거 | beta-A 적용 | 논리적 효과 |
+| --- | --- | --- | --- |
+| Provenance와 traceability | [W3C PROV Overview](https://www.w3.org/TR/prov-overview/)는 data나 thing을 만든 entity, activity, people 정보를 품질, 신뢰성, trustworthiness 평가에 쓸 수 있는 provenance로 설명한다. | phase별 source, actor, evidence, downstream artifact를 ledger에 기록한다. | 어떤 산출물이 어떤 근거와 활동에서 나왔는지 추적 가능해진다. |
+| 정보검색 평가는 관측과 relevance judgment가 필요함 | [NIST TREC](https://trec.nist.gov/about.html)은 retrieval system을 test collection, topic, relevance judgment, evaluation software로 평가하는 연구 기반을 제공한다. | AI answer visibility, citation, referral, conversion은 readiness가 아니라 capture artifact가 있을 때만 observed claim으로 다룬다. | "노출될 가능성"과 "실제로 관측됨"을 구분한다. |
+| 구조화 데이터는 이해 가능성을 높이지만 결과를 보장하지 않음 | [Google Search structured data documentation](https://developers.google.com/search/docs/guides/search-gallery)은 structured data가 페이지 내용을 이해하고 rich result에 활용될 수 있음을 설명하고, [Schema.org](https://schema.org/)는 웹 구조화 데이터 vocabulary를 제공한다. | `geo-schema`는 schema validity와 platform outcome을 분리한다. | schema가 맞다는 사실을 AI 답변 노출이나 commerce 성과로 과장하지 않는다. |
+| crawler와 indexing control은 구분되어야 함 | [Google robots.txt reference](https://developers.google.com/search/reference/robots_txt)는 Google crawler가 `robots.txt`를 crawl 가능 범위 판단에 사용한다고 설명한다. | crawler access, indexing, `robots.txt`, `noindex`, `llms.txt`를 별도 gate로 둔다. | 기술적 접근 가능성과 검색/AI 노출 가능성을 혼동하지 않는다. |
+| 콘텐츠 품질은 경험, 전문성, 권위, 신뢰와 연결됨 | [Google Search Central의 E-E-A-T 안내](https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t)는 creators가 Search 성공을 self-assess할 때 품질 가이드가 유용할 수 있음을 설명한다. | content quality, source credibility, author/surface trust를 report claim과 분리해 기록한다. | 단순 keyword 최적화가 아니라 신뢰 가능한 답변 source 요건을 점검한다. |
+| AI/automation은 context, risk, human boundary를 문서화해야 함 | [NIST AI RMF resources](https://airc.nist.gov/AI_RMF_Knowledge_Base)는 AI risk management operationalization과 documentation practice를 다룬다. | destructive, credential, payment, external decision, unclear validation failure에서 stop condition을 둔다. | 자동 수행이 승인/책임/법적 판단을 넘지 않도록 경계를 만든다. |
+
+#### 6. 학문적/논리적 정당화
+
+| 원리 | beta-A 적용 | 왜 필요한가 |
+| --- | --- | --- |
+| Source precedence | 원본 source와 downstream output 분리 | derived artifact를 근거로 다시 원본을 왜곡하지 않기 위해 |
+| Traceability | phase별 evidence와 ledger 기록 | provenance 원리에 맞춰 판단 경로를 재검토하기 위해 |
+| Falsifiability | readiness와 observed outcome 분리 | 정보검색 평가처럼 관측과 판단을 분리하기 위해 |
+| Reproducibility | validator와 template 기반 검증 | 같은 package를 다른 runtime이나 checkout에서도 확인하기 위해 |
+| Bounded automation | stop condition과 failed queue | 자동화가 승인, 결제, 자격 증명, 법적 판단을 넘지 않게 하기 위해 |
+| Actor relevance | manager/operator/builder handoff | 같은 외부 근거와 근거 기반 설계/구현 입증 증거를 의사결정, 운영, 구현에 맞게 전달하기 위해 |
+
+전체 한국어 설명서는 `docs/beta-a-geo-guide.ko.md`에 있으며, 이 README의
+표는 그 문서를 저장소 첫 화면에서 바로 이해할 수 있도록 압축한 입증 map입니다.
+
+### beta 유기적 시스템 통합
+
+`beta` 브랜치는 `beta-A`와 `beta-B`를 따로 붙인 묶음이 아니라, 하나의
+`geo` 실행 시스템입니다.
+
+`beta-A`는 clarification, source priority, sequence-dependent autopilot,
+evidence closure, completion judgment를 제공하는 루트 운영 계약입니다.
+`beta-B`는 한국어, 다국어, platform, crawler, AI-readiness, realtime,
+tracker, batch, `/geo-code` 작업을 담당하는 KR2 capability입니다.
+기존 deep-audit-ecommerce 작업은 ecommerce와 commerce readiness를 담당하는
+`geo` 하위 capability로 유지됩니다.
+
+폴더는 유지보수 경계를 위해 분리하지만, 실행 workflow는 하나로 닫습니다.
+
+```text
+geo core -> capability selection -> shared evidence ledger -> one report contract
+```
+
+ecommerce 요청이 한국어, 다국어, platform, crawler, realtime, tracking 문제를
+포함하면 `geo`는 deep-audit-ecommerce와 KR2를 하나의 workflow로 결합합니다.
+KR2 요청이 ecommerce나 commerce property를 대상으로 하면, readiness를 닫기
+전에 deep-audit-ecommerce rubric을 함께 사용합니다.
+
+자세한 계약은 `references/organic-capability-system.md`와
+`docs/beta/organic-beta-integration.ko.md`를 기준으로 합니다.
 
 ### 왜 존재하는가
 
@@ -539,7 +759,10 @@ guide를 먼저 따라갈 수 있습니다.
 - `references/implementation-completion-plan.md`: P2-P13 requirement, sequence, verification, completion plan
 - `references/cogarch-alignment.md`: evidence closure, owner split, actor-first handoff, portable knowledge packet용 선택적 governance alignment
 - `references/sequence-dependent-autopilot.md`: `전부 해줘`, `전체 진행`, `do everything` 같은 전체 수행 요청용 end-to-end process autopilot
-- `docs/beta-a-geo-guide.ko.md`: beta-A 기능 이름, 효과, 메커니즘, 근거와 전체 GEO 프로세스를 정리한 한글 설명서
+- `references/organic-capability-system.md`: deep-audit-ecommerce와 KR2를 하나의 `geo` 시스템 안에서 결합하는 organic composition 계약
+- `docs/beta-a-geo-guide.ko.md`: beta-A 기능 이름, 효과, 메커니즘, 외부 근거, 근거 기반 설계/구현 입증 증거와 전체 GEO 프로세스를 정리한 한글 설명서
+- `docs/beta/organic-beta-integration.ko.md`: 단일 시스템 설계를 설명하는 한글 beta 통합 가이드
+- `packages/geo-seo-skills-kr2/`: evidence boundary, source index, function matrix, local Code extension을 갖춘 KR2 capability package
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: `haegyung.com`용 versioned 한글 벤치마크 리포트와 source metrics
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 

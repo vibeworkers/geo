@@ -1,0 +1,37 @@
+{
+  "site": "gmarket",
+  "url": "https://www.gmarket.co.kr/",
+  "home": {
+    "url": "https://www.gmarket.co.kr/",
+    "ok": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "robots": {
+    "url": "https://www.gmarket.co.kr/robots.txt",
+    "ok": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "sitemap_xml": {
+    "url": "https://www.gmarket.co.kr/sitemap.xml",
+    "ok": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "llms_txt": {
+    "url": "https://www.gmarket.co.kr/llms.txt",
+    "ok": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  "signals": {
+    "html_lang": null,
+    "title": "",
+    "meta_description": "",
+    "og_title": "",
+    "og_description": "",
+    "canonical": "",
+    "hreflang_count": 0,
+    "hreflang_samples": [],
+    "jsonld_count": 0,
+    "robots_sitemap_lines": [],
+    "explicit_ai_user_agents_in_robots": []
+  }
+}

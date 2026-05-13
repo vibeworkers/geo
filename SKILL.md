@@ -20,6 +20,9 @@ metadata:
 This is a portable GEO skill.
 This package is intended to move across supported skill roots without hidden
 machine-local assumptions.
+When this checkout is used as beta-A, beta-A is represented by the separate
+branch, worktree, or folder boundary, not by a separate skill name. The
+representative skill name and command surface remain `geo`.
 
 It owns request routing across these surfaces:
 
@@ -119,7 +122,8 @@ If this skill summary drifts, see the portable GEO routing baseline defined in
 `references/user-level-workflow-guide.md`, and
 `references/execution-skill-matrix.md`, and
 `references/cogarch-alignment.md`, and
-`references/sequence-dependent-autopilot.md`.
+`references/sequence-dependent-autopilot.md`, and
+`references/organic-capability-system.md`.
 
 The bundled term contract is defined in `references/glossary.md`.
 
@@ -158,6 +162,7 @@ Use the smallest confirmed source surface that can answer the request:
   `references/user-level-workflow-guide.md`
   `references/cogarch-alignment.md`
   `references/sequence-dependent-autopilot.md`
+  `references/organic-capability-system.md`
 - user-provided working sources:
   pasted notes, attached docs, explicit file paths, or named deliverables from
   the user
@@ -180,6 +185,11 @@ Use the smallest confirmed source surface that can answer the request:
   `continue until complete`; when triggered, build the ordered dependency
   graph, execute each unblocked phase, verify it, record the ledger, and
   continue until all required phases pass or a real stop condition applies
+- organic capability system:
+  `references/organic-capability-system.md` keeps deep-audit-ecommerce and KR2
+  as capabilities inside one `geo` system; physical folders are maintenance
+  boundaries, while routing, evidence ledger, completion judgment, and report
+  contract remain unified under the representative `geo` surface
 - derived deliverables:
   HTML, slides, exports, or build surfaces only after the upstream working
   source is known
@@ -211,6 +221,14 @@ Classify each GEO request into one lane before deeper work:
 
 If more than one lane is involved, route in this order:
 `framework-source or evidence-note -> working-source or asset-surface -> execution-bundle -> derived-deliverable`.
+
+When a local package capability under `packages/*` is involved, keep the user
+request inside one `geo` workflow. `packages/geo-deep-audit-ecommerce/` is the
+physical compatibility path for the `deep-audit-ecommerce` capability, and
+`packages/geo-seo-skills-kr2/` is the KR2 capability. They may be maintained in
+separate folders, but they must share one source-order decision, one evidence
+ledger, one completion judgment, and one report contract for a single user
+request.
 
 ## Sequence-Dependent Autopilot
 
@@ -478,6 +496,16 @@ optimization.
     names or commands, and do not continue through destructive, credential,
     payment, external-decision, missing-source, or high-risk professional
     blockers.
+15. **Gate 15: Organic capability composition**
+    Entry: the selected workflow needs commerce/ecommerce judgment, Korean or
+    multilingual context, platform/crawler readiness, realtime capture,
+    tracking, batch scan, or `/geo-code` extension work.
+    Exit: compose `deep-audit-ecommerce` and `kr2` as needed under the root
+    `geo` contract, then close with one evidence ledger, one completion
+    judgment, and one report contract.
+    Fail: do not return separate deep-audit and KR2 closeouts for one user
+    request, and do not treat physical package folders as separate product
+    surfaces.
 
 ## Rubric
 
@@ -507,6 +535,9 @@ Must:
   hardening or whole-system completion claims
 - use `references/sequence-dependent-autopilot.md` when the user asks for the
   whole task or all processes to be performed end to end
+- use `references/organic-capability-system.md` when a workflow combines
+  commerce/ecommerce deep audit with KR2 language, platform, crawler,
+  realtime, tracker, batch, or `/geo-code` concerns
 - route execution-intent requests through a confirmed local execution bundle
   only after `skills/*` is checked
 - keep prompt templates, activation prompts, routing examples, and experiment
