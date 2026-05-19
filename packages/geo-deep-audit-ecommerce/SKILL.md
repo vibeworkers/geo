@@ -159,6 +159,40 @@ LLM-judged:
 - How to phrase Korean deliverables naturally while preserving technical
   precision and evidence limits.
 
+## 3-Layer Classification
+
+Fixed (this `SKILL.md`, `references/`, validator text):
+
+- the workflow skeleton and lane labels: `scorecard`, `site-report`,
+  `crawler-matrix`, `roadmap`, `methodology`, `follow-up-measurement`
+- immutable `raw/` boundary and the rule that copied source evidence is not
+  rewritten
+- evidence labels: `captured audit finding`, `recommendation`,
+  `methodology assumption`, `requires live validation`
+- runtime compatibility status, provider/provenance vs output brand split, and
+  the deterministic scorecard path through `scripts/summarize_scorecard.py`
+
+Flexible (project SoT pointed to by this skill):
+
+- the actual contents of `raw/*.md` and `raw/audit_scorecard.csv`
+- the per-site findings, scores, top issues, and top actions captured in the
+  packaged audit
+- future official-source updates used only when the user requests a new live
+  validation pass
+
+Flexible values are defined in `references/source-index.md`,
+`references/concept-map.md`, and the copied files under `raw/`.
+
+Decisional (runtime LLM judgment inside the declared boundary):
+
+- which lane best fits the current request
+- which smallest raw source surface is sufficient
+- which evidence label applies to a given claim
+- whether the current request can close with packaged evidence or must be
+  downgraded to `requires live validation`
+
+Always use the smallest raw source surface that answers the request.
+
 ## Setup
 
 No special bootstrap is required. The package is self-contained once this

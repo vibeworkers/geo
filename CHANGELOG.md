@@ -8,6 +8,8 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
 
 ## Unreleased
 
+## 0.11.0 - 2026-05-19
+
 - Added `references/cogarch-alignment.md` as a portable governance alignment
   contract that borrows evidence closure, owner split, actor-first handoff, and
   knowledge-packet discipline without introducing a runtime dependency on
@@ -21,6 +23,15 @@ Historical note: `0.0.1` through `0.0.4` predate the formal protocol in
   as `전부 해줘`, `전체 진행`, and `do everything` run through an ordered
   dependency graph, phase verification, ledger recording, and completion
   judgment instead of stopping at a plan.
+- Added validator-backed organic capability composition for
+  `packages/geo-deep-audit-ecommerce/` and `packages/geo-seo-skills-kr2/`, and
+  wired the root validator to delegate to those package contracts.
+- Added explicit `fixed / flexible / decisional` classification sections to the
+  deep-audit-ecommerce and KR2 package surfaces so package-level source of
+  truth, runtime judgment, and evidence boundaries are predictable.
+- Removed machine-local KR2 `00_tunnel` path assumptions from capability docs
+  and replaced them with the `GEO_TUNNEL_ROOT` runtime hint plus validator
+  enforcement.
 
 ## 0.10.0 - 2026-05-12
 

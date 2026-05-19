@@ -20,6 +20,11 @@ OVERVIEW = ROOT / "OVERVIEW.md"
 SKILLS = ROOT / "skills"
 REFERENCES = ROOT / "references"
 REPORTS = ROOT / "reports" / "2026-05-12-individual-geo-audits" / "README.md"
+PORTABILITY_PATH_PATTERNS = [
+    re.compile(r"/Volumes/"),
+    re.compile(r"/Users/"),
+]
+PORTABILITY_SURFACE_SUFFIXES = {".md", ".yaml", ".yml"}
 
 REQUIRED_FILES = [
     OVERVIEW,
@@ -27,6 +32,18 @@ REQUIRED_FILES = [
     REFERENCES / "source-index.md",
     REFERENCES / "function-matching-matrix.md",
     REFERENCES / "lang-platform-map.md",
+]
+
+REQUIRED_SECTIONS = [
+    "### Working Source of Truth and Clarification Packet",
+    "### Trigger Contract",
+    "### Capability Split",
+    "### Runtime Compatibility Gate",
+    "### Legacy Package Distillation Gate",
+    "### Code / LLM Boundary",
+    "### 3-Layer Classification",
+    "### Portable Handoff Metadata",
+    "### Rubric",
 ]
 
 REQUIRED_EVIDENCE_TERMS = [
@@ -75,6 +92,20 @@ REQUIRED_REALITY_TERMS = [
     "Heuristic",
 ]
 
+REQUIRED_RUNTIME_HINT_TERMS = [
+    "GEO_TUNNEL_ROOT",
+    "00_tunnel",
+]
+
+REQUIRED_SKILL_PHRASES = [
+    "Fixed (this `SKILL.md`, validator text, package boundary notes):",
+    "Flexible values are defined in `references/source-index.md`,",
+    "`references/function-matching-matrix.md`, `references/lang-platform-map.md`,",
+    "`references/concept-map.md`, and the matching file under `skills/*/SKILL.md`.",
+    "whether a claim must remain `Readiness` / `Heuristic` or can be upgraded to",
+    "`Measured`",
+]
+
 
 def fail(message: str) -> None:
     print(f"FAIL: {message}")
@@ -102,11 +133,35 @@ def routed_subskills(skill_text: str) -> set[str]:
     return names
 
 
+def portability_surfaces() -> list[Path]:
+    surfaces: list[Path] = []
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        if path.suffix not in PORTABILITY_SURFACE_SUFFIXES:
+            continue
+        surfaces.append(path)
+    return sorted(surfaces, key=lambda path: path.as_posix())
+
+
 def main() -> None:
     skill_text = read(SKILL)
 
     for path in REQUIRED_FILES:
         read(path)
+
+    for section in REQUIRED_SECTIONS:
+        if section not in skill_text:
+            fail(f"SKILL.md missing section: {section}")
+
+    for path in portability_surfaces():
+        text = read(path)
+        for pattern in PORTABILITY_PATH_PATTERNS:
+            if pattern.search(text):
+                fail(
+                    "absolute path leak found in "
+                    f"{path.relative_to(ROOT)}: pattern {pattern.pattern}"
+                )
 
     boundary = read(REFERENCES / "evidence-boundary.md")
     for term in REQUIRED_EVIDENCE_TERMS:
@@ -145,6 +200,10 @@ def main() -> None:
         if term not in readme and term not in skill_text:
             fail(f"README.md or SKILL.md missing reality gate term: {term}")
 
+    for term in REQUIRED_RUNTIME_HINT_TERMS:
+        if term not in readme:
+            fail(f"README.md missing local runtime hint: {term}")
+
     if "observed site data" not in matrix or "stored platform output" not in matrix:
         fail("function-matching-matrix.md missing realistic-claim guard")
 
@@ -160,6 +219,10 @@ def main() -> None:
     for phrase in ["heuristic readiness", "Measured", "Readiness", "Heuristic"]:
         if phrase not in skill_text:
             fail(f"SKILL.md missing evidence disclosure phrase: {phrase}")
+
+    for phrase in REQUIRED_SKILL_PHRASES:
+        if phrase not in skill_text:
+            fail(f"SKILL.md missing phrase: {phrase}")
 
     if REPORTS.exists():
         report_text = REPORTS.read_text(encoding="utf-8")

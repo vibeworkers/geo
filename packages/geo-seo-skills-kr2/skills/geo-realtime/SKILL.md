@@ -53,7 +53,7 @@ allowed-tools: Read, Bash, Write
 | 런타임 | Node.js + Playwright CDP |
 | Chrome 프로필 | `~/.claude/skills/browser-citation/chrome-debug-profile/` |
 | CDP 포트 | `9222` |
-| Tunnel 경로 | `/Users/seomkt/Library/CloudStorage/GoogleDrive-seomkt.kr@gmail.com/내 드라이브/00_tunnel` |
+| Tunnel 경로 | `GEO_TUNNEL_ROOT` 환경변수로 주입한 사용자 로컬 `00_tunnel` 경로 |
 
 ---
 
@@ -143,8 +143,8 @@ DOMAIN=$(echo "$URL" | sed 's|https\?://||' | sed 's|/.*||')
 
 CP 콘텐츠에서 질문을 추출한다.
 
-```
-TUNNEL="/Users/seomkt/Library/CloudStorage/GoogleDrive-seomkt.kr@gmail.com/내 드라이브/00_tunnel"
+```bash
+TUNNEL="${GEO_TUNNEL_ROOT:?set GEO_TUNNEL_ROOT to your local 00_tunnel root}"
 CP_DIR="$TUNNEL/10_projects/$DOMAIN/04_cp"
 ```
 
@@ -190,7 +190,7 @@ topics.csv가 없는 경우 기본 모드 질문 5개 + H2/H3 질문 5개를 혼
 추출된 질문 목록을 browser-citation.js에 전달한다.
 
 ```bash
-TUNNEL="/Users/seomkt/Library/CloudStorage/GoogleDrive-seomkt.kr@gmail.com/내 드라이브/00_tunnel"
+TUNNEL="${GEO_TUNNEL_ROOT:?set GEO_TUNNEL_ROOT to your local 00_tunnel root}"
 SCRIPT="$HOME/.claude/skills/browser-citation/browser-citation.js"
 OUTPUT="/tmp/geo-realtime-$(date +%s).json"
 KEYWORDS=$(echo "$QUESTIONS" | tr '\n' ',' | sed 's/,$//')

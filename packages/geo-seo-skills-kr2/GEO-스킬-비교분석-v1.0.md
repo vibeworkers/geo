@@ -276,7 +276,7 @@ KR GEO 스킬을 Tunnel Framework에 통합하면 두 시스템의 장점을 모
 
 ```bash
 # 1. 파일 저장 경로를 Tunnel 규칙으로 변경
-TUNNEL="/Users/seomkt/Library/CloudStorage/GoogleDrive-seomkt.kr@gmail.com/내 드라이브/00_tunnel"
+TUNNEL="${GEO_TUNNEL_ROOT:?set GEO_TUNNEL_ROOT to your local 00_tunnel root}"
 OUTPUT="$TUNNEL/10_projects/$DOMAIN/03_geo/"
 
 # 2. sequence-status 갱신

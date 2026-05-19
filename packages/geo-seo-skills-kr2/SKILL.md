@@ -592,6 +592,45 @@ LLM judgment areas:
 - How to reconstruct English-first evidence into natural Korean while preserving mechanism, limitation, and decision relevance.
 - Whether a near-miss request should be routed to general writing, web engineering, or governance instead of this skill.
 
+### 3-Layer Classification
+
+Fixed (this `SKILL.md`, validator text, package boundary notes):
+
+- representative routing contract, command map, and the package-level language
+  and user-level handling
+- evidence labels and reality gate terms: `Measured`, `Readiness`,
+  `Heuristic`, `Manual Fallback`
+- runtime compatibility boundary, hidden local path rule, and the rule that
+  runtime-local metadata stays confined to `agents/openai.yaml`
+- package ownership split between `SKILL.md`, `skills/*/SKILL.md`,
+  `references/`, and `agents/openai.yaml`
+
+Flexible (project SoT pointed to by this skill):
+
+- external source families and claim boundaries defined in
+  `references/source-index.md`
+- reusable execution and routing expectations defined in
+  `references/function-matching-matrix.md`,
+  `references/lang-platform-map.md`, and `references/concept-map.md`
+- subskill-specific GEO workflows, caveats, and runtime requirements defined in
+  `skills/*/SKILL.md`
+- project-local reports or deliverables supplied by the user and routed through
+  the matching GEO subskill
+
+Flexible values are defined in `references/source-index.md`,
+`references/function-matching-matrix.md`, `references/lang-platform-map.md`,
+`references/concept-map.md`, and the matching file under `skills/*/SKILL.md`.
+
+Decisional (runtime LLM judgment inside the declared boundary):
+
+- which GEO subskill best matches the request
+- whether the answer can stay at the representative package surface or must
+  drop to a concrete subskill
+- whether a claim must remain `Readiness` / `Heuristic` or can be upgraded to
+  `Measured`
+- how to adapt the same evidence into L1, L2, or L3 output without changing
+  the underlying confidence
+
 ### Portable Handoff Metadata
 
 Setup/install note: copy or install the package directory as `geo-seo-skills-kr2`

@@ -85,6 +85,13 @@ Playwright 실측·파이프라인 자동화가 필요할 때 확장 계층 오�
 /geo-code pipeline https://example.com     # 전체 파이프라인 자동 실행
 ```
 
+CP 연동이 필요한 `/geo realtime --cp`, `/geo tracker`, `/geo-code status [도메인]`
+흐름은 사용자 로컬 `00_tunnel` 루트를 `GEO_TUNNEL_ROOT` 환경변수로 먼저 고정한다.
+
+```bash
+export GEO_TUNNEL_ROOT=/path/to/your/00_tunnel
+```
+
 ---
 
 ## 레벨 시스템

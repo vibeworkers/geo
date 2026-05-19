@@ -161,6 +161,12 @@ Advanced workflow installation:
    judgment, KR2 judgment, or export support.
 5. If you are using this repository checkout, that bundle is already included.
 
+When capability packages are present, `python3 scripts/check_geo_skill.py`
+delegates to their package validators as part of the root contract check.
+
+If you use KR2 local Code, realtime, tracker, or CP-linked flows, set
+`GEO_TUNNEL_ROOT` to your local `00_tunnel` root before those workflows.
+
 ### GitHub Sharing and Preview
 
 This README embeds the English and Korean introduction images directly so
@@ -370,6 +376,8 @@ If advanced workflows are not available or do not start as expected:
 - `docs/beta/organic-beta-integration.ko.md`: Korean beta integration guide for the single-system design
 - `packages/geo-deep-audit-ecommerce/`: ecommerce and commerce-readiness capability package with raw audit evidence, evidence boundaries, source index, scorecard, and summarizer
 - `packages/geo-seo-skills-kr2/`: KR2 capability package with evidence boundaries, source index, function matrix, and local Code extensions
+- `packages/geo-deep-audit-ecommerce/scripts/check_deep_audit_ecommerce_contract.py`: capability validator for the ecommerce audit package
+- `packages/geo-seo-skills-kr2/scripts/check_kr2_evidence_contract.py`: capability validator for the KR2 package
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: versioned Korean benchmark report and source metrics for `haegyung.com`
 - `skills/geo-*/SKILL.md`: workflow-specific setup, permissions, and outputs
 
@@ -615,6 +623,12 @@ Advanced workflow 설치:
 5. 이 저장소 checkout을 그대로 사용한다면 그 번들은 이미 포함되어
    있습니다.
 
+organic capability package가 함께 있으면 `python3 scripts/check_geo_skill.py`
+는 루트 계약 검증 과정에서 각 package validator도 함께 실행합니다.
+
+KR2의 local Code, realtime, tracker, CP 연동 흐름을 사용할 때는 먼저
+`GEO_TUNNEL_ROOT`를 사용자 로컬 `00_tunnel` 루트로 설정합니다.
+
 ### GitHub 공유와 미리보기
 
 이 README는 영문/국문 섹션 시작부에 소개 이미지를 직접 넣어 저장소 방문자가
@@ -819,6 +833,8 @@ guide를 먼저 따라갈 수 있습니다.
 - `docs/beta/organic-beta-integration.ko.md`: 단일 시스템 설계를 설명하는 한글 beta 통합 가이드
 - `packages/geo-deep-audit-ecommerce/`: raw audit evidence, evidence boundary, source index, scorecard, summarizer를 갖춘 ecommerce와 commerce-readiness capability package
 - `packages/geo-seo-skills-kr2/`: evidence boundary, source index, function matrix, local Code extension을 갖춘 KR2 capability package
+- `packages/geo-deep-audit-ecommerce/scripts/check_deep_audit_ecommerce_contract.py`: ecommerce audit package용 capability validator
+- `packages/geo-seo-skills-kr2/scripts/check_kr2_evidence_contract.py`: KR2 package용 capability validator
 - `reports/benchmarks/2026-05-08-haegyung-main-vs-beta/`: `haegyung.com`용 versioned 한글 벤치마크 리포트와 source metrics
 - `skills/geo-*/SKILL.md`: workflow별 setup, permission, output 설명
 

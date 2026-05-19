@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -188,6 +189,18 @@ DISALLOWED_STRINGS = [
 PORTABILITY_PATH_PATTERNS = [
     re.compile(r"/Volumes/"),
     re.compile(r"/Users/"),
+]
+
+CAPABILITY_PACKAGE_DIRS = [
+    "packages/geo-deep-audit-ecommerce",
+    "packages/geo-seo-skills-kr2",
+]
+
+PORTABILITY_SURFACE_SUFFIXES = {".md", ".yaml", ".yml"}
+
+CAPABILITY_VALIDATOR_SCRIPTS = [
+    "packages/geo-deep-audit-ecommerce/scripts/check_deep_audit_ecommerce_contract.py",
+    "packages/geo-seo-skills-kr2/scripts/check_kr2_evidence_contract.py",
 ]
 
 README_REQUIRED_PHRASES = [
@@ -731,6 +744,24 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
             if pattern.search(text):
                 fail(f"absolute path leak found in {rel_path}: pattern {pattern.pattern}")
 
+    for rel_root in CAPABILITY_PACKAGE_DIRS:
+        package_root = skill_dir / rel_root
+        if not package_root.exists():
+            fail(f"required capability package missing: {rel_root}")
+        for path in sorted(package_root.rglob("*")):
+            if not path.is_file():
+                continue
+            if path.suffix not in PORTABILITY_SURFACE_SUFFIXES:
+                continue
+            text = read_text(path)
+            rel_path = path.relative_to(skill_dir)
+            for pattern in PORTABILITY_PATH_PATTERNS:
+                if pattern.search(text):
+                    fail(
+                        "absolute path leak found in "
+                        f"{rel_path}: pattern {pattern.pattern}"
+                    )
+
 
 def ensure_no_generated_clutter(skill_dir: Path) -> None:
     for path in skill_dir.rglob("*"):
@@ -1184,6 +1215,24 @@ def ensure_platform_truth_contract(skill_dir: Path) -> None:
             fail(f"stale platform truth phrase found: {phrase}")
 
 
+def ensure_capability_validators_pass(skill_dir: Path) -> None:
+    for rel_path in CAPABILITY_VALIDATOR_SCRIPTS:
+        script_path = skill_dir / rel_path
+        if not script_path.exists():
+            fail(f"missing capability validator: {rel_path}")
+
+        completed = subprocess.run(
+            ["python3", str(script_path)],
+            cwd=skill_dir,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.returncode != 0:
+            detail = (completed.stdout + completed.stderr).strip()
+            fail(f"capability validator failed ({rel_path}): {detail}")
+
+
 def main() -> None:
     if len(sys.argv) > 2:
         fail("usage: check_geo_skill.py [skill_dir]")
@@ -1204,6 +1253,7 @@ def main() -> None:
     ensure_reference_contract(skill_dir)
     ensure_restored_execution_bundle(skill_dir)
     ensure_platform_truth_contract(skill_dir)
+    ensure_capability_validators_pass(skill_dir)
 
     print("[ok] geo skill package and portable contract are consistent")
 

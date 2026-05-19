@@ -201,7 +201,7 @@ ls GEO-BRAND-BASELINE-*.json 2>/dev/null | sort
 **3. CP 연동 상태** (`<도메인>` 인수가 있을 때만)
 
 ```bash
-TUNNEL="/Users/seomkt/Library/CloudStorage/GoogleDrive-seomkt.kr@gmail.com/내 드라이브/00_tunnel"
+TUNNEL="${GEO_TUNNEL_ROOT:?set GEO_TUNNEL_ROOT to your local 00_tunnel root}"
 ls "$TUNNEL/10_projects/$DOMAIN/04_cp/topics.csv" 2>/dev/null
 ls "$TUNNEL/10_projects/$DOMAIN/04_cp/contents/"*.md 2>/dev/null | wc -l
 ```
