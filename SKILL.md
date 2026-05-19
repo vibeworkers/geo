@@ -20,6 +20,9 @@ metadata:
 This is a portable GEO skill.
 This package is intended to move across supported skill roots without hidden
 machine-local assumptions.
+When this checkout is used as beta-A, beta-A is represented by the separate
+branch, worktree, or folder boundary, not by a separate skill name. The
+representative skill name and command surface remain `geo`.
 
 It owns request routing across these surfaces:
 
@@ -117,7 +120,10 @@ If this skill summary drifts, see the portable GEO routing baseline defined in
 `references/report-template-contract.md`,
 `references/implementation-completion-plan.md`,
 `references/user-level-workflow-guide.md`, and
-`references/execution-skill-matrix.md`.
+`references/execution-skill-matrix.md`, and
+`references/cogarch-alignment.md`, and
+`references/sequence-dependent-autopilot.md`, and
+`references/organic-capability-system.md`.
 
 The bundled term contract is defined in `references/glossary.md`.
 
@@ -154,6 +160,9 @@ Use the smallest confirmed source surface that can answer the request:
   `references/report-template-contract.md`
   `references/implementation-completion-plan.md`
   `references/user-level-workflow-guide.md`
+  `references/cogarch-alignment.md`
+  `references/sequence-dependent-autopilot.md`
+  `references/organic-capability-system.md`
 - user-provided working sources:
   pasted notes, attached docs, explicit file paths, or named deliverables from
   the user
@@ -165,6 +174,22 @@ Use the smallest confirmed source surface that can answer the request:
   crawler, schema, compare, report, and proposal workflows; each subskill
   remains a standalone execution owner and must not require `cogarch`,
   `~/.cogarch`, `OPERATIONS.md`, or hidden session-state commands
+- optional governance alignment:
+  `references/cogarch-alignment.md` may guide evidence closure, owner split,
+  measurement boundaries, actor-first handoff, and portable knowledge packets;
+  it must not introduce a runtime dependency on `cogarch`, `~/.cogarch`,
+  `OPERATIONS.md`, or hidden workspace state
+- optional sequence-dependent autopilot:
+  `references/sequence-dependent-autopilot.md` controls all-in requests such as
+  `전부 해줘`, `전체 진행`, `전체 수행`, `끝까지 해줘`, `do everything`, and
+  `continue until complete`; when triggered, build the ordered dependency
+  graph, execute each unblocked phase, verify it, record the ledger, and
+  continue until all required phases pass or a real stop condition applies
+- organic capability system:
+  `references/organic-capability-system.md` treats deep-audit-ecommerce and
+  KR2 as capability inputs to one `geo` system; integration takes priority over
+  preserving separate reports, and physical folders are only maintenance
+  boundaries
 - derived deliverables:
   HTML, slides, exports, or build surfaces only after the upstream working
   source is known
@@ -196,6 +221,39 @@ Classify each GEO request into one lane before deeper work:
 
 If more than one lane is involved, route in this order:
 `framework-source or evidence-note -> working-source or asset-surface -> execution-bundle -> derived-deliverable`.
+
+When a local package capability under `packages/*` is involved, keep the user
+request inside one `geo` workflow. `packages/geo-deep-audit-ecommerce/` is the
+physical compatibility path for the `deep-audit-ecommerce` capability, and
+`packages/geo-seo-skills-kr2/` is the KR2 capability. They may be maintained in
+separate folders, but the folders do not preserve separate user-facing report
+tracks. For a single user request, use one source-order decision, one evidence
+ledger, one completion judgment, and one report contract.
+
+## Sequence-Dependent Autopilot
+
+When the user asks for the whole task with wording such as `전부 해줘`,
+`전체 진행`, `전체 수행`, `끝까지 해줘`, `알아서 다 해줘`, `처음부터 끝까지`,
+`do everything`, `run the whole process`, or `continue until complete`, do not
+stop at a plan.
+
+Use `references/sequence-dependent-autopilot.md` to:
+
+1. lock `goal / scope / surface / success / evidence target`,
+2. select context mode and owning lane,
+3. build an ordered dependency graph,
+4. run the next unblocked process,
+5. verify the phase,
+6. record evidence and unresolved boundaries,
+7. continue until every required phase passes or a real blocker appears.
+
+The user does not need to know subskill names, reference names, gates, or
+commands. GEO chooses the next process step from the dependency graph.
+
+Stop only for destructive operations, missing credentials, account or payment
+approval, external system decisions, missing source material that cannot be
+inferred safely, high-risk professional judgment, unclear validation failure,
+or explicit user interruption.
 
 ## Clarification-First Intake
 
@@ -426,6 +484,28 @@ optimization.
     `current_score`, `all_must_passed` or `failed_must_queue`,
     `verification_set`, and `report_artifact_path`.
     Fail: do not declare completion when any Must condition lacks evidence.
+14. **Gate 14: Sequence-dependent autopilot**
+    Entry: the user asks for the whole task with wording such as `전부 해줘`,
+    `전체 진행`, `전체 수행`, `끝까지 해줘`, `do everything`, or
+    `continue until complete`.
+    Exit: build the ordered dependency graph from the selected lane and
+    applicable references, run each unblocked phase, verify it, record the
+    ledger, and continue until `all_must_passed=true` or
+    `failed_must_queue` contains a real stop condition.
+    Fail: do not stop at a plan, do not require the user to know GEO subskill
+    names or commands, and do not continue through destructive, credential,
+    payment, external-decision, missing-source, or high-risk professional
+    blockers.
+15. **Gate 15: Organic capability composition**
+    Entry: the selected workflow needs commerce/ecommerce judgment, Korean or
+    multilingual context, platform/crawler readiness, realtime capture,
+    tracking, batch scan, or `/geo-code` extension work.
+    Exit: compose `deep-audit-ecommerce` and `kr2` as needed under the root
+    `geo` contract, then close with one evidence ledger, one completion
+    judgment, and one report contract.
+    Fail: do not return separate deep-audit and KR2 closeouts for one user
+    request, and do not treat physical package folders as separate product
+    surfaces.
 
 ## Rubric
 
@@ -453,6 +533,11 @@ Must:
   proposals, and PDF-ready handoffs
 - use `references/implementation-completion-plan.md` for P2-P13 package
   hardening or whole-system completion claims
+- use `references/sequence-dependent-autopilot.md` when the user asks for the
+  whole task or all processes to be performed end to end
+- use `references/organic-capability-system.md` when a workflow combines
+  commerce/ecommerce deep audit with KR2 language, platform, crawler,
+  realtime, tracker, batch, or `/geo-code` concerns
 - route execution-intent requests through a confirmed local execution bundle
   only after `skills/*` is checked
 - keep prompt templates, activation prompts, routing examples, and experiment
@@ -502,6 +587,9 @@ Should:
 - Do not claim a build or export refresh is ready without checking
   prerequisites.
 - Do not invent local validation notes, file names, or version states.
+- Do not stop at a plan when sequence-dependent autopilot is triggered.
+- Do not require the user to know subskill names, reference names, gates, or
+  commands before GEO can proceed through the ordered process.
 
 ### LLM judgment area
 
@@ -517,6 +605,7 @@ Should:
 - Decide whether bundled references are enough or whether stronger user or local
   source material is required.
 - Label unresolved cases as `needs source material` or `hypothesis only`.
+- Decide the next unblocked phase when sequence-dependent autopilot is active.
 
 ## Standard Response Shape
 
@@ -534,7 +623,10 @@ Default representative answer shape:
 7. **Evidence** — one fact from the confirmed source surface
 8. **Measurement / commerce / private / regional / policy status** — include
    only the relevant fields for the request
-9. **Next action** — one concrete routed step
+9. **Autopilot ledger** — include when the user requested all processes or
+   end-to-end completion
+10. **Next action** — one concrete routed step, or completion judgment when all
+   required phases passed
 
 Keep the default answer compact unless the user asks for depth.
 
@@ -680,6 +772,8 @@ Runtime-fact exception:
 - `references/implementation-completion-plan.md`
 - `references/user-level-workflow-guide.md`
 - `references/execution-skill-matrix.md`
+- `references/cogarch-alignment.md`
+- `references/sequence-dependent-autopilot.md`
 - `scripts/check_geo_skill.py`
 
 ## AGENTS.md Alignment

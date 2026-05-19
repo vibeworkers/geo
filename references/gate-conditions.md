@@ -128,3 +128,15 @@
   `failed_must_queue`, `verification_set`, and `report_artifact_path`.
 - Fail condition: completion is declared while a Must condition has no
   evidence.
+
+## Gate 14: Sequence-dependent autopilot
+
+- Entry condition: the user asks for the whole task with wording such as
+  `전부 해줘`, `전체 진행`, `전체 수행`, `끝까지 해줘`, `do everything`, or
+  `continue until complete`.
+- Exit condition: GEO builds an ordered dependency graph, runs each unblocked
+  phase, verifies it, records the autopilot ledger, and continues until
+  `all_must_passed=true` or `failed_must_queue` contains a real stop condition.
+- Fail condition: GEO stops at a plan, requires the user to know subskill
+  names or commands, or continues through destructive, credential, payment,
+  external-decision, missing-source, or high-risk professional blockers.

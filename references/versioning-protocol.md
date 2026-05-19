@@ -59,6 +59,26 @@ immutable even though they mix annotated and lightweight tag styles.
 - experimental or review branches may use pre-release tags, but normal release
   tags must wait for `main`
 
+## Branch Variant Identity
+
+When the same project is split into a separate branch, worktree, or folder for
+review or beta work, the branch boundary represents the variant. Do not rename
+the package, representative skill, command surface, or public project identity
+only because the checkout folder or branch name differs.
+
+For example, a `beta-A` branch or `geo-beta-A` worktree still represents the
+same `geo` package unless a deliberate public contract change renames the
+package. The correct version-management interpretation is:
+
+- branch, worktree, or folder name: variant/review boundary
+- `SKILL.md` `name: geo`: representative skill identity
+- `geo <request>` and `$geo <request>`: stable runtime command surface
+- changelog, pre-release tag, and release gate: public version evidence
+
+Folder-name and skill-name mismatch warnings in local validators should be
+classified as intentional variant-boundary warnings when the mismatch is caused
+by a branch/worktree split. They are not rename requirements by themselves.
+
 ## Pre-1.0 Policy
 
 This package is still in the three-part `0.Y.Z` phase.

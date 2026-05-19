@@ -10,6 +10,34 @@ contract. A subskill must remain usable without `cogarch`, `~/.cogarch`,
 Subskill examples should describe direct inputs or plain-language requests, not
 a separate `/geo ...` slash-command surface.
 
+## Organic capability composition
+
+`geo` is one representative system. Folder separation is a maintenance and
+ownership boundary, not a user-facing product split.
+
+Use `references/organic-capability-system.md` when a request needs more than
+one capability. The root router gives integration priority over separate
+report preservation: one source-order decision, one evidence ledger, one
+completion judgment, and one report contract.
+
+| Capability | Physical surface | Use inside the organic `geo` system |
+| --- | --- | --- |
+| `geo core` | `SKILL.md`, `references/*.md` | source priority, context mode, gates, sequence-dependent autopilot, evidence labels, report contract |
+| `deep-audit-ecommerce` | `packages/geo-deep-audit-ecommerce/` | ecommerce and commerce readiness, including product, schema, merchant, catalog, checkout/action, and measurement judgment |
+| `kr2` | `packages/geo-seo-skills-kr2/` | Korean, multilingual, platform, crawler, AI-readiness, realtime, tracker, batch, and `/geo-code` extension judgment |
+| portable execution bundle | `skills/geo-*` | root-routed advanced workflows that must remain usable directly |
+
+Composition rules:
+
+1. Commerce and ecommerce requests start from `deep-audit-ecommerce`.
+2. Korean, multilingual, platform, crawler, realtime, tracker, batch, or
+   `/geo-code` requests start from `kr2`.
+3. Commerce requests with KR2 concerns use both capabilities in one workflow.
+4. KR2 requests for ecommerce or commerce properties import the
+   deep-audit-ecommerce rubric before closing readiness.
+5. The final output must not be a pasted bundle of separate reports; it must be
+   one `geo` judgment flow with explicit evidence labels.
+
 ## How to enable these workflows
 
 Treat this section as the advanced-workflow setup guide.
@@ -117,9 +145,27 @@ existing subskills should report outcome and commerce/action claims.
 | `references/policy-risk-gate.md` | `geo-crawlers`, `geo-content`, `geo-platform-optimizer`, `geo-report`, `geo-proposal`, `geo-technical` | check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility before recommendations |
 | `references/report-template-contract.md` | `geo-report`, `geo-report-pdf`, `geo-proposal`, `geo-audit` | require score_type, evidence_label, confidence, measurement_status, commerce_status, private_surface_status, regional_context, and policy_risk |
 | `references/implementation-completion-plan.md` | `geo`, `geo-report`, `geo-proposal` | close P2-P13 hardening with all_must_passed or failed_must_queue evidence |
+| `references/cogarch-alignment.md` | `geo`, `geo-audit`, `geo-report`, `geo-proposal`, `geo-platform-optimizer`, `geo-technical` | apply optional governance alignment for evidence closure, owner split, actor-first handoff, and portable knowledge packets without requiring `cogarch` |
+| `references/sequence-dependent-autopilot.md` | `geo`, `geo-audit`, `geo-report`, `geo-proposal`, `geo-report-pdf`, `geo-schema`, `geo-technical` | run all-in requests through an ordered dependency graph, phase execution, verification, ledger recording, and completion judgment |
+| `references/organic-capability-system.md` | `geo`, `geo-audit`, `geo-report`, `geo-proposal`, `geo-technical`, `geo-platform-optimizer` | compose deep-audit-ecommerce and KR2 as one organic GEO workflow with one evidence ledger and report contract |
 
 Use these references when the request asks whether GEO "worked", whether an AI
 platform cites a brand, whether shopping/action readiness exists, or whether a
 product/schema change can support commerce outcomes. Use the report and
 completion contracts when the user asks for a consolidated handoff or
 whole-system completion judgment.
+
+Use `references/cogarch-alignment.md` when a workflow needs stronger
+governance discipline, reusable knowledge packaging, or actor-specific handoff.
+It can shape the report loop and ownership boundary, but advanced workflows
+must remain executable without hidden global files.
+
+Use `references/sequence-dependent-autopilot.md` when the user asks GEO to do
+the whole task without naming the individual workflow steps. The representative
+router should select the next unblocked process, verify it, and keep going
+until every required phase passes or a real stop condition is recorded.
+
+Use `references/organic-capability-system.md` when commerce/ecommerce audit and
+KR2 language, platform, crawler, realtime, tracker, batch, or `/geo-code`
+concerns appear in the same request. The representative router should compose
+the needed capabilities under one root `geo` closeout.

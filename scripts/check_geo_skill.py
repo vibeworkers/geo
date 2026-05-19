@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -31,6 +32,9 @@ REQUIRED_FILES = [
     "references/implementation-completion-plan.md",
     "references/user-level-workflow-guide.md",
     "references/execution-skill-matrix.md",
+    "references/cogarch-alignment.md",
+    "references/sequence-dependent-autopilot.md",
+    "references/organic-capability-system.md",
     "references/versioning-protocol.md",
     "scripts/check_geo_release.py",
     "scripts/check_geo_skill.py",
@@ -62,6 +66,7 @@ REQUIRED_SECTIONS = [
     "## Project Topology Contract",
     "## Canonical SoT",
     "## Request Classification",
+    "## Sequence-Dependent Autopilot",
     "## Clarification-First Intake",
     "## Trigger Probes",
     "## Command Surface",
@@ -83,6 +88,8 @@ REQUIRED_PHRASES = [
     "The official website is <https://vibeworkers.net>.",
     "outputs default to `VibeWorkers`.",
     "This package is intended to move across supported skill roots without hidden",
+    "When this checkout is used as beta-A, beta-A is represented by the separate",
+    "representative skill name and command surface remain `geo`.",
     "VibeWorkers 의 컨트리뷰터: 김범수, 유수호, 고경만.",
     "Prompt templates, activation prompts, routing examples, and experiment prompts",
     "Choose conversation language: Korean or English.",
@@ -122,6 +129,13 @@ REQUIRED_PHRASES = [
     "**Output brand** — default to `VibeWorkers`;",
     "Its official website is <https://vibeworkers.net>.",
     "They are routed by `geo`, but each one must remain a standalone contract rather",
+    "`references/organic-capability-system.md` treats deep-audit-ecommerce and",
+    "physical compatibility path for the `deep-audit-ecommerce` capability",
+    "`packages/geo-seo-skills-kr2/` is the KR2 capability",
+    "separate user-facing report",
+    "one source-order decision, one evidence",
+    "Gate 15: Organic capability composition",
+    "compose `deep-audit-ecommerce` and `kr2` as needed under the root",
 ]
 
 INLINE_GATE_PHRASES = [
@@ -157,6 +171,13 @@ INLINE_GATE_PHRASES = [
     "robots, terms, privacy, regulated claims, brand claims",
     "**Gate 13: Whole-system completion boundary**",
     "completion_rubric_path_or_inline",
+    "**Gate 14: Sequence-dependent autopilot**",
+    "ordered dependency graph",
+    "all_must_passed=true",
+    "failed_must_queue",
+    "**Gate 15: Organic capability composition**",
+    "one evidence ledger, one completion",
+    "judgment, and one report contract.",
 ]
 
 DISALLOWED_STRINGS = [
@@ -170,6 +191,18 @@ PORTABILITY_PATH_PATTERNS = [
     re.compile(r"/Users/"),
 ]
 
+CAPABILITY_PACKAGE_DIRS = [
+    "packages/geo-deep-audit-ecommerce",
+    "packages/geo-seo-skills-kr2",
+]
+
+PORTABILITY_SURFACE_SUFFIXES = {".md", ".yaml", ".yml"}
+
+CAPABILITY_VALIDATOR_SCRIPTS = [
+    "packages/geo-deep-audit-ecommerce/scripts/check_deep_audit_ecommerce_contract.py",
+    "packages/geo-seo-skills-kr2/scripts/check_kr2_evidence_contract.py",
+]
+
 README_REQUIRED_PHRASES = [
     "# GEO",
     "This README is bilingual: English first, Korean second.",
@@ -180,6 +213,7 @@ README_REQUIRED_PHRASES = [
     "### Quick Summary",
     "`geo` helps solve these GEO work problems:",
     "### What This Project Is",
+    "`beta-A` is not a separate skill name.",
     "### Why It Exists",
     "### Installation",
     "### Runtime Compatibility",
@@ -249,6 +283,16 @@ README_REQUIRED_PHRASES = [
     "`references/report-template-contract.md`",
     "`references/implementation-completion-plan.md`",
     "`references/user-level-workflow-guide.md`",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
+    "### beta Organic System Integration",
+    "### beta 유기적 시스템 통합",
+    "`docs/beta/organic-beta-integration.ko.md`",
+    "`packages/geo-deep-audit-ecommerce/`",
+    "`packages/geo-seo-skills-kr2/`",
+    "Organic capability workflows use `packages/*`",
+    "geo core -> capability selection -> shared evidence ledger -> one report contract",
     "`skills/geo-*/SKILL.md`",
     "private `generateSkill` workflow derived from",
     "the public Skill Creator skill.",
@@ -258,6 +302,7 @@ README_REQUIRED_PHRASES = [
     "### 한눈 요약",
     "`geo`는 아래 GEO 문제를 해결하도록 돕습니다.",
     "### 이 프로젝트는 무엇인가",
+    "`beta-A`는 별도 스킬명이 아닙니다.",
     "### 왜 존재하는가",
     "### 설치",
     "### 런타임 호환성",
@@ -299,6 +344,9 @@ README_REQUIRED_PHRASES = [
     "다른 런타임이나 모델로 바꿨다면 기존 상태를 그대로 가정하지 말고 setup",
     "이전 세션에서 먼저 실행해 둔 명령을 요구하지 않습니다",
     "저작자: 김범수, 유수호, 고경만.",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
     "저장된 prompt는 영어로 작성합니다.",
     "goal, scope, working surface, success condition, evidence target이 아직",
     "`geo`의 output brand는 `VibeWorkers`입니다.",
@@ -339,6 +387,13 @@ EXECUTION_MATRIX_REQUIRED_PHRASES = [
     "`references/policy-risk-gate.md`",
     "`references/report-template-contract.md`",
     "`references/implementation-completion-plan.md`",
+    "`references/cogarch-alignment.md`",
+    "`references/sequence-dependent-autopilot.md`",
+    "`references/organic-capability-system.md`",
+    "## Organic capability composition",
+    "`packages/geo-deep-audit-ecommerce/`",
+    "`packages/geo-seo-skills-kr2/`",
+    "one source-order decision, one evidence",
 ]
 
 RESTORED_SUBSKILL_REQUIRED_PHRASES = [
@@ -445,6 +500,9 @@ VERSIONING_PROTOCOL_REQUIRED_PHRASES = [
     "are not part of the portable GEO package contract unless a future protocol",
     "`main` is the release line",
     "`codex/<topic>` is the default short-lived working branch shape",
+    "When the same project is split into a separate branch, worktree, or folder",
+    "the branch boundary represents the variant.",
+    "They are not rename requirements by themselves.",
     "validator-enforced required files, required sections, or required",
     "phrases that alter routed invocation, source-order, runtime adaptation,",
     "README or reference wording about auxiliary delivery, sharing, or social",
@@ -631,6 +689,9 @@ def ensure_no_stale_aliases(skill_dir: Path) -> None:
         "references/implementation-completion-plan.md",
         "references/user-level-workflow-guide.md",
         "references/execution-skill-matrix.md",
+        "references/cogarch-alignment.md",
+        "references/sequence-dependent-autopilot.md",
+        "references/organic-capability-system.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -665,6 +726,9 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         "references/implementation-completion-plan.md",
         "references/user-level-workflow-guide.md",
         "references/execution-skill-matrix.md",
+        "references/cogarch-alignment.md",
+        "references/sequence-dependent-autopilot.md",
+        "references/organic-capability-system.md",
         "references/versioning-protocol.md",
         "scripts/check_geo_release.py",
     ]:
@@ -679,6 +743,24 @@ def ensure_no_absolute_path_leaks(skill_dir: Path) -> None:
         for pattern in PORTABILITY_PATH_PATTERNS:
             if pattern.search(text):
                 fail(f"absolute path leak found in {rel_path}: pattern {pattern.pattern}")
+
+    for rel_root in CAPABILITY_PACKAGE_DIRS:
+        package_root = skill_dir / rel_root
+        if not package_root.exists():
+            fail(f"required capability package missing: {rel_root}")
+        for path in sorted(package_root.rglob("*")):
+            if not path.is_file():
+                continue
+            if path.suffix not in PORTABILITY_SURFACE_SUFFIXES:
+                continue
+            text = read_text(path)
+            rel_path = path.relative_to(skill_dir)
+            for pattern in PORTABILITY_PATH_PATTERNS:
+                if pattern.search(text):
+                    fail(
+                        "absolute path leak found in "
+                        f"{rel_path}: pattern {pattern.pattern}"
+                    )
 
 
 def ensure_no_generated_clutter(skill_dir: Path) -> None:
@@ -717,6 +799,9 @@ def ensure_reference_contract(skill_dir: Path) -> None:
     implementation_completion = read_text(skill_dir / "references/implementation-completion-plan.md")
     glossary = read_text(skill_dir / "references/glossary.md")
     execution_matrix = read_text(skill_dir / "references/execution-skill-matrix.md")
+    cogarch_alignment = read_text(skill_dir / "references/cogarch-alignment.md")
+    sequence_autopilot = read_text(skill_dir / "references/sequence-dependent-autopilot.md")
+    organic_capability = read_text(skill_dir / "references/organic-capability-system.md")
 
     for phrase in [
         "`portable-baseline`",
@@ -741,7 +826,9 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "`policy_risk_reference`: `references/policy-risk-gate.md`",
         "`report_template_reference`: `references/report-template-contract.md`",
         "`implementation_completion_reference`: `references/implementation-completion-plan.md`",
+        "`sequence_dependent_autopilot_reference`: `references/sequence-dependent-autopilot.md`",
         "`clarification_rule`: if `goal / scope / surface / success / evidence target`",
+        "`sequence_dependent_autopilot_rule`: when the user asks for all processes,",
         "Derived outputs should follow source changes, not replace them.",
         "Do not assume a local overlay or hidden workspace path exists.",
         "| clarification packet | minimal pre-plan packet with `goal / scope / surface / success / evidence target`",
@@ -758,6 +845,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "| policy risk gate | `references/policy-risk-gate.md`",
         "| report template contract | `references/report-template-contract.md`",
         "| implementation completion plan | `references/implementation-completion-plan.md`",
+        "| sequence-dependent autopilot | `references/sequence-dependent-autopilot.md`",
     ]:
         if phrase not in concept_map:
             fail(f"missing concept-map phrase: {phrase}")
@@ -775,6 +863,7 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Gate 11: Regional/situational boundary",
         "Gate 12: Policy risk boundary",
         "Gate 13: Whole-system completion boundary",
+        "Gate 14: Sequence-dependent autopilot",
         "packet with `goal / scope / surface / success / evidence target` is locked.",
         "`execution-bundle`",
         "advanced-workflow",
@@ -785,6 +874,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "regional or vertical claims must use a confirmed source pack",
         "robots, terms, privacy, regulated claims, brand claims",
         "`completion_rubric_path_or_inline`",
+        "ordered dependency graph",
+        "`all_must_passed=true`",
     ]:
         if phrase not in gate_conditions:
             fail(f"missing gate condition phrase: {phrase}")
@@ -819,6 +910,8 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "Expected boundary: check robots, terms, privacy, regulated claims, brand claims, and commerce eligibility",
         "Expected boundary: use `references/report-template-contract.md`",
         "Expected boundary: use `references/implementation-completion-plan.md`",
+        "Expected boundary: use `references/sequence-dependent-autopilot.md`",
+        "Expected behavior: build an ordered dependency graph",
     ]:
         if phrase not in experiments:
             fail(f"missing experiment phrase: {phrase}")
@@ -988,15 +1081,74 @@ def ensure_reference_contract(skill_dir: Path) -> None:
         "private_surface_status",
         "regional_context",
         "policy_risk",
+        "Claim boundary ledger",
+        "Actor-first handoff",
+        "measured facts",
+        "interpretation",
+        "assumptions",
+        "unknowns",
     ]:
         if phrase not in report_template:
             fail(f"missing report-template phrase: {phrase}")
 
     for phrase in [
+        "# GEO Cogarch Alignment Contract",
+        "compatibility, not inheritance",
+        "without depending on `cogarch`, `~/.cogarch`",
+        "Goal -> Rubric -> Iteration -> Score -> Next Action",
+        "measured / interpretation / assumption / unknown",
+        "owner split",
+        "actor-first handoff",
+        "portable knowledge packet",
+        "The package fails portability if this alignment requires `cogarch`",
+    ]:
+        if phrase not in cogarch_alignment:
+            fail(f"missing cogarch-alignment phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Sequence-Dependent Autopilot",
+        "guided completion",
+        "`전부 해줘`",
+        "`전체 진행`",
+        "`전체 수행`",
+        "`do everything`",
+        "`continue until complete`",
+        "ordered dependency graph",
+        "Execute next unblocked phase",
+        "Verify phase",
+        "Record ledger",
+        "all_must_passed=true",
+        "failed_must_queue",
+        "Do not require the user to know the names of subskills",
+    ]:
+        if phrase not in sequence_autopilot:
+            fail(f"missing sequence-autopilot phrase: {phrase}")
+
+    for phrase in [
+        "# GEO Organic Capability System",
+        "`geo` is the single representative system.",
+        "The physical folders under `skills/` and `packages/` are ownership and",
+        "| Commerce capability | `packages/geo-deep-audit-ecommerce/`",
+        "| KR2 capability | `packages/geo-seo-skills-kr2/`",
+        "`deep-audit-ecommerce`.",
+        "`kr2`.",
+        "one evidence ledger and one report contract",
+        "Integration takes priority over preserving both reports",
+        "Do not upgrade `Readiness` or `Heuristic` to `Measured` unless direct",
+        "Do not make `cogarch`, `~/.cogarch`, `OPERATIONS.md`, or hidden session",
+        "It must be a single GEO judgment flow:",
+        "serve one organic `geo` system",
+    ]:
+        if phrase not in organic_capability:
+            fail(f"missing organic-capability phrase: {phrase}")
+
+    for phrase in [
         "# GEO P2-P13 Implementation Completion Plan",
         "RQ1",
         "RQ13",
+        "RQ14",
         "P2-P13 Sequence",
+        "P14",
         "completion_judgment",
         "all_must_passed",
         "failed_must_queue",
@@ -1063,6 +1215,24 @@ def ensure_platform_truth_contract(skill_dir: Path) -> None:
             fail(f"stale platform truth phrase found: {phrase}")
 
 
+def ensure_capability_validators_pass(skill_dir: Path) -> None:
+    for rel_path in CAPABILITY_VALIDATOR_SCRIPTS:
+        script_path = skill_dir / rel_path
+        if not script_path.exists():
+            fail(f"missing capability validator: {rel_path}")
+
+        completed = subprocess.run(
+            ["python3", str(script_path)],
+            cwd=skill_dir,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.returncode != 0:
+            detail = (completed.stdout + completed.stderr).strip()
+            fail(f"capability validator failed ({rel_path}): {detail}")
+
+
 def main() -> None:
     if len(sys.argv) > 2:
         fail("usage: check_geo_skill.py [skill_dir]")
@@ -1083,6 +1253,7 @@ def main() -> None:
     ensure_reference_contract(skill_dir)
     ensure_restored_execution_bundle(skill_dir)
     ensure_platform_truth_contract(skill_dir)
+    ensure_capability_validators_pass(skill_dir)
 
     print("[ok] geo skill package and portable contract are consistent")
 

@@ -32,7 +32,9 @@ proposal summaries, PDF-ready reports, and executive handoffs.
 6. Regional and situational context when applicable
 7. Policy risk gate
 8. Prioritized remediation plan
-9. Remaining gaps and next verification
+9. Claim boundary ledger: measured facts, interpretation, assumptions, unknowns
+10. Actor-first handoff when applicable
+11. Remaining gaps and next verification
 
 ## Claim Labels
 
@@ -43,6 +45,42 @@ proposal summaries, PDF-ready reports, and executive handoffs.
 - Use `score_type=conversion` only when action or commerce systems show the
   conversion evidence.
 
+## Claim Boundary Ledger
+
+Every report should keep the following categories separable:
+
+- measured facts: crawler output, captured answers, analytics, logs, validator
+  output, or explicitly provided source text
+- interpretation: the reasoning that connects measured facts to readiness,
+  priority, or risk
+- assumptions: unverified conditions accepted for the current report
+- unknowns: missing evidence that could change the recommendation
+
+If space is limited, use a compact table:
+
+| boundary | entries |
+| --- | --- |
+| measured facts | |
+| interpretation | |
+| assumptions | |
+| unknowns | |
+
+Do not present interpretation as measurement. Do not present assumptions as
+verified facts.
+
+## Actor-First Handoff
+
+When a report or proposal includes a handoff, identify the receiving actor:
+
+| actor | required handoff content |
+| --- | --- |
+| decision maker | conclusion, risk, budget or priority implication, owner |
+| operator | exact surface, action sequence, verification step, fallback |
+| builder | file, command, schema, API, test, rollback or failure mode |
+
+Audience-specific wording may change packaging, but it must not remove
+evidence labels, source paths, confidence, or unresolved gaps.
+
 ## Fail Conditions
 
 - A report fails if it has a score without `evidence_label`.
@@ -51,3 +89,6 @@ proposal summaries, PDF-ready reports, and executive handoffs.
   `private_surface_status`.
 - A report fails if commerce claims omit `commerce_status`.
 - A report fails if policy risk is unknown but presented as safe.
+- A report fails if measured facts and interpretation are collapsed into one
+  unsupported claim.
+- A handoff fails if the next action has no actor or owner.

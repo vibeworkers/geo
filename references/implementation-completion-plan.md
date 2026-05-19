@@ -28,6 +28,7 @@ status.
 | RQ11 | Harden validation so regressions are caught | `scripts/check_geo_skill.py` checks the new files, gates, README references, and reference contract phrases |
 | RQ12 | Produce a verification set and patch artifact | `python3 scripts/check_geo_skill.py`, `git diff --check`, stale-claim search, portability search, and patch generation all complete |
 | RQ13 | Close with a handoff boundary | The final report records `completion_judgment`, `all_must_passed` or failed queue, verification set, patch path, and release/push boundary |
+| RQ14 | Support sequence-dependent autopilot for all-in requests | `references/sequence-dependent-autopilot.md`, `SKILL.md`, gates, scenarios, matrix, README, and validator define all-in trigger handling, ordered dependency graph execution, verification, ledger recording, and stop conditions |
 
 ## P2-P13 Sequence
 
@@ -45,6 +46,7 @@ status.
 | P11 | P9/P10 | Harden validator | New omissions fail `scripts/check_geo_skill.py` |
 | P12 | P11 | Run targeted verification and create patch bundle | Verification commands pass and patch can be reviewed |
 | P13 | P12 | Write closeout report | `completion_judgment=pass` only if all Must checks pass |
+| P14 | P13 | Add sequence-dependent autopilot | All-in requests run through ordered dependency graph, phase verification, ledger recording, and stop conditions |
 
 ## Adaptive Judgment Criteria
 
@@ -61,13 +63,16 @@ status.
 - If policy status is unknown, report `policy_risk=unknown` or `caution`, not
   safe.
 - If a validator fails, fix the smallest missing contract before broad edits.
+- If the user asks for all processes, continue through the ordered dependency
+  graph until every required phase passes or a stop condition is recorded.
 
 ## Completion Rubric
 
 Must:
 
-- all RQ1-RQ13 done conditions are represented in package files
+- all RQ1-RQ14 done conditions are represented in package files
 - top-level router exposes Gates 8-13
+- top-level router exposes Gate 14 for sequence-dependent autopilot
 - existing execution subskills reference the new contracts where relevant
 - validator checks the new contracts
 - verification set passes locally
